@@ -1189,6 +1189,10 @@ $(X, \mathcal{T}_X)$の部分位相空間$Y$の分割が存在する
 	 しかし, これが$c$の最小上界性に反する.
 \end{proof}
 
+\begin{corollary}
+	実数全体の集合は連結である.
+\end{corollary}
+
 \begin{theorem}[中間値の定理]
 	連結な順序位相空間$\left( X ,\mathcal{T}_X \right) $ と順序位相空間$ \left( Y, \mathcal{T}_Y \right) $ 間の連続写像
 	$f: X \to Y$ について, 以下の命題が成立する: 
@@ -1207,10 +1211,26 @@ $(X, \mathcal{T}_X)$の部分位相空間$Y$の分割が存在する
 \end{proof}
 
 \begin{definition}[弧状連結]
-	
+	位相空間$ \left( X , \mathcal{T}_X \right) $の二点$x,y \in X$ に対し, 
+	実数のある閉区間$[a,b]$から,  $f(a) =x,f(b) = y$を満たすような連続写像 
+	$f: [a,b] \to X$は$x$から $y$への道\textbf{(path)}といい, 
+	位相空間が弧状連結 \textbf{(paht connected)}とは, 任意の二点を結ぶ道が存在すること.
 \end{definition}
 
+\begin{lemma}
+	弧状連結な位相空間が連結である.
+\end{lemma}
 
+\begin{proof}
+	位相空間$\left( X, \mathcal{T}_X \right) $ が弧状連結とする. 
+	位相空間が連結でないと仮定して矛盾を導く:　\\
+	$C,D$を $X$の分割とする.  
+	$x \in C, y \in D$に対し,弧状連結であるから, $x,y$ を結ぶ道が存在する, 
+	道の像が連結であるから,$C,D$のどれかに含まれる.
+	その時, $x,y$が同一集合に属することになり, 矛盾が生じる.
+\end{proof}
+
+ここで自然な質問が出てくると思うが,　連結と弧状連結が同値であるか? 当然ながらわざと弧状連結を定義したから同値な分けないだろう.
 
 
 

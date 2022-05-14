@@ -1,4 +1,4 @@
-\babel@toc {english}{}\relax 
+\babel@toc {english}{}
 \contentsline {part}{目次}{5}{chapter*.2}%
 \contentsline {part}{第I部\hspace {1em}Topological Space}{7}{part.1}%
 \contentsline {chapter}{\numberline {第1章}位相と位相空間の基本常識}{11}{chapter.1}%
