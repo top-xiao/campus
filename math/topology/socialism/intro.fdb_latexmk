@@ -1,9 +1,9 @@
 # Fdb version 3
-["dvipdf"] 1652700760 "intro.dvi" "intro.pdf" "intro" 1652700760
-  "intro.dvi" 1652700759 158408 b77ae87bfa6f4761766df4c166b9b3ab "latex"
+["dvipdf"] 1652701755 "intro.dvi" "intro.pdf" "intro" 1652701756
+  "intro.dvi" 1652701755 159300 4ceb523e22d641d2b23a1f1fd67b41c8 "latex"
   (generated)
   "intro.pdf"
-["latex"] 1652700759 "intro.tex" "intro.dvi" "intro" 1652700760
+["latex"] 1652701755 "intro.tex" "intro.dvi" "intro" 1652701756
   "/etc/texmf/web2c/texmf.cnf" 1652511832 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
@@ -231,10 +231,10 @@
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/var/lib/texmf/web2c/eptex/platex.fmt" 1652511884 2754569 dfbf8ef613725f14f871d3004da7400a ""
-  "intro.aux" 1652700759 3315 c3faefc8aa327ce1613a38f8aadbf8f2 "latex"
-  "intro.out" 1652700759 1095 615dc4205647720d4a7c403006293ab3 "latex"
-  "intro.tex" 1652700758 84908 16bbe386c6b8baa2ea0e8a03c638e7f5 ""
-  "intro.toc" 1652700759 1299 b7e4605e6d9344b3e95c157545db1b99 "latex"
+  "intro.aux" 1652701755 3315 217bcfdcb7c286189f793709e0dce9c1 "latex"
+  "intro.out" 1652701755 1095 615dc4205647720d4a7c403006293ab3 "latex"
+  "intro.tex" 1652701754 85304 141f7f1c2c149b808c34167f39402e77 ""
+  "intro.toc" 1652701755 1299 df7c78f29ae085e1e31b9efdd2419d4a "latex"
   (generated)
   "intro.aux"
   "intro.dvi"
