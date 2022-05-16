@@ -44,7 +44,7 @@
 \newtheorem{remark}{Remark}[section]
 \theoremstyle{plain}
 \newtheorem{example}{Example}[section]
-\newtheorem{excercise}{Excercise}[section]
+\newtheorem{exercise}{Exercise}[section]
 \newcommand{\incfig}[1]{%
     \includegraphics{~/Documents/campus/math/eps/topology/1st/#1.eps}
 }
@@ -1262,25 +1262,60 @@ $(X, \mathcal{T}_X)$の部分位相空間$Y$の分割が存在する
 この二項関係も同値関係である. これは自明に見えるが証明は自明ではない.
 しかし, Theorem \ref{thm:paste}を利用すれば流石にお猿さんでも解けるから, ここも言わないようにしておく.
 
-\begin{excercise}
-	連結あるいは弧状連結な空でない部分位相空間に対し, それと交わりを持てる連結種類に対応する成分がただ一つしかありえない.
-\end{excercise}
+\begin{exercise}
+	連結あるいは弧状連結な空でない部分位相空間に対し, それと交わりを持てる連結種類に対応する成分がただ一つしかありえない. \footnote{これは成分が同値関係で結ばれていることに由来する性質である.}
+\end{exercise}
 
 \begin{definition}
 	位相空間$\left( X , \mathcal{T}_{X} \right)$ が$x$で局所(弧状)連結\textbf{(locally (path) connected at x)}
-	であるとは, $x$の任意の開近傍 $V$に対し, $x \in U \subseteq V$を満たす(弧状)連結な開近傍$U$ が存在する. 
+	であるとは, $x$の任意の開近傍 $U$に対し, $x \in V \subseteq U$を満たす(弧状)連結な開近傍$V$ が存在する. 
 	$X$が任意の点 $x \in X$で局所(弧状)連結となる時,  $X$が局所(弧状)連結空間\textbf{(locally (path) connected space)}と呼ぶ.
 \end{definition}
 
 \begin{remark}
-	位相空間が連結ならば局所連結である. 位相空間が弧状連結ならば局所弧状連結である.
-	これらの主張はいずれも不成立である. 前者の反例は位相学者の正弦曲線で与えられて, 
+	位相空間が連結ならば局所連結である. 位相空間が弧状連結ならば局所弧状連結である. \footnote{同じ$0$に収束な点列を開近傍の中から選び出せば良い.}
+	これらの主張はいずれも不成立である. 前者の反例は位相学者の正弦曲線で与えられて, 後者の反例は次の演習問題に取り組んでいただくとわかるのではないか. 
 \end{remark}
 
+\begin{exercise}
+	$X$を区間 $[0,1] \times \{0\} $ 上の有理点とする. 
+	$T$を $X$上の各点と点$(0,1)$を結ぶ線分からなる集合とする.
+	この集合$T$ に$\mathbb{R}^2$ に対する部分位相を入れる, 位相空間$\left( T , \mathcal{T}_{T} \right)$
+	が弧状連結であるが, 局所弧状連結ではないことを示せ. 
+\end{exercise}
 
+さて, 局所における連結や弧状連結はなぜ必要とされるでしょう？
+そもそも連結と弧状連結は我々のイメージに即しているし,
+これ以上の連結性は何に使われるかが意味不明に見えるでしょう.
+しかし, 局所における連結性をよく見てみると, 開集合の連結性と深く関わっている. 
+局所連結性と局所弧状連結性の位相的性質が似ているため, 今後議論がこの両者のいずれに対しても成立する時,
+単に局所的連結性で表現する.
 
+\begin{theorem}
+	位相空間$\left( X , \mathcal{T}_{X} \right)$ に対し, 以下の２つの命題が互いに同値である: 
+	\begin{enumerate}
+		\item $X$ が局所(弧状)連結である.
+		\item $X$の任意の開集合 $U$ に対し, $U$ の(道)成分が開集合である.
+	\end{enumerate}
+\end{theorem}
 
+\begin{proof}
+	$\implies$ を示す:
+	$U$の任意の(道)成分$C$を取る. $x \in C$ を任意に固定して, 
+	$X$ の局所的連結性より, $x \in V \subseteq U$を満たす(弧状)連結な開集合が存在する, 
+	この場合, $V$と交わりを持ちうる $U$の(道)成分が $C$しか存在しない. 
+	よって,  $V \subseteq C$がわかり, $C$が開集合であることを示せた.\\
+	$ \impliedby$ を示す: 
+	 $x \in  X$を任意に取る. $x$の開近傍 $U$を任意に取る.
+	 この時, $x$を含む $U$の(道)成分 $V$を取れば,
+	 仮定より$V$が開集合であることがわかる. これで局所的連結性を示せた.
+\end{proof}
 
+いよいよ連結性の最後の部分になった. つまり局所連結性と局所弧状連結性は開集合の世界では類似な構造を持つことを次の定理で述べられる: 
+
+\begin{theorem}
+	
+\end{theorem}
 
 
 
