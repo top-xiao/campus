@@ -1342,17 +1342,31 @@ $(X, \mathcal{T}_X)$の部分位相空間$Y$の分割が存在する
 先の$\sup$が無限個のデータを有限個しか存在しないかのように振る舞っている. これは実数上のコンパクト性という重要な性質による.
 
 \begin{definition}[被覆]
-	位相空間$\left( X , \mathcal{T}_{X} \right)$ の部分集合族$\mathcal{A}$ に対し, $ \cup \mathcal{A} = X$ を満たすならば, $\mathcal{A}$ を$X$の被覆\textbf{(covering)}と呼び,  さらに$\mathcal{A}$ の各元が開集合の時, $\mathcal{A}$ を$X$の開被覆\textbf{(open covering)}とする.
+	位相空間$\left( X , \mathcal{T}_{X} \right)$ の部分集合族$\mathcal{A}$ に対し, $ \cup \mathcal{A} = X$ を満たすならば, $\mathcal{A}$ を$X$の被覆\textbf{(covering)}と呼び,  さらに$\mathcal{A}$ の各元が開集合の時, $\mathcal{A}$ を$X$の開被覆\textbf{(open covering)}とする. 部分空間の被覆は集合を含むことを満たせば良いとする.
 \end{definition}
 
 \begin{definition}[\textcolor{red}{コンパクト性}]
-	位相空間$\left( X , \mathcal{T}_{X} \right)$がコンパクト\textbf{(compact)}とは, 任意の被覆が$X$の有限被覆を部分集合に持つ.	
+	位相空間$\left( X , \mathcal{T}_{X} \right)$がコンパクト\textbf{(compact)}とは, 任意の開被覆が$X$の有限被覆を部分集合に持つ.	
 \end{definition}
 
+\begin{lemma}[部分空間におけるコンパクト性]
+	位相空間$\left( X , \mathcal{T}_{X} \right)$ の部分空間$Y$ に対し, 
+	$Y$ がコンパクトであることと,  $Y$の任意の$X$で開集合族が被覆となる場合, その部分有限被覆が存在する.
+\end{lemma}
 
+これに関して, 部分位相空間が開集合との共通集合からできることより直ちに導かれる.
 
+\begin{theorem}
+	コンパクトな位相空間における閉集合からなる部分位相空間もコンパクトである.
+\end{theorem}
 
-
+\begin{proof}
+	コンパクトな位相空間$\left( X , \mathcal{T}_{X} \right)$の閉集合$Y$の任意の開被覆$\mathcal{A}$を取る.
+	\[
+		\mathcal{B}= \mathcal{A} \cup {X \setminus Y}
+	.\] 
+	が$X$の開被覆となるので,  $\mathcal{B}$ から$X$の有限開被覆$\mathcal{B'}$が取れる, この場合, $\mathcal{B'} \setminus { X \setminus Y}$が$\mathcal{A}$ から取り出した$Y$の有限被覆となる. 
+\end{proof}
 
 
 
