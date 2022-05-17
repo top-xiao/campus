@@ -1,5 +1,5 @@
 \babel@toc {english}{}\relax 
-\contentsline {part}{目次}{5}{chapter*.2}%
+\contentsline {part}{無産階級数学者革命綱要}{5}{chapter*.2}%
 \contentsline {part}{第I部\hspace {1em}Topological Space}{7}{part.1}%
 \contentsline {chapter}{\numberline {第1章}位相と位相空間の基本常識}{11}{chapter.1}%
 \contentsline {section}{\numberline {1.1}位相，開基，準開基}{11}{section.1.1}%
