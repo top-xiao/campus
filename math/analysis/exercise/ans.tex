@@ -1,0 +1,80 @@
+\documentclass[dvipdfmx]{jreport}
+\DeclareFontShape{JY1}{mc}{m}{it}{<->ssub*mc/m/n}{}
+\DeclareFontShape{JY1}{mc}{m}{sl}{<->ssub*mc/m/n}{}
+\DeclareFontShape{JY1}{mc}{m}{sc}{<->ssub*mc/m/n}{}
+\DeclareFontShape{JY1}{gt}{m}{it}{<->ssub*gt/m/n}{}
+\DeclareFontShape{JY1}{gt}{m}{sl}{<->ssub*gt/m/n}{}
+\DeclareFontShape{JY1}{mc}{bx}{it}{<->ssub*gt/m/n}{}
+\DeclareFontShape{JY1}{mc}{bx}{sl}{<->ssub*gt/m/n}{}
+\DeclareFontShape{JT1}{mc}{m}{it}{<->ssub*mc/m/n}{}
+\DeclareFontShape{JT1}{mc}{m}{sl}{<->ssub*mc/m/n}{}
+\DeclareFontShape{JT1}{mc}{m}{sc}{<->ssub*mc/m/n}{}
+\DeclareFontShape{JT1}{gt}{m}{it}{<->ssub*gt/m/n}{}
+\DeclareFontShape{JT1}{gt}{m}{sl}{<->ssub*gt/m/n}{}
+\DeclareFontShape{JT1}{mc}{bx}{it}{<->ssub*gt/m/n}{}
+\DeclareFontShape{JT1}{mc}{bx}{sl}{<->ssub*gt/m/n}{}
+\usepackage{xcolor}
+\usepackage{framed}
+\usepackage{pifont}
+\usepackage[dvipdfmx,hidelinks]{hyperref}
+\usepackage{pxjahyper}
+\usepackage{bm}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage[english]{babel}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{claim}{Claim}
+\begin{document}
+\title{answer}
+\author{your friend}
+\date{2022-02-14}
+\maketitle
+\newpage
+\tableofcontents
+\addcontentsline{toc}{chapter}{contents}
+\newpage
+\section{問題１}%
+\label{sec:問題１}
+ $y=\log f(x)$とする, これの微分は $\frac{f'(x)}{f(x)}= \log x + 1$. $f(x)$を掛けると $f'(x)= f(x) \left(\log x +1 \right) = \left(\log x + 1\right) x^x$.\\
+	同じように$y= \log x^{x^x}= x^x \log x $とする． 
+	これの微分は$ (x^x)' \log x + x^{x-1}$, $(x^x)'= \left(\log x +1 \right)x^x$より, 
+	yの微分は$(x\log x + x + 1) x^{n-1}$. 次に$x^{x^{x}}$を両辺にかければ,
+	$f'(x) = (x \log x + x +1 ) x^{x-1 + x^x}$が導かれる \\
+	最後の問題がやや難しいかもしれないが， $0^0$の処理が今まで扱っていないけど, 
+	実は集合論での考え方によれば，１にならなければいけない．（空集合から空集合への写像は空写像のみであるから）
+	ただし，我々はこれを解析的に証明せざるを得ない\\
+	不定形の処理に使われる強力な道具はL'Hospital's ruleだけ，しかし$\frac{0}{0}$ または $\frac{\infty}{\infty}$のような不定形が存在しない.
+	従って，不定形を作ればこの問題が解決と言うことになる．
+	この時，指数を対数に直すことを思いつけばよい．$x^x$の対数, つまり$x \log x$の極限を議論することになる,
+ $\frac{\log x }{ x^{-1}}$のような分数型に変形するのは自然な発想だろう,
+	L'Hospital's ruleを使えば $\log x^x =  x =0$が直ちにわかる,
+	よって，$\lim_{x \to 0} x^x = e^0 =1 $.
+\section{問題２}%
+\label{sec:問題２}
+積分定数を省略すれば次のようになる：
+$$
+\begin{aligned}
+	\int \frac{1}{x^3+8} dx &= \frac{1}{10} \int \left(\frac{1}{x+2}-\frac{x-3}{x^2-x+4}\right) dx \\
+	&= \frac{1}{10} \left(\log (x+2)  -\frac{1}{2} \log (x^2 -x) + \frac{5\sqrt{15}}{3} \arctan (\frac{2}{\sqrt{15}}x) \right) \\ 
+\end{aligned}
+.$$ 
+\section{問題３}%
+\label{sec:問題３}
+\[
+	f(x,y)=1-\frac{1}{2!} \left( x^2 + y^2 \right) +o( (x,y)^{4} )
+.\] 
+\section{問題４}%
+\label{sec:問題４}
+一般化しよう，凸ｎ角形の各辺の対する円心角を$x_n$とする,円の半径は１のもとで議論すれば，面積函数は正弦定理のもとで次のように定まる： 
+\[
+f(x_1, \ldots ,x_n) = \frac{1}{2}\sum_{k=1}^{n} \sin (x_k)
+.\] 
+円心角の総和より$\sum^{n}_{k=1} x_k = 2 \pi,0<x_k\le \pi $, \\
+函数 $g(x_1,\ldots,x_n) =\sum^{n}_{i=1}x_i -2\pi $とすると, Lagrange multiplier より $\forall k_{1\le k \le n} ; \frac{1}{2}\cos(x_k) - \lambda x_k = 0$\\
+余弦函数と一次函数が$[0,\pi]$では持ちうる解はただ一つなので， $0<x_k<\pi$,  $x_1=x_2=\cdots=x_n$.各辺が等しいことがわかる．なおこれが極大となることは自明，なぜかと言うと，面積が極小となる場合はないから．
+\end{document}

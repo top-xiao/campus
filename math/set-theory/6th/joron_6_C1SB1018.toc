@@ -1,0 +1,12 @@
+\contentsline {chapter}{目次}{1}{chapter*.1}%
+\contentsline {section}{\numberline {6.1}問題6.1}{2}{section.6.1}%
+\contentsline {subsection}{\numberline {6.1.1}(i)開球体$B_d(a,r)$が$X$の開集合であることを示せ}{2}{subsection.6.1.1}%
+\contentsline {subsection}{\numberline {6.1.2}(ii)$\mathbb {R}^2$に新しい距離$d_{sncf}$のもとで以下の質問に答えよ}{3}{subsection.6.1.2}%
+\contentsline {subsubsection}{(1)開球体を図示せよ}{3}{section*.2}%
+\contentsline {subsubsection}{(2)集合C,D,Eについて，判定を行え}{6}{section*.3}%
+\contentsline {subsubsection}{(3)写像$\Phi : (\mathbb {R}^2,d_{sncf}) \to \mathbb {R}$が連続であるかどうかを判別せよ}{8}{section*.4}%
+\contentsline {section}{\numberline {6.2}リーマン広義可積分な連続函数のなす空間について}{9}{section.6.2}%
+\contentsline {subsection}{\numberline {6.2.1}$(V,d_1)$が距離空間であることを示せ}{9}{subsection.6.2.1}%
+\contentsline {subsection}{\numberline {6.2.2}点列$(h_n)_{n \in \mathbb {N}}$が$(V,d_1)$上のCauchy列であることを示せ}{10}{subsection.6.2.2}%
+\contentsline {subsection}{\numberline {6.2.3}$(V,d_1)$は完備距離空間であるかどうかを判定せよ}{11}{subsection.6.2.3}%
+\contentsline {section}{\numberline {6.3}\# 雑談}{13}{section.6.3}%
