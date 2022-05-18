@@ -1,0 +1,580 @@
+\documentclass{jreport}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{bm}
+\usepackage{romannum}
+\usepackage[dvipdfmx,hidelinks]{hyperref}
+\usepackage{pxjahyper}
+\usepackage{framed}
+\usepackage{pifont}
+\newenvironment{claim}[1]{\par\noindent\underline{Claim:}\space#1}{}
+\newenvironment{claimproof}[1]{\par\noindent\underline{Proof:}\space#1}{\hfill $\square$}
+\DeclareMathOperator{\spn}{\mathbb{Q}-span}
+\begin{document}
+\pagenumbering{arabic}
+\title{第5回演習課題解答}
+\author{習近平}
+\maketitle
+\setcounter{chapter}{5}
+\newpage
+\tableofcontents
+\addcontentsline{toc}{chapter}{目次}
+\newpage
+\section{問題5.1 Zorn's lemma $\Leftrightarrow$ Tukey's lemma}
+\subsection{\texorpdfstring{(\Romannum{4})}\  $\implies$ \texorpdfstring{(\Romannum{5})} \ を示す}
+\begin{proof}
+$Y$を集合、$(\mathcal{F} ,\subseteq )$を有限特性を持つ$Y$の空でない部分集合族とする。\\
+\textcolor{blue}{Zorn's lemmaを仮定して、次の命題を導く:}\\
+\begin{framed}
+	任意の$A \in (\mathcal{F},\subseteq )$に対し、$A \subset M_A$を満たすような$(\mathcal{F},\subseteq )$の極大元$M_A$が存在する。\\
+\end{framed}
+\begin{claim}
+	$\emptyset \in (\mathcal{F}, \subseteq)$が成り立つ。\\
+\end{claim}
+\begin{claimproof}
+	$(\mathcal{F},\subseteq )$が空でないため、$F \in (\mathcal{F},\subseteq )$を一つ取る。有限特性より\\
+	$F$の有限部分集合$\emptyset $に対し、$\emptyset \in (\mathcal{F}, \subseteq)$が成り立つ。\\
+\end{claimproof}
+\begin{claim}
+	集合$(\mathcal{F},\subseteq )$が空でない帰納的順序集合である。\\
+\end{claim}
+\begin{claimproof}
+	\ding{1}$(\mathcal{F},\subseteq )$の空でない鎖$\mathcal{C}$を任意に取る。\\
+	以下$\bigcup\limits_{B \in \mathcal{C}}B \in (\mathcal{F},\subseteq )$であることを示す:\\
+	集合$\bigcup\limits_{B \in \mathcal{C}}B$の有限部分集合$B'$を任意に取る。\\
+	$B' = \emptyset$の時、claimより、$B' \in (\mathcal{F},\subseteq )$が成り立つ。\\
+	$B'\ne \emptyset$の時、$B'$が有限集合であるため、ある$n \in \mathbb{N}$が存在し、$B' =\{b_0,b_1,\ldots ,b_n\}$と表せる。\\
+	このような$n \in \mathbb{N}$を一つ取る。上記の形で$B'$を表す。\\
+	自然数$i \in \mathbb{N}$を$i \le n$を満たすように任意に取る。\\
+	$b_i \in B'$に対し、$B' \subseteq \bigcup\limits_{B \in \mathcal{C}}B$であることより、\\
+	ある集合$B_i \in \mathcal{C}$が存在し、$b_i \in B_i$を満たす。\\
+	このような集合$B_i$を一つ取る。\\
+	このように集合列$B_0,B_1,\ldots ,B_n$を構成し、集合$B_0,B_1,\ldots ,B_n$がいずれも$\mathcal{C}$の元であるため、\\
+	これらの中に包含関係による最大元が存在し、それを$B_{\max}$と書く。\\
+	この時、$i \le n$を満たす任意の$i \in \mathbb{N}$に対し、$B_i \subseteq B_{\max}$が成り立つ。\\
+	したがって、$\bigcup\limits_{j=0}^{n}B_j \subseteq B_{max}$が得られる。\\
+	先程の議論より、$B' \subseteq \bigcup\limits_{j=0}^{n}B_j$ であることが明らかである。\\
+	これより、$B' \subseteq B_{\max}$が成り立つ。\\
+	$B_{\max} \in \mathcal{C} \subseteq (\mathcal{F}, \subseteq )$であるから、\\
+	有限特性より、$B' \in (\mathcal{F}, \subseteq )$が成り立つ。\\
+	つまり、$\bigcup\limits_{B \in \mathcal{C}}B \in (\mathcal{F},\subseteq )$が成り立つ。\\
+	以上の議論より、$\bigcup\limits_{B \in \mathcal{C}}B \in (\mathcal{F},\subseteq )$であることを有限特性のもとで示せた。\\
+	\ding{2}次に任意の集合$B'' \in \mathcal{C}$に対し、\\
+	$B'' \subseteq \bigcup\limits_{B \in \mathcal{C}}B$であることを示す:\\
+	これは構成より明らかである。\\
+	以上より、$(\mathcal{F},\subseteq )$の任意の空でない鎖に対し、上界が存在することを示せた。\\
+	よって、$(\mathcal{F},\subseteq )$が帰納的順序集合である。\\
+\end{claimproof}
+\\
+	\textbf{本題の証明:}\\
+	$A \in (\mathcal{F}, \subseteq)$を任意に取る。\\
+	claimで示した$(\mathcal{F}, \subseteq)$が帰納的順序集合であることに、仮定のZorn's lemmaを適用すると、包含関係による$(\mathcal{F}, \subseteq)$の極大元$M_A$が存在し、$A \subseteq M_A$を満たす。\\
+	以上より、Zorn's lemmaからTukey's lemmaを導けた。\\
+\end{proof}
+\newpage
+\subsection{\texorpdfstring{(\Romannum{5})}\  $\implies$ \texorpdfstring{(\Romannum{4})} \ を示す}
+\begin{proof}
+	$(X,\le_X)$を空でない帰納的順序集合とする。\\
+	Tukey's lemmaを仮定して、次の命題を導く:\\
+	\begin{framed}
+		任意の$p \in (X, \le_X )$に対し、$(X, \le_X )$上の極大元$m_p$が存在し、$p \le_X m_p$を満たす。\\
+	\end{framed}
+	$(X, \le_X )$の部分集合族$(\mathcal{F}, \subseteq ) = \{ \mathcal{C} \in \mathcal{P}(X) \mid \mathcal{C}\text{が}(X,\le_X)\text{上の鎖である。}\}$とする。\\
+	$\emptyset$が$(X, \le_X )$上の自明の鎖である、$\emptyset \in (X, \le_X )$より、$(\mathcal{F}, \subseteq ) \ne \emptyset$であることが成り立つ。\\
+	\begin{claim}
+	$(\mathcal{F}, \subseteq )$が有限特性を持つ。\\
+	\end{claim}
+	\begin{claimproof}
+	$B \in \mathcal{P}(X)$を任意に取る。\\
+		\ding{1} $B \in (\mathcal{F}, \subseteq )$を仮定して、$B$の任意の有限部分集合が$(\mathcal{F}, \subseteq )$の要素であることを導く:\\
+		$B$の有限部分集合$B'$を任意に取る。\\
+		$x',y' \in B'$を任意に取る、$B' \subseteq B$となるため、\\
+		$x',y' \in B $が成り立つ。\\
+		$B$が全順序集合であることより、$x',y'$が$\le_X$で比較可能である。\\
+		よって、$B'$も全順序集合である。\\
+		したがって、$B' \in (\mathcal{F}, \subseteq )$が成り立つ。\\
+		\ding{2}$B$の任意の有限部分集合が$(\mathcal{F}, \subseteq )$の要素であることを仮定して、$B \in (\mathcal{F}, \subseteq )$を導く:\\
+		$x,y \in B$を任意に取る。\\
+		仮定より$B$の有限部分集合$\{ x,y\} \in (\mathcal{F}, \subseteq )$が成り立つ。\\
+		$\{x,y\} \in (\mathcal{F}, \subseteq )$より、$\{x,y\}$が$(X,\le_X)$の全順序部分集合である。\\
+		つまり、$x,y$が$\le_X$で比較可能である。\\
+		$x,y$は任意に取ったため、$B$が全順序集合である。\\
+		よって、$B \in (\mathcal{F}, \subseteq )$が成り立つ。\\
+		以上の議論より、集合$(\mathcal{F}, \subseteq )$が有限特性を持つことを示せた。\\
+	\end{claimproof}
+\\
+	\textbf{本題の証明:}\\
+	$p \in (X, \le_X)$を任意に取る、$p \le_X m_p$を満たす$(X,\le_X)$上の極大元$m_p$が存在することを以下示す:\\
+		一点集合$\{p\}$に対し、$\{p\}$が全順序集合であることが明らかであるため。\\
+		$\{p\} \in (\mathcal{F}, \subseteq )$が成り立つ。\\
+		この時、有限特性を持つ空でない部分集合族$(\mathcal{F}, \subseteq )$に対し、Tukey's lemmaを適用すると、\\
+		$(\mathcal{F}, \subseteq )$上の極大元$M_p$が存在し、$\{p\} \subseteq M_p$を満たす。\\
+		このような$M_p$を一つ取る。\\
+		$M_p \in (\mathcal{F}, \subseteq )$であるため、$M_p$が$(X, \le_X)$の鎖である。\\
+		$(X,\le_X)$が帰納的順序集合であることより、\\
+		$M_p$の上界$m_p$が存在し、これを一つ取る。\\
+		次に$m_p \in M_p$であることを示す:\\
+		$m_p \notin M_p$と仮定して、矛盾を導く。\\
+		$m_p$が$M_p$の上界であるため、$\{m_p\}\sqcup M_p$も鎖である。\\
+		つまり、$\{m_p\}\sqcup M_p \in (\mathcal{F}, \subseteq )$が成り立つ。\\
+		この時、$p \in\{m_p\}\sqcup M_p $であることが構成より明らかである。\\
+		仮定より、$M_p \subsetneq \{m_p\}\sqcup M_p $が成り立つ。これは$M_p$の極大性に反するため、矛盾が生じる。\\
+		したがって、$m_p \in M_p$であることが成り立つ。\\
+		次に$m_p$が$(X,\le_X)$の極大元であることを示す:\\
+		$m_p$が$(X,\le_X)$の極大元でないと仮定して、$M_p$の極大性の下で矛盾を導く:\\
+		仮定より、ある$m_p' \in (X,\le_X)$が存在し、\\
+		$m_p \le_X m_p'$かつ$m_p \neq m_p'$が成り立つ。\\
+		このような$m_p'$を一つ取る。\\
+		先程の証明と似たような議論をすれば、矛盾を導ける。\\
+		以上の議論より、$m_p$が$(X,\le_X)$上の極大元で$p \le_X m_p$を満たすことを示せた。\\
+		よって、Tukey's lemmaからZorn's lemmaを導けた。\\
+\end{proof}
+\newpage
+
+\section{問題5.1 $\mathbb{Q}$上一次独立な$\mathbb{R}$の部分集合}
+\subsection{(1)分解の一意性を示せ}
+\begin{proof}
+	$\mathbb{R}$の部分集合$B$が$\mathbb{Q}$上一次独立かつ$\spn{(B)} =\mathbb{R}$と仮定して、\\
+任意の$0$でない$\alpha \in \mathbb{R}$に対し、ある$n \in \mathbb{N}$が存在し、\\
+$x_0< x_1< \ldots <x_n$を満たす$B$の元$x_0,x_1,\ldots ,x_n$と$q_0,q_1,\ldots,q_n \in \mathbb{Q}\setminus \{0\}$がそれぞれ存在し、\\
+$\alpha = \sum\limits_{k=0}^n q_k x_k$を満たす、かつ$\alpha$に対する$n,(x_0,x_1,\ldots,x_n),(q_0,q_1,\ldots,q_n)$が一意的に定まることを示す:\\
+\textbf{存在性:}\\
+	$\alpha \in \mathbb{R}$が成り立つことと$\spn{(B)} =\mathbb{R}$より、ある$n'' \in \mathbb{N}$とある$x_0',x_1',\ldots,x_{n''}'$とある$q_0',q_1',\ldots,q_{n''}'$が存在し、
+	$\alpha = \sum\limits_{k=0}^{n''}q_k'x_k'$となる。\\
+等式の右辺に対し、次の操作を考える:
+	\begin{framed}
+		\textbf{操作A:}\\
+		任意の$0 \le i \le n''$を満たす$i \in \mathbb{N}$に対し、\\
+		$x_i' =x_j'$となるような$j \in \mathbb{N}$が存在するならば、\\
+		$q_i'x_i'+q_j'x_j'=(q_i'+q_j')x_i=\tilde{q}_ix_i'$とする。(複数存在する時も同じように乗法の分配律を適用する)\\
+		$x_i' =x_j'$を満たすような$j \in \mathbb{N}$が存在しない時、\\
+		$q_i'x_i'=\tilde{q}_ix_i'$と書く。\\
+	\end{framed}
+	\begin{framed}
+		\textbf{操作B:}\\
+		$\alpha = \sum\limits_{k=0}^{n''}\tilde{q}_kx_k'$に対し、$0\le i \le n''$かつ$\tilde{q}_i =0$を満たす$i \in \mathbb{N}$が存在する時、\\
+		$\alpha = \sum\limits_{k=0,k \ne i}^{n''}\tilde{q}_kx_k'$と書き換える。(複数存在する時も同じように項を削除する)\\
+	\end{framed}
+	$\alpha$が有限和で表されるから、操作A,Bを適用するして、$x_i'$の小さい順に項を並べると次のようなことが成り立つ:\\
+	ある$n \in \mathbb{N}$が存在し、$x_0<x_1<\ldots<x_n$を満たす相異なる$B$の元$x_0,x_1,\ldots ,x_n$と$q_0,q_1,\ldots,q_n \in \mathbb{Q}\setminus \{0\}$がそれぞれ存在し、\\
+	$\alpha = \sum\limits_{k=0}^n q_k x_k$を満たす。\\
+	以上より、存在性が示された。\\
+	\textbf{一意性:}\\
+	$n,n' \in \mathbb{N},(x_0<\ldots<x_n)\land (x_0'<\ldots<x_{n'}')$を満たす\\
+	$B$の元$x_0,\ldots,x_n,x_0',\ldots ,x_{n'}'$と\\
+	$q_0,\ldots,q_n, q_0',\ldots q_{n'}' \in \mathbb{Q} \setminus \{0\}$がそれぞれ存在し、\\
+	$\alpha =\sum\limits_{k=0}^n q_k x_k =\sum\limits_{k=0}^{n'} q_k' x_k'$と仮定して、\\
+	$(n=n') \land ((x_0,\ldots , x_n) =( x_0',\ldots ,x_{n'}')) \land ((q_0, \ldots , q_n) =(q_0',\ldots, q_{n'}'))$が成り立つことを以下示す:\\
+	成り立たないと仮定して、矛盾を導く:\\
+	仮定を満たす$\alpha$に関する二組の分解を一つずつ取る。\\
+	仮定より、以下の式が成り立つ:\\
+	$$
+	\sum_{j=0}^{n}(-1)q_ix_i + \sum_{i=0}^{n'}q_j'x_j' =0
+	$$
+	ここで$n'' = n+n',(-1)q_i = q_{n'+i}'$とする。先程の操作A,Bをこの等式の左辺に作用させる。\\
+	同じように和の式の$B$の元の小さい順に項の並べると、次のようなことが仮定のもとで成り立つ:\\
+	ある$m \in \mathbb{N}$が存在し、
+	$\tilde{x}_o<\ldots <\tilde{x}_m$を満たす$B$の元$\tilde{x}_0,\ldots,\tilde{x}_m$と\\
+	ある$\tilde{q}_0,\ldots,\tilde{q}_m \in \mathbb{Q}\setminus \{0 \}$がそれぞれ存在し、
+	$\sum\limits_{k=0}^m \tilde{q}_k \tilde{x}_k =0$となる。\\
+	これが$B$が$\mathbb{Q}$上一次独立であることに反する。よって、矛盾が生じる。\\
+	したがって、$(n=n') \land ((x_0,\ldots , x_n) =( x_0',\ldots ,x_{n'}')) \land ((q_0, \ldots , q_n) =(q_0',\ldots, q_{n'}'))$が成り立つ。\\
+	一意性を示せた。\\
+\end{proof}
+	$x\neq 0$を満たす任意の$x \in \mathbb{R}$に対し、\\
+	\begin{equation}
+		x=\sum_{k=0}^{n}q_kx_k \label{sd}
+	\end{equation}
+	このように$x \neq 0$を一意的に積の和の形に分解することを\textcolor{red}{SD分解}と呼ぶ。あとの(3)で用いる。
+\newpage
+\subsection{目指せ、極大モンスター！}
+Tukey's lemmaを用いる。
+\begin{proof}
+	$\mathbb{R}$の部分集合族を次にように定める:\\
+	$(\mathcal{F},\subseteq ) := \{ \mathcal{C} \in \mathcal{P}(\mathbb{R}) \mid \mathcal{C} \text{が} \mathbb{Q} \text{上一次独立である。} \}$\\
+	$\emptyset $が$\mathbb{Q}$上一次独立であるため。$\emptyset \in (\mathcal{F},\subseteq )$で
+	$(\mathcal{F},\subseteq ) \ne \emptyset$である。\\
+\begin{claim}
+	$(\mathcal{F},\subseteq )$が有限特性を持つ。\\
+\end{claim}
+	\begin{claimproof}
+		$B \in \mathcal{P}(R)$を任意に取る。\\
+		\ding{1}$B \in (\mathcal{F},\subseteq )$を仮定して、\\
+		$B$の任意の有限部分集合が$(\mathcal{F},\subseteq )$の元であることを導く:\\
+		$B$の有限部分集合$B'$を任意に取る。\\
+		任意の$n \in \mathbb{N}$と$B'$の相異なる$n+1$個の元$x_0,x_1,\ldots,x_n$と任意の$q_0,q_1,\ldots, q_n \in \mathbb{Q} \setminus\{0\}$を取る。\\
+		$B' \subseteq B$となるため、$x_0,x_1,\ldots,x_n \in B$が成り立つ。\\
+		したがって、$q_0x_0 +q_1x_1 + \cdots +q_nx_n \neq 0$が成り立つ。
+		\footnote{$n>\mathbf{card}B'$の時、元が取れないから$\forall$から始まる命題の条件は常に真であるため。特に問題はなし、同様に空集合に関する議論を省略させていただきます}\\
+		よって、$B'$が$\mathbb{Q}$上一次独立で$B' \in (\mathcal{F},\subseteq )$が成り立つ。\\
+		\ding{2}$B$の任意の有限部分集合が$(\mathcal{F},\subseteq )$の元であることを仮定して、\\
+		$B \in (\mathcal{F},\subseteq )$を導く:\\
+		任意の$n \in \mathbb{N}$と$B$の相異なる$n+1$個の元$x_0,x_1,\ldots,x_n$と任意の$q_0,q_1,\ldots, q_n \in \mathbb{Q} \setminus\{0\}$を取る。\\
+		この時、$B$の有限部分集合$B'=\{x_0,x_1,\ldots,x_n\}$が仮定より$(\mathcal{F},\subseteq )$の元である。\\
+		$B'$が$\mathbb{Q}$上一次独立であるため、\\
+		$q_0x_0 +q_1x_1 + \cdots +q_nx_n \neq 0 $
+		が成り立つ。\\
+		つまり、$B$が$\mathbb{Q}$上一次独立であって、$B \in (\mathcal{F},\subseteq )$が示された。\\
+		以上の議論より、$(\mathcal{F},\subseteq )$が有限特性を持つことが示された。\\
+	\end{claimproof}
+	\\
+	\textbf{本題の続き:}\\
+	$\mathbb{R}$の$\mathbb{Q}$上一次独立な部分集合$I$を任意に取る。\\
+	$(\mathcal{F},\subseteq )$が有限特性を持つ空でない集合族であるため、Tukey's lemma より、\\
+	$I \subseteq B_I$を満たす$(\mathcal{F},\subseteq )$上の包含関係による極大元$B_I$が存在する。\\
+	この$B_I$を一つ取る。\\
+	以下$B_I$の極大性を用いて、$\spn{(B_I)} =\mathbb{R}$を示す:\\
+	$\spn{(B_I)} \neq \mathbb{R}$をと仮定して、矛盾を導く:\\
+	仮定より、\\
+	ある$\alpha \in \mathbb{R}$が存在し、
+	\begin{framed}
+		\#任意の$\tilde{n} \in \mathbb{N}$と任意の$\tilde{x}_0,\ldots,\tilde{x}_{\tilde{n}} \in B_I$と
+		任意の$\tilde{q}_0,\ldots,\tilde{q}_{\tilde{n}} \in \mathbb{Q} \setminus \{0\} $に対し、
+	$\alpha \neq \tilde{q}_0 \tilde{x}_0 +\cdots+\tilde{q}_{\tilde{n}} \tilde{x}_{\tilde{n}}$が成り立つ。\\
+	\end{framed}
+	このような$\alpha \in \mathbb{R}$ を一つ取る。\\
+	$\alpha \in B_I$ならば、有理数$1$に対し、$\alpha = 1 \times \alpha$が成り立つことになり\#に反する。\\
+	したがって、$\alpha \notin B_I$が成り立つ。
+	以下$B_I\sqcup \{\alpha\}$が$\mathbb{Q}$上一次独立を示し、$B_I$の極大性の下で、矛盾を導く:\\
+	任意の$n \in \mathbb{N}$と任意の$n+1$個相異なる$B_I\sqcup \{\alpha\}$の元$x_0,\ldots,x_n$と任意の$q_0,\ldots,q_n \in \mathbb{Q} \setminus \{0\}$を取る。\\
+	$\alpha \notin \{x_0,x_1,\ldots,x_n\}$の時、$B_I$の定義より、\\
+	$q_0x_0+q_1x_1+\cdots+q_nx_n \neq 0$が成り立つ。\\
+	ある自然数$i \in \mathbb{N}$に対し、\\
+	$\alpha =x_i \in \{x_0,x_1,\ldots,x_n\}$の時、
+	$q_0x_0+q_1x_1+\cdots+q_nx_n = 0$と仮定すると、\\
+			$$
+	\alpha = -\frac{1}{q_i}(q_0x_0+\ldots+q_{i-1}x_{i-1}+q_{i+1}x_{i+1}+\ldots+q_nx_n )
+			$$
+			が得られ、先程の\#に矛盾する。\\
+		したがって、$q_0x_0+q_1x_1+\cdots+q_nx_n \neq 0$が成り立つ。\\
+	よって、$B_I\sqcup \{\alpha\}$が$\mathbb{Q}$上一次独立である。\\
+	つまり、$B_I\sqcup \{\alpha\} \in (\mathcal{F},\subseteq )$かつ$B_I \subsetneq B_I\sqcup \{\alpha\} $が成り立ち、$B_I$の極大性に反し、矛盾が生じる。\\
+	したがって、$\spn{(B_I)}=\mathbb{R}$であることが背理法の下で示された。\\
+	以上の議論より、問題を正しく示せた。
+\end{proof}
+\newpage
+\subsection{Cauchyの函数方程式を満たすものは必ず一次関数または0函数であることが言えるの}
+{\large \textcolor{red}{\textbf{言えない}}}
+\begin{proof}
+	以下反例を構成する。\\
+	まず集合$I=\{\sqrt{2},\sqrt{3}\}$が$\mathbb{Q}$上一次独立であることが自明である。(気になる人は各自\textcolor{red}{checkせよ})\\
+	(2)より、$(I\subseteq B_I)\land (\spn{(B_I)}=\mathbb{R}) \land (B_I \text{が} \mathbb{Q} \text{上一次独立である})$\\
+	となるような$\mathbb{R}$の部分集合$B_I$が存在する。\\
+	これを一つ取る。\\
+	写像$g : B_I \to \mathbb{R}$を次のように定める:\\
+	$$
+		b \mapsto b
+	$$
+	次に写像$f: \mathbb{R} \to \mathbb{R}$を構成する:\\
+	$x\in \mathbb{R}$を任意に取る。\\
+	$x\neq 0$の時、式\ref{sd}の\textcolor{red}{SD分解}を適用する。
+	\begin{equation}
+		f(x)=
+		\begin{cases}
+			0 &(x=0)\\
+			\sum\limits_{k=0}^{n}g(x_k)q_kx_k &(x \neq 0)
+		\end{cases}
+	\end{equation}
+	分解の一意性より、上記の写像はwell-definedである。\\
+	$\forall x,y \in \mathbb{R} ;f(x+y) =f(x)+f(y)$であることは\textcolor{red}{SD分解}の一意性のもとで(1)で使っていた操作A,B を適用することで簡単に示せる。\\
+	以下、写像$f$が反例になっていることを確認する:\\
+	ある$r \in \mathbb{R}$が存在し、任意の$x \in \mathbb{R}$に対し、$f(x) =rx$と仮定し、このもとで矛盾を導く:\\
+	この時、$\sqrt{2},\sqrt{3} \in B_I$の像の挙動を調べる:\\
+	この時、\textcolor{red}{SD分解}の一意性より、\\
+	$f(\sqrt{2}) =2$,$f(\sqrt{3})=3$である。\\
+	しかし、$f(x)=rx$のであれば$r=\sqrt{2} =\sqrt{3}$となり、矛盾が生じる。\\
+	よって、写像は反例となっていることを示せた。
+\end{proof}
+\newpage
+\section{\#補足}
+はい、では数学序論Bの第五回演習課題の解答は以上にしたいと思いますが一応問題に関する話をさせていただきます。問題5.1の(\romannum{1})の(1)と(2)を一斉に証明しましたが、Zorn's 'lemmaからTukey's lemma示すことには変わりがありません。また問題5.2(3)で構成した写像は函数方程式を満たしていることの原因は
+実数を“独立なベクトル”の一次結合の形に書き直したことです。実数を$B_I$の元を基底ベクトルとする一次結合の形に直し、各基底ベクトルに対する特異的な拡大倍率を取ります。
+こうすることによって、和の像と像の和が基底ベクトルへの分解が一意的に定めるかつ有限和の議論のもとで、両者が一致することが確認できます。\\
+特に拡大倍率函数$g: B_I \to \mathbb{R}$が基底ベクトルのみに依存することが大事です。xの“座標”(有理数q)に依存するような拡大倍率を取ってしまうと、写像がwell-definedではなくなります。\\
+また、(1)(2)では0に関する議論はされていませんので、写像を構成する際に特に0を考察しなければなりません。でも、問題文の函数方程式に$x,y=0$を代入すれば、その答えは簡単にわかります。ですので、なぜ0の像が0になるのかが判然としています。\\
+最後に函数が確実に反例になっている部分の証明で、なんでもいいから適当に一つの$x$を取って来て、$f(x)-rx=0$のもとで一次独立のもとで矛盾を導きたい場合、$n=0$かもしれませんし、$\sum\limits_{k=0}^{n}(r-x_k)q_kx_k=0$に
+一次独立を適用しようとする時、$r-x_k$が無理数となった場合、問題文の定義から直接対応できません。ですので、今回は特別な2つの基底ベクトルを予め用意して議論を行いました。\\
+はい、では数学序論Bの第五回演習課題の解答は以上となります。例の雑談は次のページにありますので、興味のある方はそちらの方を鑑賞していただければと思います。ページを切ります。
+\newpage
+\section{\#雑談}
+では、今回の雑談をさせていただきます、今週の課題の分量はいつもより多いような気がします。学生さんは全学共通科目も履修している事実を認識した上で、適量の課題を出していただければ助かります。今週も課題解決に約11時間、\LaTeX での清書は約9時間費やしました。なかなか大変だと思います。また前回重複するコードをコピペする際に、添字のミスが多量発生して、心が折れました。今回は添字ミスのないように極力検査していましたが、やはりミスが発生するのを回避することが難しいです。ですので、もし添字のミスでおかしい表記になった場合、その文脈に応じて各自修正して読み進めるのを強く推奨します。はい、今週も長い時間取らせていただき、お疲れ様でした。ではアンケートを
+とって終わりたいと思います.\\
+
+\noindent
+\begin{tabular}{|p{3cm}p{5cm}p{2cm}|}
+\hline
+        \multicolumn{3}{|c|}{今回の解答を理解できましたか？}\\
+        \hline
+                 &$\circ$ よくわかった.&\\
+                &$\circ$ そこそこわかった.&\\
+                 &$\circ$ ちょっと難しい.&\\
+                &$\circ$ 全く理解できなかった.&\\
+                        \hline
+\end{tabular}\\
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

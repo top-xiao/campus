@@ -1,3 +1,0 @@
-\babel@toc {english}{}
-\contentsline {chapter}{contents}{1}{chapter*.1}%
-\contentsline {chapter}{\numberline {第1章}比較可能定理}{2}{chapter.1}%

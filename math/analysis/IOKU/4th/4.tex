@@ -1,0 +1,136 @@
+\documentclass{jarticle}
+\usepackage{bm}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\begin{document}
+\title{第4回レポート問題}
+\author{習近平}
+\maketitle
+\section*{Q4.1}
+\begin{proof}
+$\sum\limits_{n=1}^{\infty} \mid a_{n} \mid$が収束すると仮定して，$\sum\limits_{n=1}^{\infty} a_{n} $が収束することを導く：\\
+$\mathbb{R}$の連続性より，数列$ \mathbf{\widetilde{S}}_{n} = \sum\limits_{k=1}^{n} \mid a_{k} \mid$がCauchy列であることのもとで，\\
+数列$\mathbf{S}_{n} = \sum\limits_{k=1}^{n} a_{k} $もCauchy列であることを以下示す:\\
+$\varepsilon \in \mathbb{R}_{>0} $を任意に取る．\\
+仮定より，ある自然数$N \in \mathbb{N}$が存在し，このような$N$を一つとると以下の命題が成り立つ．\\
+$m \ge n \ge N$を満たす任意の$m,n \in \mathbb{N}$に対し，次の式が成立する:\\
+$$
+\mid \mathbf{\widetilde{S}}_{m} - \mathbf{\widetilde{S}}_{n} \mid \; = \;  \bm{\mid} \sum_{k=n+1}^{m} \mid a_{k} \mid \bm{\mid}< \varepsilon
+$$
+この時，\\
+$$
+\mid \mathbf{S}_{m} - \mathbf{S}_{n} \mid =\, \mid \sum_{k=n+1}^{m}  a_{k}  \mid
+$$
+に三角不等式を帰納的に適用していくと，次の関係が得られる：\\
+$$
+\mid \mathbf{S}_{m} - \mathbf{S}_{n} \mid =\; \mid \sum_{k=n+1}^{m}  a_{k}  \mid\; < \;\bm{\mid} \sum_{k=n+1}^{m} \mid a_{k} \mid \bm{\mid} \; < \varepsilon
+$$
+従って，数列$(\mathbf{S_{n}})_{n \in \mathbb{N}\setminus }$がCauchy列であることがわかり，実数の連続性より，数列$(\mathbf{S_{n}})_{n \in \mathbb{N}\setminus }$が$\mathbb{R}$上の収束列であり，
+$\sum\limits_{n=1}^{\infty} a_{n} $が収束することが示された．
+\end{proof}
+
+\section*{Q4.2}
+(1)\\
+\begin{proof}
+\begin{equation}
+	b_{n} = \left\{
+		\begin{aligned}
+			&1 &n=1& \\
+			&\frac{1}{n(n-1)}& n>1&\\
+		\end{aligned}
+			\right\|
+	\\
+	\\
+	\\
+	a_{n}= \frac{n}{(n+1)^{3}}
+\end{equation}
+とする．この時，
+$$
+	0 \le a_n \le \frac{1}{n^2} \le b_n
+$$
+が成り立つため，$\sum\limits_{n=1}^{\infty} \frac{n}{(n+1)^3}$が正項級数であることがわかり，$\sum\limits_{n=1}^{\infty} \frac{n}{(n+1)^3}$が上に有界であることを以下示す:\\
+$N \ge 2$を満たす任意の$N \in \mathbb{N}$に対し，
+$$
+	\sum_{n=1}^N b_n = 1+1-\frac{1}{N} =2-\frac{1}{N}
+$$
+従って，$(\sum\limits_{k=1}^n b_k)_{n \in \mathbb{N}}$が上に有界で，$(\sum\limits_{k=1}^n a_k) \le (\sum\limits_{k=1}^n b_k)$より，\\
+$(\sum\limits_{k=1}^n a_k)_{n \in \mathbb{N}}$も上に有界，実数の連続性より，\\
+$
+	\lim\limits_{n \to \infty} \sum\limits_{k=1}^{n}a_{k}
+$
+	が存在する．以上より，級数$\sum\limits_{n=1}^{\infty} a_n$が収束することが示された．
+\end{proof}
+(2)\\
+\begin{proof}
+数列$(a_{n})_{n \in \mathbb{N}\setminus \{0\}}$ と数列$(b_{n})_{n \in \mathbb{N}\setminus \{0\}}$を以下のように定める:\\
+\begin{equation}
+ b_{n} = \left\{
+                \begin{aligned}
+                        &1 &n=1,2& \\
+                        &\frac{6}{n(n-1)}& n>2&\\
+                \end{aligned}
+                        \right\|
+        \\
+        \\
+        \\
+        a_{n}= \frac{n}{3^n+1}
+\end{equation}
+$n=1,2$の時，以下の式が成り立つ:\\
+\begin{equation}
+	\begin{aligned}
+		0 & < a_1 &=& \frac{1}{4} &<b_1&=1\\
+		0 & < a_2 &=& \frac{1}{5} &<b_2&=1\\
+	\end{aligned}
+\end{equation}
+$n>2$の時:\\
+	\begin{equation}
+		\begin{aligned}
+			0 < a_n &=& \frac{n}{3^n+1} < \frac{n}{2^n} \\
+				&<& \frac{n}{(1+1)^n}<\frac{6}{n^2}<\frac{6}{n(n-1)}=b_n\\
+		\end{aligned}
+	\end{equation}
+以上より，$(\sum\limits_{k=1}^n a_k)_{n \in \mathbb{N} \setminus \{0\}}$が正項級数がわかり，その有界性を以下示す:
+$N \ge 3$を満たす任意の自然数$N$に対し，次の関係が成り立つ:\\
+$$
+	\sum_{k=1}^Nb_k \le 6(1+1+ \frac{1}{2}-\frac{1}{N}) < 15
+$$
+なので，$(\sum\limits_{k=1}^n b_k)_{n \in \mathbb{N} \setminus \{0\}}$が上に有界で,よって$(\sum\limits_{k=1}^n a_k)_{n \in \mathbb{N} \setminus \{0\}}$も上に有界である．\\
+以上より，級数$\sum\limits_{n=1}^{\infty} a_n$が収束することが示された．
+
+
+
+
+
+\end{proof}
+
+\section*{\#雑談}
+今週の数学序論Bは重そうなので，おまけ問題の提出を遅らせていただきます．それらの性質を全て満たす面積函数が
+ただ一つ存在することから類推して，以前やった行列式も性質から決められるでしょう．あと小学生に説明する問題に関して，こういうふうに定義したから，覚えなさいというしかないと感じている．(教職とっていないから日本社会が救われる世界線w）
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+\end{document}

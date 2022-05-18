@@ -1,0 +1,72 @@
+\documentclass{jreport}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{bm}
+\usepackage{romannum}
+\usepackage[dvipdfmx,hidelinks]{hyperref}
+\usepackage{pxjahyper}
+\usepackage{framed}
+\usepackage{pifont}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{float}
+\newenvironment{claim}[1]{\par\noindent\underline{Claim:}\space#1}{}
+\newenvironment{claimproof}[1]{\par\noindent\underline{Proof:}\space#1}{\hfill $\square$}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Rp}{\mathbb{R}_{>0}}
+\newcommand{\N}{\mathbb{N}}
+\DeclareMathOperator{\spn}{\mathbb{Q}-span}
+\begin{document}
+\pagenumbering{arabic}
+\title{第13回演習課題解答}
+\author{習近平}
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+\setcounter{chapter}{13}
+\section{問題13.1}
+数列$(a_n)_{\N_{\ge 1}}$を次のように定める:
+$$
+a_n = \frac{1}{n^2}
+$$
+次に，級数$\sum\limits_{n=1}^{\infty} a_n$が収束することを以下示す:
+数列$S_n = \sum\limits_{m=1}^{n} a_m$とする．数列$S_n$が単調増加である．次に，$S_n$が上に有界であることを示す:
+$$
+\sum_{m=1}^n  \frac{1}{m^2} \le \sum_{m=1}^n \frac{1}{m-1}- \frac{1}{m} \le 3 
+$$
+以上より，実数の連続性より$S_n$が収束する．続いて，$n \in \N_{\ge 1}$を任意に取った時，
+$$
+\sup_{x \in \R}  \frac{1}{x^2+n^2} \le \frac{1}{n^2} = a_n
+$$
+が成り立つ．M-testより，この函数項級数が$\R$上一様収束する．
+\section{問題13.2}
+区間$I=[-1,1]$とする．
+\subsection{(1)}
+$x\in \R\{0\}$を任意に取る．級数$\sum\limits_{n=1}^{\infty} \frac{x^2}{(1+x^2)^{n-1}}$は初項が$x^2$,公比が$\frac{1}{1+x^2}<1$の等比数列の無限和である．\\
+この時，$\sum\limits_{n=1}^{\infty} \frac{x^2}{(1+x^2)^{n-1)}}=1+x^2$となる．\\
+$x =0$の時，$\sum\limits_{n=1}^{\infty} 0 =0$となる．
+$$
+\sum_{n=1}^{\infty} \frac{x^2}{(1+x^2)^{n-1}} = \begin{cases}
+1+ x^2, x\neq 0 \\
+0,x=0
+\end{cases}
+$$
+\subsection{(2)}
+一様収束しない．\\
+一様収束と仮定してこのもとで矛盾を導く:
+第十三回講義の補題より，函数項級数を$f_n(x) =\sum\limits_{k=1}^{n} \frac{x^2}{(1+x^2)^{k-1}}$として，その一様収束先は(1)を用いて，次のような函数$f: \R \to \R$で表せる:
+$$
+f(x)  = \begin{cases}
+1+ x^2, x\neq 0 \\
+0,x=0
+\end{cases}
+$$
+ここで各自然数$n$に対し，$f_n$が$I$上連続であり(有限個連続函数の和となるため，連続函数の性質に従う)，また第十一回レポートの問題11.2の定理より，$f$は$I$上連続となる．しかし，$x=0$に対し，$\varepsilon =1/2$と定めたことろ，任意の$\delta \in \Rp$に関して，$x_0=\delta/2$としたら，$|x_0 -0|<\delta$を満たすが，$|f(x_0)-f(0)|>1>\varepsilon$で連続でないことを示せた．従って，矛盾が生じる．以上より一様収束するわけがありません．
+\newpage
+\section{\# 雑談}
+最初は定義どおりに一様収束でないことを確認したかったが，値の評価が細かすぎてうまく行かなかった．過去のレポート問題を復習したら，この方針に辿り着いた．てか定義どおりに確認できるなら，ぜひ教えてください．
+\end{document}
+

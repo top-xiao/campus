@@ -1,0 +1,75 @@
+\documentclass{jreport}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{bm}
+\usepackage{romannum}
+\usepackage[dvipdfmx,hidelinks]{hyperref}
+\usepackage{pxjahyper}
+\usepackage{framed}
+\usepackage{pifont}
+\newenvironment{claim}[1]{\par\noindent\underline{Claim:}\space#1}{}
+\newenvironment{claimproof}[1]{\par\noindent\underline{Proof:}\space#1}{\hfill $\square$}
+\DeclareMathOperator{\spn}{\mathbb{Q}-span}
+\begin{document}
+\pagenumbering{arabic}
+\title{第10回演習課題解答}
+\author{習近平}
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+\setcounter{chapter}{10}
+\section{問題10.1}
+\noindent 本問においてより強い結論を導く:\\
+$A=[0,\infty ),\mathbb{R}_{>0} = \{x \in \mathbb{R} \mid x>0 \}$ とする。\\
+$A$において、$f(x)$は連続であり、$\lim\limits_{x \to \infty} f(x) = \alpha \in \mathbb{R}$とする。以下のことを示す:
+$$
+\lim_{x \to \infty} \frac{1}{x} \int_0^x f(t)dt = \alpha
+$$
+示すべきことは:
+$$
+\forall \varepsilon \in \mathbb{R}_{>0} ;\exists X \in \mathbb{R}_{>0} ; \forall x \in A; \left( x \ge X \implies \left| \frac{1}{x} \int_0^x f(t) dt  - \alpha \right| < \varepsilon \right)
+$$
+いつものように$\varepsilon \in \mathbb{R}_{>0}$を任意に取る、$\lim\limits_{x \to \infty} f(x) = \alpha$より、
+$$
+\exists X' \in \mathbb{R}_{>0};\forall x' \in A ; \left( x' \ge X' \implies \left| f(x') - \alpha \right| < \frac{\varepsilon}{3 } \right)
+$$
+このような$X' \in \mathbb{R}_{>0} $を一つ取る。\\
+$f(x)$は閉区間$[0,X']$上連続することより、以下の式が成り立つ:
+$$
+\exists \beta \in \mathbb{R}; \int_0^{X'} f(t)dt =\beta
+$$
+この$\beta \in \mathbb{R}$を取る。\\
+実数のアルキメデス性より、次の式が明らかである。\footnote{アルキメデス性を利用して、絶対値について議論する方がより厳密となるが、ここで割愛させていただきます。} 
+$$
+\exists X'' \in \mathbb{R}_{>0}; \left| \frac{\beta}{X''} \right| < \frac{\varepsilon}{3}
+$$
+このような$X'' \in \mathbb{R}_{>0}$を$X''> X'$となるように一つ取る。\footnote{このような元が取れることは実数における大小関係と反比例函数の性質より保証されている}\\
+同じように、
+$$
+\exists X \in \mathbb{R}_{>0}; \left|  \frac{X'}{X} \left( \alpha + \frac{\varepsilon}{3} \right) \right| < \frac{\varepsilon}{3}
+$$
+このような$X \in \mathbb{R}_{>0}$を$X>X''$を満たすように一つ取る。\\
+この時、$x \ge X$を満たす$x \in A$を任意に取る。\\
+\begin{equation}
+	\begin{aligned}
+		\left| \frac{1}{x} \int_0^x f(t) dt -\alpha \right| & = \left| \frac{1}{x} \left( \int_0^{X'}  f(t) dt + \int_{X'}^x f(t) dt \right) -\alpha \right| \\
+		&< \left| \frac{\beta}{x} \right| + \left| \frac{1}{x} \int_{X'}^x \left( \alpha +\frac{\varepsilon}{3} \right) dt - \alpha \right|\\
+		&\le \frac{\varepsilon}{3} + \left| \frac{\varepsilon}{3} - \frac{X'}{x} \left( \alpha + \frac{\varepsilon}{3} \right) \right| \\
+		&\le \frac{\varepsilon}{3} + \frac{\varepsilon}{3} + \frac{\varepsilon}{3} =\varepsilon
+	\end{aligned}
+\end{equation}
+よって、$A$において、$f(x)$は連続であり、$\lim\limits_{x \to \infty} f(x) = \alpha \in \mathbb{R}$とする。以下のことが成り立つのを証明できた:
+$$
+\lim_{x \to \infty} \frac{1}{x} \int_0^x f(t)dt = \alpha
+$$
+特に$\alpha =0 $の時、問題の主張が成り立つ。
+\newpage
+\section{\# 雑談}
+今回は何について雑談するのは良いかがよくわからないため。とりあえずこれを読んでいる皆様はよい一年を過ごせることをお祈り申し上げます。
+
+\end{document}
+
