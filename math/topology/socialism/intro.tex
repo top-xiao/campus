@@ -66,6 +66,7 @@
 
 
 \part{一般位相空間論}
+\chapter*{概説}
 マルクスによりますと資本家は労働者の剰余価値を絞り出す悪役でありますように, 微積分などの資本主義社会の数学は数学の本質にある構造を無視して, 計算結果しか評価していません. 我々は新時代中国特色社会主義思想の先駆けであり, 無産階級による数学改造を実現するには数学の根底にある構造そのものに着眼しなければいけません. 
 この章において, 数学の根底にある位相的性質を徹底的に分析して, 資本家はどのようにしてユークリッド空間の位相的性質を搾り取るのを学びます.
 
@@ -823,7 +824,7 @@ $x \in \cl{A}$を任意に取り,  $f(x) \in \cl{A}$であることを示す:
 
 
 \begin{definition}[同相]
-	位相空間$\left( X,\mathcal{T}_X \right) $と位相空間$\left( Y,\mathcal{T}_Y \right) $ が同相\textbf{(homomorphism)}であるとはある全単射$f:X\to Y$ が存在して,$f,f^{-1}$ いずれも連続写像である.  
+	位相空間$\left( X,\mathcal{T}_X \right) $と位相空間$\left( Y,\mathcal{T}_Y \right) $ が同相\textbf{(homeomorphism)}であるとはある全単射$f:X\to Y$ が存在して,$f,f^{-1}$ いずれも連続写像である.  
 \end{definition}
 
 
@@ -1390,7 +1391,7 @@ $(X, \mathcal{T}_X)$の部分位相空間$Y$の分割が存在する
 先の$\sup$が無限個のデータを有限個しか存在しないかのように振る舞っている. これは実数上のコンパクト性という重要な性質による.
 
 \begin{definition}[被覆]
-	位相空間$\left( X , \mathcal{T}_{X} \right)$ の部分集合族$\mathcal{A}$ に対し, $ \cup \mathcal{A} = X$ を満たすならば, $\mathcal{A}$ を$X$の被覆\textbf{(covering)}と呼び,  さらに$\mathcal{A}$ の各元が開集合の時, $\mathcal{A}$ を$X$の開被覆\textbf{(open covering)}とする. 部分空間の被覆は集合を含むことを満たせば良いとする.
+	位相空間$\left( X , \mathcal{T}_{X} \right)$ の部分集合族$\mathcal{A}$ に対し, $ \cup \mathcal{A} = X$ を満たすならば, $\mathcal{A}$ を$X$の被覆\textbf{(covering)}と呼び,  さらに$\mathcal{A}$ の各元が開集合の時, $\mathcal{A}$ を$X$の開被覆\textbf{(open covering)}とする. 部分空間の被覆は集合を含むことを満たせば良いとする. 特に被覆が有限個の集合からなる場合, 被覆のことを有限被覆と呼ぶ.
 \end{definition}
 
 \begin{definition}[\textcolor{red}{コンパクト性}]
@@ -1446,14 +1447,27 @@ $(X, \mathcal{T}_X)$の部分位相空間$Y$の分割が存在する
 \end{theorem}
 
 \begin{proof}
-	
+	$\left( X , \mathcal{T}_{X} \right)$ をコンパクトな位相空間, $\left( Y , \mathcal{T}_{Y} \right)$を位相空間とする. 
+	写像$f: X \to Y$を連続写像とする. $f(X)$が $\left( Y , \mathcal{T}_{Y} \right)$ のコンパクトな部分位相空間であることを示す:\\
+	$f(X)$の開被覆$\left( A_{\alpha} \right)_{\alpha \in J}$を任意に取る.
+	$f$が連続写像なので, $\left( f^{-1}(A_{\alpha}) \right) _{\alpha \in J}$ が$X$の開被覆となる.
+	$X$がコンパクトな位相空間なので,  $J$の有限部分集合$K$が存在し,  $\left( f^{-1}(A_{\alpha}) \right)_{\alpha \in K} $ が$X$の有限開被覆となる. つまり, $\left( A_{\alpha} \right) _{\alpha \in K}$ が$f(X)$の有限開被覆となる.
+
 \end{proof}
 
+\begin{theorem}
+	$\left( X , \mathcal{T}_{X} \right)$ をコンパクトな位相空間, $\left( Y , \mathcal{T}_{Y} \right)$ をHausdorff空間とする. $f: X \to Y$ を連続な全単射であるならば, $f$が同相写像である.
+\end{theorem}
 
+\begin{proof}
+	逆写像$f^{-1} :Y \to X$が連続写像であることを示せばよくて, この時, 閉集合を用いて議論する:\\
+	$A$を $X$の閉集合とする. この時, コンパクトな位相空間の閉集合がコンパクトな部分位相空間であるので,  連続写像$f$での像$f(A)$が$Y$のコンパクトな部分位相空間である. 
+	またHausdorff空間のコンパクトな集合が閉集合であることが示されていたので, $f(A)$が閉集合であり,  $f^{-1}$が連続写像であることが確認でき, $f$が同相写像であることが導かれる.
+\end{proof}
 
-
-
-
+\begin{theorem}
+	有限個のコンパクトな位相空間から作られる積位相空間もコンパクトである.
+\end{theorem}
 
 
 
