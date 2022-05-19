@@ -587,6 +587,7 @@ $I=[0,1]$として， 順序位相空間$I^2_o$と順序位相空間$\mathbb{R}^
 	\end{enumerate}
 \end{theorem}
 
+
 \begin{proof}
 	2と3の同値性が開基による位相の生成から直ちにわかる. よって, 1と2の同値性を示せば良い.
 ここで対偶を示す:
@@ -601,6 +602,8 @@ $A \subseteq \cl{A}$ より, $\left( X\setminus \cl{A} \right) \cap A = \emptyse
 	
 \end{proof}
 
+闇の世界に属するものは開集合を汚染しています. 革命を目指している諸君たちよ, 闇の世界と関わらないでください.
+
 \begin{definition}[集積点]
 	位相空間$X$の部分集合 $A$に対し,  $x \in X$が $A$の集積点\textbf{(limit point)}であることは,
 $x$の任意の開近傍 $U$に対し,  $\left( U\setminus \{x\}  \right) \cap A \neq \emptyset $.
@@ -611,6 +614,10 @@ $x$の任意の開近傍 $U$に対し,  $\left( U\setminus \{x\}  \right) \cap A
 	 \[
 	A' := \{x \in X  \mid  x がAの集積点である\} 
 	.\] 
+\end{definition}
+
+\begin{definition}[孤立点]
+	位相空間$\left( X , \mathcal{T}_{X} \right)$ の部分集合$A$の元 $x$が $A$の孤立点であるとは $x \in  A\setminus A'$とする.
 \end{definition}
 
 \begin{theorem}[導集合による閉包の特徴づけ]
@@ -641,7 +648,7 @@ $x$の任意の開近傍 $U$に対し,  $\left( U\setminus \{x\}  \right) \cap A
 		\item $\Int{A} \cap \bd{A} = \emptyset$
 		\item $\cl{A} = \Int{A} \cup \bd{A}$
 		\item  $\bd{A} = \emptyset \iff A \in \mathcal{T}_X \land A \in \mathcal{C}_X$
-		\item $A \in \mathcal{T_X} \iff \bd{A} = \cl{A} \setminus A $
+	\item $A \in \mathcal{T}_X \iff \bd{A} = \cl{A} \setminus A $
 	\end{enumerate}
 \end{theorem}
 
@@ -777,7 +784,7 @@ Hausdorff space における収束列の収束先が一点のみ.
 \end{proof}
 
 \begin{theorem}[連続写像の特徴づけ]
-	位相空間$\left( X,\mathcal{T}_X \right) ,\left( Y,\mathcal{T}_Y \right) $ と写像$f:\left( X,\mathcal{T}_X \right) \to \left( Y,\mathcal{T}_Y \right)$に対し, 以下の4つの命題が互いに同値である:
+	位相空間$\left( X,\mathcal{T}_X \right) ,\left( Y,\mathcal{T}_Y \right) $ と写像$f:X \to Y$に対し, 以下の4つの命題が互いに同値である:
 	\begin{enumerate}
 		\item $f$が連続写像である.
 		\item  $\forall A \subseteq X ; f\left( \cl{A} \right) \subseteq \cl{f\left( A \right) }$ 
@@ -815,7 +822,7 @@ $x \in \cl{A}$を任意に取り,  $f(x) \in \cl{A}$であることを示す:
 	 $f\left( X \setminus A \right) \subseteq V$ が求まる. \\
 	(4)$\implies$(1): $\forall x \in X; \forall V \in \mathcal{U}_{f(x)};\exists U \in \mathcal{U}_x; f(U) \subseteq V $ を仮定して, $f$が連続写像であることを導く:
 	 $V \in \mathcal{T}_Y$ を任意に取る, $x \in f^{-1}\left( V \right) $ を任意に取り, 
-	 仮定より,$\exists U_x \in \mathcal{U}_x ; f(U_x) \subseteq V$, このような$U_x$を一つ取る.\footnote{ここでは選択公理が暗黙に使われているのを気づいたの?} $U_x \subseteq f^{-1}\left( V \right) $ が明らか. 
+ 仮定より,$\exists U_x \in \mathcal{U}_x ; f(U_x) \subseteq V$, このような$U_x$を一つ取る.\footnote{ここでは選択公理が暗黙に使われているのを気づいたの?実は$(1),(4)$ と $(3),(1)$ の同値性を示すことで選択公理の使用を回避できる.しかし,本を書く人に取って仕事が増えるから読者の皆様の演習問題にしておく.} $U_x \subseteq f^{-1}\left( V \right) $ が明らか. 
 	 $$
 	 f^{-1}\left( V \right) = \bigcup_{x \in f^{-1}\left( V \right) } U_x
 	 $$
