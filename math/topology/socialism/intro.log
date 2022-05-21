@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p3.9.1-210218-2.6 (utf8.euc) (TeX Live 2022/dev/Debian) (preloaded format=platex 2022.5.14)  21 MAY 2022 14:14
+This is e-pTeX, Version 3.141592653-p3.9.1-210218-2.6 (utf8.euc) (TeX Live 2022/dev/Debian) (preloaded format=platex 2022.5.14)  21 MAY 2022 15:17
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -943,9 +943,9 @@ Overfull \hbox (5.83026pt too wide) detected at line 976
 
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
 (Font)              No change on input line 980.
+[28]
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
 (Font)              No change on input line 989.
-[28]
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
 (Font)              No change on input line 1005.
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
@@ -956,9 +956,9 @@ LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
 (Font)              No change on input line 1029.
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
 (Font)              No change on input line 1036.
+ [29]
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
 (Font)              No change on input line 1040.
- [29]
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
 (Font)              No change on input line 1049.
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
@@ -969,10 +969,10 @@ Package xypdf Warning: The produced DVI file is NOT PORTABLE. Convert it with
 dvipdfm(x) to the PDF format but do not expect the DVI file itself to be
 displayed correctly.
 
-137>
+137> [30]
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
 (Font)              No change on input line 1086.
- [30] [31] [32
+ [31] [32
 
 ]
 第 2 章
@@ -1085,7 +1085,10 @@ LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
 (Font)              No change on input line 1489.
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
 (Font)              No change on input line 1494.
- [40] [41] (./intro.aux)
+ [40]
+LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
+(Font)              No change on input line 1509.
+ [41] (./intro.aux)
 Package rerunfilecheck Info: File `intro.out' has not changed.
 (rerunfilecheck)             Checksum: F340ABD36EDAF4328D901FF347681F4A;1037.
  ) 
@@ -1096,6 +1099,6 @@ Here is how much of TeX's memory you used:
  43479 multiletter control sequences out of 15000+600000
  525505 words of font info for 130 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
- 84i,12n,80p,3241b,619s stack positions out of 5000i,500n,10000p,200000b,80000s
+ 84i,12n,80p,3241b,621s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on intro.dvi (41 pages, 171532 bytes).
+Output written on intro.dvi (41 pages, 174792 bytes).

@@ -822,7 +822,7 @@ $x \in \cl{A}$を任意に取り,  $f(x) \in \cl{A}$であることを示す:
 	 $f\left( X \setminus A \right) \subseteq V$ が求まる. \\
 	(4)$\implies$(1): $\forall x \in X; \forall V \in \mathcal{U}_{f(x)};\exists U \in \mathcal{U}_x; f(U) \subseteq V $ を仮定して, $f$が連続写像であることを導く:
 	 $V \in \mathcal{T}_Y$ を任意に取る, $x \in f^{-1}\left( V \right) $ を任意に取り, 
- 仮定より,$\exists U_x \in \mathcal{U}_x ; f(U_x) \subseteq V$, このような$U_x$を一つ取る.\footnote{ここでは選択公理が暗黙に使われているのを気づいたの?実は$(1),(4)$ と $(3),(1)$ の同値性を示すことで選択公理の使用を回避できる.しかし,本を書く人に取って仕事が増えるから読者の皆様の演習問題にしておく.} $U_x \subseteq f^{-1}\left( V \right) $ が明らか. 
+ 仮定より,$\exists U_x \in \mathcal{U}_x ; f(U_x) \subseteq V$, このような$U_x$を一つ取る.\footnote{ここでは選択公理が暗黙に使われているのを気づいたの?実は$(1),(4)$ と $(3),(1)$ の同値性を示すことで選択公理の使用を回避できる.しかし,本を書く人に取って仕事が増えるから読者の皆様の演習問題にしておく. 実は$x$に対応する $U_x$ はなんでもいいから全部取って来て, 和集合を考えても結局開集合となるので, この方法で選択公理の利用も回避できる.} $U_x \subseteq f^{-1}\left( V \right) $ が明らか. 
 	 $$
 	 f^{-1}\left( V \right) = \bigcup_{x \in f^{-1}\left( V \right) } U_x
 	 $$
@@ -1491,8 +1491,27 @@ $(X, \mathcal{T}_X)$の部分位相空間$Y$の分割が存在する
 \end{theorem}
 
 \begin{proof}
-	
+	コンパクトな位相空間$\left( X , \mathcal{T}_{X} \right),\left( Y , \mathcal{T}_{Y} \right)$
+	の積位相空間$\left( X\times Y , \mathcal{T}_{X\times Y} \right)$がコンパクトな位相空間であることを示せば, 数学的帰納法より任意の有限個のコンパクト位相空間からなる積位相空間がコンパクトであることがわかる.
+
+	ます, $X \times Y$ の開被覆$\mathcal{A}$ を任意に取る, $x_0 \in X$を任意に取る.
+	この時, $\{x_0\} \times Y$ の有限開被覆$\mathcal{A}'$が$\mathcal{A}$ から取れる. \\
+	$N = \bigcup \mathcal{A}_{x_0}$とする. 先程の補題より, ある$x_0$の開近傍$W$ が存在して, $W \times Y \subseteq N$が成立する.
+	任意の$x \in X$に対し, $W_{x}$ を取ってくると, $\left( W_x \right)_{x \in X}$が $X$の開被覆となり,
+	 $X$のコンパクト性より,  $X$の有限部分集合$K$が存在し,  $\left( W_x \right) _{x \in K}$が$X$の開被覆となる.
+	 従って, $\bigcup_{x \in K} \mathcal{A}_x $ が$X \times Y$の有限開被覆となる.
 \end{proof}
+
+これでコンパクト性を持つ集合を用いてより大きなコンパクト集合を作れること
+がある意味では保証されている. しかし, 上記の証明では選択公理を暗黙に使っている. どこで用いられているでしょう？
+一応演習問題として該当箇所を指摘してください, また上記の証明を標準積位相空間まで拡張できるかを考えて見てください? 今から続きを見ることをやめて, ゆっくり考えてから下の標準積位相空間への拡張を鑑賞してください.
+
+\begin{definition}[有限交叉性]
+	集合$X$の部分集合族$\mathcal{C}$が有限交叉性 
+	\textbf{(finite intersection property)}を持つとは$\mathcal{C}$ 
+	の任意の有限部分集合$\mathcal{C}'$に対し, $\bigcap \mathcal{C}' \neq \emptyset$ が成立する.
+\end{definition}
+
 
 
 
