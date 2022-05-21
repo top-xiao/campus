@@ -22,15 +22,15 @@
 \newcommand{\Int}[1]{#1 ^{\mathrm{o}} }
 \newcommand{\bd}[1]{\operatorname{Bd}{#1}}
 \newtheorem{theorem}{Theorem}[section]
-\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{corollary}[theorem]{Corollary}
 \newtheorem{lemma}[theorem]{Lemma}
-\newtheorem{definition}{Definition}[section]
-\newtheorem{claim}{Claim}[section]
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{claim}{Claim}[theorem]
 \theoremstyle{remark}
-\newtheorem{remark}{Remark}[section]
+\newtheorem{remark}[theorem]{Remark}
 \theoremstyle{plain}
-\newtheorem{example}{Example}[section]
-\newtheorem{exercise}{Exercise}[section]
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
 \newcommand{\incfig}[1]{%
     \includegraphics{~/Documents/campus/math/eps/topology/1st/#1.eps}
 }
@@ -1091,9 +1091,8 @@ $x \in \cl{A}$を任意に取り,  $f(x) \in \cl{A}$であることを示す:
 \chapter{連結性とコンパクト性}%
 \label{cha:連結性とコンパクト性}
 
-\section{連結性概論}
 
-\subsection{連結性}
+\section{連結性}
 
 \begin{definition}[分割, 連結]
 	位相空間$\left( X , \mathcal{T}_X \right) $ において, 集合$A$の分割\textbf{(separation)}が存在するとは, ある空でない集合$U,V \in \mathcal{T}_X$ に対し, $A=U \sqcup   V $. 位相空間$\left( X,\mathcal{T}_X \right) $ が連結\textbf{(connected)}であるとは$X$ の分割が存在しないとする.
@@ -1210,7 +1209,7 @@ $(X, \mathcal{T}_X)$の部分位相空間$Y$の分割が存在する
 	  従って, $x \in \cl{Y}$となり, $X$が連結な位相空間であることを示せた.
 \end{proof}
 
-\subsection{実数の連続性と弧状連結}
+\section{実数の連続性と弧状連結}
 
 \begin{definition}[線形連続]
 	全順序集合$L$が線形連続\textbf{(linear continuum)}であることは以下の2つの条件を満たすとする:
@@ -1296,7 +1295,7 @@ $(X, \mathcal{T}_X)$の部分位相空間$Y$の分割が存在する
 	$\cl{S}$が連結であることは自明, しかし,  $\cl{S}$が弧状連結ならば,  $0$に収束する数列 $\left( s_n \right) _{n \in \mathbb{N}}; \sin \frac{1}{s_{n}}= (-1)^n$となるようなものが取れる, これが道が連続写像であることに反する.
 \end{example}
 
-\subsection{連結成分と局所連結}
+\section{連結成分と局所連結}
 
 前のセクションでは連結な位相空間についていろんな議論を行った. 
 そこで, 任意の位相空間に対し, それを連結な部分空間に分解して議論したくなる気持ちは持っているのではないか?
@@ -1389,7 +1388,7 @@ $(X, \mathcal{T}_X)$の部分位相空間$Y$の分割が存在する
 	以上より$P=C$が得られ, 局所連結な位相空間では, 道成分と成分が一致することを示せた. 
 \end{proof}
 
-\section{コンパクト性概論}
+\section{コンパクト性}
 
 ここで, 皆さんに質問する: 解析学でやった$\sup , \max$というものがあると思うけど, なぜ $\sup$の性質が良いでしょう？
 勘のいいガキはそれが $\max$が有限個の値に対して意味を持ち, 無限個について破綻するからと答えるでしょう.

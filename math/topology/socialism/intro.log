@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p3.9.1-210218-2.6 (utf8.euc) (TeX Live 2022/dev/Debian) (preloaded format=platex 2022.5.14)  21 MAY 2022 13:49
+This is e-pTeX, Version 3.141592653-p3.9.1-210218-2.6 (utf8.euc) (TeX Live 2022/dev/Debian) (preloaded format=platex 2022.5.14)  21 MAY 2022 14:14
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -614,23 +614,18 @@ Package transparent Warning: Loading aborted, because pdfTeX is not running in P
 
 )
 \c@theorem=\count327
-\c@corollary=\count328
-\c@definition=\count329
-\c@claim=\count330
-\c@remark=\count331
-\c@example=\count332
-\c@exercise=\count333
+\c@claim=\count328
  (/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-dvipdfmx.def
 File: l3backend-dvipdfmx.def 2022-01-12 L3 backend support: dvipdfmx
  (|extractbb --version)
-\c__kernel_sys_dvipdfmx_version_int=\count334
-\l__color_backend_stack_int=\count335
-\g__color_backend_stack_int=\count336
-\g__graphics_track_int=\count337
+\c__kernel_sys_dvipdfmx_version_int=\count329
+\l__color_backend_stack_int=\count330
+\g__color_backend_stack_int=\count331
+\g__graphics_track_int=\count332
 \l__pdf_internal_box=\box89
-\g__pdf_backend_object_int=\count338
-\g__pdf_backend_annotation_int=\count339
-\g__pdf_backend_link_int=\count340
+\g__pdf_backend_object_int=\count333
+\g__pdf_backend_annotation_int=\count334
+\g__pdf_backend_link_int=\count335
 ) (./intro.aux)
 \openout1 = `intro.aux'.
 
@@ -664,7 +659,7 @@ Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
 ) (/usr/share/texlive/texmf-dist/tex/generic/gettitlestring/gettitlestring.sty
 Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
-\c@section@level=\count341
+\c@section@level=\count336
 )
 LaTeX Info: Redefining \ref on input line 38.
 LaTeX Info: Redefining \pageref on input line 38.
@@ -904,7 +899,7 @@ LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
 (Font)              No change on input line 833.
 
 Overfull \hbox (4.68147pt too wide) in paragraph at lines 834--835
-[][]\OT1/cmr/bx/n/10 Definition 1.4.2 \OT1/cmr/m/n/10 (\JY1/mc/m/n/10 同相\OT1/cmr/m/n/10 )\OT1/cmr/bx/n/10 . []\JY1/mc/m/n/10 位相空間 $[]$ と位相空間 $[]$ が同相 \OT1/cmr/bx/it/10 (home-
+[][]\OT1/cmr/bx/n/10 Definition 1.4.5 \OT1/cmr/m/n/10 (\JY1/mc/m/n/10 同相\OT1/cmr/m/n/10 )\OT1/cmr/bx/n/10 . []\JY1/mc/m/n/10 位相空間 $[]$ と位相空間 $[]$ が同相 \OT1/cmr/bx/it/10 (home-
  []
 
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
@@ -982,125 +977,125 @@ LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
 ]
 第 2 章
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 1098.
+(Font)              No change on input line 1097.
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 1102.
+(Font)              No change on input line 1101.
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 1108.
+(Font)              No change on input line 1107.
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 1120.
+(Font)              No change on input line 1119.
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 1125.
+(Font)              No change on input line 1124.
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 1129.
+(Font)              No change on input line 1128.
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 1134.
+(Font)              No change on input line 1133.
 [33]
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 1144.
+(Font)              No change on input line 1143.
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 1149.
+(Font)              No change on input line 1148.
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 1159.
+(Font)              No change on input line 1158.
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 1164.
+(Font)              No change on input line 1163.
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 1167.
+(Font)              No change on input line 1166.
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 1172.
+(Font)              No change on input line 1171.
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 1181.
+(Font)              No change on input line 1180.
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 1186.
+(Font)              No change on input line 1185.
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 1196.
+(Font)              No change on input line 1195.
  [34]
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 1215.
+(Font)              No change on input line 1214.
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 1223.
+(Font)              No change on input line 1222.
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 1228.
+(Font)              No change on input line 1227.
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 1250.
+(Font)              No change on input line 1249.
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 1254.
+(Font)              No change on input line 1253.
  [35]
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 1263.
+(Font)              No change on input line 1262.
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 1271.
+(Font)              No change on input line 1270.
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 1278.
+(Font)              No change on input line 1277.
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 1283.
+(Font)              No change on input line 1282.
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 1294.
+(Font)              No change on input line 1293.
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 1304.
-LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 1312.
+(Font)              No change on input line 1303.
  [36]
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 1321.
+(Font)              No change on input line 1311.
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 1325.
+(Font)              No change on input line 1320.
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 1332.
+(Font)              No change on input line 1324.
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 1336.
+(Font)              No change on input line 1331.
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 1350.
+(Font)              No change on input line 1335.
+LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
+(Font)              No change on input line 1349.
  [37]
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 1359.
+(Font)              No change on input line 1358.
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 1372.
+(Font)              No change on input line 1371.
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 1378.
+(Font)              No change on input line 1377.
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 1400.
+(Font)              No change on input line 1399.
  [38]
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 1404.
+(Font)              No change on input line 1403.
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 1408.
+(Font)              No change on input line 1407.
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 1415.
+(Font)              No change on input line 1414.
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 1420.
+(Font)              No change on input line 1419.
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 1431.
+(Font)              No change on input line 1430.
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 1436.
+(Font)              No change on input line 1435.
  [39]
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 1452.
+(Font)              No change on input line 1451.
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 1457.
+(Font)              No change on input line 1456.
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 1465.
+(Font)              No change on input line 1464.
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 1470.
+(Font)              No change on input line 1469.
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 1475.
+(Font)              No change on input line 1474.
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 1482.
+(Font)              No change on input line 1481.
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 1490.
+(Font)              No change on input line 1489.
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
-(Font)              No change on input line 1495.
+(Font)              No change on input line 1494.
  [40] [41] (./intro.aux)
 Package rerunfilecheck Info: File `intro.out' has not changed.
-(rerunfilecheck)             Checksum: EC8F8C5A84C45B748FBD842F9E551133;1126.
+(rerunfilecheck)             Checksum: F340ABD36EDAF4328D901FF347681F4A;1037.
  ) 
 Here is how much of TeX's memory you used:
- 25604 strings out of 478741
- 452955 string characters out of 5860982
- 789283 words of memory out of 5000000
- 43500 multiletter control sequences out of 15000+600000
+ 25583 strings out of 478741
+ 452727 string characters out of 5860982
+ 788801 words of memory out of 5000000
+ 43479 multiletter control sequences out of 15000+600000
  525505 words of font info for 130 fonts, out of 8000000 for 9000
  929 hyphenation exceptions out of 8191
  84i,12n,80p,3241b,619s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on intro.dvi (41 pages, 172152 bytes).
+Output written on intro.dvi (41 pages, 171532 bytes).
