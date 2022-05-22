@@ -464,7 +464,7 @@ $I=[0,1]$として， 順序位相空間$I^2_o$と順序位相空間$\mathbb{R}^
 	\[
 	X\setminus \left( \bigcap_{\alpha \in J} A_{\alpha}\right) = \bigcup_{\alpha \in J} \left( X\setminus A_{\alpha} \right) 
 	.\] 
-	右辺は開集合の任意和集合であるから，$\cap A_{\alpha}$が閉集合であることが示された.\\
+	右辺は開集合の任意和集合であるから，$\bigcap A_{\alpha}$が閉集合であることが示された.\\
 	3.同様に$2$個の閉集合 $A_1, A_2$ に対し，
 	\[
 	X\setminus \left(A_1 \cup A_2 \right) = \left( X \setminus A_1 \right) \cap \left( X \setminus A_2 \right) 
@@ -1397,7 +1397,7 @@ $(X, \mathcal{T}_X)$の部分位相空間$Y$の分割が存在する
 先の$\sup$が無限個のデータを有限個しか存在しないかのように振る舞っている. これは実数上のコンパクト性という重要な性質による.
 
 \begin{definition}[被覆]
-	位相空間$\left( X , \mathcal{T}_{X} \right)$ の部分集合族$\mathcal{A}$ に対し, $ \cup \mathcal{A} = X$ を満たすならば, $\mathcal{A}$ を$X$の被覆\textbf{(covering)}と呼び,  さらに$\mathcal{A}$ の各元が開集合の時, $\mathcal{A}$ を$X$の開被覆\textbf{(open covering)}とする. 部分空間の被覆は集合を含むことを満たせば良いとする. 特に被覆が有限個の集合からなる場合, 被覆のことを有限被覆と呼ぶ.
+	位相空間$\left( X , \mathcal{T}_{X} \right)$ の部分集合族$\mathcal{A}$ に対し, $ \bigcup \mathcal{A} = X$ を満たすならば, $\mathcal{A}$ を$X$の被覆\textbf{(covering)}と呼び,  さらに$\mathcal{A}$ の各元が開集合の時, $\mathcal{A}$ を$X$の開被覆\textbf{(open covering)}とする. 部分空間の被覆は集合を含むことを満たせば良いとする. 特に被覆が有限個の集合からなる場合, 被覆のことを有限被覆と呼ぶ.
 \end{definition}
 
 \begin{definition}[\textcolor{red}{コンパクト性}]
@@ -1512,6 +1512,9 @@ $(X, \mathcal{T}_X)$の部分位相空間$Y$の分割が存在する
 	の任意の有限部分集合$\mathcal{C}'$に対し, $\bigcap \mathcal{C}' \neq \emptyset$ が成立する.
 \end{definition}
 
+\begin{theorem}
+	空でない位相空間$\left( X , \mathcal{T}_{X} \right)$ がコンパクトな位相空間であることと$\left( X , \mathcal{T}_{X} \right)$ の任意の閉集合族$\mathcal{C}$ が有限交叉性を持つことと同値である.
+\end{theorem}
 
 
 
