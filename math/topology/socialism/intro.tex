@@ -1532,12 +1532,68 @@ $(X, \mathcal{T}_X)$の部分位相空間$Y$の分割が存在する
 \end{proof}
 
 \begin{lemma}
-	集合$X$ に対し, $\mathcal{F }= \{ \mathcal{A} \subseteq \mathcal{P}(X)  \mid  \mathcal{A} \text{が有限交叉性を持つ.}\} $ とする. $\mathcal{F}$ が帰納的順序集合である.
+	集合$X$ に対し, $\mathcal{F }= \{ \mathcal{A} \subseteq \mathcal{P}(X)  \mid  \mathcal{A} \text{が有限交叉性を持つ.}\} $ とする. $\mathcal{F}$ が包含関係での帰納的順序集合である.
 \end{lemma}
 
+\begin{proof}
+	$\mathcal{F}$ の鎖(包含関係での全順序部分集合)$ \mathcal{C}$を任意に取る. $\bigcup_{C \in \mathcal{C}} C \in \mathcal{C}$ を示す:\\
+	$\bigcup_{C \in \mathcal{C}} C$の有限部分集合$\mathcal{B}=\{B_1, \ldots , B_i\} $を任意に取る. 任意の$B_k$に対し, それを含む $\mathcal{C}$ の元$C_k$が存在する.  $C_1, \ldots ,C_i $の中から包含関係での最大元が存在して, それが有限交叉性を持つので, $\bigcap \mathcal{B} \neq \emptyset$ が示される.
+以上より, $\mathcal{F}$ が帰納的順序集合であることが示された.
+\end{proof}
 
+\begin{lemma}
+	集合$X$に対し,  $\mathcal{D}$ が$X$の有限交叉性を持つ部分集合族の中で包含関係での極大元であるならば, 以下の2つの命題が成立する: 
+	 \begin{enumerate}
+		\item $\mathcal{D}$ の任意の有限個の要素の共通部分が$\mathcal{D}$ に属する.
+		\item $X$の部分集合 $A$が $\mathcal{D}$ の任意要素と交わるならば, $A$が $\mathcal{D}$ に属する.
+	\end{enumerate}
+\end{lemma}
 
+\begin{proof}
+	1の証明, $\mathcal{D}$ の任意の有限個の要素の共通部分を$B$とする,  $\mathcal{E} = \mathcal{D}\cup \{B\} $ と定める. $\mathcal{E}$ は有限交叉性を持つことが明らかであり, $\mathcal{D}$ の包含関係での極大性より, $\mathcal{E}=\mathcal{D}$ とならざるを得ない.\\
+	2の証明, $\mathcal{E} = \mathcal{D} \cup \{A\} $ とすれば, 同じく極大性原理のもとで示される.
+\end{proof}
 
+\begin{theorem}[Tychonoff theorem]
+	任意のコンパクトな位相空間からなる標準積位相空間がコンパクトである.
+\end{theorem}
+
+\begin{proof}
+	\[
+	X = \prod_{\alpha \in J} X_{\alpha}  
+	.\] 
+	任意の$X_{\alpha}$ をコンパクトな位相空間とする. $\mathcal{A}$ を有限交叉性を持つ$X$の部分集合族とする. 以下,
+	 \[
+	 \bigcap_{A \in \mathcal{A}} \cl{A} \neq \emptyset
+	 .\] 
+	 を示せば, $X$のコンパクト性が直ちにこれに従う.
+	 Zornの補題より, $\mathcal{A}$ を含む有限交叉性を持つ包含関係での極大元$\mathcal{D}$ が取れる. 
+	 \[
+		 \bigcap_{D \in  \mathcal{D}} \cl{D} \neq \emptyset
+	 .\] 
+	 を示せば, $\mathcal{A}$ に関する部分がすぐに導かれる.
+	 任意の$\alpha \in  J$に対し, 成分射影$\pi_{\alpha}: X \to X _{\alpha}$ について, 集合$P_{\alpha}$ を次のように定める: 
+	 \[
+	 P_{\alpha }= \{\pi_{\alpha} \left( D \right)  \mid  D \in \mathcal{D}\} 
+	 .\] 
+	 $P_{\alpha}$ が有限交叉性を有し, $X_{\alpha}$ のコンパクト性より, 
+	  \[
+		  x_{\alpha} \in \bigcap_{D \in \mathcal{D}} \cl{\pi_{\alpha}(D)}
+	 .\] 
+	 が取れる.
+ このように, $x_{\alpha}$ を成分に持つ$x = \left( x_{\alpha} \right) _{\alpha \in  J} \in X$を固定する.
+ 以下, 任意の$D \in \mathcal{D}$ に対し, $x \in \cl{D}$が成立することを示す:\\
+ まず,  $\pi_{\alpha}^{-1}(U_{\alpha})$ が$x$を含むならば,  $\pi_{\alpha}^{-1}(U_{\alpha})$と$\mathcal{D}$ の任意要素と交わることを示す:\\
+  $D \in  \mathcal{D}$ を任意に取る. $U _{\alpha}$が$x _{\alpha}$ の開近傍であるから, 
+  $U_{\alpha} \cap \cl{\pi_{\alpha}{(D)}} \neq \emptyset$, 従って, ある点$y \in D$が存在し,  $\pi_{\alpha} (y) \in U_{\alpha} \cap \cl{\pi_{\alpha}{(D)}}$ が言える, つまり, $y \in \pi_{\alpha}(U_{\alpha}) \cap D$が成立する.\\
+  よって, $x$を含む準開基がすべて $\mathcal{D}$ と交わりを持つ, $x$を含む準開基がすべて $\mathcal{D}$に属することとなり, $\mathcal{D}$ の有限交叉性より, $x$の開近傍がすべて $\mathcal{D}$ に属し, 任意の$D \in \mathcal{D}$ に対し, $x$の任意開近傍と $D$との交わりが空でないため,  $x \in \cl{D}$が言える.
+  以上より, 
+   \[
+	   x \in \bigcap_{D \in \mathcal{D}} \cl{D} 
+  .\] 
+  が成立することを示せたので, $X$がコンパクトな位相空間であることがわかる.
+
+\end{proof}
 
 
 
