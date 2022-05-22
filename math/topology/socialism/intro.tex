@@ -1516,8 +1516,24 @@ $(X, \mathcal{T}_X)$の部分位相空間$Y$の分割が存在する
 	位相空間$\left( X , \mathcal{T}_{X} \right)$ がコンパクトな位相空間であることと$\left( X , \mathcal{T}_{X} \right)$ の任意の有限交叉性を持つ閉集合族$\mathcal{C}$に対し, $\bigcap \mathcal{C} \neq \emptyset $ と同値である.
 \end{theorem}
 
+\begin{proof}
+	$X$の部分集合族 $\mathcal{A}$ が与えられた時, 
+	\[
+	\mathcal{C} = \{X \setminus A  \mid  A \in \mathcal{A} \} 
+	.\] 
+	と定義する. そして以下の命題が成立する:
+	\begin{enumerate}
+		\item $\mathcal{A}$が$X$の開集合族であることと $\mathcal{C}$ が$X$の閉集合族であることと同値である.
+		\item $\mathcal{A}$ が$X$の被覆であることと,  $\bigcap \mathcal{C} = \emptyset$と同値である.
+		\item $\mathcal{A}$ のある有限部分集合$\mathcal{A}'$ が$X$の被覆であることと$\mathcal{C}$のある有限部分集合$\mathcal{C}'$に対し, $\bigcap \mathcal{C}' = \emptyset$と同値である.
+	\end{enumerate}
+	以下$X$がコンパクトであることの同値命題を考えれば良い.  $X$の任意の開集合族$\mathcal{A}$ に対し, $X$の有限被覆を持っていなければ,  $\mathcal{A}$ が$X$の被覆にならない.
+	この命題を上記の三条件で書き換えると正しく,  $X$の任意の閉集合族$\mathcal{C}$に対し,  $\mathcal{C}$ が有限交叉性を持つならば, $\bigcap \mathcal{C} \neq \emptyset$ となる.
+\end{proof}
 
-
+\begin{lemma}
+	集合$X$ に対し, $\mathcal{F }= \{ \mathcal{A} \subseteq \mathcal{P}(X)  \mid  \mathcal{A} \text{が有限交叉性を持つ.}\} $ とする. $\mathcal{F}$ が帰納的順序集合である.
+\end{lemma}
 
 
 
