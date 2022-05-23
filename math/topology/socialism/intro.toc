@@ -1,4 +1,3 @@
-\babel@toc {english}{}\relax 
 \contentsline {part}{無産階級数学者革命綱要}{5}{chapter*.2}%
 \contentsline {part}{第I部\hspace {1em}一般位相空間論}{7}{part.1}%
 \contentsline {chapter}{\numberline {第1章}位相と位相空間の基本常識}{11}{chapter.1}%

@@ -1,9 +1,9 @@
 # Fdb version 3
-["dvipdf"] 1653204614 "intro.dvi" "intro.pdf" "intro" 1653204614
-  "intro.dvi" 1653204614 183872 3cdb38101bc7141b9af367304ac6cf6a "latex"
+["dvipdf"] 1653281149 "intro.dvi" "intro.pdf" "intro" 1653281150
+  "intro.dvi" 1653281149 189332 a53d638e59e1c0a57fd2404a4d56e97e "latex"
   (generated)
   "intro.pdf"
-["latex"] 1653204613 "intro.tex" "intro.dvi" "intro" 1653204614
+["latex"] 1653281148 "intro.tex" "intro.dvi" "intro" 1653281150
   "/etc/texmf/web2c/texmf.cnf" 1652511832 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
@@ -68,9 +68,6 @@
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/xypic/xyluat10.tfm" 1381187214 608 a3a3bc08980c5126ff2a7a68fb5a64ff ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/public/xypic/xylubt10.tfm" 1381187214 608 a3a3bc08980c5126ff2a7a68fb5a64ff ""
   "/usr/share/texlive/texmf-dist/tex/generic/atbegshi/atbegshi.sty" 1575674566 24708 5584a51a7101caf7e6bbf1fc27d8f7b1 ""
-  "/usr/share/texlive/texmf-dist/tex/generic/babel-english/english.ldf" 1496785618 7008 9ff5fdcc865b01beca2b0fe4a46231d4 ""
-  "/usr/share/texlive/texmf-dist/tex/generic/babel/babel.sty" 1643231327 147419 2058c0f5e6893b19c8f3ce95d177646c ""
-  "/usr/share/texlive/texmf-dist/tex/generic/babel/txtbabel.def" 1643231327 5233 d5e383ed66bf272b71b1a90b596e21c6 ""
   "/usr/share/texlive/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty" 1576625341 40635 c40361e206be584d448876bba8a64a3b ""
   "/usr/share/texlive/texmf-dist/tex/generic/bitset/bitset.sty" 1576016050 33961 6b5c75130e435b2bfdb9f480a09a39f9 ""
   "/usr/share/texlive/texmf-dist/tex/generic/etexcmds/etexcmds.sty" 1576625273 7734 b98cbb34c81f667027c1e3ebdbfce34b ""
@@ -195,7 +192,6 @@
   "/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty" 1612734870 13242 133e617c5eebffdd05e421624022b267 ""
   "/usr/share/texlive/texmf-dist/tex/latex/hyperref/pd1enc.def" 1623096352 14132 c9404e8e78123ef0d1007c34d1d6da51 ""
   "/usr/share/texlive/texmf-dist/tex/latex/hyperref/puenc.def" 1623096352 117004 86586f287ddfad919a0a4bd68934277a ""
-  "/usr/share/texlive/texmf-dist/tex/latex/ifmtarg/ifmtarg.sty" 1525197427 318 019510c713feab56160631df4423d2aa ""
   "/usr/share/texlive/texmf-dist/tex/latex/import/import.sty" 1586645574 6201 0ad8b5da8e12f60a88d546b2198a56f2 ""
   "/usr/share/texlive/texmf-dist/tex/latex/kvoptions/kvoptions.sty" 1602274869 22521 d2fceb764a442a2001d257ef11db7618 ""
   "/usr/share/texlive/texmf-dist/tex/latex/l3backend/l3backend-dvipdfmx.def" 1642022539 36459 431d805f28e08da6ecb6222ff0c6e5e7 ""
@@ -223,7 +219,6 @@
   "/usr/share/texlive/texmf-dist/tex/latex/transparent/transparent.sty" 1575152205 4155 541de118e0abc42fce3317addc90afb0 ""
   "/usr/share/texlive/texmf-dist/tex/latex/url/url.sty" 1388531844 12796 8edb7d69a20b857904dd0ea757c14ec9 ""
   "/usr/share/texlive/texmf-dist/tex/latex/xcolor/xcolor.sty" 1635798903 56029 3f7889dab51d620aa43177c391b7b190 ""
-  "/usr/share/texlive/texmf-dist/tex/latex/xifthen/xifthen.sty" 1448319911 5689 1bfa68243e89a54479e7d0580773c57e ""
   "/usr/share/texlive/texmf-dist/tex/platex/base/jbk10.clo" 1601501154 8482 cf4697feec57e0072d9c20cb41f0a3c4 ""
   "/usr/share/texlive/texmf-dist/tex/platex/base/jbook.cls" 1601501154 29041 9655c65583adb621c1345fb89f0d2342 ""
   "/usr/share/texlive/texmf-dist/tex/platex/pxjahyper/pxjahyper-enc.sty" 1623096304 3307 40ba5bda2b5c9020f010f133aed995e8 ""
@@ -231,10 +226,10 @@
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/var/lib/texmf/web2c/eptex/platex.fmt" 1652511884 2754569 dfbf8ef613725f14f871d3004da7400a ""
-  "intro.aux" 1653204614 3190 31dcbb581f94f3d714457b1eb4e45d43 "latex"
-  "intro.out" 1653204614 1037 f340abd36edaf4328d901ff347681f4a "latex"
-  "intro.tex" 1653204612 101282 2e5ccc26e18286d545eb5311de6a5098 ""
-  "intro.toc" 1653204614 1218 4222fc821f83d3194dff1a3495925f8f "latex"
+  "intro.aux" 1653281149 3151 91daf42a152fe1c923d72992828fcb8e "latex"
+  "intro.out" 1653281149 1037 f340abd36edaf4328d901ff347681f4a "latex"
+  "intro.tex" 1653281148 104439 9f4ac091a04e27bfe8de2097002f6a65 ""
+  "intro.toc" 1653281149 1188 39308a6af99118aade7cd523e2fa6ae5 "latex"
   (generated)
   "intro.aux"
   "intro.dvi"
