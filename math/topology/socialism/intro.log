@@ -1,4 +1,4 @@
-This is e-pTeX, Version 3.141592653-p3.9.1-210218-2.6 (utf8.euc) (TeX Live 2022/dev/Debian) (preloaded format=platex 2022.5.14)  23 MAY 2022 14:06
+This is e-pTeX, Version 3.141592653-p3.9.1-210218-2.6 (utf8.euc) (TeX Live 2022/dev/Debian) (preloaded format=platex 2022.5.14)  24 MAY 2022 16:10
 entering extended mode
  restricted \write18 enabled.
  file:line:error style messages enabled.
@@ -1094,9 +1094,14 @@ LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
 (Font)              No change on input line 1615.
 LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
 (Font)              No change on input line 1620.
- [43] [44]
+ [43]
+LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
+(Font)              No change on input line 1632.
+LaTeX Font Info:    Kanji font shape `JY1/mc/m/it' undefined
+(Font)              No change on input line 1636.
+ [44]
 LaTeX Font Info:    Kanji font shape `JY1/gt/m/it' undefined
-(Font)              No change on input line 1657.
+(Font)              No change on input line 1671.
  [45
 
 ] (./intro.aux)
@@ -1112,4 +1117,4 @@ Here is how much of TeX's memory you used:
  929 hyphenation exceptions out of 8191
  84i,12n,80p,3233b,603s stack positions out of 5000i,500n,10000p,200000b,80000s
 
-Output written on intro.dvi (45 pages, 189404 bytes).
+Output written on intro.dvi (45 pages, 191776 bytes).
