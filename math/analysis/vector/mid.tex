@@ -1,0 +1,65 @@
+\documentclass[dvipdfmx]{jarticle}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{float}
+\usepackage{framed}
+\usepackage{pifont}
+\usepackage[dvipdfmx,hidelinks]{hyperref}
+\usepackage{pxjahyper}
+\usepackage{bm}
+\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage[all]{xy}
+\usepackage[english]{babel}
+\usepackage{import}
+\usepackage{xifthen}
+\usepackage{pdfpages}
+\usepackage{transparent}
+\newcommand{\cl}[1]{\overline{ #1}  }
+\newcommand{\Int}[1]{#1 ^{\mathrm{o}} }
+\newcommand{\bd}[1]{\operatorname{Bd}{#1}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{definition}{Definition}[section]
+\newtheorem{claim}{Claim}[section]
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}[section]
+\theoremstyle{plain}
+\newtheorem{example}{Example}[section]
+\newtheorem{exercise}{Exercise}[section]
+\newcommand{\incfig}[1]{%
+    \includegraphics{~/Documents/campus/math/eps/topology/1st/#1.eps}
+}
+
+\begin{document}
+\title{平面におけるベクトル解析の基本常識}
+\author{習近平}
+\date{\today}
+\maketitle
+$$
+\int_{\it{l}} V \cdot dl = \int_a^b V(l(t)) \cdot \frac{dl}{dt} \: dt
+$$
+$$
+\int_{\it{L}}V \cdot \vec{n} dL = \int_{a}^{b} {\| \dot{l}(s) \| V(l(s)) \vec{n}  } \: d{s}
+$$
+$$
+\int_{\it{L}} V \cdot \vec{n} \: dL = \iint_D \mathrm{div}{V} \: dxdy
+$$
+$$
+\iint_D \mathrm{rot} V \: dxdy =\iint_D \left( \frac{\partial V_2}{\partial x} - \frac{\partial V_1}{\partial y} \right) \: dxdy = \int_{\partial D} V \cdot dl
+$$
+三次元ベクトルの外積が可換性を持たない。\\
+スカラー三重積は行列式で表される。\\
+座標変換が行われた場合$\rm{div}, \rm{rot}$ を合成函数の微分を用いて変換しなければならない.
+
+
+
+
+
+
+
+
+\end{document}
