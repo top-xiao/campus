@@ -1699,12 +1699,81 @@ $(X, \mathcal{T}_X)$の部分位相空間$Y$の分割が存在する
 
 \end{proof}
 
+\begin{definition}
+	距離空間$\left( X ,d \right) $ について, 点 $x \in  X$から空でない部分集合 $  A \subseteq X$ への距離は次のように定める:
+	\[
+	d\left( x,A \right) = \inf  \{d\left( x,a \right)  \mid a \in A\} 
+	.\] 
+\end{definition}
 
+\begin{claim}
+	距離空間$\left( X ,d \right) $ の空でない部分集合$A$より定まる写像 $f: X \to \mathbb{R}$:
+	\[
+	x \mapsto d(x,A)
+	.\] 
+が連続である.
+\end{claim}
 
+\begin{proof}
+	任意の$x,y \in X$と任意の$a \in A$に対し，
+	\[
+	\begin{aligned}
+		& d\left( x,A \right)   \le d(x,a) \le d(x,y) + d(y,a)\\
+		\iff &d(x,A) - d(x,y)  \le d(y,a) \\
+		\implies &d(x,A) -d(x,y) \le d(y,A)\\
+		\iff & d(x,A) -d(y,A) \le d(x,y)
+	\end{aligned}
+	\] 
+	より，連続であることが明らかである.
+\end{proof}
 
+\begin{definition}
+	距離空間$\left( X ,d \right) $の空でない部分集合$A$ に対し，その半径\textbf{(diameter)}は次のように定める:
+	\[
+		\mathrm{diam}A= \sup \{d(x,y)  \mid x,y \in A\} 
+	.\] 
+\end{definition}
 
+\begin{theorem}
+	コンパクトな距離空間$\left( X,d \right) $ の任意の開被覆$\mathcal{A}$ に対し, 
+	ある正の実数$\delta$が存在し, $X$の任意の部分集合$U$ に対し, $\mathrm{diam}U < \delta$ならば, 開被覆のある要素$A$が存在し, $U \subseteq A$を満たす.
+\end{theorem}
 
+\begin{proof}
+	$\left( X,d \right) $ の開被覆$\mathcal{A}$ を任意に取る．
+	$X$がコンパクトな位相空間なので,  $\mathcal{A}$ から有限開被覆$\mathcal{A}'$が取れる. $\mathcal{A}'$に対応する$n$個の要素からなる閉集合族$\mathcal{C} = \{C_1, \ldots , C_{n}\} $ を取り, 次のような連続写像$f: X \to \mathbb{R}$を定める:
+	\[
+		f(x) = \frac{1}{n}\sum_{i =1}^n d(x,C_i)
+	.\]
+	任意の$x \in X $ に対し, 
+	$x \in A_i$ を満たす, $A_i \in \mathcal{A}'$を取り, 
+	距離空間の定義より, ある$\varepsilon$を半径とする開近傍が取れて,
+	$A_i$に含まれる,
+	$C_i$ が$A_i$の補集合なので, 
+	任意の $y \in C$ に対し,  $d(x,y) \ge \varepsilon$となる. 
+	したがって, 
+	$f(x) \ge \frac{1}{n}d(x,C_i) \ge \frac{\varepsilon}{n}>0$.
+	これがコンパクトな位相空間に定義される連続写像なので， 最小値$\delta >0$が取れる.
+	次に$\rm{diam}U<delta$を満たす$X$の部分集合 $U$を任意に取る.  $x \in U$を任意に一つ取って固定する.
+	 $$\delta \le f(x) \le d(x,C_m)$$
+	  を満たすかつ$d(x,C_m)$が最大となるような$C_m$ を取る.
+	  $C_i$に対応する $A_i \in \mathcal{A}'$を取り, この時, $x$の半径 $\delta$の開球体が $A_i$に含まれるから問題が示された.
+\end{proof}
 
+\begin{definition}
+	距離空間$\left( X,d_X \right) , \left( Y, d_Y \right) $ 間の写像
+	$f:X \to Y$が一様連続\textbf{(uniformly continuous)}とは，
+	任意の正の実数$\varepsilon$に対し, 
+	ある正の実数 $\delta$が存在し,
+	任意の$x,y \in X$について，
+	 \[
+	 d_X(x,y) < \delta \implies d_Y(f(x),f(y))<\varepsilon
+	 .\] 
+\end{definition}
+
+\begin{theorem}
+	
+\end{theorem}
 
 
 

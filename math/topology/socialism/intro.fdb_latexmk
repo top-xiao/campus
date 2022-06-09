@@ -1,10 +1,10 @@
 # Fdb version 3
-["dvipdf"] 1653718148 "intro.dvi" "intro.pdf" "intro" 1653718149
-  "intro.dvi" 1653718148 198776 ee880f4eccdc879c9bb51a0ccffb30a6 "latex"
+["dvipdf"] 1654741554 "intro.dvi" "intro.pdf" "intro" 1654741554
+  "intro.dvi" 1654741554 204924 5e9fa9d5e5d0a4f08755b5f37ba69998 "latex"
   (generated)
   "intro.pdf"
-["latex"] 1653718147 "intro.tex" "intro.dvi" "intro" 1653718149
-  "/etc/texmf/web2c/texmf.cnf" 1652511832 475 c0e671620eb5563b2130f56340a5fde8 ""
+["latex"] 1654741553 "intro.tex" "intro.dvi" "intro" 1654741554
+  "/etc/texmf/web2c/texmf.cnf" 1654695909 475 c0e671620eb5563b2130f56340a5fde8 ""
   "/usr/share/texlive/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/symbol/psyr.tfm" 1136768653 1408 5937f58aa508ea2cea4901c07d10f5fe ""
   "/usr/share/texlive/texmf-dist/fonts/tfm/adobe/zapfding/pzdr.tfm" 1136768653 1528 f853c4d1b4e0550255e02831fdc8496f ""
@@ -225,11 +225,11 @@
   "/usr/share/texlive/texmf-dist/tex/platex/pxjahyper/pxjahyper.sty" 1623096304 45778 a49f011e10f5724dbca08e6537be63e6 ""
   "/usr/share/texlive/texmf-dist/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
   "/usr/share/texmf/web2c/texmf.cnf" 1644012257 39432 7155514e09a3d69036fac785183a21c2 ""
-  "/var/lib/texmf/web2c/eptex/platex.fmt" 1652511884 2754569 dfbf8ef613725f14f871d3004da7400a ""
-  "intro.aux" 1653718148 3286 a9edef46eccef7681b3c4cba15e99797 "latex"
-  "intro.out" 1653718148 1117 36f66d99cd5a4bdd9128dd5a4f540931 "latex"
-  "intro.tex" 1653718145 109154 18a9ba106bd3584df6a2226d49b454c6 ""
-  "intro.toc" 1653718148 1282 3cdbe4549d1aa5c1b660a0d1aca3bb26 "latex"
+  "/var/lib/texmf/web2c/eptex/platex.fmt" 1654695960 2752473 a87635cf5b6b418bd1e92422ebb7f329 ""
+  "intro.aux" 1654741554 3286 a567d0bf0291950844e0a0c16f3b22de "latex"
+  "intro.out" 1654741554 1117 36f66d99cd5a4bdd9128dd5a4f540931 "latex"
+  "intro.tex" 1654741551 112264 3b8029efaa9a9619766c39d37af1ac30 ""
+  "intro.toc" 1654741554 1282 3cdbe4549d1aa5c1b660a0d1aca3bb26 "latex"
   (generated)
   "intro.aux"
   "intro.dvi"
