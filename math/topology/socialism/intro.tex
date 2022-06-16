@@ -1086,11 +1086,94 @@ $x \in \cl{A}$を任意に取り,  $f(x) \in \cl{A}$であることを示す:
 以上より位相空間の基本常識が終わります. ここまでやって来た諸君は厳密な中国特色社会主義的数学を学ぶことの第一歩を踏み出せました. ここまで耐えて来た皆様の国に対する愛はきっと我々の偉大なる指導者のもとに届くはずだろう. 西洋から舶来した数学の社会主義的改造初期段階は終わりました, 次の章では位相空間の構造にまつわる細かい性質を調べて行きます.
 
 \section{位相構造}
-今までの学習において，指導階級，対立階級，指導者の近傍，集団の内部，集団の閉包を考察して来ました．これらは社会において同等な概念であることがこれから述べたい重要な事実です．社会を多様な側面を持ち，これらのどの側面から見ても同じ社会では同じ結論が得られます．これからそれらが同じ社会構造を生成することについて学びましょう.
+今までの学習において，指導階級，対立階級，指導者の近傍，集団の内部，集団の閉包を考察して来ました．私達は社会学的議論をする際に常に指導階級を見ているわけではありません．対立階級，指導者の近傍を使って議論することも多いという事実を認識しておいてください．世界の他のところにいる社会学者は私達の研究手法と異なるかもしれません．ただし，上記の概念を使っているならば，同じ社会学を研究していることが違いません．なぜかというとこれらの概念は社会において同等であること．社会を多様な側面を持ち，これらのどの側面から見ても同じ社会では同じ結論が得られます．これからそれらが同じ社会構造を生成することについて学びましょう.
+
+\begin{definition}
+	集合$X$に対し，次のような3つの性質を満たす部分集合族$\mathcal{O}$を$X$ の開集合族と呼ぶ．
+	\begin{enumerate}
+		\item $\emptyset , X \in \mathcal{O}$ 
+	\item $\forall O_1, O_2 \in  \mathcal{O} ;O_1 \cap O_2 \in \mathcal{O}$ 
+		\item $\forall \mathcal{O}' \in \mathcal{P}(\mathcal{O}); \bigcup \mathcal{O}' \in \mathcal{O} $
+	\end{enumerate}
+\end{definition}
+
+\begin{definition}
+	集合$X$に対し，次のような3つの性質を満たす部分集合族$\mathcal{C}$を$X$ の開集合族と呼ぶ．
+	\begin{enumerate}
+		\item $\emptyset ,X \in \mathcal{C}$ 
+		\item $\forall C_1 , C_2 \in  \mathcal{C}; C_1 \cup C_2 \in \mathcal{C}$ 
+		\item $\forall \mathcal{C}' \in \mathcal{P}(\mathcal{C}); \bigcap \mathcal{C}' \in \mathcal{C} $
+
+	\end{enumerate}
+\end{definition}
+
+\begin{definition}
+	集合$X$に対し，写像 $i: \mathcal{P}(X) \to \mathcal{P}(X)$が以下の4つの性質を満たす時， $X$の開核作用素と呼ぶ．
+	 \begin{enumerate}
+		\item $X^{i}=X$
+		\item $\forall M \in \mathcal{P}(X); M^{i}\subseteq M$
+		\item $\forall M ,N \in \mathcal{P}(X); \left( M \cap N \right) ^{i} = M^{i} \cap N^{i}$
+		\item $\forall M \in \mathcal{P}(X); M^{ii}= M^{i}$
+	\end{enumerate}
+\end{definition}
+
+\begin{definition}
+	集合$X$に対し，写像 $a: \mathcal{P}(X) \to \mathcal{P}(X)$が以下の4つの性質を満たす時， $X$の閉包作用素と呼ぶ．
+	 \begin{enumerate}
+		\item $\emptyset^{a}=\emptyset$
+		\item $\forall M \in \mathcal{P}(X); M^{a}\supseteq M$
+		\item $\forall M ,N \in \mathcal{P}(X); \left( M \cup N \right) ^{a} = M^{a} \cup N^{a}$
+		\item $\forall M \in \mathcal{P}(X); M^{aa}= M^{a}$
+	\end{enumerate}
+
+\end{definition}
+
+\begin{definition}
+	集合$X$に対し, 各$x \in X$ に対し, $X$の部分集合族 $\mathcal{N}_x$ が以下の5つの性質を満たすならば，$\mathcal{N}_x$を点$x$の近傍系と呼ぶ．
+	\begin{enumerate}
+		\item $\mathcal{N}_x \neq \emptyset$
+		\item $ \forall N \in \mathcal{N}_x; x \in N$
+		\item $ \forall N \in \mathcal{N}_x; \forall N' \in P(X); \left( N \subseteq N' \implies N' \in \mathcal{N}_x \right) $ 
+		\item $\forall M, N \in \mathcal{N}_x ; M  \cap N \in \mathcal{N}_x $ 
+		\item $\forall N \in \mathcal{N}_x; \exists N' \in \mathcal{N}_xN' \subseteq N; \forall y \in N'; N \in \mathcal{N}_y$
+	\end{enumerate}
+\end{definition}
+ \newpage
+では以上の定義を持って，どれか一つが与えられた場合，それと一対一に対応する他の概念が定まることを見ていきましょう．
 
 \begin{theorem}
-	集合$X$に対し,
+集合$X$とその開集合族 $\mathcal{O}$ が与えられた場合，次のように定義される集合族$\mathcal{C}$は閉集合族の性質を満たし，更に閉集合族$\tilde{\mathcal{C}}$ を用いて定義される集合族$\tilde{\mathcal{O}}$は開集合族の性質を満たし,$\mathcal{C} = \tilde{\mathcal{C}}$ならば $\tilde{\mathcal{O}} = \mathcal{O}$ が成立する.
+	 \[
+	\mathcal{C} = \{X \setminus O \in \mathcal{P}(X) \mid O \in \mathcal{O} \} 
+	.\] 
+	\[
+		\tilde{\mathcal{O}} = \{ X \setminus C \in \mathcal{P}(X)  \mid C \in \tilde{\mathcal{C}} \} 
+	.\] 
 \end{theorem}
+
+\begin{proof}
+	De Morganの法則に従う．	
+\end{proof}
+
+\begin{theorem}
+	集合$X$とその開集合族 $\mathcal{O}$ が与えられた場合，次のように定義される写像$i: \mathcal{P}(X) \to  \mathcal{P}(X)$が開核作用素の性質を満たし，更に開核作用素の性質を満たす写像$\tilde{i}$を用いて定義される集合族 $\tilde{\mathcal{O}}$ が開集合族の性質を満たし, $i = \tilde{i}$ならば$\tilde{\mathcal{O}} = \mathcal{O}$ となる．
+	\[
+	M^{i}= i(M) = \bigcup \{O \in \mathcal{O} \mid O \subseteq M\} 
+	.\] 
+
+	\[
+		\tilde{\mathcal{O}} =\{ M \in \mathcal{P}(X) \mid M = M^{\tilde{i}}\} 
+	.\] 
+\end{theorem}
+
+\begin{proof}
+	性質１と性質２と性質４が構成より自明である．\\
+	性質３の証明: $M , N \in \mathcal{P}(X)$ を任意に取る．$\left( M \cap N \right) ^{i} \subseteq M^{i} \cap N^{i}$ を示す: 性質２より, $\left( M \cap N \right)^{i} \subseteq M^{i}, \left( M \cap N \right) ^{i} \subseteq N^{i} $ が成立する．従って, $\left( M \cap  N \right) ^{i } \subseteq M^{i} \cap  N^{i}$ 
+	が得られる. 次に$(M\cap N)^{i} \supseteq M^{i}  \cap  N ^{i}$を示す: $M^{i} , N^{i} \in \mathcal{O}$より,$ M^{i} \cap  N^{ i} \in \mathcal{O}$ また$M^{i} \cap N^{i} \subseteq M \cap N$ より, $M^{i} \cap N^{i} \subseteq \left( M \cap N \right) ^{i}$ が得られる.\\
+	$\emptyset , X \in \tilde{\mathcal{O}}$が開核作用素の性質１，２より直ちに導かれる．\\
+	$O_1, O_2 \in \tilde{\mathcal{O}}$ を任意に取る, $(O_1 \cap O_2)^{\tilde{i}} = O_1 ^{\tilde{i}} \cap O_2^{\tilde{i}} = O_1 \cap O_2$ より $O_1 \cap O_2 \in \tilde{\mathcal{O}}$ が成立する.\\
+	$\mathcal{O}' \subseteq \tilde{\mathcal{O}}$ を任意に取る. $\left(\bigcup \mathcal{O}' \right) ^{\tilde{i}} \subseteq \bigcup \mathcal{O}'  $ が性質２より導かれる. 任意の$O \in \mathcal{O}'$に対し, $O \subseteq \bigcup \mathcal{O}' $が成立するから, $O = O^{\tilde{i}} \subseteq  \left(\bigcup \mathcal{O}'\right) ^{\tilde{i}}$ が得られ，従って, $\bigcup \mathcal{O}' \subseteq \left(\bigcup \mathcal{O}' \right)^{\tilde{i}}  $,以上より, $\bigcup \mathcal{O}' = \left( \bigcup \mathcal{O}'  \right) ^{\tilde{i}}$ が得られ, $\bigcup \mathcal{O}' \in \tilde{\mathcal{O}}$が示された.
+\end{proof}
 \chapter{連結性とコンパクト性}%
 \label{cha:連結性とコンパクト性}
 
