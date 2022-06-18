@@ -1135,14 +1135,17 @@ $x \in \cl{A}$を任意に取り,  $f(x) \in \cl{A}$であることを示す:
 		\item $ \forall N \in \mathcal{N}_x; x \in N$
 		\item $ \forall N \in \mathcal{N}_x; \forall N' \in P(X); \left( N \subseteq N' \implies N' \in \mathcal{N}_x \right) $ 
 		\item $\forall M, N \in \mathcal{N}_x ; M  \cap N \in \mathcal{N}_x $ 
-		\item $\forall N \in \mathcal{N}_x; \exists N' \in \mathcal{N}_xN' \subseteq N; \forall y \in N'; N \in \mathcal{N}_y$
+		\item $\forall N \in \mathcal{N}_x; \exists N' \in \mathcal{N}_x ;N' \subseteq N; \forall y \in N'; N \in \mathcal{N}_y$
 	\end{enumerate}
 \end{definition}
  \newpage
 では以上の定義を持って，どれか一つが与えられた場合，それと一対一に対応する他の概念が定まることを見ていきましょう．
 
 \begin{theorem}
-集合$X$とその開集合族 $\mathcal{O}$ が与えられた場合，次のように定義される集合族$\mathcal{C}$は閉集合族の性質を満たし，更に閉集合族$\tilde{\mathcal{C}}$ を用いて定義される集合族$\tilde{\mathcal{O}}$は開集合族の性質を満たし,$\mathcal{C} = \tilde{\mathcal{C}}$ならば $\tilde{\mathcal{O}} = \mathcal{O}$ が成立する.
+集合$X$とその開集合族 $\mathcal{O}$ が与えられた場合，
+次のように定義される集合族$\mathcal{C}$は閉集合族の性質を満たし，
+更に閉集合族$\tilde{\mathcal{C}}$ を用いて定義される集合族$\tilde{\mathcal{O}}$は開集合族の性質を満たし,
+$\mathcal{C} = \tilde{\mathcal{C}}$ならば $\tilde{\mathcal{O}} = \mathcal{O}$  が成立する. $\tilde{\mathcal{O}} = \mathcal{O}$ ならば $\mathcal{C} = \tilde{\mathcal{C}}$ が成立する.
 	 \[
 	\mathcal{C} = \{X \setminus O \in \mathcal{P}(X) \mid O \in \mathcal{O} \} 
 	.\] 
@@ -1156,7 +1159,9 @@ $x \in \cl{A}$を任意に取り,  $f(x) \in \cl{A}$であることを示す:
 \end{proof}
 
 \begin{theorem}
-	集合$X$とその開集合族 $\mathcal{O}$ が与えられた場合，次のように定義される写像$i: \mathcal{P}(X) \to  \mathcal{P}(X)$が開核作用素の性質を満たし，更に開核作用素の性質を満たす写像$\tilde{i}$を用いて定義される集合族 $\tilde{\mathcal{O}}$ が開集合族の性質を満たし, $i = \tilde{i}$ならば$\tilde{\mathcal{O}} = \mathcal{O}$ となる．
+	集合$X$とその開集合族 $\mathcal{O}$ が与えられた場合，
+	次のように定義される写像$i: \mathcal{P}(X) \to  \mathcal{P}(X)$が開核作用素の性質を満たし，
+	更に開核作用素の性質を満たす写像$\tilde{i}$を用いて定義される集合族 $\tilde{\mathcal{O}}$ が開集合族の性質を満たす．
 	\[
 	M^{i}= i(M) = \bigcup \{O \in \mathcal{O} \mid O \subseteq M\} 
 	.\] 
@@ -1171,8 +1176,72 @@ $x \in \cl{A}$を任意に取り,  $f(x) \in \cl{A}$であることを示す:
 	性質３の証明: $M , N \in \mathcal{P}(X)$ を任意に取る．$\left( M \cap N \right) ^{i} \subseteq M^{i} \cap N^{i}$ を示す: 性質２より, $\left( M \cap N \right)^{i} \subseteq M^{i}, \left( M \cap N \right) ^{i} \subseteq N^{i} $ が成立する．従って, $\left( M \cap  N \right) ^{i } \subseteq M^{i} \cap  N^{i}$ 
 	が得られる. 次に$(M\cap N)^{i} \supseteq M^{i}  \cap  N ^{i}$を示す: $M^{i} , N^{i} \in \mathcal{O}$より,$ M^{i} \cap  N^{ i} \in \mathcal{O}$ また$M^{i} \cap N^{i} \subseteq M \cap N$ より, $M^{i} \cap N^{i} \subseteq \left( M \cap N \right) ^{i}$ が得られる.\\
 	$\emptyset , X \in \tilde{\mathcal{O}}$が開核作用素の性質１，２より直ちに導かれる．\\
-	$O_1, O_2 \in \tilde{\mathcal{O}}$ を任意に取る, $(O_1 \cap O_2)^{\tilde{i}} = O_1 ^{\tilde{i}} \cap O_2^{\tilde{i}} = O_1 \cap O_2$ より $O_1 \cap O_2 \in \tilde{\mathcal{O}}$ が成立する.\\
-	$\mathcal{O}' \subseteq \tilde{\mathcal{O}}$ を任意に取る. $\left(\bigcup \mathcal{O}' \right) ^{\tilde{i}} \subseteq \bigcup \mathcal{O}'  $ が性質２より導かれる. 任意の$O \in \mathcal{O}'$に対し, $O \subseteq \bigcup \mathcal{O}' $が成立するから, $O = O^{\tilde{i}} \subseteq  \left(\bigcup \mathcal{O}'\right) ^{\tilde{i}}$ が得られ，従って, $\bigcup \mathcal{O}' \subseteq \left(\bigcup \mathcal{O}' \right)^{\tilde{i}}  $,以上より, $\bigcup \mathcal{O}' = \left( \bigcup \mathcal{O}'  \right) ^{\tilde{i}}$ が得られ, $\bigcup \mathcal{O}' \in \tilde{\mathcal{O}}$が示された.
+	$O_1, O_2 \in \tilde{\mathcal{O}}$ を任意に取る, 性質３より
+	$(O_1 \cap O_2)^{\tilde{i}} = O_1 ^{\tilde{i}} \cap O_2^{\tilde{i}} = O_1 \cap O_2$ より $O_1 \cap O_2 \in \tilde{\mathcal{O}}$ が成立する.\\
+	$\mathcal{O}' \subseteq \tilde{\mathcal{O}}$ を任意に取る. 
+	$\left(\bigcup \mathcal{O}' \right) ^{\tilde{i}} \subseteq \bigcup \mathcal{O}'  $ が性質２より導かれる. 
+	任意の$O \in \mathcal{O}'$に対し, $O \subseteq \bigcup \mathcal{O}' $が成立するから, 
+	$O = O^{\tilde{i}} \subseteq  \left(\bigcup \mathcal{O}'\right) ^{\tilde{i}}$ が得られ，
+	従って, $\bigcup \mathcal{O}' \subseteq \left(\bigcup \mathcal{O}' \right)^{\tilde{i}}  $,
+	以上より, $\bigcup \mathcal{O}' = \left( \bigcup \mathcal{O}'  \right) ^{\tilde{i}}$ が得られ, 
+	$\bigcup \mathcal{O}' \in \tilde{\mathcal{O}}$が示された.
+\end{proof}
+
+\begin{theorem}
+	$X$の任意の開核作用素$i$と任意の開集合族$\mathcal{O}$ 
+	と$i$から定まる開集合族 $\mathcal{O}_i$ と
+	開集合族$\mathcal{O}$ から定まる開核作用素に$i_O$対し, 以下の主張が成立する:
+	\[
+	i_O = i \implies \mathcal{O} = \mathcal{O}_i
+	.\] 
+	\[
+	\mathcal{O} = \mathcal{O}_i \implies i_O = i
+	.\] 
+\end{theorem}
+
+\begin{proof}
+	$i_O = i $と仮定して， $\mathcal{O} = \mathcal{O}_i$を導く:\\
+	$O \in \mathcal{O}$ を任意に取る. $i_O$の定義より,  $O = O^{i_O}$ が成立し, 
+	仮定より $O = O ^{i}$ となり, $O \in \mathcal{O}_i$が得られる.\\
+	$O_i \in \mathcal{O}_i$ を任意に取る. $O_i = O_i^{i} = O_i^{i_O}$ が成立し, $O_i \in \mathcal{O}$ が得られる.\\
+	$\mathcal{O} = \mathcal{O}_i$ と仮定して, $i_O =i$を示す:\\
+	 $M \in \mathcal{P}(X)$を任意に取る. 
+	 $M ^{i_O} = \bigcup \{O \in \mathcal{O} \mid O\subseteq M\} $ が定義より自明である．\\
+	 以下$M^{i_O} = M^{i}$ を示す:\\
+	 $M^{i} \subseteq M$ が開核作用素の性質２からわかる.
+	 また性質４より$M^{ii}=M^{i}$ より，$M^{i} \in \mathcal{O}_i$ が成立する. 
+	 仮定の条件を使えば$M^{i} \in \mathcal{O}$ が求まり, $M^{i} \subseteq M^{i_O}$ が導かれる.\\
+	 $O \in \{O \in \mathcal{O} \mid O\subseteq M\} $ を任意に取る. 
+	 仮定に$\mathcal{O}_i$ の定義を適用すると$O^{i}= O$ がわかる.
+	 開核作用素の性質より, $O = O^{i} \subseteq M^{i}$. 従って$M^{i_O} \subseteq  M^{i}$ が示される.
+\end{proof}
+
+\begin{theorem}
+	集合$X$とその開核作用素 $i$に対し,  次のように定義される写像$a : \mathcal{P}(X) \to \mathcal{P}(X)$が閉包作用素の性質を満たす．閉包作用素の性質を満たす写像$\tilde{a}$から作られた写像 $\tilde{i}$に対し，  $ i = \tilde{i} \implies a = \tilde{a}$, $a =\tilde{a} \implies i = \tilde{i}$が成立する.
+	\[
+		M^{a}= a(M) = M^{cic}
+	.\] 
+	\[
+		M^{\tilde{i}}= \tilde{i}(M) = M^{c\tilde{a}c}
+	.\] 
+\end{theorem}
+
+\begin{proof}
+	De Morganに従う.
+\end{proof}
+
+\begin{theorem}
+	集合$X$とその開集合族 $\mathcal{O}$ に対し, 各点$x \in X$に対し，次のように定める 集合族$\mathcal{N}_x$が近傍系の性質を満たす． 更に，近傍系が$\mathcal{\tilde{N}}_x$ から定まる集合族$\tilde{\mathcal{O}}$ が開集合族の性質を満たす.
+	\[
+	 \mathcal{N}_x =\{ V \in \mathcal{P}(X)  \mid  x \in V^{i}\} 
+	.\] 
+	\[
+		\tilde{\mathcal{O}}= \{ O \in \mathcal{P}(X)  \mid \forall x \in O; O \in \mathcal{\tilde{N}}_x\} 
+	.\] 
+\end{theorem}
+
+\begin{proof}
+	
 \end{proof}
 \chapter{連結性とコンパクト性}%
 \label{cha:連結性とコンパクト性}
