@@ -687,6 +687,7 @@ $\mathbb{R} = \mathbb{R} \setminus \left( U \cap V \right) =\left( \mathbb{R} \s
 矛盾であることがすぐにわかるだろう.
 
 \begin{theorem}
+	\label{thm: limit point}
 	$T_1$公理を満たす位相空間 $X$ の部分集合$A$ と任意の$x \in X$に対し, 以下の2つの命題が同値である: 
 	\begin{enumerate}
 		\item $x$が集合 $A$ の集積点である.
@@ -1934,6 +1935,7 @@ $(X, \mathcal{T}_X)$の部分位相空間$Y$の分割が存在する
 \begin{theorem}
 	コンパクトな距離空間$\left( X,d \right) $ の任意の開被覆$\mathcal{A}$ に対し, 
 	ある正の実数$\delta$が存在し, $X$の任意の部分集合$U$ に対し, $\mathrm{diam}U < \delta$ならば, 開被覆のある要素$A$が存在し, $U \subseteq A$を満たす.
+	このような正の実数$\delta$を Lebesgue numberと呼ぶ.
 \end{theorem}
 
 \begin{proof}
@@ -2004,7 +2006,54 @@ $f(a),f(b) \in B_{d_Y}(x, \frac{\varepsilon}{2})$ が成立する.
 	 逆が成立しない例として，順序位相での最小不可算集合は最大値を持たないからコンパクト性を満たさず，無限部分集合$A$を取り出した時，更に可算無限の部分集合$B \subseteq A$を取り出す. 最小不可算性より, $B$がある閉区間に含まれて，最小上界性を持つ閉区間が順序位相ではコンパクトであるから，上記の証明より集積点を持つ. したがって集積点コンパクト性を満たす．
 \end{proof}
 
+\begin{definition}
+	 写像$f: \mathbb{N} \to X$を$X$上の点列と呼ぶ. 
+	 通常$(f_n)_{n \in \mathbb{N}}$ と表す．
+	 $\mathbb{N}$上に定義される狭義単調増加写像$g: \mathbb{N} \to  \mathbb{N}$に対し, 
+	 \[
+	 h(x) = f(g(x))
+	 .\] 
+	 の形で定義される写像$h: \mathbb{N} \to \mathbb{N}$が点列$f$の部分列と呼ぶ．
+\end{definition}
 
+\begin{definition}
+	位相空間$\left( X , \mathcal{T}_{X} \right)$が点列コンパクト\textbf{(sequentially compact)}
+	であるとは任意の点列に対し，収束部分列が存在する.
+\end{definition}
+
+\begin{theorem}
+	距離空間$\left( X ,d \right)$ において以下３つの命題が互いに同値である.
+	\begin{enumerate}
+		\item $X$がコンパクトである．
+		\item  $X$が集積点コンパクトである.
+		\item $X$が点列コンパクトである.
+	\end{enumerate}
+\end{theorem}
+
+\begin{proof}
+	$(1) \implies (2)$ はすでに示されたので，ここで$(2) \implies (3) , (3) \implies (2)$を示す:\\
+	$(2) \implies (3)$の証明:\\
+	点列$(x_n)_{n \in \mathbb{N}}$ を任意に取る. $A = \{x_n  \mid n \in N\} $ とする.
+	 $A$が有限集合ならば， 点列がある自然数以降で定数列となるから収束である．
+	  $A$が無限集合の時.  集積点コンパクト性より$A$の集積点$a \in X$が存在する.
+	  距離空間がHausdorff空間であることから(check せよ)
+	  Theorem $\ref{thm: limit point}$より， 任意の $n \in \mathbb{N}$に対し,
+	  \[
+	 C_n =  B_d(a, \frac{1}{2^{n}}) \cap A
+	  .\] 
+	  が無限集合である. 選択公理より,  $x_{n(k)} \in C_k$を満たす, 狭義単調増加の$n(k)$の列が取れる.
+	  これより構成される$(x_{n(k)})_{k \in N}$ が収束する部分列である. (check せよ)\\
+	  $(3) \implies (1) $ の証明: この証明はかなり複雑であり，まず流れをのべておくと:
+	  点列コンパクト性から任意の開被覆に対し，Lebesgue numberが存在する．更に任意の$\varepsilon \in \mathbb{R}_{>0}$ に対し, 有限個の半径$\varepsilon$の開球で $X$を覆うことができる．この事実を用いて距離空間のコンパクト性が得られる.\\
+	step1: ある$X$の開被覆 $\mathcal{A}$ に対し，
+	Lebesgue number が存在しないと仮定する. 
+	任意の$n \in \mathbb{N}$に対し, 
+	$\rm{diam}C_n<\frac{1}{2^{n}}$ で,
+	$\mathcal{A}$ の任意の元に含まれないような集合$C_n$が存在する.  
+	選択公理よりこのような集合列 $(C_n)_{n \in \mathbb{N}}$ が取れる．
+	更に, 選択公理より先程の集合列から一点ずつ取り出してできる数列$(x_n)_{n \in \mathbb{N}}$ が構成される.
+	点列コンパクト性より, 収束部分列のが取れて
+\end{proof}
 
 
 
