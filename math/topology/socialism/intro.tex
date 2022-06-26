@@ -2084,7 +2084,72 @@ $f(a),f(b) \in B_{d_Y}(x, \frac{\varepsilon}{2})$ が成立する.
 	位相空間$\left( X , \mathcal{T}_{X} \right)$ が点$x$において局所コンパクト\textbf{(locally compact at x)}であるとは$x$ のある開近傍を含むようなコンパクトな位相空間$C$が存在する.  $X$のすべての点において局所コンパクトであることを位相空間 $\left( X , \mathcal{T}_{X} \right)$ が局所コンパクト\textbf{(locally compact)}であるという.
 \end{definition}
 
+\begin{theorem}
+	位相空間$\left( X , \mathcal{T}_{X} \right)$ に対し，$X$が局所コンパクトなHausdorff空間であることと以下の3つの性質を満たす位相空間 $Y$が存在することと同値である:
+	 \begin{enumerate}
+		\item $X$が $Y$の部分位相空間である．
+		\item $Y \setminus X$が一点集合である．
+		\item $Y$がコンパクトなHausdorff空間である．
+	\end{enumerate}
+	上記の性質を同時に満たす$Y,Y'$が存在するならば,  $X$において恒等写像となるような $Y,Y'$間の同相写像が存在する.
+\end{theorem}
 
+\begin{proof}
+	Step1: まず一意性を示す: $Y,Y'$を上記の性質を満たす位相空間とする. 
+	写像$h: Y \to Y'$を$X$において恒等写像で， 
+	一点集合$Y\setminus X = \{p\} $ の$h$での像が
+	$Y' \setminus X = \{q\} $となるような写像とする.
+	この写像が全単射であることが明らかである. 
+	また$h^{-1}$が連続写像であることさえ言えれば,
+	対称性より$h$が同相写像であることがわかる. 
+	$Y$での開集合 $U$を任意に取り，$h\left( U \right) $ が$Y'$ での開集合であることを示す:\\
+	$ p \not\in U$の場合, $h(U) =U$, $U$が $Y$の開集合であるから,  
+	$U$が $X$での開集合であることが明らか, 
+	また $Y ' \setminus X$が一点集合で$Y '$ がHausdorff空間であるから, 有限濃度を持つ集合がすべて閉集合であり,
+	$X$が $Y'$での開集合となる. 従って, $h\left( U \right) $が$Y'$で開集合となる.\\
+	$p \in U$の場合，$C = Y \setminus U$が$Y$の閉集合で, 
+	従って, $C$が$Y$のコンパクトな部分集合である.
+	$C \subseteq X$から$C$が $X$でのコンパクトな部分空間でもある. 
+	$X$が $Y'$の部分位相空間であるから,  $C $が $Y'$ のコンパクトな部分位相空間であることは自明である.
+	$Y'$がHausdorff空間より,  $C$が閉集合で , $ h\left( U \right)  = Y \setminus C$で, $h\left( U \right) $ が開集合となる.\\
+	Step2: これから局所コンパクトなHausdorff空間から上記3条件を満たすコンパクトな位相空間$Y$を構成する:\\
+	 便宜上，$Y = X \cup \{ \infty \} $ と定める. Step1の証明において,  $\left( Y , \mathcal{T}_{Y} \right)$ は$X$の開集合全体, $C$がコンパクト集合となるような $Y \setminus C$ 全体を開集合として含む. 
+	 $$
+		 A = \{U \in \mathcal{P}(Y)  \mid  U \in \mathcal{T}_X \} 
+		 $$
+		 $$
+		 B= \{Y \setminus C  \mid \text{$C$が$X$ においてコンパクトである.}\}  
+		 $$
+
+	 以下，$\mathcal{T}_Y = A \cup B$が位相の公理を満たすことを確認する:\\
+	 空集合が$A$に属し,  $Y$が $B$に属するから一番目の性質が自明である.\\
+	 共通部分に関して,
+	 \begin{align*}
+		& U_1 \cap U_2 \in A & U_1 , U_2 \in A \\
+		& \left( Y \setminus U_1 \right) \cap \left( Y \setminus U_2 \right) = Y \setminus \left(U_1 \cup U_2  \right) \in B &Y\setminus U_1,Y\setminus U_2 \in B \\
+		&U_1 \cap  \left( Y \setminus C_1 \right) = U_1  \cap \left( X \setminus C_1 \right) \in A & U_1 \in A , Y\setminus C_1 \in B 
+	 \end{align*}
+	 次に和集合に関して閉じていることを示す:
+	 \begin{align*}
+		& \bigcup U _{\alpha} = U \in A \\
+		& \bigcup \left( Y \setminus C _{\beta} \right)  = Y \setminus \left( \bigcap C_{\beta}  \right) = Y \setminus C \in B  \\
+		& \left( \bigcup U_{\alpha}  \right) \cup \left( \bigcup \left( Y \setminus C_{\beta} \right)   \right)  = U \cup (Y \setminus C) = Y \setminus \left( C \setminus U \right) \in B  
+	 \end{align*}
+	次に$X$が $Y$の部分位相空間であることを示す:  $U \in \mathcal{T}_Y$を任意に取る.
+	$U \in  A$ならば, $U \cap X = U \in \mathcal{T}_X $. $U = Y \setminus C \in B$ならば, $\left( Y\setminus C \right) \cap X = X \setminus C $で$C$が閉集合より,  $U \cap X$が$X$での開集合である. \\
+	続いて$Y$がコンパクトであることを示す:
+	$Y$の任意の開被覆 $\mathcal{A}$ が$B$の元を含む． 
+	$Y \setminus C \in \mathcal{A} \cap B$を一つ取り,  
+	$D =\{ A \cap X \in \mathcal{A}  \mid A \neq Y \setminus C\} $ とすると, 
+	$D$がコンパクト集合 $C$ の開被覆となり, 
+	$\mathcal{A}$ から有限個の要素を用いて, $C$の開被覆となる.  
+	$Y \setminus C$を加えると, $Y$全体の有限開被覆をなす.\\
+	これから$Y$のHausdorff性を確認する.  $x, y \in Y$を任意に取る, $x, y \in X$の時, $X$のHausdorff性に従う.  $x \in X , y = \infty$の場合のみを議論すれば良い. この時, $X$の局所コンパクト性より,  $x$のある開近傍 $U$を含むコンパクト集合 $C$が存在する.  $U , Y \setminus C$が$x,y$を分離させる互いに交わらない開集合となる.\\
+	Step3: 上記3条件を満たす$Y$が存在する時,  $X$が局所コンパクトなHausdorff空間であることを示す:\\
+	Hausdorff性は$X$が $Y$の部分位相空間 であることに従う. $x \in X$を任意に取ると, $\infty ,x$を分離させる互いに交わらない$U \in \mathcal{U}_x, V \in \mathcal{U}_{\infty}$ が存在する. $Y \setminus V$が閉集合で, コンパクトである. 従って, 局所コンパクト性を示せた.
+	
+
+\end{proof}
 
 
 
