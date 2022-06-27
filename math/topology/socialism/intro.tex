@@ -1391,7 +1391,7 @@ $(X, \mathcal{T}_X)$の部分位相空間$Y$の分割が存在する
 	$a \in X$を1つ取って固定する.\\
 	 $J$の有限部分集合 $K$を任意に取って固定する.  $X_{K}$ を次のような点$x$の集合とする:  
 	 $$ 
-	 \forall \alpha \in J; \alpha \notin K \implies x_{\alpha} = a_{\alpha}
+	 \forall \alpha \in J;  \left( \alpha \notin K \implies x_{\alpha} = a_{\alpha} \right)
 	 $$ 
 	 $X_{K}$ が有限積位相空間と同相である. 従って, これが連結である.\\
 	 $J$の有限部分集合全体 $\mathcal{F}$ として, 
@@ -1643,6 +1643,12 @@ $(X, \mathcal{T}_X)$の部分位相空間$Y$の分割が存在する
 	$X \setminus Y$ が開集合であり, 
 	つまり, $Y$が閉集合であることを得られた.
 \end{proof}
+
+この証明では次のようなLemmaも示された.
+\begin{lemma}
+	\label{lem:compact-separate}
+	$Y$がHausdorff空間 $X$のコンパクトな部分位相空間である.  $x_0 \not\in Y$ならば, $x_0 \in U, Y \subseteq W$を満たす互いに交わらない開集合$U,W$が存在する.
+\end{lemma}
 
 \begin{theorem}
 	コンパクト空間の連続写像での像もコンパクト空間である.
@@ -2150,6 +2156,43 @@ $f(a),f(b) \in B_{d_Y}(x, \frac{\varepsilon}{2})$ が成立する.
 	
 
 \end{proof}
+
+\begin{definition}
+	コンパクトなHausdorff空間$Y$の真の部分集合 $X$の閉包は $Y$に一致するならば, 
+	$Y$を 位相空間$X$のコンパクト化 \textbf{(compactification)}といい, 
+	$Y \setminus X$が一点集合の場合,
+	$Y$を $X$の一点コンパクト化\textbf{(one-point compactification)}という.
+\end{definition}
+
+
+
+\begin{theorem}
+	$\left( X , \mathcal{T}_{X} \right)$ をHausdorff空間とする. 
+	$X$が局所コンパクトであることと任意の点 $x \in X$と$U \in \mathcal{U}_x$に対し，
+	$\overline{V} \subseteq U$ を満たすコンパクトな$\overline{V} \in  \mathcal{N}_x$が成立することと同値である.
+\end{theorem}
+
+\begin{proof}
+	構成から局所コンパクト性が成立するのが明らかであるので，その逆を示す:\\
+	$x \in X$と$U \in \mathcal{U}_x$を任意に取り, $X$の一点コンパクト化 $Y$を取り, 
+	$C = Y \setminus U$が$Y$のコンパクトな閉集合となる. 
+	Lemma\ref{lem:compact-separate}より,
+	$x \in V, C \subseteq W $となる互いに交わらない開集合$V ,W$が存在する. 
+	$V \subseteq U$, $\cl{V}$が $Y$でのコンパクト集合で, 
+	$V \subseteq Y \setminus W$より, 
+	$\cl{V} \subseteq Y \setminus W$,
+	従って$C \subseteq Y \setminus V$が成立する． 
+	すなわち, $\cl{V} \subseteq U$が成立する.
+\end{proof}
+
+\begin{corollary}
+	$X$をHausdorffな局所コンパクト空間とする．任意の $A \subseteq X$に対し, $A$が開集合または閉集合である時, 部分位相空間$A$が局所コンパクトである.
+\end{corollary}
+
+\begin{corollary}
+	$X$があるコンパクトなHausdorff空間の部分空間と同相であることと,  $X$が局所コンパクトなHausdorff空間であることと同値である.
+\end{corollary}
+
 
 
 
