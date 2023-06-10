@@ -1,0 +1,202 @@
+\documentclass{jarticle}
+\usepackage{xcolor}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\begin{document}
+\title{第5回演習課題}
+\author{習近平}
+\maketitle
+
+\section*{問題5.1}
+\noindent
+(1)
+\begin{proof}
+$\lim\limits_{n \to \infty} \frac{a_{n+1}}{a_n}=l<1$を仮定して，$\sum\limits_{n=1}^{\infty}a_n$が収束することを導く:\\
+$s=(l+1)/2, \varepsilon =s-l$とする．\\
+この時，仮定より$\exists N \in \mathbb{N}; \forall n \in \mathbb{N} ; \left( n \ge N \rightarrow \left|\frac{a_{n+1}}{a_n} -l \right| < \varepsilon \right) $\\
+$\forall n \in \mathbb{N} ; a_n >0$が成り立つため，以下の式が成り立つ:\\
+\begin{equation}
+\begin{aligned}
+\frac{a_{n+1}}{a_n} &< \varepsilon +l \\
+a_{n+1} &<(\varepsilon +l) a_n < sa_n
+\end{aligned}
+\end{equation}
+次に数列$(b_n)_{n \in \mathbb{N} \setminus \{0\}}$を以下のように定める:\\
+\begin{equation}
+b_n := 
+		\left\{ 
+		\begin{aligned}
+		&s^{n-N} a_N & n \ge N\\
+		&max\{a_k|1 \le k \le N \} & n<N 
+		\end{aligned} \right.
+\end{equation}
+この時，任意の$n \in \mathbb{N} \setminus \{0\}$に対し，\\
+\begin{equation}
+\begin{aligned}
+\sum\limits_{k=1}^{n} b_k &=& \frac{1-s^{n-N}}{1-s} a_N + N \cdot max\{a_k|1 \le k \le N \} \\
+			   &<& \frac{1}{1-s} a_N + N \cdot max\{a_k|1 \le k \le N \}
+\end{aligned}
+\end{equation}			   
+が得られ，級数$\sum\limits_{n=1}^{\infty} b_n$が収束することがわかる，$\forall n \in  \mathbb{N} \setminus \{0\} ; a_n < b_n$という明らかな事実を用いて，
+比較判定法より，級数$\sum\limits_{n=1}^{\infty} a_n$が収束することが示される．
+\end{proof}
+\newpage
+\noindent
+(2)\footnote{全く同じような議論する時はコードのコピペをすればうまく行く，楽勝w}
+\begin{proof}
+$\lim\limits_{n \to \infty} \frac{a_{n+1}}{a_n}=l>1$を仮定して，$\sum\limits_{n=1}^{\infty}a_n$が発散するすることを導く:\\
+$s=(l+1)/2, \varepsilon =l-s$とする．\\
+この時，仮定より$\exists N \in \mathbb{N}; \forall n \in \mathbb{N} ; \left( n \ge N \rightarrow \left|\frac{a_{n+1}}{a_n} -l \right| < \varepsilon \right) $\\
+$\forall n \in \mathbb{N} ; a_n >0$が成り立つため，以下の式が成り立つ:\\
+\begin{equation}
+\begin{aligned}
+\frac{a_{n+1}}{a_n} &> l - \varepsilon \\
+a_{n+1} &>(l - \varepsilon) a_n > sa_n
+\end{aligned}
+\end{equation}
+次に数列$(b_n)_{n \in \mathbb{N} \setminus \{0\}}$を以下のように定める:\\
+\begin{equation}
+b_n := 
+		\left\{ 
+		\begin{aligned}
+		&s^{n-N} a_N & n \ge N\\
+		&min\{a_k|1 \le k \le N \} & n<N 
+		\end{aligned} \right.
+\end{equation}
+この時，$\alpha \in \mathbb{R}$を任意に取る:
+任意の$n>N$を満たすような$n \in \mathbb{N} \setminus \{0\}$に対し，\\
+\begin{equation}
+\begin{aligned}
+\sum\limits_{k=1}^{n} b_k &=& \frac{1-s^{n-N}}{1-s} a_N + N \cdot min\{a_k|1 \le k \le N \} \\
+			   &>& \frac{s(n-N)}{s-1} a_N + N \cdot max\{a_k|1 \le k \le N \}
+\end{aligned}
+\end{equation}
+アルキメデス性よりある$N' \in \mathbb{N}$が存在し，$n>N'$を満たす任意の$n \in \mathbb{N}$に対し$\sum\limits_{k=1}^{n} b_k > \alpha$となる．\\			   
+級数$\sum\limits_{n=1}^{\infty} b_n$が発散することがわかる，$\forall n \in  \mathbb{N} \setminus \{0\} ; a_n > b_n$という明らかな事実を用いて，
+比較判定法より，級数$\sum\limits_{n=1}^{\infty} a_n$も発散することが示された．
+\end{proof}
+\newpage
+\section*{問題5.2}
+\noindent
+上の問題5.1の結論を用いて証明をごまかしていく:\\
+(1)収束する:\\
+\begin{proof}
+$a_n = \frac{n^2}{2^n}$とする,この時$\lim\limits_{n \to \infty} \frac{a_{n+1}}{a_n}=1/2$を以下示す:\\
+$\varepsilon \in \mathbb{R}_{>0} $を任意に取る，この時，アルキメデス性より，$2/(N'-1) < \varepsilon$を満たす$N' \in \mathbb{N}$が存在する，これを一つ取る．\\
+このもとで，$N := max{2,N'}$と定め，$n \ge N $を満たす任意の$n \in \mathbb{N}$に対し，以下の式が成り立つ:\\
+\begin{equation}
+\begin{aligned}
+\left| \frac{a_{n+1}}{a_n} - \frac{1}{2} \right| = \left| \frac{1}{2} \left( 1+\frac{1}{n} \right)^2 - \frac{1}{2} \right| < \frac{2}{n} < \varepsilon
+\end{aligned}
+\end{equation}
+従って，$\lim\limits_{n \to \infty} \frac{a_{n+1}}{a_n}=1/2$が示され，問題5.1より，$\sum\limits_{n=1}^{\infty} \frac{n^2}{2^n} $が収束することが示された．
+\end{proof}
+(2)発散する:\\
+\begin{proof}
+	$a_n = \frac{(2n)!}{(n!)^2}$と定め，$\lim\limits_{n \to \infty} \frac{a_{n+1}}{a_n}=4$であることを以下示す:\\
+	$\varepsilon \in \mathbb{R}_{>0}$を任意に取る．アルキメデス性より$\frac{2}{N'} < \varepsilon$を満たす$N' \in \mathbb{N}$が存在する．\\
+	$N= max \{2,N'+1\} $と定め，$n \ge N$を満たす任意の$n \in \mathbb{N}$に対し，以下の式が成り立つ:\\
+	\begin{equation}
+		\begin{aligned}
+			&	\left|	\frac{a_{n+1}}{a_n}-4 \right|& = & \left| \frac{(2n+1)! (n!)^2}{(2n)!((n+1)!)^2} -4 \right| \\
+			&				     & = & \frac{2}{n+1}< \frac{2}{N} <\varepsilon
+		\end{aligned}
+	\end{equation}
+	従って，$\lim\limits_{n \to \infty} \frac{a_{n+1}}{a_n}=4>1$が示され，問題5.1より，級数$\sum\limits_{n=1}^{\infty} \frac{(2n)!}{(n!)^2}$が発散することが示された．
+\end{proof}
+(3)収束する:\\
+\begin{proof}
+	$a_n=\frac{2^n}{n^n}$と定め，$\lim\limits_{n \to \infty} \frac{a_{n+1}}{a_n}=0$であることを以下示す:\\
+	まず，講義中に扱っていない$\lim\limits_{n \to \infty} (1+\frac{1}{n})^n = e \in \mathbb{R}_{>0}$であることを証明せずに使わせていただく．\footnote{正直これは示せるが，コードを打つのがしんどいし，早く講義中に指数対数を定義してよ，毎回こんな脚注を書いて，これをみるのも面倒くさいでしょう？}\\
+	$\varepsilon \in \mathbb{R}_{>0}$を任意に取る，この時，先ほど宣言したことと，収束数列の四則演算に関する性質より，ある自然数$N'$が存在し，$n' \ge N'$を満たす任意の自然数$n'$に対し，次のようなことがわかる:\\
+	$$
+	\left|  \frac{n'^{n'}}{(n'+1)^{n'}} - \frac{1}{e} \right| < \varepsilon
+	$$
+	また実数のアルキメデス性より，ある自然数$N''$が存在し，$\frac{2(\frac{1}{e}+ \varepsilon)}{N''+1}< \varepsilon$を満たす．\\
+	この時$N= max\{ N', N'' \}$とする，$n \ge N$を満たす任意の自然数$n$に対し，\\
+	\begin{equation}
+		\begin{aligned}
+			&\left| \frac{a_{n+1}}{a_n} -0 \right| &=& \frac{2^{n+1}n^n}{(n+1)^{n+1} 2^n} =  \frac{2 \cdot n^n}{(n+1)^{n}(n+1)}\\
+			&				      &\le& \frac{2(\frac{1}{e} +\varepsilon)}{n+1} <\varepsilon&
+		\end{aligned}
+	\end{equation}
+	以上の議論に踏まえ，問題5.1の結論を施すと級数$\sum\limits_{n=1}^{\infty} \frac{2^n}{n^n}$が収束することが示された．
+\end{proof}
+\section*{問題5.6}
+まず収束に関する部分を以下示す:
+\begin{proof}
+	$\gamma = (\alpha +1)/2$として，$\varepsilon = \alpha - \gamma$とする．この時$\lim\limits_{n \to \infty} n \left( \frac{a_n}{a_{n+1}} -1 \right) = \alpha$であるため．\\
+	ある$N \in \mathbb{N}$が存在し，$ n \ge N$を満たす任意の$ n \in \mathbb{N}$に対し，次のような関係が成り立つ:\\
+			$$
+			\left| n \left(\frac{a_n}{a_{n+1}}-1 \right) - \alpha \right|  <  \varepsilon 
+			$$
+
+			$$
+			n \left(\frac{a_n}{a_{n+1}}-1 \right)  >  \gamma
+			$$
+
+			$$
+			na_n-na_{n+1} > \gamma a_{n+1} 
+			$$
+			ここで，左辺を階差数列の形に直すことを目的にして，変形を施すと次にようになる:\\
+			$$
+			na_n - (n+1)a_{n+1}  >  ( \gamma -1 ) a_{n+1}
+			$$
+			この式に対し，$k=N$から$k=n$まで動かして両辺足していくと次のようになる:\\
+			$$
+			(\gamma -1) \sum_{k=N}^{n}a_{k+1} <Na_N - (n+1)a_{n+1}<Na_N
+			$$
+			変形して有限項を足せば以下の式になる:\\
+			$$
+			\sum_{k=1}^{n}a_k < \frac{Na_N}{\gamma -1} + \sum_{k=1}^{N-1}a_k
+			$$
+	
+	以上より正項級数$\sum\limits_{n=1}^{\infty}a_n$が上に有界であることがわかり，その収束性が示された．\\
+\end{proof}
+次に発散に関する部分を示す:
+\begin{proof}
+第三回レポート問題で積分法を用いて調和級数を評価したため，本回答では調和級数が発散することを証明せずに用いるとする:
+	$\delta = (\alpha +1)/2$として，$\varepsilon = \delta - \alpha$とする．この時$\lim\limits_{n \to \infty} n \left( \frac{a_n}{a_{n+1}} -1 \right) = \alpha$であるため．\\
+        ある$N \in \mathbb{N}$が存在し，$ n \ge N$を満たす任意の$ n \in \mathbb{N}$に対し，次のような関係が成り立つ:\\
+			$$
+			\left| n \left(\frac{a_n}{a_{n+1}}-1 \right) - \alpha \right|  <  \varepsilon 
+			$$
+			$$
+			n \left(\frac{a_n}{a_{n+1}}-1 \right) <  \delta 
+			$$
+			$$
+			na_n - n a_{n+1}  <  \delta a_{n+1} 
+			$$
+			$$
+			na_n<(n+\delta)a_{n+1}<(n+1)a_{n+1}
+			$$
+			ここで数列$(na_n)$が$n \ge N$の時狭義単調増加で$n \ge N$を満たす時の下限$I$を取る, $I > 0$が正項級数であることより明らか
+			$$
+			a_n > \frac{I}{n}
+			$$
+			$$
+			\sum_{k=N}^{n} a_k > I \sum_{k=N}^{n}\frac{1}{k}
+			$$
+			$$
+			\sum_{n=1}^{\infty} a_n > \sum_{n=1}^{N-1}a_n + I \sum_{n=N}^{\infty} \frac{1}{n}
+			$$
+	右辺が調和級数であるため，発散する，比較判定法より正項級数$\sum\limits_{n=1}^{\infty}a_n$が発散することが示された．
+\end{proof}
+ダランベールの判定法より判定できず，ラーベの判定法がうまく行くのが講義中に扱っていた$\sum_{n=1}^{\infty} \frac{1}{n^2}$である．$a_n = \frac{1}{n^2}$と置いたところ，
+$\lim_{n \to \infty}\frac{a_{n+1}}{a_{n}}=1; \lim_{n \to \infty}n \left(\frac{a_n}{a_{n+1}}-1 \right) =2>1$，実際に収束することが講義中で説明されたためここで割愛する．
+\\
+\section*{\# 雑談}
+はい，ではこれから例の雑談に入ろう．今回の問題5.2(3)で重要な極限自然対数の底の逆数が出たのではないか？あとラーベの判定法で調和級数が出てきて，この判定法は微分法と何かの関連性でも持っているの？
+
+
+
+
+
+
+
+
+
+
+\end{document} 

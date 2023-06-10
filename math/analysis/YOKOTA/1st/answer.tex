@@ -1,0 +1,110 @@
+\documentclass{jarticle}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{xcolor}
+\usepackage{bm}
+\usepackage{mathtools}
+
+\begin{document}
+\title{適当な課題の解答解説}
+\author{習近平}
+\date{$\forall \varepsilon \in \mathbb{R}_{>0} ; deadline - \varepsilon < \text{提出時刻} <deadline$}
+\maketitle
+\noindent
+\fbox{1}\\
+先に結論を言う:函数$f : \mathbb{R}^2 \mapsto \mathbb{R}$が原点において連続，偏微分可能，全微分可能である．\\
+ここでこの函数の全微分可能性だけ示して，全微分可能性に第三回講義ノートの
+$Thm(1),(2)$を適用すれば，残りの主張が正しいことが直ちに分かる．
+\begin{proof}
+$\bm{h} =(h,k) \in \mathbb{R}^2 , \bm{m} = (0,0) \in \mathbb{R}^2$とする.\\
+$ \varepsilon \in \mathbb{R}_{>0} $を任意に取る．この時$ \delta = \frac{2 \varepsilon }{ \pi }$とする．\\
+$ \mid \mid \bm{h} \mid \mid < \delta $を満たす任意の$ \bm{h} \in \mathbb{R}^2$に対し，\\
+$$
+\begin{aligned}
+\left| \cfrac{f(\bm{h}+\bm{0})-f(\bm{0}) - < \bm{m} \cdot \bm{h}>}{ \mid \mid \bm{h} \mid \mid } \right| & = \left| \cfrac{f(\bm{h})}{\mid \mid \bm{h} \mid \mid} \right|  \le  \cfrac{\cfrac{\pi}{2} \mid h^2 \mid }{\mid \mid \bm{h} \mid \mid } \\								       
+& \le  \frac{\pi}{2}\mid \mid \bm{h} \mid \mid	 <  \varepsilon
+\end{aligned}
+$$
+よって，原点における全微分可能性が示された．第三回講義ノートの$Thm(1),(2)$より，原点における連続性と偏微分可能性も示された．
+\end{proof}
+次に，2つの二階偏導関数を求める:\\
+$$
+\left. \frac{\partial f}{\partial x \partial y}\right|_{(x,y)=(0,0)}=1
+$$
+$$
+\left. \frac{\partial f}{\partial y \partial x}\right|_{(x,y)=(0,0)}=0
+$$
+以上の式は偏導関数を求める時に1階導関数を普通に微分して，二階導関数を定義に従ってやれば以上になることが明らかである．\\
+\\
+\noindent \fbox{2}
+\begin{proof}
+$\mathbb{R}^2 $上の二項関係$\sim$を次のように定める:\\
+$$
+(x,y) \sim (x',y') \Longleftrightarrow ax+by=ax'+by'
+$$
+$\sim$が$\mathbb{R}^2$上の同値関係であることが自明である，念の為一応示しておく:\\
+\begin{tabular}{|p{10cm}|}
+\hline
+反射律:\\
+$(x,y) \in \mathbb{R}^2$を任意に取る. $ax+by=ax+by$が成り立つため，$(x,y) \sim (x,y)$が成り立つ．\\
+\hline
+対称律:\\
+$(x_1,y_1) \sim (x_2,y_2)$を満たすような$(x_1,y_1),(x_2,y_2) \in \mathbb{R}^2$を任意に取る．\\
+$(x_1,y_1) \sim (x_2,y_2)$が成り立つため．\\
+$ax_1+by_1=ax_2+by_2$が得られ，$ax_2+by_2=ax_1+by_1$が成り立つ．よって，$(x_2,y_2) \sim (x_1,y_1)$\\
+\hline
+推移律:\\
+$(x_1,y_1) \sim (x_2,y_2)$かつ$(x_2,y_2) \sim (x_3,y_3)$が成り立つような$(x_1,y_1),(x_2,y_2),(x_3,y_3) \in \mathbb{R}^2$を任意に取る．\\
+この時，$ax_1+by_1=ax_2+by_2=ax_3+by_3$が成り立つため，$(x_1,y_1) \sim (x_3,y_3)$が示された．\\
+\hline
+\end{tabular}
+\\
+\noindent 以上の議論より$\sim$が$\mathbb{R}^2$上の同値関係であることが示された．\\
+$\mathbb{R}^2$を$\sim$で割った商集合を$\mathbb{R}^2 / \sim$とする．この時，次のような商写像はwell-definedであることが構成より明らかである\footnote{ここまで丁寧に同値関係であることを議論したのに，わからなかったら人生ガチャをやり直そう，まだ間に合うよw}:
+\begin{align}
+ h: \mathbb{R}^2 / \sim \mapsto \mathbb{R}\\
+ h([(x,y)]) := ax+by
+\end{align}
+しかもこの写像が全単射である\footnote{任意の$y \in \mathbb{R}$に対し，$[(0,y/b)]$を取れは全射であることが明らか，単射性は構成より明らかである}．
+次の写像$s : \mathbb{R}^2 / \sim \mapsto \mathbb{R}$がwell-definedであることを以下示す:\\
+$$
+s([(x,y)]) := f(x,y)
+$$
+$(x_1,y_1) \sim (x_2,y_2)$を満たすような$\bm{x_{1}}=(x_1,y_1),\bm{x_{2}}=(x_2,y_2) \in \mathbb{R}^2$を任意に取る．\\
+$\Delta \bm{x}= \bm{x_2}-\bm{x_1}$とする．\\ 
+$$
+b \frac{\partial f}{\partial x} \bm{x} = a \frac{\partial f}{\partial y} \bm{x}
+$$
+より，$f(\bm{x}+k(a,-b))=f(\bm{x}) \quad ;\quad \left(k \in \mathbb{R} \right)$.\\
+この時，ある実数$k$が存在し$\Delta \bm{x} = k(a,-b)$を満たすため ．$s([(x_1,y_1)]) = s([(x_2,y_2)])$が得られ，\\
+従って，写像sがwell-definedである．\\
+以上の議論より写像$(s \circ h^{-1}) : \mathbb{R} \mapsto \mathbb{R}$が問題文を満たす写像$g$である．\\
+\end{proof}
+\\
+\noindent 
+\fbox{3}
+\begin{proof}
+$C^2$級函数$f$について\\
+$$
+\frac{\partial^2 f}{\partial x^2} = \frac{\partial^2 f}{\partial x \partial y}=\frac{\partial^2 f}{\partial y^2}=0
+$$
+が成り立つため．ティラーの定理を適用すると次のようになる．\\
+\begin{equation}
+\begin{aligned}
+&\exists \theta \in (0,1);\\
+&f(\bm{x})&=&f(\bm{0})+(x\frac{\partial}{\partial x}+y\frac{\partial}{\partial y})f(\bm{0})+ \frac{1}{2}(x\frac{\partial}{\partial x}+y\frac{\partial}{\partial y})^2 f(\theta \bm{x})\\
+&&=&f(\bm{0})+(x\frac{\partial}{\partial x}+y\frac{\partial}{\partial y})f(\bm{0})\\
+&&=&f(\bm{0} ) + \frac{\partial f(\bm{0})}{\partial x}\cdot x+ \frac{\partial f(\bm{0})}{\partial y} \cdot y
+\end{aligned}
+\end{equation}
+$\frac{\partial f(\bm{0})}{\partial x}, \frac{\partial f(\bm{0})}{\partial y}$が定数であるため．
+$\frac{\partial f(\bm{0})}{\partial x}=a, \frac{\partial f(\bm{0})}{\partial y}=b,f(\bm{0})=c$とすれば，
+$f(x,y)=ax+by+c$が成り立ち，問題の主張が示された．
+\end{proof}
+
+
+
+\end{document}
+

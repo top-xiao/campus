@@ -1,0 +1,70 @@
+\documentclass{jreport}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{bm}
+\usepackage{romannum}
+\usepackage[dvipdfmx,hidelinks]{hyperref}
+\usepackage{pxjahyper}
+\usepackage{framed}
+\usepackage{pifont}
+\usepackage[dvipdfmx]{graphicx}
+\usepackage{float}
+\newenvironment{claim}[1]{\par\noindent\underline{Claim:}\space#1}{}
+\newenvironment{claimproof}[1]{\par\noindent\underline{Proof:}\space#1}{\hfill $\square$}
+\newcommand{\R}{\mathbb{R}}
+\newcommand{\Rp}{\mathbb{R}_{>0}}
+\newcommand{\N}{\mathbb{N}}
+\DeclareMathOperator{\spn}{\mathbb{Q}-span}
+\begin{document}
+\pagenumbering{arabic}
+\title{第12回演習課題解答}
+\author{習近平}
+\maketitle
+\newpage
+\tableofcontents
+\newpage
+\setcounter{chapter}{12}
+\section{問題12.1}
+\subsection{(1)}
+函数列$(f_n)$は区間$I$で$f$に一様収束し，$f$は$I$で連続とする．この時，区間$I$上の数列$(x_n)$は点$a \in I$に収束するとする．以下の論理式が成立することを示す:
+$$
+\forall \varepsilon \in \Rp; \exists N \in \N; \forall n \in \N;\left( n\ge N \implies \left|f_n(x_n)-f(a) \right| < \varepsilon \right)
+$$
+まず，$\varepsilon \in \Rp$を任意に取る，$(f_n)$は区間$I$で$f$に一様収束することより，
+$$
+\exists N' \in \N;\forall x \in I; \forall n \in \N;\left( n\ge N' \implies \left| f_n(x) - f(x) \right| <\frac{\varepsilon}{2} \right)
+$$
+が成立する．このような自然数$N'$を一つ取る．次に，$f$が区間$I$で連続することより，
+$$
+\exists \delta \in \Rp; \forall x \in I; \left( |x-a|<\delta \implies |f(x) -f(a)|<\frac{\varepsilon}{2} \right)
+$$
+も成立するから,このような$\delta \in \Rp$を一つ取る．また，数列$(x_n)$は 点$a $に収束する数列であるため，
+$$
+\exists N'' \in \N; \forall n \in \N; \left( n\ge N'' \implies |x_n - a|<\delta \right)
+$$
+が得られる．この場合，このような自然数$N''$を一つ取り，$N = \max\{ N',N''\}$と定め，自然数$n$を$n\ge N$を満たすように任意に取る，
+\begin{equation}
+\begin{aligned}
+	|f_n(x_n) -f(a)|&=|f_n(x_n) - f(x_n) +f(x_n) -f(a) |\\
+			& \le |f_n(x_n) -f(x_n)| + |f(x_n) - f(a)| \\
+			&<\frac{\varepsilon}{2} +\frac{\varepsilon}{2} =\varepsilon
+\end{aligned}
+\end{equation}
+\newpage
+\subsection{(2)}
+成り立たない．
+$$
+f_n(x)=\begin{cases}
+	x^n , x\in (0,1)\\
+	0,x=1
+	\end{cases}
+$$
+この函数列は$f(x)=0$に各点収束する，また数列$x_n=1-1/n$に対し，$\lim_{n\to \infty}x_n =1$が成り立つ．\\
+$f(1)=0$となる，しかし$f_n(x_n)=(1-1/n)^{n}$で，$\lim_{n\to\infty}f_n(x_n)=1/e$.よって，矛盾が生じた\\
+\newpage
+\section{\# 雑談}
+(2)は(1)の証明を振り返ることで簡単にわかるだろう．今週もネタ尽きでここまでにしておきます．お疲れ様でした．
+\end{document}

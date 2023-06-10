@@ -1,0 +1,213 @@
+\documentclass{jarticle}
+\usepackage{xcolor}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\begin{document}
+\title{第三回レポート問題}
+\author{習近平}
+\date{$\forall \varepsilon \in \mathbb{R}_{ > 0}, 締切-\varepsilon <提出時刻<締切$}
+\maketitle
+\section*{Q3.1}
+\subsection*{(1.1)}
+\begin{proof}
+\noindent 数列$(b_{n})_{n\in \mathbb{N}}$の有界性と単調性を以下示す:
+\\
+\noindent 有界性: \\
+\noindent $ \mathbf{A} = \left\{k \in \mathbb{N} \mid \frac{1}{2} \le b_{k} <1 \right\}$とする.\\
+$ \mathbf{A} = \mathbb{N}$ であることを以下示す: \\
+$ \frac{1}{2} \le b_{0}= \frac{1}{2} < 1 $より$0 \in \mathbf{A}$．\\
+$ \mathbf{S}_{n+1} := \left\{j \in \mathbb{N} \mid j < n+1 \right\}$とする． \\
+$ \mathbf{S}_{n+1} \subset \mathbf{A} $と仮定し， $n+1 \in \mathbf{A} $を示す．\\
+仮定より，$ \frac{1}{2} \le b_{n} < 1 $が成り立ち，漸化式に代入すると，\\
+$\frac{1}{2} \le b_{n+1}= \frac{{b_{n}}^2+1}{2}< \frac{1+1}{2} < 1$ が得られる.\\
+従って，$n+1 \in \mathbf{A} $となり，数学的帰納法より，$ \mathbf{A} = \mathbb{N}$が得られ，\\
+数列$(b_{n})_{n\in \mathbb{N}}$の有界性が示された．\\
+
+\noindent 単調性:\\
+$n \in \mathbb{N}$を任意に取る．与えられた漸化式より，\\
+$ b_{n+1}-b_{n} = \frac{1}{2} (b_{n}^{2} - 2b_{n} +1) =\frac{1}{2} (b_{n} -1)^{2} >0 $\\
+よって，数列$(b_{n})_{n\in \mathbb{N}}$が単調列であることがわかる．\\
+
+\noindent 実数の連続性より，数列$(b_{n})_{n\in \mathbb{N}}$が閉区間$[ \frac{1}{2} , 1]$の一点に収束することが示された．
+\qed
+\end{proof}
+\subsection*{(1.2)}
+\begin{proof}
+数列$(b_{n})_{n\in \mathbb{N}}$が1に収束することを以下示す:\\
+$(1)$の結論のもとで，
+$$ 
+\lim_{n \to \infty} b_{n} = \alpha , (\alpha \in [\frac{1}{2} , 1])
+$$ 
+
+とする．\\
+$$
+\lim_{n \to \infty} b_{n} = \alpha
+$$
+と収束列に関する四則演算の性質より，\\
+$$
+\lim_{n \to \infty} b_{n}^{2} = \alpha^{2}
+$$
+となる.
+また，収束列の部分列は収束列と同じ極限を持つことより，
+$$
+\lim_{n \to \infty} b_{n+1} = \alpha
+$$
+が得られる．\\
+以上のことから，\\
+$$
+ \alpha = \lim_{n \to \infty} b_{n+1} = \lim_{n \to \infty} \frac{b_{n}^{2}+1}{2} =\frac{1}{2} (\alpha^{2} +1)
+$$
+ここで，中学校で習った知識をうまく活用してやると以下のことが分かる：\\
+$$
+ \alpha =1
+$$
+従って，
+$$
+\lim_{n \to \infty }b_{n} = 1
+$$
+ であることが証明された．\qed
+ \end{proof}
+\subsection*{(2)}
+\noindent 収束しない．\\
+\begin{proof}
+$$
+\mathbf{B} = \left\{ n \in \mathbb{N} \mid b_{n} \ge n-1 \right\}
+$$
+とする．\\
+$b_0 =2 \ge -1$より，$ 0 \in \mathbf{B}$ \\
+$ \mathbf{S}_{n+1} := \left\{j \in \mathbb{N} \mid j < n+1 \right\}$とする． \\
+$ \mathbf{S}_{n+1} \subset \mathbf{B} $と仮定し， $n+1 \in \mathbf{B} $を以下示す．\\
+仮定より，$b_n \ge n-1$が成り立つ．この時，漸化式より:\\
+$$
+b_{n+1} = \frac{1}{2} ( b_n^2 +1 ) \\
+$$
+$$
+b_{n+1} -n \ge \frac{1}{2} (n^2 -2n +1) = \frac{1}{2}(n-1)^2 \ge 0
+$$
+従って，$ n+1 \in \mathbf{B} $ よって，$ \mathbf{B} = \mathbb{N}$が成り立つ．\\
+以上より，$ \forall  n \in \mathbb{N} ; b_n \ge n-1 $が成り立つ．\\
+任意の実数$ \beta \in \mathbb{R} $に対し，アルキメデス性より，$ N-1 > \beta $となるような$ N \in \mathbb{N}$が存在する．\\
+$n \ge N$を満たすような任意の$n \in \mathbb{N}$ に対し，\\
+$$
+b_n \ge b_N \ge N-1 > \beta
+$$
+が成り立つため．数列$(b_{n})_{n\in \mathbb{N}}$が無限大に発散することが示された．
+\qed
+\end{proof}
+\section*{Q3.2}\footnote{$0 \in \mathbb{N} $から$k=0$の時$a_{2k-1}$が定義されていないため，以下$a_{2k-1}$の代わりに$a_{2k+1}$を使わせていただきます．}
+\begin{proof}
+$\varepsilon \in \mathbb{R}_{>0}$を任意に取る．\\
+$$
+\lim_{k \to \infty} a_{2k} = \alpha \, より \\
+$$
+ある$k_1 \in \mathbb{N} $が存在し，$k_1^{'} \ge k_1$ を満たす任意の$k_1^{'} \in \mathbb{N}$ に対し，以下の式が成り立つ：\\
+$$
+\mid a_{2k^{'}} - \alpha \mid < \varepsilon \\
+$$
+$$
+次に \lim_{k \to \infty } a_{2k+1} = \alpha より\\
+$$
+ある$k_{2} \in \mathbb{N} $が存在し，$k_2^{'} \ge k_2$ を満たす任意の$k_2^{'} \in \mathbb{N}$ に対し，以下の式が成り立つ：\\
+$$
+\mid a_{2k_{2}^{'}+1} - \alpha \mid <\varepsilon
+$$
+数列$(a_{n})_{n\in \mathbb{N}}$が$\alpha$に収束することを以下示す:\\
+$$
+N := max\left\{ 2k_1,2k_2+1\right\} + k_1 + k_2
+$$
+$n \ge N $を満たすような$n \in \mathbb{N}$ を任意に取る．\\
+この時，$ k \ge max\left\{ k_1,k_2\right\}$を満たす$k \in \mathbb{N}$が存在し,
+$(n=2k) \lor (n =2k+1)$が成り立つ．\\
+いずれにせよ，
+$$
+\mid a_n - \alpha \mid < \varepsilon
+$$
+が成り立つため，数列$(a_{n})_{n\in \mathbb{N}}$が$\alpha$に収束することが示された．
+\qed
+\end{proof}
+\section*{Q3.7}
+\begin{proof}
+\footnote{この問題って実数が累乗のところに来ているから，対数や微積を使わない解法が僕の脳内に存在しないので，対数や微積の諸性質を宣言せずに使わせていただきます．}\\
+条件から簡単に分かること: \\
+$$
+\prod_{k=1}^{n} (1 + \frac{\alpha}{k} )>1
+$$
+$$ 
+ここで，a_n = \prod_{k=1}^{n} (1 + \frac{\alpha}{k})とする．b_n = \ln a_nと定める．\\
+$$
+この時\\
+$$
+b_n = \sum_{k=1}^{n} \ln (1 + \frac{\alpha}{k})であることが簡単にわかる．(気になる人はcheckせよ!)
+$$
+$x >0$の時$\ln (1+x) < x$が成り立つことより，\\
+\begin{eqnarray}
+b_n & < & \sum_{k=1}^{n} \frac{\alpha}{k}  = \alpha \sum_{k=1}^{n} \frac{1}{k} \nonumber \\
+	& = & \alpha + \alpha \sum_{k=2}^{n} \frac{1}{k} \nonumber \\
+\end{eqnarray}
+この時，微積分の手法を使うと:\\
+$$
+\frac{1}{k} = \int_{k-1}^{k} \frac{1}{k} dx <\int_{k-1}^{k} \frac{1}{x} dx= \ln (k) -\ln (k-1)
+$$
+従って，\\
+$$
+\sum_{k=2}^{n} \frac{1}{k}< \ln (n)
+$$
+が得られ，
+\begin{equation}
+b_n < \alpha + \alpha \ln n \label{1}
+\end{equation} 
+が成り立つ．\\
+また
+\begin{eqnarray}
+\ln(1+ \frac{\alpha}{k}) & = & \int_0^{\frac{\alpha}{k}} \frac{1}{1+x}dx >\int_0^{\frac{\alpha}{k}}\frac{1}{1+\frac{\alpha}{k}} dx \nonumber \\
+			   & = & \frac{\alpha}{k+\alpha} \nonumber \\
+\end{eqnarray}
+が成り立つから，
+$$
+\alpha \sum_{k=1}^{n} \frac{1}{k+\alpha} < b_n
+$$
+が成り立つ．\\
+また，\\
+$$
+\frac{1}{k+\alpha} = \int_{k}^{k+1} \frac{1}{k+\alpha} dx > \int_{k}^{k+1} \frac{1}{x+\alpha} dx= \ln (k+1+\alpha) -\ln (k+\alpha)
+$$
+より，
+$$
+\sum_{k=1}^{n} \frac{1}{k+\alpha} > \ln (n+1+\alpha) - \ln (1+\alpha)> \ln n \, -\ln (1+\alpha)
+$$
+従って，\\
+$$
+b_n > \alpha \sum_{k=1}^{n} \frac{1}{k+\alpha} > \alpha \ln (n+1+\alpha) - \alpha \ln (1+\alpha)> \alpha \ln n \, -\alpha
+$$
+が成り立つ．\\
+以上より:\\
+$$
+-\alpha + \alpha \ln n < b_n < \alpha + \alpha \ln n
+$$
+が得られる，これを指数の形に直すと次のようになる:\\
+$$
+e^{-\alpha + \alpha \ln n}< a_n <e^{\alpha + \alpha \ln n}
+$$
+つまり，
+$$
+e^{-\alpha }n^{\alpha}< \frac{(\alpha +1)...(\alpha +n)}{n!}<e^{\alpha}n^{\alpha}
+$$
+が成り立つ．\\
+以上の議論より:\\
+$$
+c_1 =e^{\alpha} \, ;c_2 =e^{-\alpha}
+$$
+と置けば，すべてがうまく行くよ．
+\qed
+\end{proof}
+\section*{\#雜談}
+前回対数に関する質問を答えてくれて，ありがとう．今回は流石に対数を使わなければいけないよね．（笑）早く講義中に対数を定義してくれたらありがたいw．\\
+今回はおまけ問題を全部やろうとしていたが，時間がなさそうなので，点数になれる部分しか解いていなかった．
+今回のおまけ問題を解く時，定数の決め方に悩んでいた．三角関数に関する不等式$\frac{2x}{\pi} < sinx$を思い出して，もしかして，何らかの指数を定数として評価すればいいかに気づいて，雑な不等式を数時間いじってみたらうまくいった．\\
+もう一つだね，\LaTeX で行内数式を使うと$\sum_{k=1}^{n}$，下標が右に出ているのが気持ち悪い．何か対策とかあるの？
+
+
+\end{document}
+
+

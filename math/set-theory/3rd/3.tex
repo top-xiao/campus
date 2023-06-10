@@ -1,0 +1,222 @@
+\documentclass{jarticle}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{bm}
+\usepackage{romannum}
+\begin{document}
+\title{第三回演習課題}
+\author{習近平}
+\maketitle
+
+\section{問題3.1}
+\subsection{(\Romannum{1})から(\Romannum{2})を導く．}
+\begin{proof}
+$\mathbf{X}$の部分集合系$(\mathbf{F})_{\mathbf{F} \in \mathcal{F}}$について，議論を行う:\\
+問題文の条件より，添字集合$\mathcal{F}$が空でないかつ任意の$\mathbf{F} \in \mathcal{F}$に対し，$\mathbf{X}$の部分集合，$\mathbf{F}$が空集合ではない．\\
+この時，(\textcolor{red}{AC})より，直積$\prod\limits_{\mathbf{F} \in \mathcal{F}} \mathbf{F}$が空でない集合である．この集合の元$f$を一つとる．\\
+この時，集合$C$を次のように定める:\\
+$$
+C:= \{f(\mathbf{F}) \mid  \mathbf{F} \in \mathcal{F} \}
+$$
+任意の$\mathbf{F} \in \mathcal{F}$に対し，$C \cap \mathbf{F} $が一点集合であることを以下示す:\\
+\\
+	\begin{tabular}{|p{11cm}|}
+		\hline
+一点以上であること:)\\
+$\mathbf{F} \in \mathcal{F}$を任意に取る．この時，
+	$C$の元$f(\mathbf{F})$を一つ取る，直積の定義より，$f(\mathbf{F}) \in \mathbf{F}$であることがわかり，
+	よって，$f(\mathbf{F}) \in \mathbf{F} \cap C$が成り立つため，$ C \cap \mathbf{F}$が一点以上から成る集合であることが示された．\\
+	\hline
+一点以下であること:)\\
+ある$\mathbf{F} \in \mathcal{F}$に対し，$ C \cap \mathbf{F}$が二点以上から成る集合と仮定して，このもとで矛盾を導く．\\
+このような$\mathbf{F} \in \mathcal{F}$を一つ取る．\\
+	先ほどの議論より，$f(\mathbf{F}) \in \mathbf{F} \cap C$が成り立つ．$ C \cap \mathbf{F}$が二点以上から成る集合の仮定から，
+	$f(\mathbf{F}') \neq f(\mathbf{F})$となるような$f(\mathbf{F}')$ を一つ取る．\\
+	この時，$\mathbf{F}' \neq \mathbf{F}$が写像の定義より，自明である．また，写像$f$の定義より
+	$f(\mathbf{F}') \in \mathbf{F}'$が成り立つ．\\
+	従って，$\mathbf{F} \cap \mathbf{F}' \neq \emptyset$が得られ，問題文と矛盾する．\\
+	以上より，$ C \cap \mathbf{F}$が一点以下から成る集合であることが示された．\\
+	\hline
+	\end{tabular}
+\noindent \\
+よって，$ C \cap \mathbf{F}$がちょうど一点から成る集合であることが示された．
+以上の議論より(\Romannum{1})から(\Romannum{2})を導けた．
+\end{proof}
+
+\subsection{(\Romannum{2})から(\Romannum{1})を導く．}
+\begin{proof}
+非空集合$\Lambda$を添字集合とする集合$X$の非空部分集合系 \footnote{今回の解答で使われている“非空部分集合系”$(A_\lambda)_{\lambda \in \Lambda}$は$\forall \lambda \in \Lambda ; A_\lambda \neq\emptyset$を意味する．}
+	$(A_\lambda)_{\lambda \in \Lambda}$について，以下の議論を行う:\\ 
+$\Lambda$上の二項関係$\sim$を次のように定義する:\\
+$$
+	\forall \lambda_1,\lambda_2 \in \Lambda;( \lambda_1 \sim \lambda_2 \iff A_{\lambda_1} = A_{\lambda_2})
+$$
+自明であることがわかっていると思うが，一応$\sim$が$\Lambda$上の同値関係であることを以下示す:\\
+\\
+	\begin{tabular}{|p{11cm}|}
+\hline
+	反射律:)\\
+	$\lambda \in \Lambda$を任意に取る，$A_{\lambda} = A_{\lambda}$が成り立つため，$\lambda \sim \lambda$が成り立つ．\\
+	\hline
+	対称律:)\\
+$\lambda_1 \sim \lambda_2$を満たすような$\lambda_1 ,\lambda_2 \in \Lambda$を任意に取る.\\
+$\lambda_1 \sim \lambda_2$より$A_{\lambda_1} = A_{\lambda_2}$が成り立つ.従って$A_{\lambda_2} = A_{\lambda_1}$が得られ，
+$\lambda_2 \sim \lambda_1$が示された．\\
+\hline
+	推移律:)\\
+$\lambda_1 \sim \lambda_2$かつ$\lambda_2 \sim \lambda_3$を満たすような$\lambda_1 ,\lambda_2 , \lambda_3 \in \Lambda$を任意に取る.\\
+$\lambda_1 \sim \lambda_2$より$A_{\lambda_1} = A_{\lambda_2}$;\\
+$\lambda_2 \sim \lambda_3$より$A_{\lambda_2} = A_{\lambda_3}$\\
+	従って，$A_{\lambda_1} = A_{\lambda_3}$が得られ，$\lambda_1 \sim \lambda_3$が示された．\\
+\hline
+	\end{tabular}
+\\
+	以上より$\sim$がは$\Lambda$上の同値関係であることが示された．\\
+	\\
+以下，$\Lambda$を$\sim$で割った商集合を$\Lambda / \! \sim$とする．$\lambda \in \Lambda$の同値類を$[\lambda]_{L}$と定める．
+	また，集合$A_{\Lambda}:= \{A_\lambda \mid \lambda \in \Lambda \}$と定め，
+	写像$L: \Lambda \rightarrow A_\Lambda$を次のように定める：\\
+	\begin{tabular}{|p{11cm}|}
+		\hline
+	任意の$[\lambda]_L \in \Lambda / \! \sim$に対し，\\
+	$$
+	L([\lambda]_L):=A_\lambda
+	$$
+	この写像のwell-defined性は$\sim$の定義より明らかである．\\
+	また，この写像は全単射である，これも構成より明らかな事実である．\\
+		\hline
+	\end{tabular}
+		\footnote{講義中に何回も繰り返されている典型的な商写像なので，講義資料を参照していただければ，全単射であることを理解できると思っております}\\
+		
+
+	以下，$A_\lambda$と$A_{[\lambda]_L}$を同一視して，議論を行う:\\
+	任意の$[\lambda]_L \in \Lambda / \! \sim$に対し，\\
+	集合$A_{[\lambda]_L}^{'} := \{ (A_{[\lambda ]_{L}}, a) \mid a \in A_{[\lambda ]_L } \}$
+	と定める．$A_{[\lambda]_L}$が空でないため，集合$A_{[\lambda]_L}^{'}$も空でないことがわかる．\\
+	次に，集合$\mathcal{A} := \{ A_{[\lambda]_L}^{'} \mid [\lambda]_L \in \Lambda / \! \sim \}$とする．\\
+	次に，集合$\mathcal{A}$の任意の2つ異なる要素が互いにdisjointであることを示す：\\
+	\begin{tabular}{|p{11cm}|}
+		\hline
+	集合$\mathcal{A}$のある2つ異なる要素$A_{[\lambda^{'}]_L}^{'} , A_{[\lambda]_L}^{'}$が共通要素を持つと仮定して，このもとで矛盾を導く:\\
+	このような$A_{[\lambda^{'}]_L}^{'} , A_{[\lambda]_L}^{'}$を一組取る．\\
+	この二元の共通要素を一つ取る．\\
+	この時，$A_{[\lambda]_L} = A_{[\lambda^{'}]_L}$が得られる，従って，写像$L$が全単射であるから，$[\lambda]_L =[\lambda^{'}]_L$が成り立つ．\\
+	よって，$A_{[\lambda^{'}]_L}^{'} = A_{[\lambda]_L}^{'}$が導かれ，矛盾が生じる．\\
+	以上より集合$\mathcal{A}$の任意の2つ異なる要素が互いにdisjointであることが示された．\\
+		\hline
+	\end{tabular}
+	\\
+	(\Romannum{2}) より，ある集合$C$が存在し，任意の$A_{[\lambda_\alpha]_{L}}^{'} \in \mathcal{A}$
+	に対し，$ C \cap A_{[\lambda_\alpha]_{L}}^{'}$がちょうど一点から成る集合である．\\
+	このような集合$C$を一つ取る．\\
+	$A_{[\lambda]_{L}}^{'} \in \mathcal{A}$を任意に取る．\\
+	この時，一点集合$C \cap A_{[\lambda]_{L}}^{'}$を集合$\mathcal{A}$から$X$への写像と同一視できる．\\
+	一点集合$C \cap A_{[\lambda]_{L}}^{'}$を次のように定めれば，写像$h:A_\Lambda \mapsto X$を構成できる:\\
+	$$
+	C \cap A_{[\lambda]_{L}}^{'} = \{ (A_{[\lambda]_{L}} , h(A_{[\lambda]_{L}})) \}
+	$$
+	次に写像$f : \Lambda \mapsto X$を次にように構成する:\\
+	任意の$\lambda \in \Lambda$に対し，\\
+	$$
+	f(\lambda) := (h \circ L)([\lambda]_{L})
+	$$
+	この時，$f(\lambda) \in A_{[\lambda]_{L}}=A_\lambda$であるため．\\
+	直積$\prod\limits_{\lambda \in \Lambda}A_\lambda$が空でないことが得られ，従って(\textcolor{red}{AC})が導かれた．\\
+\end{proof}
+\subsection{(\Romannum{3})から(\Romannum{1})を導く}
+\begin{proof}
+	(\Romannum{3})を仮定して，このもとで，(\Romannum{1})を導く:\\
+	任意の非空添字集合$\Lambda$とそれに対応する集合$X$の非空部分集合系$(A_{\lambda})_{\lambda \in \Lambda}$に対し，$A_\Lambda := \{ A_\lambda \mid \lambda \in \Lambda \}$とする．\\
+	写像$g : \bigcup\limits_{\lambda \in \Lambda}(A_\lambda \times \{A_\lambda\}) \mapsto A_\Lambda$を次のように定める:\\
+	$$
+	\forall \lambda \in \Lambda ; \forall a \in A_\lambda ;\\
+	g(a,A_\lambda) := A_\lambda
+	$$
+	$\Lambda$と任意の$\lambda \in \Lambda$に対する$A_\lambda$がどっちでも空でないため，$a \in A_\lambda$が必ず取れる．\\
+	従って，任意の$A_\lambda \in A_{\Lambda}$に対し，$g(a,A_\lambda) := A_\lambda$となるような$(a,A_\lambda) \in \bigcup\limits_{\lambda \in \Lambda}(A_\lambda \times \{A_\lambda\})$が存在する．\\
+	よって，写像$g:\bigcup\limits_{\lambda \in \Lambda}(A_\lambda \times \{A_\lambda\}) \mapsto A_\Lambda$が全射であることが明らかである．\footnote{明らかでないと思っている方がいらっしゃれば，退学して，受験し直すことを強くお勧めします}\\
+	(\Romannum{3})よりある写像$s : A_\Lambda \mapsto \bigcup\limits_{\lambda \in \Lambda}(A_\lambda \times \{A_\lambda\}) $が存在し，\\
+	$g \circ s = id_{A_\Lambda}$を満たす．このような写像$s$を一つ取る．\\
+	また，$\Lambda $と$(A_\lambda)_{\lambda \in \Lambda}$間の対応関係を写像$h : \Lambda \mapsto A_\Lambda $と定める．\\
+	写像$e: \bigcup\limits_{\lambda \in \Lambda}(A_\lambda \times \{A_\lambda\}) \mapsto \bigcup\limits_{\lambda \in \Lambda}A_\lambda$を次のように定める:\\
+	任意の$(a,A_\lambda ) \in \bigcup\limits_{\lambda \in \Lambda}(A_\lambda \times \{A_\lambda\})$に対し，\\
+	$$e(a,A_\lambda):= a$$
+	写像$f: \Lambda \mapsto \bigcup_{\lambda \in \Lambda}A_\lambda$を次のように定義する:\\
+	$$
+	\forall \lambda \in \Lambda ; \\
+	f(\lambda):=(e \circ s \circ h )(\lambda)
+	$$
+	以上の構成より，任意の$\lambda \in \Lambda$に対し，$f(\lambda) \in A_\lambda$が成り立つから，\\
+	写像$f: \Lambda \mapsto \bigcup\limits_{\lambda \in \Lambda}A_\lambda$が直積$\prod\limits_{\lambda \in \Lambda}A_\lambda$の元で，$\prod\limits_{\lambda \in \Lambda}A_\lambda \neq \emptyset$が得られ，従って(\textcolor{red}{AC})が示された．
+
+\end{proof}
+\section{問題3.2}
+\subsection{全射を作りなさい}
+\begin{proof}
+	各$\lambda \in \Lambda_1$に対し，全射$f_\lambda : \mathbb{N} \mapsto A_\lambda$が存在するため，
+	$\mathbb{N}$から$A_\lambda$への全射集合\footnote{全射を要素に持つ集合である} $\prod\limits_{n \in \mathbb{N}}^{sur} A_\lambda$が空でないことが保証される．\\
+	また$\Lambda_1 \neq \emptyset$のもとで，(\textcolor{red}{AC})を適用すると，直積$\prod\limits_{\lambda \in \Lambda}(\prod\limits_{n \in \mathbb{N}}^{sur} A_\lambda) \neq \emptyset$がわかり，
+	この直積集合の元$g$を一つ取る．\\
+	写像$g : \Lambda \mapsto \prod\limits_{n \in \mathbb{N} } \tilde{A}$は$\Lambda$上の選択函数である．\footnote{$\lambda \in \Lambda$に対し，$A_\lambda$への全射を選び出す函数である}\\
+	\\
+	この時，$\lambda \in \Lambda$を任意に取る．\\
+	$g(\lambda):=f_\lambda$とする．この時，$f_\lambda $は$\mathbb{N}$から$A_\lambda$への全射である．\\
+	\\
+	$\Lambda_1 \times \mathbb{N} $から$\tilde{A}$への全射$h$を以下のように定める:\\
+	任意の$(\lambda , n) \in \Lambda_1 \times \mathbb{N}$に対し，\\
+	$$
+	h(\lambda,n):=f_\lambda(n)
+	$$
+	$h$が全射であることを\textcolor{red}{(check せよ！)}\\
+	減点されるかもしれないから，私がやらざるを得ないよねw:\\
+	$a \in \tilde{A}$を任意に取る．\\
+	この時，ある$\lambda^{'} \in \Lambda_1$が存在し，$a \in A_{\lambda^{'}}$を満たす.\\
+	このような$\lambda^{'}$を一つ取る．この時$g(\lambda^{'})=f_{\lambda^{'}}$が全射であるから，ある$n^{'}$が存在し，$f_{\lambda^{'}}(n) = a$を満たす．\\ このような$n^{'} \in \mathbb{N}$を一つ取る．\\
+	$$
+	h(\lambda^{'} ,n^{'}) := f_{\lambda^{'}}(n^{'}) = a
+	$$
+	となるから，$h$が全射であることが示された．\footnote{数式の入力が面倒くさい}
+\end{proof}
+\subsection{本題を示しなさい}
+\begin{proof}
+	全射$h: \Lambda_1 \times \mathbb{N} \mapsto \tilde{A}$に対し，Corollary 3.12(2)を適用すると，\\
+	単射$i : \tilde{A} \mapsto \Lambda_1 \times \mathbb{N}$が存在する．\\
+	従って，$\tilde{A} \preceq \Lambda_1 \times \mathbb{N}$が成り立つ．\\
+	また，$\Lambda_1 \preceq \mathbb{N} $より，単射$l : \mapsto  \mathbb{N}$が存在する．\\
+	この時，$\Lambda_1 \neq \emptyset$のもとで，写像$k: \Lambda_1 \times \mathbb{N} \mapsto \mathbb{N} \times \mathbb{N}$を以下のように定める:\\
+	任意の$(\lambda , n) \in \Lambda_1 \times \mathbb{N}$に対し，\\
+	$$
+	k(\lambda , n) := ( l(\lambda) ,n)
+	$$
+	写像$k: \Lambda_1 \times \mathbb{N} \mapsto \mathbb{N} \times \mathbb{N}$は単射であることを以下示す:\footnote{正直にこんな自明なことを示す必要はないと思っているが念の為示しておく}\\
+	$(l(\lambda),n) = (l(\lambda '), n')$を満たすような$(l(\lambda),n) , (l(\lambda '), n') \in \mathbb{N} \times \mathbb{N}$
+	を任意に取る．\\
+	この時$n=n'$が自明で，写像$l$の単射性より，$\lambda = \lambda '$が成り立つ，従って，$(\lambda,n) =(\lambda',n')$となり，単射性が示された．\\
+	この時，$ card\tilde{A} \preceq card(\mathbb{N} \times \mathbb{N})$が成り立つ．\\
+	またThm 4.2(2)(2-0)より\\
+	$$
+	card(\mathbb{N} \times \mathbb{N}) = card\mathbb{N} = \aleph_0
+	$$
+	が得られ，従って，$card(\bigcup\limits_{\lambda \in \lambda}A_\lambda) \preceq \aleph_0$が示された．
+\end{proof}
+\subsection{(\textcolor{red}{AC})が暗黙に使われる箇所を指摘せよ}
+\textcolor{blue}{各$\lambda \in \Lambda_1$に対し，全射$f_\lambda$が存在する}\\
+$\Lambda_1$が無限集合となる時，各$\lambda \in \Lambda_1$に対し，全射$f_\lambda$が存在するするけど，全射の取り方が明示されていないため，(\textcolor{red}{AC})が暗黙に使われている．\\
+\textcolor{red}{各$\lambda \in \Lambda_1$に対し，全射$f_\lambda : \mathbb{N} \mapsto A_\lambda$が存在するため，
+	$\mathbb{N}$から$A_\lambda$への全射集合\footnote{全射を要素に持つ集合である} $\prod\limits_{n \in \mathbb{N}}^{sur} A_\lambda$が空でないことが保証される．}\\
+        また$\Lambda_1 \neq \emptyset$のもとで，(\textcolor{red}{AC})を適用すると，直積$\prod\limits_{\lambda \in \Lambda}(\prod\limits_{n \in \mathbb{N}}^{sur} A_\lambda) \neq \emptyset$がわかり，
+        この直積集合の元$g$を一つ取る．\\
+        写像$g : \Lambda \mapsto \prod\limits_{n \in \mathbb{N} } \tilde{A}$は$\Lambda$上の選択函数で
+ある．\footnote{$\lambda \in \Lambda$に対し，$A_\lambda$への全射を選び出す函数である}\\
+        \\
+        この時，$\lambda \in \Lambda$を任意に取る．\\
+        $g(\lambda):=f_\lambda$とする．この時，$f_\lambda $は$\mathbb{N}$から$A_\lambda$への全射である．\\
+このような$g$が存在することで，(1)の議論が正しく機能する．
+\section*{\# 雑談}
+はい，では数学序論Bの第三回演習課題に関する雑談をさせていただきます．
+今回は初めて\LaTeX で序論の演習課題の解答を作成させていただきました．200行のコードと合計15時間弱の共同作用でようやくこのレポートを仕上げることができました．
+行間空白や表の使い方がまだまだ慣れていませんので，見づらいことがたくさんあると思います．また，\LaTeX で数学のレポートを作成する時の注意事項を教えて貰えば，大変助かります．最後まで読んでくださり，ありがとうございました．では今回の数学序論Bの第三回演習課題のレポートを以上となりますので，長い時間を取らせていただき，お疲れ様でした．
+\end{document}

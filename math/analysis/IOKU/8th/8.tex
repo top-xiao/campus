@@ -1,0 +1,77 @@
+\documentclass{jarticle}
+\usepackage{xcolor}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{amsmath}
+\usepackage[dvipdfmx,hidelinks]{hyperref}
+\usepackage{pxjahyper}
+\begin{document}
+\title{第８回解析学序論レポート問題}
+\author{習近平}
+\maketitle
+\newpage
+\tableofcontents
+\addcontentsline{toc}{section}{目次}
+\newpage
+\section{問題8.1}
+\begin{proof}
+$f$が$a \in \mathbb{R}$を含む閉区間$I$で定義された実数値関数であるとする。$f$が$a$で連続である仮定して、$\forall n \in \mathbb{N} ; x_n \in I$かつ$\lim\limits_{n \to \infty} x_n =a$
+を満たす任意の数列に対し、$\lim\limits_{n \to \infty} f(x_n) =f(a)$が成り立つことを導く:\\
+	つまり、数列$\left( f(x_n) \right)_{n \in \mathbb{N}}$の極限が$f(a)$であることを示せばよい。\\
+仮定を満たすような数列$(x_n)_{n\in \mathbb{N}}$を任意に取る。
+$\varepsilon \in \mathbb{R}_{>0}$を任意に取る、仮定より
+\begin{equation}
+	\exists \delta \in \mathbb{R}_{>0}; \forall x \in I ; \left( |x-a|<\delta \Rightarrow |f(x) - f(a)| <  \varepsilon \right) \label{1}
+\end{equation}
+が成り立つ。このような$\delta \in \mathbb{R} $を一つ取る。\\
+仮定から、数列$(x_n)_{n\in \mathbb{N}}$に対し、$\lim\limits_{n\to \infty} x_n =a$より、\\
+$$
+	\exists N \in \mathbb{N}; \forall n \in \mathbb{N} ; ( n \ge N \Rightarrow  |x_n -a | < \delta )
+$$
+この時、$n \ge N$を満たすような任意の自然数$n$に対し、\\
+$$
+	|x_n -a| < \delta
+$$
+	が成り立つため。仮定\ref{1}より\\
+$$
+	|f(x_n) - f(a)| < \varepsilon
+$$
+が成り立つ。\\
+以上より、$f$が$a$で連続であるならば、$\forall n \in \mathbb{N} ; x_n \in I$かつ$\lim\limits_{n \to \infty} x_n =a$
+を満たす任意の数列に対し、$\lim\limits_{n \to \infty} f(x_n) =f(a)$が成り立つことが示された。
+\end{proof}
+\newpage
+\section{問題8.5}
+\subsection{(1)}
+一点のみ連続するような函数が存在する:
+\begin{equation}
+	f(x) =
+	\begin{cases}
+		 x &x \in \mathbb{Q}\\
+		 0 &x \in \mathbb{R}\setminus \mathbb{Q}
+	\end{cases}
+\end{equation}
+至るところ不連続のDirichlet functionと連続函数xとの積で、$x=0$の時連続であることが自明、$x \ne 0$の時は不連続である. 証明のアイデアは次の問題と同じなので、次の問題を参照していただくと良いと思います。
+\subsection{(2)}
+やはりDirichlet functionをいじれば何とか成りそう、先程の議論を眺めて見ると、無理数の時に0にして、有理数の時、函数の値を0に近づくようにしたい:
+$$\mathbb{Q} \sim \mathbb{N}$$
+より、全単射$g: \mathbb{Q} \to \mathbb{N}$が存在する。これを一つ取る。\\
+写像$h : \mathbb{N} \to \mathbb{R}$を次のように定める:\\
+$$ h(n) = \frac{1}{n+1} $$
+有理数で不連続で無理数で連続となるような写像$f: \mathbb{R} \to \mathbb{R}$を次のように定める:
+\begin{equation}
+	f(x)=
+	\begin{cases}
+		(h\circ g)(x) &x \in \mathbb{Q}\\
+		0& x\notin \mathbb{Q}
+	\end{cases}
+\end{equation}
+無理数で連続の証明の方針は無理数$x_0$を任意にとって来る、任意の$\varepsilon \in \mathbb{R}_{>0}$に対し、$\exists N \in \mathbb{N}; 1/(N+1) < \varepsilon $となる。\\
+この時、$\delta = \min\limits_{0 \le n \le N+1} |g^{-1}(n) - x_0|$とする。この時、$|x-x_0|<\delta $を満たす任意の$x \in \mathbb{R}$に対し、$|f(x)-f(x_0)| < \varepsilon$が成り立つ。\\
+有理数で不連続の証明方針は有理数$x_1$を任意にとって来て、$\varepsilon =f(x_1)/2$とする、この時、任意の$\delta \in \mathbb{R}_{>0}$に対し、無理数の稠密性\footnote{この部分は厳密にいえば証明すべきところになっていますが、ここでごまかすことにしておきます。}を考えて、ある$x_2 \in \mathbb{R}\setminus \mathbb{Q} $が存在し、$|x_2 -x_1|< \delta$を満たす、この時、$|f(x_1) -f(x_2)|>\varepsilon$となるため、不連続であることが示される。\\
+\newpage
+\section{\# 雑談}
+今回のおまけ問題はDirichlet fuctionを参照して構成した。(2)の部分に関しては、数学序論の中間レポートで登場した広義単調函数の不連続点が高々可算であることの証明をもとにして$\varepsilon$を固定した時、有理数に関する外れ値が有限個しかないことを使って実装した。\\
+先週数学序論で提出したレポートにはコードのコピペによる添字ミス大量発生事件が起こったため、今でも落ち込んでいる。\footnote{僕のGPA!!!}そのせいでおまけ問題の証明すべきところに略式で書いたことをどうかお許しください。
+\end{document}

@@ -1,0 +1,223 @@
+\documentclass[dvipdfmx]{jsarticle}
+\usepackage{xcolor}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{bm}
+\usepackage{romannum}
+\usepackage[dvipdfmx,hidelinks]{hyperref}
+\usepackage{atbegshi}
+\ifnum 42146=\euc"A4A2
+\AtBeginShipoutFirst{\special{pdf:tounicode EUC-UCS2}}
+\else
+\AtBeginShipoutFirst{\special{pdf:tounicode 90ms-RKSJ-UCS2}}
+\fi
+\begin{document}
+\pagenumbering{arabic}
+\title{なんとかなりそうなごまかし}
+\author{習近平}
+\maketitle
+\newpage
+\tableofcontents
+\addcontentsline{toc}{section}{目次}
+\newpage
+\section{凸関数とPositive-Defined Matrix}
+\begin{proof}
+$(1) \Longrightarrow (2)$ \\
+$\forall \bm{x}, \bm{y} \in \mathbb{R}^n ; \forall t \in [0,1]$に対し,
+$$
+f \left( (1-t)\bm{x} + t \bm{y} \right) \le (1-t)f(\bm{x}) + tf(\bm{y})
+$$
+が成り立つことを仮定して，\\
+$\forall \bm{x} \in \mathbb{R}^n; \forall \bm{h} =(h_1, \ldots , h_n) \in \mathbb{R}^n$に対し, 
+$$
+\sum_{i,j=1}^{n}h_i h_j \frac{\partial^2 f}{\partial x_i \partial x_j}(\bm{x}) \ge 0
+$$
+が成り立つことを以下示す:\\
+今すべてのベクトル$\bm{x},\bm{h} \in \mathbb{R}^n$に対し,次の式が成り立つ:
+$$
+f(\bm{x} + \bm{h}) \ge f(\bm{x}) + \bm{h} \cdot \nabla f(\bm{x})
+$$
+ここで$\bm{y} = \bm{x} + \bm{h}$とする, 自由変数$t \in [0,1]$を導入して, 仮定より:
+$$f \left( (1-t)\bm{x} + t \bm{y} \right) \le (1-t)f(\bm{x}) + tf(\bm{y})$$
+この式を変形させてやると次のようになる:
+$$
+	\frac{f(\bm{x} + t(\bm{y} - \bm{x}))-f(\bm{x})}{t-0} +f(\bm{x}) \le f(\bm{y})
+$$
+補助函数を導入して議論を行う:\\
+連続写像$g: \mathbb{R} \to \mathbb{R}$ を次のように定める:
+$$
+g(t) := f(\bm{x} + t(\bm{y} - \bm{x}))
+$$
+これで準備が完了,多少数学の教育を受けた方のであれば,次の変形は自明だと思う:
+$$
+\frac{f(\bm{x} + t(\bm{y} - \bm{x}))-f(\bm{x})}{t-0} = \frac{g(t) - g(0)}{t-0}
+$$
+平均値の定理より:
+$$
+\exists \varepsilon \in (0,t); g'(\varepsilon ) =\frac{g(t) - g(0)}{t-0}
+$$
+$ t \to 0$の極限を考えて, 次の方程式が得られる:
+$$
+g'(\varepsilon) = g'(0) = \nabla f(\bm{x}) (\bm{y} - \bm{x})
+$$
+これまですべてのベクトル$\bm{x} ,\bm{h} \in \mathbb{R}^n$に対し, $f(\bm{x}+ \bm{h}) \ge f(\bm{x} ) + \nabla f(\bm{x})\cdot \bm{h}$が成り立つ.\\
+言い換えると次のようなことと同値:
+$$
+\forall \bm{x} ,\bm{h} \in \mathbb{R}^n; \forall t \in \mathbb{R}; f(\bm{x}+t\bm{h} ) \ge f(\bm{x}) + t \nabla f(\bm{x}) \cdot \bm{h}
+$$
+Taylor's theorem より,以下の式が明らかである:
+$$
+f(\bm{x}+t\bm{h} ) =  f(\bm{x}) + t \nabla f(\bm{x}) \cdot \bm{h} + \frac{1}{2} t^2 \left( \sum_{i,j =1}^n h_i h_j \frac{\partial^2 f}{\partial x_i \partial x_j}(\bm{x}) \right) + o(t^2)
+$$
+また,先程の不等式を考えてみれば以下のような不等式も成り立つ:
+$$
+\frac{1}{2} t^2 \left( \sum_{i,j =1}^n h_i h_j \frac{\partial^2 f}{\partial x_i \partial x_j}(\bm{x}) \right) + o(t^2) \ge 0
+$$
+$t^2$で割って, $t \to 0$の極限を考えてみれば:
+$$
+	\sum_{i,j =1}^n h_i h_j \frac{\partial^2 f}{\partial x_i \partial x_j}(\bm{x})\ge 0
+$$
+このようにきれいに証明できた.\\
+
+\noindent はい,では後半戦に入ろう:
+\end{proof}
+\begin{proof}
+	$(2) \Rightarrow (1)$が成り立つことを以下示す:
+	\begin{equation}
+		\forall \bm{x} \in \mathbb{R}^n ; \forall \bm{h} = (h_1 ,h_2 , \ldots , h_n) \in \mathbb{R}^n ; \sum\limits_{i,j =1}^n h_i h_j f(\bm{x}) \ge 0 
+	\end{equation}
+	を仮定して,
+	\begin{equation}
+		\forall \bm{x} , \bm{y} \in \mathbb{R}^n ; \forall t \in [0,1]; f((1-t)\bm{x} +t \bm{y}) \le (1-t)f(\bm{x}) + t f(\bm{y}) \label{t} 
+	\end{equation}
+	を導く:\\
+	しかし, \ref{t}を証明する前に, 次の補題を以下示す:
+	\begin{equation}
+		\forall \bm{x} , \bm{h} \in \mathbb{R}^n ; \forall t \in \mathbb{R}; f(\bm{x} + t \bm{h}) \ge  f(\bm{x}) + t \nabla f(\bm{x}) \cdot \bm{h}
+	\end{equation}
+	$\bm{x}, \bm{h} \in \mathbb{R}^n $と$ t \in \mathbb{R}$を任意に取る, Taylor's theoremより:\\
+		$	\exists \theta \in (0,1);$ \\
+		$$
+			f(\bm{x} + t\bm{h}) = f(\bm{x}) + t \nabla f(\bm{x})\cdot \bm{h} + \frac{1}{2} t^2 \sum_{i,j =1}^n h_i h_j \frac{\partial^2 f}{\partial x_i \partial x_j}(\bm{x} + \theta \bm{h})\\
+		$$
+		仮定はすべてのベクトル$ \bm{y} \in \mathbb{R}^n$に対して成り立つため,　特にベクトル$\bm{x} + \theta \bm{h}$に対して,成り立つ. 仮定のもとで次の不等式が明らかである.
+		$$
+		f(\bm{x} + t\bm{h}) \ge f(\bm{x}) + t \nabla f(\bm{x})\cdot \bm{h}
+		$$
+	では本番\ref{t}を示して行こう:\\
+	$ \bm{x}, \bm{y} \in \mathbb{R}^n $と$t \in [0,1]$を任意に取る. 
+			$$
+			f((1-t)\bm{x} + t \bm{y}) = f\left( \bm{x} + t( \bm{y} - \bm{x}) \right) = f\left(\bm{y} - (1-t)(\bm{y} - \bm{x})\right) \\
+			$$
+			後ろの二項に対し,適切な変形を考えて,補題の議論のもとで不等式を作る.\\
+			$f(\bm{x})$について議論を行う:
+			$$
+			f(\bm{x}) = f\left( (1-t)\bm{x} + t \bm{y} -t( \bm{y} - \bm{x})\right) \ge f((1-t)\bm{x} + t \bm{y}) - t\nabla f((1-t)\bm{x} + t \bm{y}) (\bm{y}- \bm{x})\\
+			$$
+			この式の両辺に$(1-t)$をかけてやる:\footnote{$t \in [0,1]$であるため,$t \ge 0 ,(1-t) \ge 0$掛け算を行っても不等号の向きが変わらない}
+			$$
+			(1-t)f(\bm{x}) = (1-t)f\left( (1-t)\bm{x} + t \bm{y} -t( \bm{y} - \bm{x}) \right) \ge (1-t)f((1-t)\bm{x} + t \bm{y}) - t(1-t)\nabla f((1-t)\bm{x} + t \bm{y}) (\bm{y}- \bm{x})\\
+			$$
+			$f(\bm{y})$について変形を施す:
+			$$
+			f(\bm{y}) = f\left( (1-t)\bm{x} + t \bm{y} + (1-t)(\bm{y} - \bm{x}) \right) \ge f((1-t)\bm{x} + t \bm{y}) + (1-t)\nabla f((1-t)\bm{x} + t \bm{y}) (\bm{y}- \bm{x})\\
+			$$
+			両辺に$t$をかけてやる:
+			$$
+			tf(\bm{y}) = tf\left( (1-t)\bm{x} + t \bm{y} + (1-t)(\bm{y} - \bm{x})\right) \ge tf((1-t)\bm{x} + t \bm{y}) + t(1-t)\nabla f((1-t)\bm{x} + t \bm{y}) (\bm{y}- \bm{x})\\
+			$$
+			和をとって,次の式が出てくる:
+			$$
+			(1-t)f(\bm{x}) + t f(\bm{y}) \ge f((1-t)\bm{x} + t \bm{y})
+			$$
+\end{proof}
+では,同値であることの証明は以上となります,アンケートを取ります:\\
+\begin{center}
+	\begin{itemize}
+		\item よく理解できた.
+		\item まあまあ理解できた.
+		\item ちょっと理解しづらい.
+		\item まったく理解できなかった.
+	\end{itemize}
+\end{center}
+ここでアンケートの結果を共有できませんが,よくわからなかった人は必ず復習してください.ではsectionを切ります.お疲れ様でした。
+\newpage
+\section{ただの計算問題}
+\subsection{$f$の極値をすべて求めよ}
+$$
+\begin{cases}
+	\frac{\partial f}{\partial x} =10x -6y =0\\
+	\frac{\partial f}{\partial y} =-6x +10y =0
+\end{cases}
+$$
+この時,
+$$
+\begin{cases}
+	x=0\\
+	y=0\\
+	f(x,y)=f(0,0)=-4
+\end{cases}
+$$
+またこの時:
+$$
+\mathbf{X}=
+\left.
+\left(
+\begin{array}{cc}
+	\frac{\partial^2 f }{\partial x^2} & \frac{\partial^2 f }{\partial x \partial y} \\
+	\frac{\partial^2 f }{\partial y \partial x} & \frac{\partial^2 f }{\partial y^2}\\
+\end{array}
+\right)
+\right|_{(x,y) =(0,0)}
+$$
+$$
+det(X)=100-36=64>0
+$$
+したがって,函数$f$が$(x,y)=(0,0)$において極小値$-4$を取る.
+\subsection{$g(x,y)=0$の下での$f$の極値をすべて求めよ}
+$f$が$\bm{a}=(a,b)$において極値をとり,その時$g(\bm{a}) =0$を満たすかつ$\nabla g(\bm{a}) \ne \bm{0}$とする,ラグランジュの未定乗数法より,\\
+$F(x,y) = f(x,y) - \lambda g(x,y)$とした時,$\exists \lambda \in \mathbb{R};$
+$$
+\begin{cases}
+	\frac{\partial F}{\partial x} = 10 a -6b -2\lambda a =0\\
+	\frac{\partial F}{\partial y} = -6a +10 b -2 \lambda b =0\\
+	a^2+b^2=1
+\end{cases}
+$$
+これらを解いてしまうと次のような式が得られる:
+$$
+\begin{cases}
+	(2- \lambda )(a+b)=0\\
+	a^2 +b^2 =1
+\end{cases}
+$$
+簡単な計算より極値は次のように与えられる:\\
+$$
+\begin{cases}
+	f( \frac{1}{\sqrt{2}}, \frac{1}{\sqrt{2}}) = -2 \\
+	f(-\frac{1}{\sqrt{2}},-\frac{1}{\sqrt{2}}) = -2 \\
+	f( \frac{1}{\sqrt{2}},-\frac{1}{\sqrt{2}}) =  4 \\
+	f(-\frac{1}{\sqrt{2}}, \frac{1}{\sqrt{2}}) =  4   
+\end{cases}
+$$
+\subsection{定義域を原点中心半径1の円板まで制限した写像$f$の最大値最小値を求めよ}
+最小値は極小値であるため,$f$の極小値がただ一つ存在するため,前問で求めた結果によれば、$f$の最小値が$-4$である.\\
+また$U = \{(x,y) \in \mathbb{R}^2 \mid x^2 + y^2 <1 \}$を定義域とした時,$|xy|<\frac{1}{2}$であることを考慮すると:$f(x,y)<4$であることが明らか.\\
+前問を参照して,円板境界部を定義域とした時,最大値が$4$となる.\\
+以上の議論より$f$の最大値は$4$で最小値が$-4$である.\\
+\newpage
+\section{\# 雑談}
+以上の議論は答えになっているんでしょうか.何か感想があれば,コメント欄に書いていただければ助かります.
+
+\end{document}
+
+
+		 
+
+
+
+
+
+

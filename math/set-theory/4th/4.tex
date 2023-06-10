@@ -1,0 +1,217 @@
+\documentclass{jreport}
+\usepackage{xcolor}
+\usepackage{amsmath} 
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage{bm}
+\usepackage{romannum}
+\usepackage[dvipdfmx,hidelinks]{hyperref}
+\usepackage{pxjahyper}
+\begin{document}
+\pagenumbering{arabic}
+\title{第4回演習課題解答}
+\author{習近平}
+\maketitle
+\setcounter{chapter}{4}
+\newpage
+\tableofcontents
+\addcontentsline{toc}{chapter}{目次}
+\newpage
+\section{問題4.1}
+\subsection{\normalsize{(1)$(X,\le_{X}),(Y,\le_{Y})$がともに整列集合であるならば，$(X\sqcup Y, \le_{(X,Y)})$も整列集合であることを示せ}}
+\begin{proof}
+  $(X,\le_{X}),(Y,\le_{Y})$がともに整列集合であると仮定して，{$(X\sqcup Y, \le_{(X,Y)})$}も整列集合であることを導く:\\
+  $(X\sqcup Y)$の\textbf{空でない}部分集合$A$を任意に取る.この場合，
+  $A\cap X = \emptyset$の時と，
+  $A\cap X \ne \emptyset$の時と場合分けして，議論を進める:\\
+  \textcolor{red}{$A\cap X = \emptyset$の時:\\}
+  $X\cap Y = \emptyset$であるため， $A \subset Y$が成り立ち，$(Y,\le_{Y})$が整列集合であることより，$\min A$が存在する．\\
+  \textcolor{red}{$A\cap X \ne \emptyset$の時:\\}
+	$A\cap X \subset X$が成り立ち，$(X,\le_{X})$が整列集合であることより，$\min (A\cap X) $が存在し，$\min (A\cap X) $が集合$A$の最小元であることを以下示す:\\
+  $x \in A$を任意に取る，$x \in A\cap X$の時，先ほどの議論より，$\min A\cap X \le_{(X,Y)} x$が成り立つ，$x \in Y$の時，$\le_{(X,Y)}$の定義より，$\min A\cap X \le_{(X,Y)} x $が成り立つ．\\
+  従って，$\min A = min A\cap X$が得られる．\\
+  以上の議論より，$A$が最小元を持つことが示され，よって，$X \sqcup Y$が整列集合であることを証明できた．
+\end{proof}
+\newpage
+\subsection{\normalsize{(2)$(C,\le),(D,\le ')$順序同型な空でない順序集合とし，$f:(C,\le)\to (D,\le ')$を順序同型写像とする．$c_0,c_1 \in C$に対し，$c_0$が$c_1$の直前の元であるならば，$f(c_0)$は$f(c_1)$の直前の元であることを示せ}}
+\begin{proof}
+	ここで，より強いことを示す:\\
+	$c_0$が$c_1$の直前の元である$\Leftrightarrow$ $f(c_0)$は$f(c_1)$の直前の元である\\
+	\textcolor{red}{$(\Rightarrow)$の証明:\\}
+  	背理法による証明:$c_0$が$c_1$の直前の元であるを仮定する，この上で，$f(c_0)$は$f(c_1)$の直前の元でないことを仮定して，矛盾を導く:\\
+	仮定より，ある$f(c_0)$と$f(c_1)$と相異なる$d \in D$が存在して，$f(c_0) \le ' d \le ' f(c_1)$を満たす，または$f(c_0)\ge f(c_1)$が成り立つ。後者は順序を保つ性質より成り立たないことが直ちにわかる。
+	よって、前者のみを考える。\\
+	この時，$f$が順序同型写像であるため，$f$が特に全単射である．この時ただ一つの$c \in C$が存在し，$f(c) =d$を満たす．\\
+	このような$c \in C$を取る．この時，$f(c_0) \le ' f(c) $,$ f(c) \le ' f(c_1)$が成り立つ．$f$が順序同型写像であるため，特に順序単射である，この時$c_0 \le c$かつ$c \le c_1$が成り立つ(等号は成り立たない)．つまり，$c_0$が$c_1$の直前の元でないことが導かれ，仮定と矛盾する．
+	従って，$f(c_0)$は$f(c_1)$の直前の元でない仮定が誤りである．よって，$c_0$が$c_0$の直前の元であるならば，$f(c_0)$は$f(c_1)$の直前の元であることを示せた.\\
+	\textcolor{blue}{ここで記号をリセットする．\\}
+	\textcolor{red}{$(\Leftarrow)$の証明:\\}
+	対偶を示す:$c_0$が$c_1$の直前の元でないことを仮定して，$f(c_0)$は$f(c_1)$の直前の元でないことを導く:\\
+	仮定より，ある$c_0$と$c_1$と相異なる$c \in C$が存在し，$c_0 \le c \le c_1$が成り立つ．この時，$f$が順序同型写像であるため，$f(c_0) \le ' f(c) \le ' f(c_1)$となる．この時，$f(c_0)$は$f(c_1)$の直前の元でないことが示された．\footnote{等号が成り立つ時,写像$f$が単射であることに矛盾することを暗黙に使っている.}\\
+	以上の議論より $c_0$が$c_1$の直前の元であることと $f(c_0)$は$f(c_1)$の直前の元であることが同値であるのを証明できた．\footnote{この部分の証明は逆写像を用いて前半の結論を適用することで
+	証明できる，気になったら各自checkした方が力になると思います.}
+\end{proof}
+\newpage
+\subsection{\normalsize{(3)$(A\sqcup B,\le_{(A,B)})$と$(\mathbb{N},\le)$が順序同型であるかを理由を込めて答えよ}}
+\begin{proof}
+  順序同型でない．\\
+  順序同型であると仮定して，順序同型写像$f: A\sqcup B \to \mathbb{N}$が存在する．このような写像$f$を一つ取る．
+  $f$が全単射であるため，その逆写像$f^{-1}$が存在し，$f^{-1}$を一つ取る.\\
+  $f(1,0) \in \mathbb{N}$が0でない時，$\mathbb{N}$において$f(1,0)$の直前の元が存在
+  する．この時$f(1,0)$の直前の元$n$をとる．(2)の議論より，$f^{-1}(n)$が$f^{-1}(f(1,0)) = (1,0)$の直前の元である．しかし，集合$(A\sqcup B,\le_{(A,B)})$には$(1,0)$の直前の元が存在しない.矛盾が生じる.\\
+    次に，$f(1,0)=0$の時，$(0,0)\le_{(A,B)} (1,0)$が成り立つため，$f(0,0) \le f(1,0)=0$が成り立つ.この時，$f(0,0)=0$ならば写像の単射性に矛盾し，$f(0,0) \ne 0$ならば$0$の最小性に矛盾する．\\
+    従って順序同型でないことが示された.
+\end{proof}
+\newpage
+\subsection{\normalsize{(4)($X\sqcup Y ,\le_{(X, Y)})$と$(Y\sqcup X, \le_{(Y,X)})$が必ず順序同型になるかを判別せよ}}
+必ず順序同型とは限らない.
+\begin{proof}
+  $(X,\le_{X})=(\mathbb{N},\le ),(Y, \le_{Y}) =(\{a\},\le ')$とする．ただし，$\le$を通常の大小関係とする．$a\in \{a\} $に対し, $a \le ' a$が成り立つとする．\\
+  この時，$X,Y$いずれも整列集合であるが，\\
+  順序同型写像$f : (X \sqcup Y, \le_{(X,Y)}) \to (Y\sqcup X, \le_{(Y,X)})$が存在しないことを以下示す:\\
+  順序同型写像$f : (X \sqcup Y, \le_{(X,Y)}) \to (Y\sqcup X, \le_{(Y,X)})$が存在すると仮定して，このもとで矛盾を導く:\\
+  このような写像$f$を一つ取る.この時，$f$が全単射であるため，写像$f$に対する逆写像$f^{-1}$も存在する.このような逆写像を一つ取る.\\
+  この時，$a\in \{a\}=Y$に対し，\\
+  $f(a) <_{(Y,X)} f(a')$となるような$f(a') \in (Y\sqcup X, \le_{(Y,X)})$が存在する.\\
+  次に，写像$f^{-1}: (Y\sqcup X, \le_{(Y,X)}) \to (X\sqcup Y, \le_{(X,Y)})$も順序同型写像であるため.\\
+    $f^{-1}(f(a)) <_{(X,Y)} f^{-1}(f(a'))$が成り立つ.つまり，$a <_{(X,Y)} a'$が成り立つ. しかし，$a$が$(X\sqcup Y,\le_{(X,Y)})$の最大元である. \\
+    よって，矛盾が生じ,必ず順序同型とは限らないことが示された.\\
+\end{proof}
+\newpage
+\section{問題4.2}
+\subsection{\normalsize{(1)$(J=X)\lor (\exists a \in X; J=X\langle a \rangle)$が成り立つことを示せ}}
+\begin{proof}
+  $J \ne X$ と$J =X$と場合分けして議論を行う:\\
+  $J \ne X $を仮定して，このもとで$(\exists a \in X; J=X\langle a \rangle)$が成り立つことを導く:\\
+  集合$A = \left\{ x \in X \mid x \notin J \right\}$とする. 仮定より\textbf{$A \ne \emptyset$である.} 定義より集合$A$が集合$X$の空でない部分集合である.$X$が整列集合であるため.$\min A$が存在する.\\
+  集合$A$の構成より，$\forall x \in X ; (x < \min A )\Rightarrow x \in J$が成り立つ.\\
+  つまり，$J \supset X \langle \min A \rangle $が得られる.\\
+  次に$J = X \langle \min A \rangle $を以下示す:\\
+  $\exists n \in J ; n \notin X \langle \min A \rangle$と仮定して，このもとで矛盾を導く:\\
+  このような$n$を一つ取る.この$n$に対し，仮定より，$ \min A < n$が成り立つ．\\
+  しかし，集合$J$の性質より，$ \min A \in J$が導かれ，矛盾が生じる.\\
+  よって，$J=X \langle \min A \rangle$であることが示された．\\
+  これで$(J=X)\lor (\exists a \in X; J=X\langle a \rangle)$が示される．\\
+  $J=X$の時，$(J=X)\lor (\exists a \in X; J=X\langle a \rangle)$が成り立つことが明らかである.\\
+	以上より，$(J=X)\lor (\exists a \in X; J=X\langle a \rangle)$を証明できた.
+\end{proof}
+\newpage
+\subsection{\normalsize{(2)$f : (X, \le) \mapsto (X, \le) $が順序単射ならば，任意の$x \in X$に対し，$f(x) \ge x$であることを示せ}}
+\begin{proof}
+  やはり背理法を使う:\\
+  $\exists x \in X ; f(x) < x$と仮定して，このもとで矛盾を導く:\\
+  集合$B = \{ x \in X \mid f(x)<x \} $ とする. 仮定より集合$B$は集合$(X, \le)$の空でない部分集合であることがわかる.\\
+  集合$(X, \le)$が整列集合であるため，$\min B$が存在する. \\
+  この時，$ f( \min B ) <  \min B$が成り立つ.\\
+  $f$が順序単射であるから，$f(f( \min B )) < f(\min B)$が成り立つ.\footnote{これは順序単射の定義から自明でないことですが，整列集合の上の順序が全順序であることを考慮すれば，$\forall x,y \in X$,必ず$x>y$と
+  $x \le y$のどっちか一方のみが成り立ちます,順序単射であることの論理式に対偶をとってやると上の結論が得られる.この議論が問題なしと言えます.
+  }\\
+  集合$B$の構成より，$f( \min B) \in B$がわかり，先ほどの不等式より矛盾が生じる.
+以上の議論より$f : (X, \le) \to (X, \le) $が順序単射ならば，任意の$x \in X$に対し，$f(x) \ge x$であることが示された.
+\end{proof}
+\newpage
+\subsection{\normalsize{(3) $ a \in X$を任意に取る時，$(X,\le) \not\simeq (X \langle a \rangle , \le)$であることを示せ}}
+\begin{proof}
+$\exists a \in X ; (X,\le) \simeq (X \langle a \rangle , \le)$であることを仮定して，このもとで矛盾を導く:\\
+このような$a \in X$を一つ取る，仮定より順序同型写像$f:(X,\le) \to  (X \langle a \rangle , \le)$が存在する，このような写像$f$を一つ取る.\\
+次に順序単射$g : X \to X$を以下のように定める:
+$$
+	\forall x \in X, g(x) := f(x)
+$$
+この時，$\exists a' \in X\langle a \rangle ; a' = g(a)$ \\
+つまり，$ g(a) <   a$である. 前問の議論より$g(a) \ge a$となるはず．\\
+よって，矛盾が生じ，全ての$a \in X$に対し，$f:(X,\le) \to  (X \langle a \rangle , \le)$が存在しないことが得られた．\\
+以上より$ a \in X$を任意に取る時，$(X,\le) \not\simeq (X \langle a \rangle , \le)$であることを示せた．
+\end{proof}
+\newpage
+\subsection{\normalsize{(4)$f: J_X \to J_Y $が順序同型写像であることを示せ.さらに$J_X =X$であるか，ある$x_0 \in X$が存在して,$J_X = X \langle a \rangle$となることを示せ}}
+  第8回講義のRem 5.10のもとで議論を進める:\\
+  \indent \textcolor{red}{まず$f$が順序同型写像であることを以下示す:}
+  \begin{proof}
+    $\simeq$の対称律のもとで，(3)の最後に述べた定理より，任意の$b \in J_Y$に対し，$(Y\langle b \rangle, \le ') \simeq (X \langle a \rangle , \le)$を満たす$a \in X$も一意的に存在する.\\
+    この$a$を$a_b$と書くことにすると，$J_X$ の定義
+    から，$a_b \in J_X$ であることがわかる. こうして，元の対応$b \mapsto a_b$により，写像$g:J_Y \to J_X$が定義される.\\
+	次のようなことを以下示す:
+	$$
+	\begin{cases}
+	  g \circ f = id_{J_X}\\
+	  f \circ g = id_{J_Y}\\
+	  \forall x_0,x_1 \in J_X ; x_0 \le x_1 \leftrightarrow f(x_0) \le f(x_1)
+	\end{cases}
+	$$
+	$x \in J_X$を任意に取る，この時，$ f(x) \in J_Y $で，写像$g$の構成より$g(f(x))=x$が成り立つ.\\
+	$y \in J_Y$を任意に取る，この時，$ g(y) \in J_X $で，写像$f$の構成より$f(g(y))=y$が成り立つ.\\
+	$x_0 ,x_1 \in J_X$を任意に取る.\\
+	$X \langle x_0 \rangle \simeq Y \langle f(x_0) \rangle$より，ある順序同型写像$\phi :X \langle x_0 \rangle \to Y \langle f(x_0) \rangle$が存在する，この写像とその逆写像$\phi^{-1}$をともに取る.\\
+	$X \langle x_1 \rangle \simeq Y \langle f(x_1) \rangle$より，ある順序同型写像$\psi :X \langle x_1 \rangle \to Y \langle f(x_1) \rangle$が存在する，この写像とその逆写像$\psi^{-1}$をともに取る．\\
+	まず$x_0 \le x_1 \rightarrow f(x_0) \le f(x_1)$であることを以下示す:\\
+	$x_0 \le x_1$を仮定して，$ f(x_0) \le f(x_1)$を導く\\
+	$x_0 \le x_1 $という仮定より,
+	写像$c:X \langle x_0 \rangle \to X\langle x_1 \rangle$を次のように定める:\\
+	$$x\mapsto x$$
+	写像$c$が順序単射であることが明らか．\\
+	この時，$(  \psi \circ c \circ \phi^{-1})(Y\langle f(x_0) \rangle) \subset Y \langle f(x_1) \rangle $より，\\
+	$$f(x_0) \le f(x_1)$$
+	次に$x_0 \le x_1 \leftarrow f(x_0) \le f(x_1)$であることを以下示す:\\
+$ f(x_0) \le f(x_1)$を仮定して$x_0 \le x_1$を導く:\\
+写像$c':Y \langle f(x_0) \rangle \to Y\langle f(x_1) \rangle$を次のように定める:\\
+$$
+y \mapsto y
+$$
+$ f(x_0) \le f(x_1)$という仮定より，写像$c'$が順序単射であることが明らかである.\\
+この時，$(\psi^{-1} \circ c' \circ \phi)(X\langle x_0 \rangle ) \subset X \langle x_1 \rangle $より，\\
+$$x_0 \le x_1$$
+これで,$\forall x_0,x_1 \in J_X ; x_0 \le x_1 \leftrightarrow f(x_0) \le f(x_1)$が示された.
+以上より，$f$が順序同型写像であることを証明できた.
+\end{proof}
+\textcolor{red}{次に$(J_X = X) \lor (\exists x_0 \in X ;J_X = X \langle  x_0 \rangle)$であることを以下示す:}
+\begin{proof}
+$(J_X \ne X) \land \lnot (\exists x_0 \in X ;J_X = X \langle  x_0 \rangle)$を仮定して矛盾を導く:\\
+集合$A=\{ x\in X \mid x \notin J_X\}$とすると，仮定より\textbf{集合$X$の空でない部分集合$A$}の最小元$\min A$が存在する.\\
+この時，$X \langle \min A \rangle \subset J_X$が成り立つ.\\
+$X \langle \min A \rangle = J_X$を以下示す:\\
+$\exists x \in J_X ; x > \min A$と仮定して，このもとで矛盾を導く:\\
+この時，$x \in J_X$より，$\exists y=f(x) \in Y; X\langle x \rangle \simeq Y \langle y \rangle$が成り立つ.\\
+このような$y \in Y$を一つ取る，順序同型写像$k: X\langle x \rangle \to Y \langle y \rangle$を一つ取る.\\
+この場合，$X\langle \min A \rangle \subset X\langle x \rangle$が成り立つ.\\
+この時，$k(X\langle \min A \rangle) \subset k(X\langle x \rangle) = Y \langle f(x) \rangle$が成り立つ．\\
+	ここで，$k$が順序同型写像であるため，集合$k(X\langle \min A \rangle)$が(1)の星印の性質をもつ\footnote{$\forall y,y' \in Y; (y<y') \land (y' \in k(X\langle \min A \rangle))$が成り立つ時,$\exists x \in X; f(x) =y < y'$ ,$f$ が順序同型写像であるから、逆写像$f^{-1}$をとって、$x<f^{-1}(y')$が成り立ち、$x \in X \langle \min A \rangle$が得られ、$y \in k(X\langle \min A \rangle)$であることが成り立つ }．前問の解答より，\textcolor{blue}{集合$k(X\langle \min A \rangle)$が集合$Y$の切片である.}\\
+この切片を$Y\langle \alpha \rangle;(\alpha \in Y)$とする.\\
+ここで，$k$の定義域を制限した写像$k' : X\langle \min A \rangle \to Y \langle \alpha \rangle$\\
+$$ x \mapsto k(x)$$
+と定める.$k'$が順序同型写像であることがわかる. この時，集合$J_X$の定義より，$\min A \in J_X$が得られる．\\
+従って，矛盾が生じ，$J_X = X \langle \min A \rangle$である.\\
+以上の議論より，$(J_X = X) \lor (\exists x_0 \in X; J_X = X \langle  x_0 \rangle)$が示された.
+\end{proof}
+\newpage
+\section{\#雑談}
+はい，では第4回数学序論Bの演習課題の解答は以上となります.上記の解答に論理の飛躍が存在するならば，コメントに書いていただければと思います.はい，ではいったん改行を入れます.\\
+\indent では，最後の雑談に入りたいと思います．今週の演習課題に8時間を費やしてこのきれいなpdfファイルを仕上げました.しかし，皆様の見ている通り，今回の答案に変なところで改行があったり，数式が行を跨ったりすることが
+結構あります，視覚には大きな負担となっていたと思いますが，残念ながら数学の文章を書く時にどこで改行すればいいのかがよくわかりません. これについて詳しく教えていただければと思います. ちなみに私は9月に順序集合に
+ついて予習してみましたが，あの時は理解があやふやでした，今回の演習課題を通して，理解がかなり深まりました. この問題の構成がかなりうまいと思っております.\\
+えっとですね，今回の解答に背理法や対偶を示すのが多かったと思いますが，早めに超限帰納法を扱っていただければ助かります.
+\indent はい，では今回の第4回数学序論Bの演習課題解答に関する内容が以上となります，記述を止めます.今週も長い時間を取らせていただき，お疲れ様でした. ああ,最後にアンケートを取り忘れたなぁ,ではアンケートを
+とって終わりたいと思います.\\
+
+\noindent
+\begin{tabular}{|p{3cm}p{5cm}p{2cm}|}
+\hline
+	\multicolumn{3}{|c|}{今回の解答を理解できましたか？}\\
+	\hline
+		 &$\circ$ よく理解できた.&\\
+		&$\circ$ まあまあ理解できた.&\\
+		 &$\circ$ ちょっと難しい.&\\
+		&$\circ$ 全く理解できなかった.&\\
+			\hline
+\end{tabular}\\
+
+ここでアンケートを共有できないと思いますので,回答をコメントに書いていただければと思います.では終わりにします,お疲れ様でした.
+
+
+\end{document}
+
+
+
+
+

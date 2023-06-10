@@ -1,0 +1,71 @@
+\documentclass{jreport}
+\usepackage{amsmath}
+\usepackage{bm}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{xcolor}
+\usepackage[dvipdfmx,hidelinks]{hyperref}
+\usepackage{pxjahyper}
+\begin{document}
+\title{第9回レポート問題}
+\author{習近平}
+\maketitle
+\newpage
+\tableofcontents
+\addcontentsline{toc}{chapter}{目次}
+\newpage
+\setcounter{chapter}{9}
+\section{問題9.1}
+\noindent
+1. 一様連続である.\\
+2. 一様連続でない.\\
+3. 一様連続である.\\
+4. 一様連続でない.\\
+5. 一様連続である.\\
+6. 一様連続でない.\\
+\section{問題9.2}
+\subsection{(1)}
+$$
+\exists \varepsilon \in \mathbb{R}_{>0};\forall \delta \in \mathbb{R}_{>0}; \exists x,y \in [a,b]; (|x-y|<\delta) \land (|f(x) -f(y)|>\varepsilon)
+$$
+\subsection{(2)}
+(1)を満たす$\varepsilon_0 \in \mathbb{R}_{>0}$を一つ取って固定する.\\
+数列$(\delta_n)_{n \in \mathbb{N}}$を次のように定める:\\
+$$
+\delta_n = \frac{1}{n+1}
+$$
+この時,(1)より,各$n \in \mathbb{N}$に対し,\\
+$\exists x,y \in [a,b]; (|x-y|<\delta_n) \land (|f(x) -f(y)|>\varepsilon_0)$\\このような$x,y \in [a,b]$を任意に取る.\\
+\begin{equation}
+	\begin{cases}
+		x_n =\min \{x,y\} \\
+		y_n =\max \{x,y\}
+	\end{cases}
+\end{equation}
+実は選択公理を暗黙に使っていることがわかる,こんなことどうでもいいが,念の為宣言しておく.\\
+このように構成した数列$(x_n)_{n\in \mathbb{N}},(y_n)_{n \in \mathbb{N}}$が求められるものであることが自明である.ここで確認の作業を採点者に任せる.\\
+\subsection{(3)}
+前問で構成した数列$(x_n)_{n \in \mathbb{N}}$が空でない有界閉区間$[a,b]$上に定義されている数列であるため:\\
+Bolzano-Weierstrassの定理より数列$(x_n)_{n \in \mathbb{N}}$のある部分列$(x_{n(k)})_{k\in \mathbb{N}}$が存在し,\\
+$$
+\exists c \in [a,b]; \lim\limits_{k \to \infty} x_{n(k)} =c
+$$
+次に数列$(y_n)_{n \in \mathbb{N}}$の部分列$(y_{n(k)})_{k\in \mathbb{N}}$に対し,考察を行う:\\
+(2)の条件より数列$(|x_n -y_n|)_{n \in \mathbb{N}}$が収束列で$\lim\limits_{n \to \infty}|x_n -y_n| =0$となる.\\
+第一回のレポートのLemma5より,収束数列の部分列が同じ極限に収束することより,\\
+数列$(|x_{n(k)} - y_{n(k)}|)_{k \in \mathbb{N}}$に対し,\\
+$\lim\limits_{k \to \infty}|x_{n(k)} - y_{n(k)}|=0$が成り立つ.\\
+数列$(x_n)_{n\in \mathbb{N}},(y_n)_{n \in \mathbb{N}}$における順序関係を考慮すれば,\\
+$\lim\limits_{k \to \infty} -x_{n(k)} +y_{n(k)} =0$が成り立つ.\\
+収束数列における四則演算の性質より,\\
+$\lim\limits_{k \to \infty} y_{n(k)} =c$であることが直ちにわかる.\\
+\subsection{(4)}
+$f$が閉区間$[a,b]$上の連続函数であるため,第八回のレポート問題8.1より,\\
+$\lim\limits_{k \to \infty} x_{n(k)} =\lim\limits_{k \to \infty} y_{n(k)} =c$のもとで,\\
+$\lim\limits_{k \to \infty} f(x_{n(k)}) =\lim\limits_{k \to \infty} f(y_{n(k)}) =f(c)$となる.\\
+しかし,(2)の構成より,$\lim\limits_{k \to \infty} f(x_{n(k)}) \ne \lim\limits_{k \to \infty} f(y_{n(k)})$が成り立つ.\\
+したがって、矛盾が生じ、示すべき問題を証明できた.
+\newpage
+\section{\# 雑談}
+今週の雑談は特にないんだけど、三角函数がまだ定義していないのに三角函数を出した今回は出題ミスだと言えるだろうw
+\end{document}
