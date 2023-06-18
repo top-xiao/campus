@@ -1,5 +1,5 @@
 # Fdb version 3
-["lualatex"] 1687079661 "intro.tex" "intro.pdf" "intro" 1687079663
+["lualatex"] 1687080444 "intro.tex" "intro.pdf" "intro" 1687080446
   "/home/arnold/.texlive2021/texmf-var/luatex-cache/generic/fonts/otl/haranoajigothic-medium.luc" 1686816455 1871096 84e5d4e41518b627f96dceb8f3717958 ""
   "/home/arnold/.texlive2021/texmf-var/luatex-cache/generic/fonts/otl/haranoajimincho-regular.luc" 1686816415 1957701 ff65c0ebff0dc3aa559c03561e26d29f ""
   "/home/arnold/.texlive2021/texmf-var/luatex-cache/generic/fonts/otl/lmmono9-regular.luc" 1686816415 77690 6ddaa6024a6cd1bfe9b61b63591c4502 ""
@@ -362,9 +362,9 @@
   "/usr/share/texmf/fonts/opentype/public/lm/lmsans17-regular.otf" 1254938640 94828 113f623892fb158753639cc67f23e192 ""
   "/var/lib/texmf/fonts/map/pdftex/updmap/pdftex.map" 1686706799 4379155 98693266ff65f58d9f98aff394de12d2 ""
   "/var/lib/texmf/web2c/luahbtex/lualatex.fmt" 1686706821 4555380 dc387278cc6838ee0fae0bb1d0664e10 ""
-  "intro.aux" 1687079663 11626 468d1c20f63d98c79cb3491751fa952f "lualatex"
-  "intro.tex" 1687079660 147014 6ca5aa09e0f261fedc087fd698ee1556 ""
-  "intro.toc" 1687079663 1976 4d90bf818bc15053d0bae0bf1152be27 "lualatex"
+  "intro.aux" 1687080446 12339 8b959d6d67e6e92f3f280f2f1a8dd17f "lualatex"
+  "intro.tex" 1687080443 147486 f2831f2d61517374fac3e26b4ed68f22 ""
+  "intro.toc" 1687080446 2128 0dc0d72647ea3319faf2f8b9924f481f "lualatex"
   (generated)
   "intro.aux"
   "intro.log"
