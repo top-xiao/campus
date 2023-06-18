@@ -16,7 +16,7 @@
 \newcommand{\cl}[1]{\overline{ #1}  }
 \newcommand{\Int}[1]{#1 ^{\mathrm{o}} }
 \newcommand{\bd}[1]{\operatorname{Bd}{#1}}
-\newtheorem{theorem}{Theorem}[section]
+\newtheorem{theorem}{Theorem}[chapter]
 \newtheorem{corollary}[theorem]{Corollary}
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{definition}[theorem]{Definition}
@@ -26,94 +26,191 @@
 \theoremstyle{plain}
 \newtheorem{example}[theorem]{Example}
 \newtheorem{exercise}[theorem]{Exercise}
-
+\newtheorem{axiom}{Axiom}
 \begin{document}
-\title{中国特色社会主義的位相学}
-\author{君の悪習}
-\date{1953/06/15}
+\title{集合, 位相, 群}
+\author{Arnold Robinson}
+\date{\today}
 \maketitle
-\chapter*{無産階級大革命家を目指している諸君へ}
-中華人民共和国第十三届五次全国人民代表大会会議精神を受け, 中共中央総書記, 国家主席, 中央軍事委員会主席習近平
-同志の指示のもとで, 新時代中国特色社会主義思想の有する位相学の教材編集委員会が開かれました.
-習近平同志によると, "新時代中国特色社会主義の建設には, マルクス主義, 毛沢東思想, 3つの代表重要思想, 科学発展観の
-5つの重要政治思想のもとで, 
-中国国政情勢に合った科学技術発展をしなければいけません. 
-なお科学技術の発展の土台として, 数学がそのすべてを率いることとなり, 資本主義社会から舶来した西洋数学に
-社会主義改造を施さなければいけません. " 
-私たち新時代中国特色社会主義的位相学編集委員会は習近平同志の指示を研究し, 数学の頭脳に該当する位相学に適切な改革を実施することが何よりも重要であると認識しております. ですので, 私たちは全国各省庁の党政機関の協力でこの画期的な位相学教材を作りました. 
 
-この教材の目的は上に書いたように, 社会主義思想の有する数学者を育成し, 
-我が国の国政にあった科学技術を発展させることを主眼に置いています. 
-マルクス主義によると, 無産階級が指導する国こそ社会の究極な形態となりますので, 本教材は特殊な前提知識を一切要しません.
-本教材に掲載されている内容の半分を習得すれば, 他分野に行っても大躍進ができますので, 毛沢東思想を徹底的に守っております.
-開位相でも, 閉位相でも連続の精神を理解できればいい位相ではありますので, 
-こだわりを持たずに多様な視点から位相空間を分析する予定です.
+\chapter*{まえがき}
 
-更に,本書が中国共産党第十八回全国党大会の会議精神, 
-全国無産階級数学者の願いと全国人民の数学教養を代表し, 資本主義教育では達成できない学習経路を設定しております. 
+この資料を見つけた君は今数学科の集合と位相の講義で悩んでいるのではないでしょうか？
+また君は数学以外の分野を専攻していて, 大学数学科の人間達は何を勉強しているかに興味をもっているでしょう？ 
+「こんな君を待ち構えてこの本を作成したよ！」, 「僕は君の悩みを理解しているよ！」, 「これを読めば基礎のすべてがわかるよ！」など胡散臭いな宣伝は私にはできない. 
+この本は私の学習ノートを整理した結果である. つまり, 高度に抽象化された議論を更に抽象的に書いたものである. 決して楽に理解できるようなものではない. （もし楽にできたら私も苦労しなかっただろう.）
 
-また本書を読んでくださる読者の皆様は数学学習初期段階にありますと想定しております. 
-本書を習得したあとに, 数学者による無産階級科学技術大革命を起こせることが偉大なる指導者の本意でありますので, 
-くれぐれも勉学怠ることのないように心がけよう. 
-\newpage
+
+
+しかし, 難しいから諦めちゃうという考え方もよろしくない, 特に大学数学化の新入生の方にとって, 集合と位相と群がほぼどの分野に進むとしても必ず習得しなければいけない概念である. これらの分野で躓いてしまうと,
+今後より専門的な学習で痛い目に遭うのはほぼ確実に言えるだろう. 
+数学は先人達の知恵の結晶であり, 読めばすぐわかるようなものではない. したがって, 一回学習したことに満足せず, 理解するまで復習することが数学における重要事項である. これらをコツコツ学んで, 論理に忠実して, 基礎的な概念を噛み砕いてからより専門的なことを勉強すると, 君は絶対自分の成長に驚くだろう.
+
+
+
+本書では難解な概念をサボらずに丁寧に解説するを主眼に置く. その代わりに本書で学習している読者に練習問題に取り組むことを強要する. 練習問題を解かないとわかったつもりになった可能性がある. 最初の第一部では手を動かしてすべての練習問題を丁寧に, 論理に忠実して書くことが必須である. また証明を書く時に, 何を仮定したか, 何を導こうとするかを誰が見てもわかるように記述することが大切である. このような練習を二年間ほど行えば, 自分の頭の中に考えたアイデアをそのまま数学的な文章に整理できるようになる. それを目指して勉強をしよう.
+
+本書の読者に高校数学で習ったはずの全称命題, 存在命題とDe Morganの法則を前提条件として課している.
+
+
 
 \tableofcontents
-\addcontentsline{toc}{part}{無産階級数学者革命綱要}
+\addcontentsline{toc}{part}{現時点の進捗}
+
+\part{公理的集合論}
+\chapter*{概説}
+
+大学数学に移行するにあたって, ある特定の対象について細かく議論するより, ある特定な性質を満たすものの集まり, あるいは特殊な構造を持つものの集まりを扱うことによって, 一般的な命題を出すことに重要視している. しかも具体的なものを扱う際に, どの背景で考えているかを極めて重視される.
+
+例えば, $-1$と$1$の大小を比較しなさいと言われたら, 君はすぐに「$-1 <1$が成立するだろう? 舐めるんじゃないぞ」と言いたくなるでしょう. しかし, それはあくまで実数の世界に通常の順序で考えた時の結論に過ぎない. 実数の通常の順序 $x < y$ に対し, $y <' x$と定めば, それはそれで順序になる. (演算に適合しているかどうかを一旦無視する.)
+
+
+
+なので, 数学的な対象を扱う時, どの世界で見ているかを明示しなければいけない. この時, 扱いたい数学的な対象を含む集合を考えたくなる.
+勘のいい人は扱いたい数学的な対象を含む集合を考えたければ, その集合が必ず存在すると認識すればいいだろうという発想に至ると思う.
+
+しかしながら, どんな性質に対しても必ずそのような性質を満たす集合が存在すると仮定すると, 大きな問題が発生する. 
+例えば, ラッセルのパラドックスと呼ばれる問題を見よう. 性質$(\star)$「自分自身を要素として持たない」とし, $(\star)$を満たす集合全体の集まり$A$を考えると, 
+$A$は自分自身を要素として持つかどうかを考えてみよう. 
+$A$が自分自身を要素として持つとしたら, 
+「自分自身を要素として持たない」という性質に反する. 
+$A$が自分自身を要素として持たない場合は性質$(\star)$を満たすこととなり, 
+$A$が自分自身を要素として持つとなり, 矛盾が生じる. どの場合でも矛盾が発生する. よって, 性質$(\star)$を満たす集合が存在しない.
+
+
+ここで, 注意してほしいのは性質 $(\star)$が空集合であるという結論ではなく, そういう集合が存在し得ないということである. 上記の議論は「猫かつ犬であるような生物である」という性質を満たす生物の集まりをとった時, そのような生物がいないから集合として空集合であるという議論と\textbf{まったく違う話になる!}
+まだ曖昧な人は議論を見直してください.
+
+
+以上の話からわかったように, どんな性質に対してそれを満たすような集合が存在するという主張は誤りである. ならば, 私達にとって特定な性質を満たすものの集まりを考えたくなった場合にどのようなアプローチを取ればいいだろう？
+
+それのいい感じの答えは集合論の公理化である. 集合に関連する当たり前ないくつかの性質を認めて, その上で話を進めるという結果になる.
+
+\chapter{ZFC公理体系}%
+\label{cha:ZFC公理体系}
+
+\section{土台となる公理}
+
+私達は集合間の関係$A \in B$を「 $A$ が $B$ に属する」, $A \not\in  B$を「$A$が $B$ に属さない」, $A = B$ を「 $A$ と $B$ が一致する」と呼び, 
+記述の簡潔性を考慮して,
+記号$\forall $ を「任意の」, $\exists $ を「存在する」, $\exists !$を「ただ一つ存在する」,  $\lnot$ を「でない」, $\lor$を 「または」,  $\land$を「かつ」と約束する.
+条件式 $\varphi$ に対し, $\varphi(x)$が「$x$が条件 $\varphi$を満たす」とする.
+
+例えば, 実数全体の集合を$\mathbb{R}$とした時, $\forall x \in \mathbb{R}; \lnot \exists y \in \mathbb{R}; (y <0 ) \land (x^2 <y )$ という論理式が日本語に直すと「任意の実数$x$に対し, 実数 $y$で $y <0 $かつ$x^2<y$を満たすようなものが存在しない」になる.
+
+更に以下のように部分集合, 和集合, 共通集合, 差集合, 空集合, 後続順序数, 冪集合と一点集合の記号を定める:
+\begin{definition}[部分集合, 和集合, 共通集合, 差集合, 空集合, 後続順序数, 冪集合と一点集合]
+\[
+	\begin{array}{rcl}
+		x \subseteq y &\iff & \forall z;\left( z \in x \rightarrow z \in y \right) \\
+		w = x\cup y & \iff & \forall z;\left( z \in w \leftrightarrow z \in x \lor z \in y \right) \\
+		w = x \cap y & \iff & \forall z;\left( z \in w \leftrightarrow z \in x \land z \in y \right) \\
+		w = x\setminus y &\iff & \forall z;\left( z \in w \leftrightarrow z \in x \land z \not\in y \right)\\ 
+		x = \emptyset & \iff &\forall z;\left( z \not\in x \right) \\
+		y = S(x) & \iff & \forall z;(z \in y \leftrightarrow z \in x \lor z = x) \\
+		y = \mathcal{P}(x)& \iff & \forall z; \left( z \in y \leftrightarrow z \subseteq x \right) \\
+		\mathrm{SING}(x) &\iff & \exists y \in x; \forall z \in x ; z=y\\
+
+\end{array}
+\] 	
+\end{definition}
+これらの準備を持って, 公理的集合論の公理を一気に紹介する.
+集合の世界では以下の公理が成立すると認める.
+\begin{axiom}[外延性公理] 
+	$$\forall x; \forall y; \forall z;  \left( \left( z \in x \leftrightarrow z \in y \right)  \rightarrow x = y \right) $$
+\end{axiom}
+
+\begin{axiom}[基礎の公理]
+	 $$\forall x;  \left( \exists y( y \in x) \rightarrow \exists y \left( y\in x \land \lnot \exists z \left( z \in x \land z \in y \right)  \right)   \right) $$ 
+	
+\end{axiom}
+
+\begin{axiom}[分出の公理]
+	$y$に依存しない任意の条件式 $\varphi$ に対し, 以下のことが成立する.
+	\[
+	\forall z; \exists y; \forall x;\left(x \in y \leftrightarrow x \in z \land \varphi(x)  \right) 
+	\] 
+\end{axiom}
+
+\begin{axiom}[対の公理]
+	\[
+	\forall x; \forall y; \exists z; \left( x \in z \land y \in z \right) 
+	\] 
+\end{axiom}
+
+\begin{axiom}[和集合の公理]
+	\[
+	\forall \mathcal{F}; \exists A; \forall Y; \forall x ;\left( x \in Y \land Y \in \mathcal{F} \rightarrow x \in A \right) 
+	\] 		
+\end{axiom}
+
+\begin{axiom}[置換の公理]
+	$B$に依存しない任意の条件$\varphi$に対し, 以下のことが成立する.
+	\[
+	\forall A;\left( \forall x \in A; \exists! y ; \varphi(x,y) \rightarrow \exists B; \forall x \in A; \exists y \in B; \varphi(x,y) \right) 
+	\] 
+\end{axiom}
+
+\begin{axiom}[無限の公理]
+	 \[
+	\exists x ;\left( \emptyset \in x \land (\forall y \in x; S(y) \in x) \right) 
+	\] 
+	
+\end{axiom}
+
+\begin{axiom}[冪集合の公理]
+	\[
+	\forall x;\exists y;\forall z;\left( z \subseteq x \rightarrow z \in y \right) 
+	\] 
+\end{axiom}
+
+\begin{axiom}[選択公理]
+	 \[
+		 \forall \mathcal{F};\left( \emptyset \not\in  \mathcal{F} \land \forall x \in \mathcal{F};\forall y \in \mathcal{F};\left( x \neq y \rightarrow x \cap y = \emptyset \right) \rightarrow \exists C; \forall x \in \mathcal{F};\left( \mathrm{SING}\left( C \cap x \right)  \right)  \right) 
+	\] 
+\end{axiom}
+
+これらのすべての公理を合わせてZFC公理系と呼ぶ.
+
+\begin{exercise}
+	分出の公理を仮定した状態で, 基礎の公理, 冪集合公理が共通集合と冪集合の記号で表現することができる. これを示してみよう.
+
+\end{exercise}
+
+次のsectionから各論理式で表されている公理の意味を解説する.
+
+\section{外延性公理}
+
+外延性公理は「集合が一致する」の判定基準を与える公理である. 任意の２つの集合$x, y$に対し, $x=y$を示そうとする時,  $x \subseteq y$と$y \subseteq x$両方を示せば良いと言っている.
+
+これで外延性の公理の解説が終わるが, 少し余談に入ろう.
+外延性の公理は当たり前な公理に見えるが実は恐ろしい公理でもある, 
+私達が議論できる数学的対象をすべて集合に制限した. 
+例えば「猫」と「犬」という集合でないものを扱う時に, 「猫」と「犬」をそれぞれ要素に持つものの集まりである$\{\text{猫}\}, \{\text{ 犬}\} $ を集合と認識してもよいか？
+
+
+答えは「ダメ」. 任意の集合$z$に対し論理式$ z \in \{\text{猫}\} $と$z \in \{\text{犬}\} $ 両方とも偽であり, 従って, $\forall z ;\left( z \in \{\text{猫}\} \leftrightarrow z \in \{\text{犬}\}  \right) $ が真である. 外延性公理より$\{\text{猫}\} = \{\text{犬}\}$が導かれる. この例からわかったように, 公理的集合論の世界では議論できる対象は集合しかない！
+
+
+\section{基礎の公理}
+基礎の公理は一言でいうと, 空でない集合$X$に対して, $X \in X$が成立しない. つまり, 属するという関係で下への無限列が取れない. これは数学基礎論においてはもっと深い意味を持つが本書の意図からずれるので割愛させていただきます. 興味のある方はキューネンの「数学基礎論講義」を参照してください.
+
+\section{分出の公理}
+
+
 
 
 
 \part{一般位相空間論}
 \chapter*{概説}
-ここで集合と位相でよく使われている用語と操作について簡単に述べておきます.
 
-はじめに我々の偉大なる習近平同志は天と地とを創造されました.
-
-地は小さな池であり, 其の内側には愚鈍な人民があり,そして習近平はメタンガスの中を漂っていました.
-
-習近平は「集合が必要だ」とおっしゃった. すると公理的集合論が生まれました. 
-
-習近平は公理的集合論を見て良しとされました. そして公理的集合論と人民とを切り離されました.
-
-習近平は集合を現代数学の基盤と称し, そして人民のうちあるものを「数学者」,残りを「数学者でない」と称しました.
-
-第一日のことでございます.
-
-習近平は「集合の演算が必要だ」とおっしゃった. $\cup, \cap ,\setminus ,\triangle$が生まれました.
-更に「二項関係が必要だ」とおっしゃった. 写像, 同値関係, 順序関係が生まれた.
-最後に「数学の領土が必要だ」とおっしゃった. 数学の共和国が生まれました.
-数学者は二項関係を以て, 集合の演算に基づき, 数学の共和国に住むことになりました.
-習近平はその様子を見て良しとされました.
-
-第二日のことでございます.
-
-習近平は「構造が必要だ」 とおっしゃった. そして, 数学的な構造が生まれました.
-習近平は数学的な構造を数学共和国に埋め込み, 論理規則を憲法にされました.
-
-第三日のことでございます.
-
-習近平は「共和国に万物あれ」とおっしゃった. 幾何,解析,代数など様々の分野が生まれ, 
-習近平は数学者たちを各分野に流されました. そして余剰の数学者を保管するために, 習近平は刑務所を作りました,
-
-第四日のことでございます.
-
-習近平は様々な仮説を立て, 数学者に「これらを検証せよ」とおっしゃった. そして数学者が仮説を証明しようとしていました.
-
-第五日のことでございます.
-
-習近平は選択公理を創造し, 数学の共和国の総理とされました.
-
-これは第六日のことでございます.
-
-習近平は困難に遭遇し, やる気がすべて失い, 安らかに眠りました.
-
-これは第七日のことでございます.
 
 \chapter{位相と位相空間の基本常識}
 
-\section{位相，開基，準開基}
+\section{位相, 開基,  準開基}
 
-マルクス主義によると, 歴史は人間が作り出したものであります. 歴史の観点を主張するには物証が必要となります.
-同じように, 連続と言う概念ももともとそこにあるものではなく, 人間が恣意的に定めたものであります. その物証にあたるものこそ位相です. 
+マルクス主義によると,  歴史は人間が作り出したものであります. 歴史の観点を主張するには物証が必要となります.
+同じように,  連続と言う概念ももともとそこにあるものではなく,  人間が恣意的に定めたものであります. その物証にあたるものこそ位相です. 
 
 
 \begin{definition}[位相]
@@ -122,7 +219,7 @@
 	\begin{enumerate}
 		\item $\emptyset \in \mathcal{O}_X \land X \in \mathcal{O}_X$
 		\item $\forall \Lambda\left( \Lambda \neq \emptyset \right) ;\left( \left( \forall \lambda \in \Lambda; U_{\lambda} \in \mathcal{O}_X \right) \implies \bigcup_{\lambda \in \Lambda} U_{\lambda} \in \mathcal{O}_X \right) $ 
-		\item $\forall T_1, T_2 \in \mathcal{O}_X; T_1\cap T_2 \in \mathcal{O}_X$
+		\item $\forall T_1,  T_2 \in \mathcal{O}_X; T_1\cap T_2 \in \mathcal{O}_X$
 	\end{enumerate}
 
 \end{definition}
@@ -130,23 +227,23 @@
 
 位相$\mathcal{O}$が与えられた集合$X$のことを位相空間\textit{(topological space)}と呼ぶ.\\
 位相$\mathcal{O}$の元$\mathbf{U}$のことを集合$X$上の\textbf{開集合}\textit{(open set)}とする.\\
-集合$X$の2つの位相$\mathcal{O},\mathcal{O}'$に対し、$\mathcal{O},\mathcal{O}'$が比較可能というのは$\mathcal{O} \subseteq \mathcal{O}' $ または$ \mathcal{O} \supseteq \mathcal{O}'$が成り立つ.
-$\mathcal{O} \subseteq \mathcal{O}'$が成り立つ時，位相$\mathcal{O}$が位相$\mathcal{O}'$より弱い\textit{(coarser)},位相$\mathcal{O}'$が位相$\mathcal{O}$より強い\textit{(finer)}と呼ぶ.
+集合$X$の2つの位相$\mathcal{O}, \mathcal{O}'$に対し、$\mathcal{O}, \mathcal{O}'$が比較可能というのは$\mathcal{O} \subseteq \mathcal{O}' $ または$ \mathcal{O} \supseteq \mathcal{O}'$が成り立つ.
+$\mathcal{O} \subseteq \mathcal{O}'$が成り立つ時,  位相$\mathcal{O}$が位相$\mathcal{O}'$より弱い\textit{(coarser)}, 位相$\mathcal{O}'$が位相$\mathcal{O}$より強い\textit{(finer)}と呼ぶ.
 
-前に書いたように, 位相を社会と思うと社会の強弱はその社会の多様性によって記述されています. 異なる方面での多様性に関しては, 比較することができません. つまり, 位相の強弱の比較は完全な包含関係でないと意味を持ちません.
+前に書いたように,  位相を社会と思うと社会の強弱はその社会の多様性によって記述されています. 異なる方面での多様性に関しては,  比較することができません. つまり,  位相の強弱の比較は完全な包含関係でないと意味を持ちません.
 
 \begin{example}
-	集合$X$に対し, $\mathcal{P}\left( X \right) $ が$X$の\textbf{離散位相}と呼ぶ. $\{\emptyset , X\} $ は$X$ の\textbf{自明な位相}と呼ぶ.
+	集合$X$に対し,  $\mathcal{P}\left( X \right) $ が$X$の\textbf{離散位相}と呼ぶ. $\{\emptyset ,  X\} $ は$X$ の\textbf{自明な位相}と呼ぶ.
 \end{example}
 
-社会があれば必ず階級が生じ, 連続な数学の社会は位相というもののであれば, 社会を指導する階級が開基であります. 開基という指導階級を知ることで, 位相社会全体の挙動を知ることができます.
+社会があれば必ず階級が生じ,  連続な数学の社会は位相というもののであれば,  社会を指導する階級が開基であります. 開基という指導階級を知ることで,  位相社会全体の挙動を知ることができます.
 
 \begin{definition}[開基]
 	集合$X$の開基$\mathcal{B}$とは以下の2つの条件を満たす$X$の部分集合族である:
 
 	\begin{enumerate}
-		\item 任意の$x \in X$に対し，ある$B \in \mathcal{B}$が存在し，$x \in B$が成り立つ.
-		\item 任意の$B_1, B_2 \in \mathcal{B}$に対し，任意の$x \in B_1 \cap B_2$に対し，$x \in B_3 \subseteq B_1 \cap B_2$を満たす集合 $B_3 \in \mathcal{B}$が存在する.
+		\item 任意の$x \in X$に対し,  ある$B \in \mathcal{B}$が存在し,  $x \in B$が成り立つ.
+		\item 任意の$B_1,  B_2 \in \mathcal{B}$に対し,  任意の$x \in B_1 \cap B_2$に対し,  $x \in B_3 \subseteq B_1 \cap B_2$を満たす集合 $B_3 \in \mathcal{B}$が存在する.
 	\end{enumerate}
 
 \end{definition}
@@ -166,57 +263,57 @@ $\mathcal{O} \subseteq \mathcal{O}'$が成り立つ時，位相$\mathcal{O}$が�
 \end{claim}
 
 \begin{proof}
-	集合$X$の開基$\mathcal{B}$に対し，定義\ref{1}により構成された$X$の部分集合族$\mathcal{O}$は$X$の位相であることを以下示す:\\
-	まず$X, \emptyset \in \mathcal{O} $が成立することを示す:\\
-	$ X$に対して，開基$\mathcal{B}$の定義より，$\forall x \in X  ; \exists B \in \mathcal{B} ; \left( B  \subseteq X \land x \in B \right)$が自明である.\\
-	$\emptyset $に対し，$\forall x \in \emptyset ; \exists B \in \mathcal{B} ; x \in B \subseteq \emptyset$が常に真となるので, $\emptyset \in \mathcal{O}$\\
+	集合$X$の開基$\mathcal{B}$に対し,  定義\ref{1}により構成された$X$の部分集合族$\mathcal{O}$は$X$の位相であることを以下示す:\\
+	まず$X,  \emptyset \in \mathcal{O} $が成立することを示す:\\
+	$ X$に対して,  開基$\mathcal{B}$の定義より,  $\forall x \in X  ; \exists B \in \mathcal{B} ; \left( B  \subseteq X \land x \in B \right)$が自明である.\\
+	$\emptyset $に対し,  $\forall x \in \emptyset ; \exists B \in \mathcal{B} ; x \in B \subseteq \emptyset$が常に真となるので,  $\emptyset \in \mathcal{O}$\\
 	次に$\mathcal{O}$の任意要素の和集合は$\mathcal{O}$に属することを示す:\\
-	$J$を任意の空でない添字集合とする，$\forall \alpha \in J; U_{\alpha} \in \mathcal{O}$が成立することを仮定して，$\bigcup\limits_{\alpha \in J} U_{\alpha } \in \mathcal{O}$であることを示せばよい.\\
+	$J$を任意の空でない添字集合とする,  $\forall \alpha \in J; U_{\alpha} \in \mathcal{O}$が成立することを仮定して,  $\bigcup\limits_{\alpha \in J} U_{\alpha } \in \mathcal{O}$であることを示せばよい.\\
 	$x \in \bigcup\limits_{\alpha \in J} U_{\alpha }$を任意に取る.\\
-	この時，ある$\alpha \in J$が存在し，$x \in U_{\alpha}$を満たす.この集合$U_{\alpha}$を一つ取る．\\
-	$U_{\alpha } \in \mathcal{O}$が成立することより，ある$B \in \mathcal{B}$が存在し，$x \in B \land B \subseteq U_{\alpha}$を満たす.このような集合$B$を一つ取る．\\
-	この場合，$B \subseteq \bigcup\limits_{\alpha \in J} U_{\alpha } $が成立する.
-	つまり，集合$\bigcup\limits_{\alpha \in J} U_{\alpha } $に対して，$\forall x \in \bigcup\limits_{\alpha \in J} U_{\alpha } ; \exists B \in \mathcal{B} ; \left( \left( B  \subseteq \bigcup\limits_{\alpha \in J} U_{\alpha } \right)  \land \left( x \in B \right) \right) $が満たされていることより，
+	この時,  ある$\alpha \in J$が存在し,  $x \in U_{\alpha}$を満たす.この集合$U_{\alpha}$を一つ取る．\\
+	$U_{\alpha } \in \mathcal{O}$が成立することより,  ある$B \in \mathcal{B}$が存在し,  $x \in B \land B \subseteq U_{\alpha}$を満たす.このような集合$B$を一つ取る．\\
+	この場合,  $B \subseteq \bigcup\limits_{\alpha \in J} U_{\alpha } $が成立する.
+	つまり,  集合$\bigcup\limits_{\alpha \in J} U_{\alpha } $に対して,  $\forall x \in \bigcup\limits_{\alpha \in J} U_{\alpha } ; \exists B \in \mathcal{B} ; \left( \left( B  \subseteq \bigcup\limits_{\alpha \in J} U_{\alpha } \right)  \land \left( x \in B \right) \right) $が満たされていることより,  
 	$\bigcup\limits_{\alpha \in J} U_{\alpha } \in \mathcal{O}$が成り立つ．\\
-	最後に,任意の2つの集合$T_1 , T_2 \in \mathcal{O}$に対し，$T_1 \cap T_2 \in \mathcal{O}$ を示す:\\
-	$T_1 , T_2 \in \mathcal{O}$を任意に取る，この時，集合$T_1 \cap T_2$について，先程と似たような議論をすれば良い.\\
-	$x \in T_1 \cap T_2 $を任意に取る，この時，$B_1 \subseteq T_1, B_2 \subseteq T_2$かつ$x \in B_1 \cap B_2$を満たすような$B_1,B_2 \in \mathcal{B}$が存在することは集合$\mathcal{O}$の定義より直ちにわかる.\\
-	このような集合$B_1, B_2 \in \mathcal{B}$を取って,開基$\mathcal{B}$の二番目の性質を用いると，$x \in B_3 ,B_3 \subseteq B_1 \cap B_2 $を満たす$B_3 \in \mathcal{B}$が存在する.\\
-	この集合$B_3$を取って，$B_3 \subseteq \left( B_1 \cap B_2  \right) \subseteq \left( T_1 \cap T_2 \right) $が成立することより，集合$T_1 \cap T_2 $に対し，$\forall x \in T_1 \cap T_2 ; \exists B \in \mathcal{B} ; \left( \left( B  \subseteq T_1  \cap T_2 \right) \land \left( x \in B \right) \right) $が得られ，$\left( T_1 \cap T_2 \right) \in \mathcal{O}$であることを示せた.\\
-	以上より，$\mathcal{O}$が集合$X$の位相であることを導けた.
+	最後に, 任意の2つの集合$T_1 ,  T_2 \in \mathcal{O}$に対し,  $T_1 \cap T_2 \in \mathcal{O}$ を示す:\\
+	$T_1 ,  T_2 \in \mathcal{O}$を任意に取る,  この時,  集合$T_1 \cap T_2$について,  先程と似たような議論をすれば良い.\\
+	$x \in T_1 \cap T_2 $を任意に取る,  この時,  $B_1 \subseteq T_1,  B_2 \subseteq T_2$かつ$x \in B_1 \cap B_2$を満たすような$B_1, B_2 \in \mathcal{B}$が存在することは集合$\mathcal{O}$の定義より直ちにわかる.\\
+	このような集合$B_1,  B_2 \in \mathcal{B}$を取って, 開基$\mathcal{B}$の二番目の性質を用いると,  $x \in B_3 , B_3 \subseteq B_1 \cap B_2 $を満たす$B_3 \in \mathcal{B}$が存在する.\\
+	この集合$B_3$を取って,  $B_3 \subseteq \left( B_1 \cap B_2  \right) \subseteq \left( T_1 \cap T_2 \right) $が成立することより,  集合$T_1 \cap T_2 $に対し,  $\forall x \in T_1 \cap T_2 ; \exists B \in \mathcal{B} ; \left( \left( B  \subseteq T_1  \cap T_2 \right) \land \left( x \in B \right) \right) $が得られ,  $\left( T_1 \cap T_2 \right) \in \mathcal{O}$であることを示せた.\\
+	以上より,  $\mathcal{O}$が集合$X$の位相であることを導けた.
 \end{proof}
 
 
-我が国が社会主義国であって, 中国共産党が国を指導しています. しかし, 党もまた社会の一部であって, 党と人民は切っても切り離せない関係があります. 同様に位相と開基も切っても切り離せない関係がたくさん存在しています.
-次に，位相と開基との関係を示す重要なLemmaを3つ紹介させていただきます:
+我が国が社会主義国であって,  中国共産党が国を指導しています. しかし,  党もまた社会の一部であって,  党と人民は切っても切り離せない関係があります. 同様に位相と開基も切っても切り離せない関係がたくさん存在しています.
+次に,  位相と開基との関係を示す重要なLemmaを3つ紹介させていただきます:
 
 \begin{lemma}[開基の和集合族]
-	$X$を集合とする. $\mathcal{B}$を集合$X$の位相$\mathcal{O}$の基底とする.この時，$\mathcal{O}$の任意要素が必ず$\mathcal{B}$の要素の和集合の形で書ける．
+	$X$を集合とする. $\mathcal{B}$を集合$X$の位相$\mathcal{O}$の基底とする.この時,  $\mathcal{O}$の任意要素が必ず$\mathcal{B}$の要素の和集合の形で書ける．
 \end{lemma}
 
 \begin{proof}
-	$U\in \mathcal{O}$を任意に取る.この時，開基の定義より，$\forall x \in U ; \exists B_x \in \mathcal{B}; x \in B_x \subseteq U.$ 従って，$U=\bigcup_{x \in U}B_x$
+	$U\in \mathcal{O}$を任意に取る.この時,  開基の定義より,  $\forall x \in U ; \exists B_x \in \mathcal{B}; x \in B_x \subseteq U.$ 従って,  $U=\bigcup_{x \in U}B_x$
 \end{proof}
 
 
 
 
-共産党が我が国の指導階級でありながら, 社会の一部でもあり, 人民のなかから取り出した集団が常に社会を指導できるわけではありません. ですので, 人民群衆から共産党を探し出せるようにする必要があります.
+共産党が我が国の指導階級でありながら,  社会の一部でもあり,  人民のなかから取り出した集団が常に社会を指導できるわけではありません. ですので,  人民群衆から共産党を探し出せるようにする必要があります.
 
 \begin{lemma}[開基の構成]\label{lem:1od}
-	位相空間$(X,\mathcal{O})$に対し，$\mathcal{O}$の部分集合$\mathcal{C}$は以下の条件を満たす時に，$\mathcal{C}$が$(X,\mathcal{O})$の開基である.
+	位相空間$(X, \mathcal{O})$に対し,  $\mathcal{O}$の部分集合$\mathcal{C}$は以下の条件を満たす時に,  $\mathcal{C}$が$(X, \mathcal{O})$の開基である.
 	$$\forall U \in \mathcal{O};\forall x \in U \exists C \in \mathcal{C}; x \in C \subseteq U$$
 \end{lemma}
 
 \begin{proof}
-	開基となるための2つの条件を確認すれば良い，
-	$X \in \mathcal{O}$より，
-	$\forall x \in X; \exists C \in \mathcal{C}; \left( x \in \mathcal{C} \land C \subseteq X  \right)  $ ,
+	開基となるための2つの条件を確認すれば良い,  
+	$X \in \mathcal{O}$より,  
+	$\forall x \in X; \exists C \in \mathcal{C}; \left( x \in \mathcal{C} \land C \subseteq X  \right)  $ , 
 	これで開基に条件1を満たす.次に共通部分について考察する: 
-	$\forall C_1 , C_2  \in \mathcal{C} $,
-	$ \mathcal{C} \subseteq \mathcal{O}$ より，
-	$C_1 , C_2 \in \mathcal{O}; C_1 \cap C_2 \in \mathcal{O}$ が得られる.
-	この時，$\forall x \in C_1 \cap C_2; \exists C_3 \in \mathcal{C} ; x \in C_3 \subseteq C_1 \cap C_2$
+	$\forall C_1 ,  C_2  \in \mathcal{C} $, 
+	$ \mathcal{C} \subseteq \mathcal{O}$ より,  
+	$C_1 ,  C_2 \in \mathcal{O}; C_1 \cap C_2 \in \mathcal{O}$ が得られる.
+	この時,  $\forall x \in C_1 \cap C_2; \exists C_3 \in \mathcal{C} ; x \in C_3 \subseteq C_1 \cap C_2$
 \end{proof}
 
 
@@ -225,40 +322,40 @@ $\mathcal{O} \subseteq \mathcal{O}'$が成り立つ時，位相$\mathcal{O}$が�
 
 
 \begin{lemma}[開基と位相の強弱]
-	集合$X$ の2つの位相$\mathcal{O} , \mathcal{T'}$ の開基$ \mathcal{B}$, $ \mathcal{B'}$ に対し，
+	集合$X$ の2つの位相$\mathcal{O} ,  \mathcal{O'}$ の開基$ \mathcal{B}$,  $ \mathcal{B'}$ に対し,  
 	以下の2つの命題が同値である: \footnote{このlemmaは位相の強弱を比較する際に大変重要である.理解することが必須．}\\
-	(1) $\mathcal{T'}$ が$\mathcal{O}$ より強い.\\
+	(1) $\mathcal{O'}$ が$\mathcal{O}$ より強い.\\
 	(2) $\forall x \in X; \forall B \in \mathcal{B} ; \left( x \in B \implies  \exists B' \in  \mathcal{B'} ; x \in B' \subseteq B \right) $
 \end{lemma}
 
 \begin{proof}
 	(2) $ \implies $ (1): $U \in \mathcal{O} $を任意に取る.
-	この時，$U \in \mathcal{T'}$ を示せば良い．
-	$\mathcal{B}  $ が$\mathcal{O}$ を生成することに着目すると，$\forall x \in U; \exists B \in \mathcal{B}; x \in B \subseteq U$は位相の生成に基づいて成立する．
-	(2) の条件より，$\forall x \in U; \exists B \in \mathcal{B};\exists B' \in \mathcal{B'}; x \in B' \subseteq B \subseteq U$. 
-	従って，$U$が開基 $\mathcal{B'}$ の元で生成される. 
-	よって，$U \in \mathcal{T'}$ が成立する．\\
-	(1) $\implies $ (2): 開基の要素は開集合であることを利用すれば，
-	$x \in B \in \mathcal{B} \implies x \in B \in \mathcal{T'}$ である.
-	$\mathcal{T'}$が開基$\mathcal{B'}$ により生成されるから，
+	この時,  $U \in \mathcal{O'}$ を示せば良い．
+	$\mathcal{B}  $ が$\mathcal{O}$ を生成することに着目すると,  $\forall x \in U; \exists B \in \mathcal{B}; x \in B \subseteq U$は位相の生成に基づいて成立する．
+	(2) の条件より,  $\forall x \in U; \exists B \in \mathcal{B};\exists B' \in \mathcal{B'}; x \in B' \subseteq B \subseteq U$. 
+	従って,  $U$が開基 $\mathcal{B'}$ の元で生成される. 
+	よって,  $U \in \mathcal{O'}$ が成立する．\\
+	(1) $\implies $ (2): 開基の要素は開集合であることを利用すれば,  
+	$x \in B \in \mathcal{B} \implies x \in B \in \mathcal{O'}$ である.
+	$\mathcal{O'}$が開基$\mathcal{B'}$ により生成されるから,  
 	$\exists B' \in \mathcal{B'} ; x \in B' \subseteq B$が得られる．
 
 \end{proof}
 
-この補題は何について議論しているでしょうか？ つまり, 任意の社会に置いて, 有力な指導階級を持つものがより強い社会である. 我が国建国70年間の飛躍的な経済発展のもっとも重要な原因は, 中国共産党は我々を指導してくださったおかげです.
+この補題は何について議論しているでしょうか？ つまり,  任意の社会に置いて,  有力な指導階級を持つものがより強い社会である. 我が国建国70年間の飛躍的な経済発展のもっとも重要な原因は,  中国共産党は我々を指導してくださったおかげです.
 
 
 \begin{definition}
 	$$
 	\begin{array}{c}
-	(a,b):= \{ x \in \mathbb{R}  \mid a <x<b  \}\\
-	\mathcal{B}:= \{ \left( a ,b \right) |a<b, a \in \mathbb{R} , b \in \mathbb{R} \} \\
+	(a, b):= \{ x \in \mathbb{R}  \mid a <x<b  \}\\
+	\mathcal{B}:= \{ \left( a , b \right) |a<b,  a \in \mathbb{R} ,  b \in \mathbb{R} \} \\
 	\end{array}
 	$$
 	$\mathcal{B}$ を開基とする位相は$\mathbb{R}$ 上の標準位相と呼ぶ.
 \end{definition}
 
-今まで扱って来た開基は党と思いなさい, 党は社会のすべてを作り出した原因はすべての人民の根本的な利益を代表しているからです. 党員が集まって議論すればその合意もまた人民の利益を代表しています. しかし, 共産党みたいな素晴らしい政党はどの国にも存在するわけではありません. ではそのような国ではどんな指導階級があるのでしょうか？ その答えは簡単です. 人が集まって, 自分の共同体で相談して合意を出す, その合意を持って国の意思となれば良い. 政治面貌のいい方はこのような政治体制は簡単に実現できると感じているでしょう. しかし, こういうふうに集まって来た指導階級は安定性と信頼性に欠け, 人民が精鋭でない人に常に不信感を持ち, こんなものが長持ちするわけがありません.
+今まで扱って来た開基は党と思いなさい,  党は社会のすべてを作り出した原因はすべての人民の根本的な利益を代表しているからです. 党員が集まって議論すればその合意もまた人民の利益を代表しています. しかし,  共産党みたいな素晴らしい政党はどの国にも存在するわけではありません. ではそのような国ではどんな指導階級があるのでしょうか？ その答えは簡単です. 人が集まって,  自分の共同体で相談して合意を出す,  その合意を持って国の意思となれば良い. 政治面貌のいい方はこのような政治体制は簡単に実現できると感じているでしょう. しかし,  こういうふうに集まって来た指導階級は安定性と信頼性に欠け,  人民が精鋭でない人に常に不信感を持ち,  こんなものが長持ちするわけがありません.
 
 \begin{definition}[準開基]
 	集合$X$ の部分集合族$\mathcal{S}$ が$\forall x \in X; \exists S \in \mathcal{S} ; x \in S \subseteq X$ を満たす時.
@@ -267,16 +364,16 @@ $\mathcal{O} \subseteq \mathcal{O}'$が成り立つ時，位相$\mathcal{O}$が�
 	この定義がwell-definedであることは自明である．
 \end{definition}
 
-\section{順序位相，積位相，部分位相}
+\section{順序位相,  積位相,  部分位相}
 
-社会には階級があり, 階級があれば順位が定まることが自然の摂理であります.
+社会には階級があり,  階級があれば順位が定まることが自然の摂理であります.
 \begin{definition}[順序位相]
-全順序集合$(X,<)$の順序位相 $\mathcal{O}$ は以下の3つの条件のどれかを満たす元からなる集合$\mathcal{B}$ の生成位相である.
+全順序集合$(X, <)$の順序位相 $\mathcal{O}$ は以下の3つの条件のどれかを満たす元からなる集合$\mathcal{B}$ の生成位相である.
 
 \begin{enumerate}
-	\item $\left( X, < \right) $上の開区間$\left( a,b \right) $
-	\item $\left( X,< \right) $ 上の半開区間$[a_0,b)$, $a_0$は最小元である.
-	\item  $\left( X, < \right) $ 上の半開区間$(a,b_0]$, $b_0$は最大元である.
+	\item $\left( X,  < \right) $上の開区間$\left( a, b \right) $
+	\item $\left( X, < \right) $ 上の半開区間$[a_0, b)$,  $a_0$は最小元である.
+	\item  $\left( X,  < \right) $ 上の半開区間$(a, b_0]$,  $b_0$は最大元である.
 \end{enumerate}
 
 \end{definition}
@@ -284,56 +381,56 @@ $\mathcal{O} \subseteq \mathcal{O}'$が成り立つ時，位相$\mathcal{O}$が�
 社会の順位は共同体の民主的議論より定められます.
 
 \begin{definition}[順序位相の準開基]
-全順序集合$\left( X,< \right) $ に対して，以下の4つの区間について考える:
+全順序集合$\left( X, < \right) $ に対して,  以下の4つの区間について考える:
 	\begin{enumerate}
-		\item $(a,+\infty)=\{x  \mid x>a	\}$
-		\item $(-\infty , a)= \{ x  \mid  x< a \}$
-		\item $[a,+\infty)= \{ x \mid x \ge a \}$
-		\item  $(-\infty,a]= \{x  \mid x \le a \}$
+		\item $(a, +\infty)=\{x  \mid x>a	\}$
+		\item $(-\infty ,  a)= \{ x  \mid  x< a \}$
+		\item $[a, +\infty)= \{ x \mid x \ge a \}$
+		\item  $(-\infty, a]= \{x  \mid x \le a \}$
 	\end{enumerate}
-	最初の2つの形をしている区間を\textbf{open rays}といい，最後の2つの形をしている区間は\textbf{closed rays}という.
+	最初の2つの形をしている区間を\textbf{open rays}といい,  最後の2つの形をしている区間は\textbf{closed rays}という.
 	\textbf{open rays} 全体からなる集合は準開基である.
 \end{definition}
 
-国際主義が必ず勝利します, 国際主義が実現できたらどんな社会を作ればいいでしょうか？ それはもちろん各社会の指導者が指導者になれば良い, 漏れなく指導者が指導者もままでいいです.
+国際主義が必ず勝利します,  国際主義が実現できたらどんな社会を作ればいいでしょうか？ それはもちろん各社会の指導者が指導者になれば良い,  漏れなく指導者が指導者もままでいいです.
 
 \begin{definition}[積位相]
-	位相空間$(X,\mathcal{O}_X),(Y,\mathcal{O}_Y)$に対し， 
-	集合$\mathcal{B}=\{ U \times Y  \mid U \in \mathcal{O}_X, Y \in \mathcal{O}_Y\}$ が集合$X \times Y$ の開基である.
+	位相空間$(X, \mathcal{O}_X), (Y, \mathcal{O}_Y)$に対し,   
+	集合$\mathcal{B}=\{ U \times Y  \mid U \in \mathcal{O}_X,  Y \in \mathcal{O}_Y\}$ が集合$X \times Y$ の開基である.
 	このように生成される位相は標準積位相と呼ぶ.
 \end{definition}
 
 \begin{theorem}
 $\mathcal{B}$ を位相空間$X$ の開基とする.
 $\mathcal{C}$ を位相空間$Y$の開基とする．
-この時，次の集合が位相空間(標準積位相が入る)$X \times Y$ の開基となる．
+この時,  次の集合が位相空間(標準積位相が入る)$X \times Y$ の開基となる．
 \[
-\mathcal{D}= \{B \times C  \mid B \in \mathcal{B} , C \in \mathcal{C} \}
+\mathcal{D}= \{B \times C  \mid B \in \mathcal{B} ,  C \in \mathcal{C} \}
 .\] 
 \end{theorem}
 
 ここで社会主義の後続元に相当する皆様に注意していただきたいことが一つあります．この定理は
-定義に似ていますが，定義そのものではありません． 混同しないでください.
+定義に似ていますが,  定義そのものではありません． 混同しないでください.
 \begin{proof}
 	標準積位相空間$X \times Y$の開集合 $W$を任意に取って固定する. 
 	$x\times y \in W$ を任意に取る．
-	標準積位相の開基$\mathcal{B'}$ に対し，$x \times y \in U \times V \subseteq W$ となる$U \times V \in \mathcal{B'}$ が存在する．
-	この時，開基$\mathcal{B},\mathcal{C}$ に対し，$x \in U' \subseteq U, y \in V' \subseteq V$を満たす $U' \in \mathcal{B},V' \in \mathcal{C}$ が存在する.
-	この時，$x\times y \in U' \times V' \subseteq W,U' \times V' \in \mathcal{D}$が成立し，Lemma \ref{lem:1od}より，$\mathcal{D}$ が積位相空間$X\times Y$ の開基である.
+	標準積位相の開基$\mathcal{B'}$ に対し,  $x \times y \in U \times V \subseteq W$ となる$U \times V \in \mathcal{B'}$ が存在する．
+	この時,  開基$\mathcal{B}, \mathcal{C}$ に対し,  $x \in U' \subseteq U,  y \in V' \subseteq V$を満たす $U' \in \mathcal{B}, V' \in \mathcal{C}$ が存在する.
+	この時,  $x\times y \in U' \times V' \subseteq W, U' \times V' \in \mathcal{D}$が成立し,  Lemma \ref{lem:1od}より,  $\mathcal{D}$ が積位相空間$X\times Y$ の開基である.
 \end{proof}
 
-多様な民族からなる社会を分析するには各民族の構造を知ることが第一歩ですので, 複雑な構成の一部を見て議論したくなります.
+多様な民族からなる社会を分析するには各民族の構造を知ることが第一歩ですので,  複雑な構成の一部を見て議論したくなります.
 
 \begin{definition}[projection]
 	写像$\pi_1 : X \times Y \to X$と写像$\pi_2 : X \times Y \to Y$を次のように定める:
 	\[
 	\begin{aligned}
-		\pi_1(x,y) =x \\
-		\pi_2(x,y)=y
+		\pi_1(x, y) =x \\
+		\pi_2(x, y)=y
 	\end{aligned}
 	\] 
 
-	この時，写像$\pi_1,\pi_2$を集合$X \times Y$ の第一，第二要素への射影(projection)と呼ぶ.
+	この時,  写像$\pi_1, \pi_2$を集合$X \times Y$ の第一,  第二要素への射影(projection)と呼ぶ.
 \end{definition}
 
 \begin{theorem}
@@ -346,19 +443,19 @@ $\mathcal{C}$ を位相空間$Y$の開基とする．
 \begin{proof}
 	$X\times Y$の位相を $\mathcal{O}$ とする.
 	集合$\mathcal{S}$ により生成される位相を$\mathcal{O}'$ とする．
-	準開基の生成位相は有限個の共通集合の任意の和集合からなるので，開集合の公理に基づいて考えると，$\mathcal{O}' \subseteq \mathcal{O}$ が成立する．
+	準開基の生成位相は有限個の共通集合の任意の和集合からなるので,  開集合の公理に基づいて考えると,  $\mathcal{O}' \subseteq \mathcal{O}$ が成立する．
 	次に$\mathcal{O} \subseteq \mathcal{O}'$を示せば良い．
 	位相$\mathcal{O}$ の基底の元$U\times V $ を任意に取る．
 	$$
 	U \times V = \pi_1^{-1}\left( U \right) \cap \pi_2^{-1}\left( V \right)  
 	$$
-	より，$U \times V \in \mathcal{O}'$が得られ，開集合は基底の任意和集合より生成されることより，$\mathcal{O} \subseteq \mathcal{O}'$ が示された.
+	より,  $U \times V \in \mathcal{O}'$が得られ,  開集合は基底の任意和集合より生成されることより,  $\mathcal{O} \subseteq \mathcal{O}'$ が示された.
 \end{proof}
 
-社会の一部分だけ研究するには社会全体の構造をその領域に制限すれば良いでしょう. 部分位相空間は位相空間をある特定の領域に制限して得られたものですから，ミクロ経済学と同じような思想が入っています．
+社会の一部分だけ研究するには社会全体の構造をその領域に制限すれば良いでしょう. 部分位相空間は位相空間をある特定の領域に制限して得られたものですから,  ミクロ経済学と同じような思想が入っています．
 
 \begin{definition}[部分位相空間]
-	位相空間$\left( X,\mathcal{O}_X \right) $ の部分集合$Y$ の位相$\mathcal{O}_Y$ が次のように与えられる時，$(Y,\mathcal{O}_Y)$ が$\left( X, \mathcal{O}_X \right) $ の部分位相空間と呼ぶ.\footnote{これが位相の公理を満たすことを各自checkせよ.}
+	位相空間$\left( X, \mathcal{O}_X \right) $ の部分集合$Y$ の位相$\mathcal{O}_Y$ が次のように与えられる時,  $(Y, \mathcal{O}_Y)$ が$\left( X,  \mathcal{O}_X \right) $ の部分位相空間と呼ぶ.\footnote{これが位相の公理を満たすことを各自checkせよ.}
 	\[
 	\mathcal{O}_Y := \{U \cap Y  \mid U \in \mathcal{O}_X\}
 	.\] 
@@ -366,7 +463,7 @@ $\mathcal{C}$ を位相空間$Y$の開基とする．
 \end{definition}
 
 \begin{lemma}[部分開基]
-	位相空間$X$ の部分集合$Y$と開基$\mathcal{B}$ に対し，
+	位相空間$X$ の部分集合$Y$と開基$\mathcal{B}$ に対し,  
 	\[
 	\mathcal{B}_Y := \{B\cap Y \mid B \in \mathcal{B}\} 
 	.\]
@@ -375,24 +472,24 @@ $\mathcal{C}$ を位相空間$Y$の開基とする．
 
 \begin{proof}
 	部分位相空間$Y$の開集合 $U$ を任意に取る.
-	$x \in U$ を任意に取って，開基の定義より，$\exists B \in \mathcal{B}; x \in B \subseteq U$が成立する．
-	この集合$B$ に対し，集合$B \cap Y \in \mathcal{B}_Y$も $x \in B \cap Y  \subseteq U$ を満たすので， Lemma \ref{lem:1od}より，$\mathcal{B}_Y$ が位相空間$Y$ の開基であることを示せた．
+	$x \in U$ を任意に取って,  開基の定義より,  $\exists B \in \mathcal{B}; x \in B \subseteq U$が成立する．
+	この集合$B$ に対し,  集合$B \cap Y \in \mathcal{B}_Y$も $x \in B \cap Y  \subseteq U$ を満たすので,   Lemma \ref{lem:1od}より,  $\mathcal{B}_Y$ が位相空間$Y$ の開基であることを示せた．
 \end{proof}
 
 \begin{lemma}
 \label{lem:openset}
 	位相空間$Y$ が位相空間$X$ の部分位相空間とする.
-	この時，$Y$ が $X$の開集合ならば$Y$ の開集合は$X$ の開集合である．
+	この時,  $Y$ が $X$の開集合ならば$Y$ の開集合は$X$ の開集合である．
 \end{lemma}
 
 \begin{proof}
 	位相空間$Y$ の開集合$U$ を任意に取る.
-	この時，部分位相空間の定義より，ある$X$の開集合 $V$が存在して， $U=Y\cap V$となる．
-	$Y,V$がいずれも $X$ の開集合であることより，有限個の共通集合$U$も位相空間 $X$ の開集合である．
+	この時,  部分位相空間の定義より,  ある$X$の開集合 $V$が存在して,   $U=Y\cap V$となる．
+	$Y, V$がいずれも $X$ の開集合であることより,  有限個の共通集合$U$も位相空間 $X$ の開集合である．
 \end{proof}
 
 \begin{theorem}[積位相に関する部分位相]
-	位相空間$X$の部分位相空間 $A$と位相空間$Y$ の部分位相空間$B$ について，標準積位相空間$A\times B$は標準積位相空間 $X \times Y$の部分位相空間である.
+	位相空間$X$の部分位相空間 $A$と位相空間$Y$ の部分位相空間$B$ について,  標準積位相空間$A\times B$は標準積位相空間 $X \times Y$の部分位相空間である.
 \end{theorem}
 
 \begin{proof}
@@ -400,131 +497,131 @@ $\mathcal{C}$ を位相空間$Y$の開基とする．
 	 \[
 		 \left(U \times V\right) \cap \left( A \times B \right) = \left( U \cap A  \right) \times \left( V \cap B \right) 
 	.\]
-	より，積位相空間の部分位相空間の基底と部分位相空間の積位相空間の基底が一致する.従って基底により生成される2つの位相が一致する．
+	より,  積位相空間の部分位相空間の基底と部分位相空間の積位相空間の基底が一致する.従って基底により生成される2つの位相が一致する．
 \end{proof}
 
-積位相空間の部分位相空間と部分位相空間の積位相空間が一致することが上記の定理より得られたが，
+積位相空間の部分位相空間と部分位相空間の積位相空間が一致することが上記の定理より得られたが,  
 この部分位相空間の考え方が果たしてすべての位相空間に対して成立すると言えるのかが我々の気になるところである.実は順序位相に対して反例が取れる．
-$I=[0,1]$として， 順序位相空間$I^2_o$と順序位相空間$\mathbb{R}^2_o$の部分位相空間が一致しない．
-もっと詳しく説明すれば，部分位相空間の位相がより強い．興味のある方は確認すると良い．\\
+$I=[0, 1]$として,   順序位相空間$I^2_o$と順序位相空間$\mathbb{R}^2_o$の部分位相空間が一致しない．
+もっと詳しく説明すれば,  部分位相空間の位相がより強い．興味のある方は確認すると良い．\\
 
-順序位相空間の部分位相空間と部分集合の順序位相空間必ずしも一致するとは限らない話をしたが，特殊な場合には一致することがある．\\
+順序位相空間の部分位相空間と部分集合の順序位相空間必ずしも一致するとは限らない話をしたが,  特殊な場合には一致することがある．\\
 
 \begin{definition}[凸集合]
-	順序集合$\left( X,< \right) $ の部分集合$Y$に対し，任意の $a<b$を満たす $a,b \in Y$ について，$X$ の開区間$\left( a,b \right) \subseteq Y$ ならば，集合$Y$ が凸集合と呼ぶ.
+	順序集合$\left( X, < \right) $ の部分集合$Y$に対し,  任意の $a<b$を満たす $a, b \in Y$ について,  $X$ の開区間$\left( a, b \right) \subseteq Y$ ならば,  集合$Y$ が凸集合と呼ぶ.
 \end{definition}
 
 \begin{theorem}
-	順序位相空間$X$の凸集合 $Y$に対し， $Y$ の順序位相と$X$ の部分位相に一致する.
+	順序位相空間$X$の凸集合 $Y$に対し,   $Y$ の順序位相と$X$ の部分位相に一致する.
 \end{theorem}
 
 \begin{proof}
-	$\mathcal{S}:=\{ \left( a, +\infty \right) \cap Y  \mid a \in X \} \cup \{\left( - \infty ,a\right) \cap Y  \mid  a \in X \}$が部分位相空間$Y$の準開基である．
-	この時，$X$のopen ray  $(a,+ \infty)$に対し，$Y$が凸集合であることより，
-	$\left( a, +\infty \right) \cap Y$ が$Y$ 全体，空集合，$Y$のopen rays,のいずれかになる．
-	つまり， $\mathcal{S}$ の要素は順序位相空間$Y$の開集合である．
-	従って，順序位相は部分位相より強いことを示せた．\\
-	一方， $Y$ のopen rays は$X$ のopen rays と$Y$ の共通集合からならものであるため，
+	$\mathcal{S}:=\{ \left( a,  +\infty \right) \cap Y  \mid a \in X \} \cup \{\left( - \infty , a\right) \cap Y  \mid  a \in X \}$が部分位相空間$Y$の準開基である．
+	この時,  $X$のopen ray  $(a, + \infty)$に対し,  $Y$が凸集合であることより,  
+	$\left( a,  +\infty \right) \cap Y$ が$Y$ 全体,  空集合,  $Y$のopen rays, のいずれかになる．
+	つまり,   $\mathcal{S}$ の要素は順序位相空間$Y$の開集合である．
+	従って,  順序位相は部分位相より強いことを示せた．\\
+	一方,   $Y$ のopen rays は$X$ のopen rays と$Y$ の共通集合からならものであるため,  
 	$Y$の順序位相の準開基の要素は部分位相空間での開集合となる. 
-	従って，部分位相は順序位相より強いことが示された．\\
-	以上の議論より， $Y$ が凸集合の時，部分位相空間と順序位相空間が一致することがわかる.
+	従って,  部分位相は順序位相より強いことが示された．\\
+	以上の議論より,   $Y$ が凸集合の時,  部分位相空間と順序位相空間が一致することがわかる.
 \end{proof}
 
-上記の議論をよく見ると，$Y$順序位相空間の部分位相は常に部分集合の順序位相より強いことがわかりますそれがまさに偉大な指導者が人民に戻っても人民の指導者であり, 指導者のない人民には何事を行ってもうまく行かないことと同じ理由です.
+上記の議論をよく見ると,  $Y$順序位相空間の部分位相は常に部分集合の順序位相より強いことがわかりますそれがまさに偉大な指導者が人民に戻っても人民の指導者であり,  指導者のない人民には何事を行ってもうまく行かないことと同じ理由です.
 
-\section{閉集合, 集積点, 内部, 閉包, 近傍, 境界}
+\section{閉集合,  集積点,  内部,  閉包,  近傍,  境界}
 
-我々の偉大なる習近平同志が率いる中国共産党は社会の光であり，しかしながら，光があれば必ず影ができてしまいます．光と影はある意味では同等な存在であり，一つの挙動が分かれば残りの部分を考察することもできます．ここで開集合と位相構造を与えることにおいて同等な概念を導入して社会を研究する道具をより多く使えるようにしておきましょう．
+我々の偉大なる習近平同志が率いる中国共産党は社会の光であり,  しかしながら,  光があれば必ず影ができてしまいます．光と影はある意味では同等な存在であり,  一つの挙動が分かれば残りの部分を考察することもできます．ここで開集合と位相構造を与えることにおいて同等な概念を導入して社会を研究する道具をより多く使えるようにしておきましょう．
 
 \begin{definition}[閉集合]
-	位相空間$X$の部分集合 $A$に対し， $X \setminus A$が開集合となる時，$A$を閉集合と定義する. \footnote{$A$が開集合でない時と意味をもたないことに注意せよ.}
+	位相空間$X$の部分集合 $A$に対し,   $X \setminus A$が開集合となる時,  $A$を閉集合と定義する. \footnote{$A$が開集合でない時と意味をもたないことに注意せよ.}
 \end{definition}
 
 \begin{theorem}[閉集合の公理]
-	位相空間$\left( X, \mathcal{O}_X \right) $に対して, 部分集合族$\mathcal{C}_X := \{C \in \mathcal{P}\left( X \right)  \mid X\setminus C \in \mathcal{O}_X \} $について, 以下命題が成立する:
+	位相空間$\left( X,  \mathcal{O}_X \right) $に対して,  部分集合族$\mathcal{C}_X := \{C \in \mathcal{P}\left( X \right)  \mid X\setminus C \in \mathcal{O}_X \} $について,  以下命題が成立する:
 
 	\begin{enumerate}
-		\item $\emptyset , X  \in \mathcal{C}_X$ 
+		\item $\emptyset ,  X  \in \mathcal{C}_X$ 
 		\item $\forall \Lambda\left( \Lambda \neq \emptyset \right) ;\left( \left( \forall \lambda \in \Lambda; C_{\lambda} \in \mathcal{C}_X \right) \implies \bigcap_{\lambda \in \Lambda} C_{\lambda} \in \mathcal{C}_X \right)$
-		\item $\forall C_1, C_2 \in \mathcal{C}_X; C_1 \cup C_2 \in \mathcal{C}_X$
+		\item $\forall C_1,  C_2 \in \mathcal{C}_X; C_1 \cup C_2 \in \mathcal{C}_X$
 	\end{enumerate}
 
 \end{theorem}
 
 \begin{proof}
-	1. $X,\emptyset$が開集合であるため，補集合 $\emptyset ,X$が閉集合である.\\
-	2. 閉集合族 $\{A_{\alpha}\}_{\alpha \in J} $ について，DeMorgan則を適用すると
+	1. $X, \emptyset$が開集合であるため,  補集合 $\emptyset , X$が閉集合である.\\
+	2. 閉集合族 $\{A_{\alpha}\}_{\alpha \in J} $ について,  DeMorgan則を適用すると
 	\[
 	X\setminus \left( \bigcap_{\alpha \in J} A_{\alpha}\right) = \bigcup_{\alpha \in J} \left( X\setminus A_{\alpha} \right) 
 	.\] 
-	右辺は開集合の任意和集合であるから，$\bigcap A_{\alpha}$が閉集合であることが示された.\\
-	3.同様に$2$個の閉集合 $A_1, A_2$ に対し，
+	右辺は開集合の任意和集合であるから,  $\bigcap A_{\alpha}$が閉集合であることが示された.\\
+	3.同様に$2$個の閉集合 $A_1,  A_2$ に対し,  
 	\[
 	X\setminus \left(A_1 \cup A_2 \right) = \left( X \setminus A_1 \right) \cap \left( X \setminus A_2 \right) 
 	.\] 
-	より，$A_1 \cup A_2$が閉集合であることがわかる.
+	より,  $A_1 \cup A_2$が閉集合であることがわかる.
 
 \end{proof}
 
-	 開集合族$\mathcal{O}_X$に対し, 閉集合族$\mathcal{C}_X$ が一意的に決まる,今後位相空間の開集合族が与えられたら, 開集合族に対応する閉集合族も与えたれたと認識せよ. 
-	 また, 上記の性質を閉集合の公理として, それらを満たす集合族$\mathcal{C}_X$ が与えられたら, その要素を閉集合と定義して, 要素の補集合を開集合と定義することもできる.
-	 つまり開集合と閉集合の公理は対等であることがわかります. 社会の見方は一意的ではありません, いろんなものが社会を構成している, どれも捨てられるものではありません.
+	 開集合族$\mathcal{O}_X$に対し,  閉集合族$\mathcal{C}_X$ が一意的に決まる, 今後位相空間の開集合族が与えられたら,  開集合族に対応する閉集合族も与えたれたと認識せよ. 
+	 また,  上記の性質を閉集合の公理として,  それらを満たす集合族$\mathcal{C}_X$ が与えられたら,  その要素を閉集合と定義して,  要素の補集合を開集合と定義することもできる.
+	 つまり開集合と閉集合の公理は対等であることがわかります. 社会の見方は一意的ではありません,  いろんなものが社会を構成している,  どれも捨てられるものではありません.
 \begin{theorem}
 	位相空間$Y$を位相空間 $X$ の部分空間とする. 集合$A$が位相空間$Y$の閉集合であることは$A$が位相空間 $X$のある閉集合と $Y$の共通集合であることと同値である.	
 \end{theorem}
 
 \begin{proof}
 	$\left( \implies \right) $ : 集合$A$ は部分位相空間 $Y$ の閉集合とする. 
-	この時, $Y\setminus A$ が部分位相空間$Y$ の開集合である.
-	部分位相空間の定義より, 位相空間$X$ のある開集合 $U$ が存在し, $Y\setminus A = U \cap Y$ となる. 
-	$X\setminus U$が$X$ の閉集合であり, $A = \left( X \setminus U \right) \cap Y$ より, $A$ が$X$ の閉集合と$Y$ の共通集合であることを示せた.
+	この時,  $Y\setminus A$ が部分位相空間$Y$ の開集合である.
+	部分位相空間の定義より,  位相空間$X$ のある開集合 $U$ が存在し,  $Y\setminus A = U \cap Y$ となる. 
+	$X\setminus U$が$X$ の閉集合であり,  $A = \left( X \setminus U \right) \cap Y$ より,  $A$ が$X$ の閉集合と$Y$ の共通集合であることを示せた.
 	
 	$\left( \impliedby \right) $ : 集合$A$が位相空間 $X$のある閉集合 $C$と集合 $Y$の共通集合とする.
-	この時, $A=C\cap Y$,  $X\setminus C$は位相空間$X$の開集合である.
-	$Y\setminus A = Y\cap \left( X \setminus C \right) $  より, $Y\setminus A$が部分位相空間$Y$の開集合であり,  $A$が部分位相空間 $A$ の閉集合であることを示せた.
+	この時,  $A=C\cap Y$,   $X\setminus C$は位相空間$X$の開集合である.
+	$Y\setminus A = Y\cap \left( X \setminus C \right) $  より,  $Y\setminus A$が部分位相空間$Y$の開集合であり,   $A$が部分位相空間 $A$ の閉集合であることを示せた.
 \end{proof}
 
 \begin{theorem}
 \label{the:closedset}
-	位相空間$X$の部分空間$Y$の閉集合$A$に対し,  $Y$が $X$の閉集合ならば $A$も $X$の閉集合となる.
+	位相空間$X$の部分空間$Y$の閉集合$A$に対し,   $Y$が $X$の閉集合ならば $A$も $X$の閉集合となる.
 \end{theorem}
 
 \begin{proof}
-	位相空間$X$のある閉集合$C$が存在し，$A = C\cap Y$となるので, 閉集合の共通集合もまた閉集合であることを用いるとすぐに導かれる.
+	位相空間$X$のある閉集合$C$が存在し,  $A = C\cap Y$となるので,  閉集合の共通集合もまた閉集合であることを用いるとすぐに導かれる.
 \end{proof}
 
-一つの社会には情報が公開されている部分があれば, それを取り除けば闇の部分となります.
+一つの社会には情報が公開されている部分があれば,  それを取り除けば闇の部分となります.
 
-\begin{definition}[内部, 閉包]
+\begin{definition}[内部,  閉包]
 	集合$A$は位相空間$X$の部分集合とする. 
 	集合 $A$の内部\textbf{(interior)} $\Int{A}$は $A$に含まれる開集合全体の和集合とする. 
 	集合 $A$の閉包\textbf{(closure)} $\cl{A}= X \setminus\Int{ \left( X\setminus A \right)}$ と定義する.
 \end{definition}
 
 \begin{claim}
-	$\Int{A}$が $A$に含まれる最大の開集合であり,  $\cl{A}$は $A$ を含む最小の閉集合である.
+	$\Int{A}$が $A$に含まれる最大の開集合であり,   $\cl{A}$は $A$ を含む最小の閉集合である.
 \end{claim}
 
 \begin{theorem}[部分位相空間の閉包]
 	位相空間$Y$ を位相空間$X$ の部分位相空間とする. 
-	$Y$ の部分集合 $A$ に対し, $A$の位相空間 $X$での閉包を $\cl{A}$とする.
-	この時, 集合$A$の 部分位相空間$Y$での閉包 $B= \cl{A} \cap Y$である.
+	$Y$ の部分集合 $A$ に対し,  $A$の位相空間 $X$での閉包を $\cl{A}$とする.
+	この時,  集合$A$の 部分位相空間$Y$での閉包 $B= \cl{A} \cap Y$である.
 \end{theorem}
 
 \begin{proof}
-	$B \subseteq \cl{A} \cap Y $の証明:  $\cl{A}$は位相空間 $X$での閉集合であるため,  $\cl{A} \cap Y $が部分位相空間 $Y$での閉集合である.  
-	$A \subseteq B, A \subseteq \cl{A} \cap Y$と閉包が$A$を含む閉集合で包含関係での最小集合であることより, $B \subseteq \cl{A} \cap Y$ となる.
+	$B \subseteq \cl{A} \cap Y $の証明:  $\cl{A}$は位相空間 $X$での閉集合であるため,   $\cl{A} \cap Y $が部分位相空間 $Y$での閉集合である.  
+	$A \subseteq B,  A \subseteq \cl{A} \cap Y$と閉包が$A$を含む閉集合で包含関係での最小集合であることより,  $B \subseteq \cl{A} \cap Y$ となる.
 
-	$B \supseteq \cl{A} \cap Y$の証明:  $B$は部分位相空間 $Y$での閉包であるため, 特に $Y$ での閉集合でもある. 
-	この時, ある$X$での閉集合 $C$が存在して,  $B=C \cap Y$となる.  
+	$B \supseteq \cl{A} \cap Y$の証明:  $B$は部分位相空間 $Y$での閉包であるため,  特に $Y$ での閉集合でもある. 
+	この時,  ある$X$での閉集合 $C$が存在して,   $B=C \cap Y$となる.  
 	$\cl{A}$は $A$を含む $X$での閉集合の中で包含関係での最小集合であるため. 
-	$\cl{A} \subseteq C$, よって,  $B = C \cap Y \supseteq \cl{A} \cap Y$が得られる.
+	$\cl{A} \subseteq C$,  よって,   $B = C \cap Y \supseteq \cl{A} \cap Y$が得られる.
 \end{proof}
 
-我々中華人民共和国の人民は偉大なる中国共産党の周りにいます. 党員が存在すれば, その周りに必ず群衆が集まっています. 党員と人民が一体であるこそこの社会が正常に動いています. この状況を抽象的にいえば次に述べられる近傍となります. 党員と人民のいるところに, 社会が生まれます.
+我々中華人民共和国の人民は偉大なる中国共産党の周りにいます. 党員が存在すれば,  その周りに必ず群衆が集まっています. 党員と人民が一体であるこそこの社会が正常に動いています. この状況を抽象的にいえば次に述べられる近傍となります. 党員と人民のいるところに,  社会が生まれます.
 
 \begin{definition}[近傍]
-	位相空間$\left( X, \mathcal{O}_X \right)$の点$x \in X$ に対し, 近傍族$\mathcal{N}_x$ は次のように定める:
+	位相空間$\left( X,  \mathcal{O}_X \right)$の点$x \in X$ に対し,  近傍族$\mathcal{N}_x$ は次のように定める:
 	\[
 	\mathcal{N}_x := \{N \in \mathcal{P}\left( X \right)  \mid \exists U \in \mathcal{O}_X ; x \in U \land U \subseteq N \} 
 	.\] 
@@ -532,74 +629,74 @@ $I=[0,1]$として， 順序位相空間$I^2_o$と順序位相空間$\mathbb{R}^
 \end{definition}
 
 \begin{theorem}[近傍族の公理]
-	位相空間$\left( X ,\mathcal{O}_X \right) $ の任意の点$x\in X$ における近傍族$\mathcal{N}_x$ に対して, 以下の4つの性質が成立する:
+	位相空間$\left( X , \mathcal{O}_X \right) $ の任意の点$x\in X$ における近傍族$\mathcal{N}_x$ に対して,  以下の4つの性質が成立する:
 	\begin{enumerate}
 		\item $\mathcal{N}_x \neq \emptyset \land \left( \forall N \in \mathcal{N}_x ; x \in N \right)$
 		\item $\forall N \in \mathcal{N}_x; \forall U \in \mathcal{P}\left( X \right) ; N\subseteq U \implies U \in \mathcal{N}_x$
-		\item $\forall N_1, N_2 \in \mathcal{N}_x ; N_1 \cap N_2 \in \mathcal{N}_x$
+		\item $\forall N_1,  N_2 \in \mathcal{N}_x ; N_1 \cap N_2 \in \mathcal{N}_x$
 		\item $\forall N \in \mathcal{N}_x; \exists U \in \mathcal{N}_x ;U\subseteq N\land \left( \forall y \in U; U \in \mathcal{N}_y  \right)  $
 	\end{enumerate}
 \end{theorem}
 
 \begin{proof}
-	1,2,3,4いずれも開集合の性質により自明である(4に関しては$U$が開集合の時について考えれば良い).
+	1, 2, 3, 4いずれも開集合の性質により自明である(4に関しては$U$が開集合の時について考えれば良い).
 \end{proof}
 
-実は近傍族と開集合族も対等な概念である. 近傍族の公理を満たす位相空間に対し, $\forall x \in N; N \in \mathcal{N}_x$ を満たす時, $N$ を開集合と定義すれば開集合族が得られる. 
+実は近傍族と開集合族も対等な概念である. 近傍族の公理を満たす位相空間に対し,  $\forall x \in N; N \in \mathcal{N}_x$ を満たす時,  $N$ を開集合と定義すれば開集合族が得られる. 
 
 閉集合とか近傍とかこれらを考えることで何かいいことでもあるかと思っている方がいらっしゃるかもしれません.
-その理由は閉集合はユークリッドの世界で収束列を用いて特徴づけられたもので, 近傍は各点連続などの性質で特徴づけられた概念です.
-これらを一般化したらこのような公理から定まる形になります. 従って, これらを研究することによって, 点列と連続性が扱いやすくなります.
+その理由は閉集合はユークリッドの世界で収束列を用いて特徴づけられたもので,  近傍は各点連続などの性質で特徴づけられた概念です.
+これらを一般化したらこのような公理から定まる形になります. 従って,  これらを研究することによって,  点列と連続性が扱いやすくなります.
 
-近傍族の公理があまりにも長くてつまらないので, 実際に扱う時は近傍の中に特別なものを抽出して議論することが多く, それは次に述べる開近傍です.
+近傍族の公理があまりにも長くてつまらないので,  実際に扱う時は近傍の中に特別なものを抽出して議論することが多く,  それは次に述べる開近傍です.
 
 
 
 
 
 \begin{definition}[開近傍]
-	$X$を位相空間とする. $X$の部分集合 $U$が $x \in X$の開近傍であるというのは,  $ x \in U$かつ $U$が開集合である.
+	$X$を位相空間とする. $X$の部分集合 $U$が $x \in X$の開近傍であるというのは,   $ x \in U$かつ $U$が開集合である.
 \end{definition}
 
 \begin{definition}[点の開近傍族]
-	位相空間$\left( X, \mathcal{O}_X \right) $ に対し, 点$x \in X$ での開近傍族$\mathcal{U}_x$は次のように定める:
+	位相空間$\left( X,  \mathcal{O}_X \right) $ に対し,  点$x \in X$ での開近傍族$\mathcal{U}_x$は次のように定める:
 	\[
 	\mathcal{U}_x := \{U \in \mathcal{O}_X \mid x \in U\} 
 	.\] 
 \end{definition}
 
 
-閉集合族と同じように, 位相空間の開集合族が与えられたら, 各点での(開)近傍族が自動的に生成されると認識せよ.
+閉集合族と同じように,  位相空間の開集合族が与えられたら,  各点での(開)近傍族が自動的に生成されると認識せよ.
 
 \begin{theorem}[閉包の特徴づけ]
-	位相空間$X$の部分集合 $A$と任意の$x \in X$に対し, 以下の3条件が同値である.
+	位相空間$X$の部分集合 $A$と任意の$x \in X$に対し,  以下の3条件が同値である.
 	 \begin{enumerate}
 		\item $x \in \cl{A}$
-		\item  $x$の任意の開近傍 $U$に対し,  $U\cap A \neq \emptyset$
-		\item  任意の開基$\mathcal{B}$ について, $x$を含む任意の $ x \in B \in \mathcal{B}$ に対し, $B\cap A \neq \emptyset$
+		\item  $x$の任意の開近傍 $U$に対し,   $U\cap A \neq \emptyset$
+		\item  任意の開基$\mathcal{B}$ について,  $x$を含む任意の $ x \in B \in \mathcal{B}$ に対し,  $B\cap A \neq \emptyset$
 	\end{enumerate}
 \end{theorem}
 
 
 \begin{proof}
-	2と3の同値性が開基による位相の生成から直ちにわかる. よって, 1と2の同値性を示せば良い.
+	2と3の同値性が開基による位相の生成から直ちにわかる. よって,  1と2の同値性を示せば良い.
 ここで対偶を示す:
 
-$\implies$ : $x$のある開近傍$U$に対し,  $U \cap A = \emptyset$ とする. 
-この時,  $X \setminus U$は集合$A$を含む閉集合である. 
-しかし,  $x \in U $より, $x \not\in X \setminus U$, 閉包が$A$を含む最小の閉集合であることより, $x \not\in \cl{A}$ がわかる.
+$\implies$ : $x$のある開近傍$U$に対し,   $U \cap A = \emptyset$ とする. 
+この時,   $X \setminus U$は集合$A$を含む閉集合である. 
+しかし,   $x \in U $より,  $x \not\in X \setminus U$,  閉包が$A$を含む最小の閉集合であることより,  $x \not\in \cl{A}$ がわかる.
 
-$\impliedby$ を示す: $x \not\in \cl{A} $とする, 閉包が閉集合であるため, $X \setminus \cl{A}$が$x \in X \setminus \cl{A}$ を満たす開集合である. 
-$A \subseteq \cl{A}$ より, $\left( X\setminus \cl{A} \right) \cap A = \emptyset$. 
-従って, $X \setminus \cl{A}$が示すべき性質が備える$x$の開近傍である.
+$\impliedby$ を示す: $x \not\in \cl{A} $とする,  閉包が閉集合であるため,  $X \setminus \cl{A}$が$x \in X \setminus \cl{A}$ を満たす開集合である. 
+$A \subseteq \cl{A}$ より,  $\left( X\setminus \cl{A} \right) \cap A = \emptyset$. 
+従って,  $X \setminus \cl{A}$が示すべき性質が備える$x$の開近傍である.
 	
 \end{proof}
 
-闇の世界に属するものは開集合を汚染しています. 革命を目指している諸君たちよ, 闇の世界と関わらないでください.
+闇の世界に属するものは開集合を汚染しています. 革命を目指している諸君たちよ,  闇の世界と関わらないでください.
 
 \begin{definition}[集積点]
-	位相空間$X$の部分集合 $A$に対し,  $x \in X$が $A$の集積点\textbf{(limit point)}であることは,
-$x$の任意の開近傍 $U$に対し,  $\left( U\setminus \{x\}  \right) \cap A \neq \emptyset $.
+	位相空間$X$の部分集合 $A$に対し,   $x \in X$が $A$の集積点\textbf{(limit point)}であることは, 
+$x$の任意の開近傍 $U$に対し,   $\left( U\setminus \{x\}  \right) \cap A \neq \emptyset $.
 \end{definition}
 
 \begin{definition}[導集合]
@@ -610,11 +707,11 @@ $x$の任意の開近傍 $U$に対し,  $\left( U\setminus \{x\}  \right) \cap A
 \end{definition}
 
 \begin{definition}[孤立点]
-	位相空間$\left( X , \mathcal{O}_{X} \right)$ の部分集合$A$の元 $x$が $A$の孤立点であるとは $x \in  A\setminus A'$とする.
+	位相空間$\left( X ,  \mathcal{O}_{X} \right)$ の部分集合$A$の元 $x$が $A$の孤立点であるとは $x \in  A\setminus A'$とする.
 \end{definition}
 
 \begin{theorem}[導集合による閉包の特徴づけ]
-	位相空間$X$の部分集合 $A$と $A$の導集合 $A'$に対し, 次の関係式が成立する:
+	位相空間$X$の部分集合 $A$と $A$の導集合 $A'$に対し,  次の関係式が成立する:
 	\[
 	\cl{A} = A \cup A'
 	.\] 
@@ -622,9 +719,9 @@ $x$の任意の開近傍 $U$に対し,  $\left( U\setminus \{x\}  \right) \cap A
 
 \begin{proof}
 	$\cl{A} \subseteq A \cup A'$の証明:  $x \in \cl{A}$を任意に取る.  
-	$x \not\in  A $の時, 閉包の特徴づけより, $x$の任意の開近傍 $U \cap A \neq \emptyset$, $x \not\in  A$より, $\left( U \setminus \{x\}  \right) \cap A \neq \emptyset $, 従って, $x \in A'$がわかる.
+	$x \not\in  A $の時,  閉包の特徴づけより,  $x$の任意の開近傍 $U \cap A \neq \emptyset$,  $x \not\in  A$より,  $\left( U \setminus \{x\}  \right) \cap A \neq \emptyset $,  従って,  $x \in A'$がわかる.
 
-	 $\cl{A} \supseteq A \cup A'$の証明: 閉包の定義より,  $A \subseteq \cl{A}$がわかり, 閉包の特徴づけから $A' \subseteq \cl{A}$が得られる.
+	 $\cl{A} \supseteq A \cup A'$の証明: 閉包の定義より,   $A \subseteq \cl{A}$がわかり,  閉包の特徴づけから $A' \subseteq \cl{A}$が得られる.
 
 \end{proof}
 
@@ -646,23 +743,23 @@ $x$の任意の開近傍 $U$に対し,  $\left( U\setminus \{x\}  \right) \cap A
 \end{theorem}
 
 \begin{proof}
-	(1): $\cl{X\setminus A}= X\setminus \Int{ A }$ より, $\Int{A} \cap \bd{A}= \emptyset$\\
-	(2): $\subseteq$の証明: 任意の$x \in \cl{A}$に対し,  $x \not\in \Int{A}$とすると,$ x \in X \setminus \Int{A} = \cl{\left( X \setminus A \right) }$,従って,$x \in \bd{A}.$\\
-	$\supseteq$ の証明: $\Int{A} \subseteq \cl{A}, \bd{A} \subseteq \cl{A}$より$\cl{A} \supseteq \Int{A} \cup \bd{A}$ \\
-	(3): $\implies$の証明: $\bd{A} = \emptyset$と仮定する. $\bd{A} \cup \Int{A} = \cl{A} $より,  $\Int{A} = \cl{A}$ となる, $\Int{A} \subseteq A \subseteq \cl{A}$より, $\Int{A} =A = \cl{A}$が得られる. 内部と閉包の定義より $A \in \mathcal{O}_X \land A \in \mathcal{C}_X$ が求まる.\\
-	$\impliedby$ の証明: $A \in \mathcal{O}_X \land A \in \mathcal{C}_X$ と仮定する. この時, $\cl{A} = A, \cl{X\setminus A } = X \setminus A$となる.
-	従って, $\bd{A} = A \cap \left( X \setminus A \right) = \emptyset$ \\
-	(4): $\implies$ の証明: $A \in \mathcal{O}_X $と仮定する. この時, $\cl{\left( X \setminus A \right) } = \left( X \setminus \Int A \right)  $ より, $\bd{A} = \cl{A} \cap \left( X \setminus A \right) = \cl{A} \setminus A$ \\
+	(1): $\cl{X\setminus A}= X\setminus \Int{ A }$ より,  $\Int{A} \cap \bd{A}= \emptyset$\\
+	(2): $\subseteq$の証明: 任意の$x \in \cl{A}$に対し,   $x \not\in \Int{A}$とすると, $ x \in X \setminus \Int{A} = \cl{\left( X \setminus A \right) }$, 従って, $x \in \bd{A}.$\\
+	$\supseteq$ の証明: $\Int{A} \subseteq \cl{A},  \bd{A} \subseteq \cl{A}$より$\cl{A} \supseteq \Int{A} \cup \bd{A}$ \\
+	(3): $\implies$の証明: $\bd{A} = \emptyset$と仮定する. $\bd{A} \cup \Int{A} = \cl{A} $より,   $\Int{A} = \cl{A}$ となる,  $\Int{A} \subseteq A \subseteq \cl{A}$より,  $\Int{A} =A = \cl{A}$が得られる. 内部と閉包の定義より $A \in \mathcal{O}_X \land A \in \mathcal{C}_X$ が求まる.\\
+	$\impliedby$ の証明: $A \in \mathcal{O}_X \land A \in \mathcal{C}_X$ と仮定する. この時,  $\cl{A} = A,  \cl{X\setminus A } = X \setminus A$となる.
+	従って,  $\bd{A} = A \cap \left( X \setminus A \right) = \emptyset$ \\
+	(4): $\implies$ の証明: $A \in \mathcal{O}_X $と仮定する. この時,  $\cl{\left( X \setminus A \right) } = \left( X \setminus \Int A \right)  $ より,  $\bd{A} = \cl{A} \cap \left( X \setminus A \right) = \cl{A} \setminus A$ \\
 	$\impliedby$の証明: $\bd{A} = \cl{A} \setminus A$と仮定する. 
-	$\cl{A} = \bd{A} \sqcup \Int{A}$より, $\cl{A} = \left( \cl{A} \setminus A  \right) \cup \Int{A}$ が得られる. 
-	$A \subseteq \cl{A} \land \Int{A} \subseteq \cl{A}$に注目して,  $ A \subseteq  \Int{A} $ が分かる. 
-	しかし, 定義より$\Int{A} \subseteq A$が求まるので,  $\Int{A} = A$が得られ,  $A \in \mathcal{O}_X$ であることが示された.
+	$\cl{A} = \bd{A} \sqcup \Int{A}$より,  $\cl{A} = \left( \cl{A} \setminus A  \right) \cup \Int{A}$ が得られる. 
+	$A \subseteq \cl{A} \land \Int{A} \subseteq \cl{A}$に注目して,   $ A \subseteq  \Int{A} $ が分かる. 
+	しかし,  定義より$\Int{A} \subseteq A$が求まるので,   $\Int{A} = A$が得られ,   $A \in \mathcal{O}_X$ であることが示された.
 	
 \end{proof}
 
 
 \begin{definition}[ハウスドルフ空間]
-	位相空間$X$がハウスドルフ空間\textbf{(Hausdorff space)}であるとは, $x\neq y$を満たす任意の $x,y \in X$に対し,  $U \cap V = \emptyset $ となるような$x$の開近傍 $U$と $y$ の開近傍$V$が存在する.
+	位相空間$X$がハウスドルフ空間\textbf{(Hausdorff space)}であるとは,  $x\neq y$を満たす任意の $x, y \in X$に対し,   $U \cap V = \emptyset $ となるような$x$の開近傍 $U$と $y$ の開近傍$V$が存在する.
 \end{definition}
 
 \begin{theorem}
@@ -670,54 +767,54 @@ $x$の任意の開近傍 $U$に対し,  $\left( U\setminus \{x\}  \right) \cap A
 \end{theorem}
 
 \begin{proof}
-	任意の$x \in X$に対し,  $\{x\} $ が閉集合であることを示せば良い.
-	位相空間がハウスドルフ的であるため, $x \neq y$を満たす任意の$y \in X$に対し,  $U \cap V =\emptyset$を満たす $x$の開近傍 $U$と $y$の開近傍 $V$が存在する.
-	$V \cap \{x\} = \emptyset $ となり, $y \not\in \cl{\{x\} } $ となる. 
-	従って,$\cl{\{x\} } = \{x\}  $ が得られ, $\{x\} $ が閉集合であることが示された.
+	任意の$x \in X$に対し,   $\{x\} $ が閉集合であることを示せば良い.
+	位相空間がハウスドルフ的であるため,  $x \neq y$を満たす任意の$y \in X$に対し,   $U \cap V =\emptyset$を満たす $x$の開近傍 $U$と $y$の開近傍 $V$が存在する.
+	$V \cap \{x\} = \emptyset $ となり,  $y \not\in \cl{\{x\} } $ となる. 
+	従って, $\cl{\{x\} } = \{x\}  $ が得られ,  $\{x\} $ が閉集合であることが示された.
 \end{proof}
 
 \begin{definition}
 	$T_1$ 公理: 任意の有限濃度を持つ部分集合は閉集合である.
 \end{definition}
 
-ハウスドルフ空間は必ず$T_1$公理を満たすが, その逆が必ずしも成立するとは限らない.
-例えば実数全体の集合に補有限位相を入れると $T_1$公理を満たすが, ハウスドルフ空間ではない. 
-もし$x \neq y \in \mathbb{R}$は非交開近傍 $U,V$を持つならば,
-$\mathbb{R} = \mathbb{R} \setminus \left( U \cap V \right) =\left( \mathbb{R} \setminus U \right) \cup \left( \mathbb{R} \setminus V \right) $, 補有限位相の定義より実数全体の集合が有限集合であることが導かれる.
+ハウスドルフ空間は必ず$T_1$公理を満たすが,  その逆が必ずしも成立するとは限らない.
+例えば実数全体の集合に補有限位相を入れると $T_1$公理を満たすが,  ハウスドルフ空間ではない. 
+もし$x \neq y \in \mathbb{R}$は非交開近傍 $U, V$を持つならば, 
+$\mathbb{R} = \mathbb{R} \setminus \left( U \cap V \right) =\left( \mathbb{R} \setminus U \right) \cup \left( \mathbb{R} \setminus V \right) $,  補有限位相の定義より実数全体の集合が有限集合であることが導かれる.
 矛盾であることがすぐにわかるだろう.
 
 \begin{theorem}
 	\label{thm: limit point}
-	$T_1$公理を満たす位相空間 $X$ の部分集合$A$ と任意の$x \in X$に対し, 以下の2つの命題が同値である: 
+	$T_1$公理を満たす位相空間 $X$ の部分集合$A$ と任意の$x \in X$に対し,  以下の2つの命題が同値である: 
 	\begin{enumerate}
 		\item $x$が集合 $A$ の集積点である.
-		\item $x$の任意の開近傍 $U$に対し,  $|A\cap U| \ge \omega$.
+		\item $x$の任意の開近傍 $U$に対し,   $|A\cap U| \ge \omega$.
 	\end{enumerate}
 \end{theorem}
 
 \begin{proof}
 	$\impliedby$ この部分が自明である.
 
-	$\implies$ ある開近傍$U$に対し,  $ |  A \cap U | < \omega $と仮定して矛盾を導く: 
-	$A\cap U$が有限集合ならば,  $\left( A \cap U \right) \setminus \{x\} $ も有限集合であり, $T_1$よりこれが閉集合となる. 
-	この時, 開集合 $U\cap \left( X \setminus \left( \left( A \cap U \right)  \setminus \{ x\} \right) \right) $ に対し, $x $の開近傍になるが $A \setminus \{x\} $と非交となるので, 集積点の定義に反する.
+	$\implies$ ある開近傍$U$に対し,   $ |  A \cap U | < \omega $と仮定して矛盾を導く: 
+	$A\cap U$が有限集合ならば,   $\left( A \cap U \right) \setminus \{x\} $ も有限集合であり,  $T_1$よりこれが閉集合となる. 
+	この時,  開集合 $U\cap \left( X \setminus \left( \left( A \cap U \right)  \setminus \{ x\} \right) \right) $ に対し,  $x $の開近傍になるが $A \setminus \{x\} $と非交となるので,  集積点の定義に反する.
 \end{proof}
 
 ハウスドルフ空間を導入する一つの動機は実数の閉集合上の収束列の収束先がその集合にあるという性質を一般化すること. 
-(これは解析学に関連するお話であるので, ここでその理由を述べるつもりはない.)
-問題が定点列は収束と定義したいけれども, 一点集合が必ずしも閉集合となるわけではない.
+(これは解析学に関連するお話であるので,  ここでその理由を述べるつもりはない.)
+問題が定点列は収束と定義したいけれども,  一点集合が必ずしも閉集合となるわけではない.
 ハウスドルフ空間ではこのような問題が回避できる.
-さて, 距離を使わずに点列の収束を定義しよう:(実はあとでネット\textbf{(net)}という概念を導入して,数列そのものを一般化することができる.)
+さて,  距離を使わずに点列の収束を定義しよう:(実はあとでネット\textbf{(net)}という概念を導入して, 数列そのものを一般化することができる.)
 
  \begin{definition}[位相空間における収束列]
-	位相空間$\left( X ,\mathcal{O} \right) $上の数列$\left( x_n \right) _{n \in \mathbb{N}}$が収束列であるとは:
+	位相空間$\left( X , \mathcal{O} \right) $上の数列$\left( x_n \right) _{n \in \mathbb{N}}$が収束列であるとは:
 	\[
 	\exists x \in X ; \forall U \in \mathcal{O}\left( x \in U \right) ; \exists N \in \mathbb{N}; \forall n \in \mathbb{N}; \left( n \ge N \implies x_n \in U \right) 
 	.\] 
 \end{definition}
 
 \begin{remark}
-実は位相空間における数列が収束するということは収束先が一点になるとは限らない, 自明な位相が入る空間における任意の点列が位相空間論での収束列となる. 
+実は位相空間における数列が収束するということは収束先が一点になるとは限らない,  自明な位相が入る空間における任意の点列が位相空間論での収束列となる. 
 ややこしいところであるが収束列の収束先が一点に保証してくる重要な位相空間がハウスドルフ空間である.	
 \end{remark}
 
@@ -727,29 +824,29 @@ Hausdorff space における収束列の収束先が一点のみ.
 
 \begin{proof}
 	収束先が2点以上存在して矛盾を導く: $x \neq y$が ハウスドルフ空間$X$上の収束列 $\left( x_n \right) _{n \in \mathbb{N} }$ の2つの収束先とする. 
-	この時,$x,y$の非交開近傍 $U,V$が取れる. 
-	収束の定義よりある番号 $N$以降の点がすべて $U$に属する, 同様に $V$に対しても同じことが成立する. 
-	しかし,  $U\cap V = \emptyset$ より矛盾が生じる.
+	この時, $x, y$の非交開近傍 $U, V$が取れる. 
+	収束の定義よりある番号 $N$以降の点がすべて $U$に属する,  同様に $V$に対しても同じことが成立する. 
+	しかし,   $U\cap V = \emptyset$ より矛盾が生じる.
 \end{proof}
 
 \section{連続写像}%
 \label{sec:連続写像}
 ここから位相学の核となる概念である連続性\textbf{(continuity)}に入ります.
 我々の偉大なる指導者は政敵を粛清する時にどのような手法を用いたでしょうか? 
-それは政敵の間にある繋がりに着目し, 容易に刑務所に連行させるやつから始まるに違いません. この政治的団体の繋がりは連続写像となります. 
-我々の偉大なる指導者は常に物事の本質を見抜くことができ, 本質に合った粛清策を行う英明な状態にあります. これは正しく古人の"天行健，君子以不強自自強不息"である.
+それは政敵の間にある繋がりに着目し,  容易に刑務所に連行させるやつから始まるに違いません. この政治的団体の繋がりは連続写像となります. 
+我々の偉大なる指導者は常に物事の本質を見抜くことができ,  本質に合った粛清策を行う英明な状態にあります. これは正しく古人の"天行健,  君子以不強自自強不息"である.
 \begin{definition}[連続写像]
-	写像$f: \left( X , \mathcal{O}_X \right) \to \left( Y, \mathcal{O}_Y \right) $ が連続\textbf{(continuous)}であるとは次の性質を満たすとする:
+	写像$f: \left( X ,  \mathcal{O}_X \right) \to \left( Y,  \mathcal{O}_Y \right) $ が連続\textbf{(continuous)}であるとは次の性質を満たすとする:
 	\[
 	\forall U \in \mathcal{O}_Y; f^{-1}\left( U \right) \in \mathcal{O}_X 
 	.\] 
 \end{definition}
 
-政治的な繋がりを調べるには, 所属団体のすべての要員について調べると時間がかかります. 我々の偉大なる習近平同志は団体を率いる者のみを調べ, 団体間の繋がりが存在するかどうかを判断します.
+政治的な繋がりを調べるには,  所属団体のすべての要員について調べると時間がかかります. 我々の偉大なる習近平同志は団体を率いる者のみを調べ,  団体間の繋がりが存在するかどうかを判断します.
 
 \begin{lemma}[開基による連続の定義]
-開基$\mathcal{B}$により生成された位相空間$\left( Y, \mathcal{O}_Y \right) $に対し,
-写像$f: \left( X , \mathcal{O}_X \right) \to \left( Y, \mathcal{O}_Y \right) $ が以下の性質を満たせば連続となる:
+開基$\mathcal{B}$により生成された位相空間$\left( Y,  \mathcal{O}_Y \right) $に対し, 
+写像$f: \left( X ,  \mathcal{O}_X \right) \to \left( Y,  \mathcal{O}_Y \right) $ が以下の性質を満たせば連続となる:
 \[
 \forall B \in \mathcal{B}; f^{-1}\left( B \right) \in \mathcal{O}_X
 .\] 
@@ -757,7 +854,7 @@ Hausdorff space における収束列の収束先が一点のみ.
 \end{lemma}
 
 \begin{lemma}[準開基による連続の定義]
-	準開基$\mathcal{S}$ により生成された位相空間$\left( Y, \mathcal{O}_Y \right) $に対し, 写像$f: \left( X , \mathcal{O}_X \right) \to \left( Y, \mathcal{O}_Y \right) $ が以下の性質を満たせば連続となる:
+	準開基$\mathcal{S}$ により生成された位相空間$\left( Y,  \mathcal{O}_Y \right) $に対し,  写像$f: \left( X ,  \mathcal{O}_X \right) \to \left( Y,  \mathcal{O}_Y \right) $ が以下の性質を満たせば連続となる:
 \[
 \forall S \in \mathcal{S}; f^{-1}\left( S \right) \in \mathcal{O}_X
 .\] 
@@ -765,22 +862,22 @@ Hausdorff space における収束列の収束先が一点のみ.
 \end{lemma}
 
 \begin{proof}
-	任意の写像$f: X \to Y$ と空でない添字集合$\Lambda$により定義される$Y$上の集合族 $\left( A_{\lambda} \right) _{\lambda \in \Lambda}$に対し,
+	任意の写像$f: X \to Y$ と空でない添字集合$\Lambda$により定義される$Y$上の集合族 $\left( A_{\lambda} \right) _{\lambda \in \Lambda}$に対し, 
 	\[
 	f^{-1}\left( \bigcup_{\lambda \in \Lambda} A_{\lambda}  \right) = \bigcup_{\lambda \in \Lambda} f^{-1}\left( A_\lambda \right) 
 	.\] 
 	\[
 	f^{-1}\left( \bigcap_{\lambda \in \Lambda} A_{\lambda}  \right) = \bigcap_{\lambda \in \Lambda} f^{-1}\left( A_\lambda \right) 
 	.\]
-	が成立することと開基と準開基の定義より, 上記の2つのLemmaが直ちに導かれる. 
-	\footnote{上記の逆像に関する性質がきれいだと思うが, それが像に対しても成立するかに気になる方もいるんでしょう. 
-	ここで答えを言っておくと和に関しては成立で, 共通集合に関する部分が{\color{red}不成立}である.単射である時のみ , 等号が成立する.}
+	が成立することと開基と準開基の定義より,  上記の2つのLemmaが直ちに導かれる. 
+	\footnote{上記の逆像に関する性質がきれいだと思うが,  それが像に対しても成立するかに気になる方もいるんでしょう. 
+	ここで答えを言っておくと和に関しては成立で,  共通集合に関する部分が{\color{red}不成立}である.単射である時のみ ,  等号が成立する.}
 \end{proof}
 
-政治団体の間の繋がりは思想に現れることがあれば, 経済に現れることも考えられるでしょう, 正しくマルクスの言うように, 物事を弁証的に捉えると見通しが良くなります.
+政治団体の間の繋がりは思想に現れることがあれば,  経済に現れることも考えられるでしょう,  正しくマルクスの言うように,  物事を弁証的に捉えると見通しが良くなります.
 
 \begin{theorem}[連続写像の特徴づけ]
-	位相空間$\left( X,\mathcal{O}_X \right) ,\left( Y,\mathcal{O}_Y \right) $ と写像$f:X \to Y$に対し, 以下の4つの命題が互いに同値である:
+	位相空間$\left( X, \mathcal{O}_X \right) , \left( Y, \mathcal{O}_Y \right) $ と写像$f:X \to Y$に対し,  以下の4つの命題が互いに同値である:
 	\begin{enumerate}
 		\item $f$が連続写像である.
 		\item  $\forall A \subseteq X ; f\left( \cl{A} \right) \subseteq \cl{f\left( A \right) }$ 
@@ -791,44 +888,44 @@ Hausdorff space における収束列の収束先が一点のみ.
 
 \begin{proof}
 	(1)$\implies$(2): $f$が連続写像と仮定する. $A \subseteq X$を任意に取る. 空集合となったら自明で以下 $A$ が空でないもとで議論を進める:
-$x \in \cl{A}$を任意に取り,  $f(x) \in \cl{A}$であることを示す:
+$x \in \cl{A}$を任意に取り,   $f(x) \in \cl{A}$であることを示す:
  $V \in \mathcal{U}_{f(x)}$ を任意に取る. 
- この時, $f$ が連続写像であることより, 
- $f^{-1}\left( V \right) \in \mathcal{U}_x$, 
- 閉包の特徴づけより, 
- $\exists y \in X; y \in f^{-1}\left( V \right)\cap A$が得られ, 
- よって, $V \cap f(A) \neq \emptyset $が求まる. 
- 閉包の特徴づけより, 
- $f(x) \in \cl{f(A)}$となり, $f\left( \cl{A} \right) \subseteq \cl{f\left( A \right) }$.\\
+ この時,  $f$ が連続写像であることより,  
+ $f^{-1}\left( V \right) \in \mathcal{U}_x$,  
+ 閉包の特徴づけより,  
+ $\exists y \in X; y \in f^{-1}\left( V \right)\cap A$が得られ,  
+ よって,  $V \cap f(A) \neq \emptyset $が求まる. 
+ 閉包の特徴づけより,  
+ $f(x) \in \cl{f(A)}$となり,  $f\left( \cl{A} \right) \subseteq \cl{f\left( A \right) }$.\\
  	(2)$\implies$(3):$\forall A \subseteq X ; f\left( \cl{A} \right) \subseteq \cl{f\left( A \right) }$を仮定する. 
 	$B \in \mathcal{C}_Y$ を任意に取る. 
-	$A = f^{-1} \left( B \right) $ として, 
+	$A = f^{-1} \left( B \right) $ として,  
 	$A = \cl{A}$を示す:
-	 $ f\left( \cl{A} \right) \subseteq \cl{f\left( A \right) }  $ と$\cl{A} \subseteq f^{-1}\left( f(\cl{A}) \right)  $より,
+	 $ f\left( \cl{A} \right) \subseteq \cl{f\left( A \right) }  $ と$\cl{A} \subseteq f^{-1}\left( f(\cl{A}) \right)  $より, 
 	 $\cl{A} \subseteq f^{-1}\left( f(\cl{A}) \right) \subseteq f^{-1}\left( \cl{f\left( A \right) } \right)  = f ^{-1} \left( B \right) = A$ が得られる. 
-	 $A \subseteq \cl{A}$と合わせて, $A = \cl{A}$ が求まり,
+	 $A \subseteq \cl{A}$と合わせて,  $A = \cl{A}$ が求まり, 
 	 $\forall B \in \mathcal{C}_Y ; f^{-1}\left( B \right)  \in \mathcal{C}_X$が示された.\\
-	 (3) $\implies$(4): $\forall B \in \mathcal{C}_Y; f^{-1}\left( B \right)  \in \mathcal{C}_X$を仮定する, 
-	 $x \in X ; V \in \mathcal{U}_{f\left( x \right) }$ を任意に取り, $\exists U \in \mathcal{U}_x ; f\left( U \right) \subseteq V$を示す:
-	 $Y \setminus V \in \mathcal{C}_Y$が閉集合の定義に従う, 
-	 この時, 仮定より, $f^{-1}\left( Y\setminus V \right) \in \mathcal{C}_X$ が得られる. 
+	 (3) $\implies$(4): $\forall B \in \mathcal{C}_Y; f^{-1}\left( B \right)  \in \mathcal{C}_X$を仮定する,  
+	 $x \in X ; V \in \mathcal{U}_{f\left( x \right) }$ を任意に取り,  $\exists U \in \mathcal{U}_x ; f\left( U \right) \subseteq V$を示す:
+	 $Y \setminus V \in \mathcal{C}_Y$が閉集合の定義に従う,  
+	 この時,  仮定より,  $f^{-1}\left( Y\setminus V \right) \in \mathcal{C}_X$ が得られる. 
 	 $A = f^{-1} \left( Y \setminus V \right) $ とする. 
-	 $X\setminus A \in \mathcal{U}_x $が得られ, 
-	 $f\left( X \setminus A \right) \cap \left( Y \setminus V \right) = \emptyset $ より, 
+	 $X\setminus A \in \mathcal{U}_x $が得られ,  
+	 $f\left( X \setminus A \right) \cap \left( Y \setminus V \right) = \emptyset $ より,  
 	 $f\left( X \setminus A \right) \subseteq V$ が求まる. \\
-	(4)$\implies$(1): $\forall x \in X; \forall V \in \mathcal{U}_{f(x)};\exists U \in \mathcal{U}_x; f(U) \subseteq V $ を仮定して, $f$が連続写像であることを導く:
-	 $V \in \mathcal{O}_Y$ を任意に取る, $x \in f^{-1}\left( V \right) $ を任意に取り, 
- 仮定より,$\exists U_x \in \mathcal{U}_x ; f(U_x) \subseteq V$, このような$U_x$を一つ取る.\footnote{ここでは選択公理が暗黙に使われているのを気づいたの?実は$(1),(4)$ と $(3),(1)$ の同値性を示すことで選択公理の使用を回避できる.しかし,本を書く人に取って仕事が増えるから読者の皆様の演習問題にしておく. 実は$x$に対応する $U_x$ はなんでもいいから全部取って来て, 和集合を考えても結局開集合となるので, この方法で選択公理の利用も回避できる.} $U_x \subseteq f^{-1}\left( V \right) $ が明らか. 
+	(4)$\implies$(1): $\forall x \in X; \forall V \in \mathcal{U}_{f(x)};\exists U \in \mathcal{U}_x; f(U) \subseteq V $ を仮定して,  $f$が連続写像であることを導く:
+	 $V \in \mathcal{O}_Y$ を任意に取る,  $x \in f^{-1}\left( V \right) $ を任意に取り,  
+ 仮定より, $\exists U_x \in \mathcal{U}_x ; f(U_x) \subseteq V$,  このような$U_x$を一つ取る.\footnote{ここでは選択公理が暗黙に使われているのを気づいたの?実は$(1), (4)$ と $(3), (1)$ の同値性を示すことで選択公理の使用を回避できる.しかし, 本を書く人に取って仕事が増えるから読者の皆様の演習問題にしておく. 実は$x$に対応する $U_x$ はなんでもいいから全部取って来て,  和集合を考えても結局開集合となるので,  この方法で選択公理の利用も回避できる.} $U_x \subseteq f^{-1}\left( V \right) $ が明らか. 
 	 $$
 	 f^{-1}\left( V \right) = \bigcup_{x \in f^{-1}\left( V \right) } U_x
 	 $$
-	 従って, $f^{-1} \left( V \right) \in \mathcal{O}_X$ が示された.
+	 従って,  $f^{-1} \left( V \right) \in \mathcal{O}_X$ が示された.
 \end{proof}
 
-証明の最後の部分では選択公理を暗黙に用いたのですが, 偉大なる習近平は位相空間が開集合の和集合に閉じている性質を用いて,同じ結果を示せた. ここで共産主義の未来を担っている諸君よ, 偉大なる導師の証明法を再現できるように試みよう.
+証明の最後の部分では選択公理を暗黙に用いたのですが,  偉大なる習近平は位相空間が開集合の和集合に閉じている性質を用いて, 同じ結果を示せた. ここで共産主義の未来を担っている諸君よ,  偉大なる導師の証明法を再現できるように試みよう.
 
 \begin{definition}[同相]
-	位相空間$\left( X,\mathcal{O}_X \right) $と位相空間$\left( Y,\mathcal{O}_Y \right) $ が同相\textbf{(homeomorphism)}であるとはある全単射$f:X\to Y$ が存在して,$f,f^{-1}$ いずれも連続写像である.  
+	位相空間$\left( X, \mathcal{O}_X \right) $と位相空間$\left( Y, \mathcal{O}_Y \right) $ が同相\textbf{(homeomorphism)}であるとはある全単射$f:X\to Y$ が存在して, $f, f^{-1}$ いずれも連続写像である.  
 \end{definition}
 
 
@@ -841,38 +938,38 @@ $x \in \cl{A}$を任意に取り,  $f(x) \in \cl{A}$であることを示す:
 
 
 \begin{theorem}[典型的な連続写像]
-	$X,Y,Z$を位相空間とする, 以下の6種類の写像はすべて連続写像である:
+	$X, Y, Z$を位相空間とする,  以下の6種類の写像はすべて連続写像である:
 	 \begin{enumerate}
 		\item 定写像$f: X \to Y; \exists y_0 \in Y ; f(X) =\{y_0\} $ .
 		\item 包含写像 $A\subseteq X ; f: A \to X; \forall x \in A; f(x)=x$.
 		\item 連続写像$f:X\to Y; g:Y\to Z$に対する合成写像$g\circ f$.
-		\item $X$の部分位相空間 $A$に対し,連続写像$f:X\to Y$の定義域を$A$に制限した写像 $f\upharpoonright A$.
-		\item  $Y$の部分位相空間 $Z$, 連続写像$f:X \to Y$に対し, $f\left( X \right) \subseteq Z$ の時, $f$の終域を $Z$ に制限した写像.
-		\item $X$が開集合列 $\left(U_{\alpha}\right) _{\alpha \in J}$の和集合の時,  $\forall \alpha \in J; f\upharpoonright U_{\alpha}$が連続写像となる写像 $f:X \to Y$
+		\item $X$の部分位相空間 $A$に対し, 連続写像$f:X\to Y$の定義域を$A$に制限した写像 $f\upharpoonright A$.
+		\item  $Y$の部分位相空間 $Z$,  連続写像$f:X \to Y$に対し,  $f\left( X \right) \subseteq Z$ の時,  $f$の終域を $Z$ に制限した写像.
+		\item $X$が開集合列 $\left(U_{\alpha}\right) _{\alpha \in J}$の和集合の時,   $\forall \alpha \in J; f\upharpoonright U_{\alpha}$が連続写像となる写像 $f:X \to Y$
 	\end{enumerate}
 \end{theorem}
 
 \begin{proof}
-	1,2,3,4,5はいずれも自明な命題であり, 以下6のみを示す:\\
+	1, 2, 3, 4, 5はいずれも自明な命題であり,  以下6のみを示す:\\
 	$V \in \mathcal{O}_Y$ を任意に取る. $\alpha \in J$を任意に取る.
 	\[
 	f^{-1}(V)\cap U_{\alpha} = (f\upharpoonright U_{\alpha})^{-1}(V)
 	.\] 
-	Lemma \ref{lem:openset}より, $ (f\upharpoonright U_{\alpha})^{-1}(V) \in \mathcal{O}_X$.
+	Lemma \ref{lem:openset}より,  $ (f\upharpoonright U_{\alpha})^{-1}(V) \in \mathcal{O}_X$.
 	\[
 	f^{-1}(V)=\bigcup_{\alpha \in J}  (f\upharpoonright U_{\alpha})^{-1}(V)
 	.\]
-	従って, $f^{-1}(V) \in \mathcal{O}_X$ であることが示された.
+	従って,  $f^{-1}(V) \in \mathcal{O}_X$ であることが示された.
 \end{proof}
 
 \begin{theorem}
 \label{thm:paste}
-	位相空間$(X,\mathcal{O}_X)$に対し,$X=A \cup B; A,B \in \mathcal{C}_X$とする. 連続写像$f:A\to Y,g:B\to Y$を用いて次のように定まる写像$h :X\to Y $が連続写像である:
+	位相空間$(X, \mathcal{O}_X)$に対し, $X=A \cup B; A, B \in \mathcal{C}_X$とする. 連続写像$f:A\to Y, g:B\to Y$を用いて次のように定まる写像$h :X\to Y $が連続写像である:
 	\[
 	h\left( x\right) =
 	\begin{cases}
-		f(x) &,x \in A\\
-		g(x) &,x \in X\setminus A
+		f(x) &, x \in A\\
+		g(x) &, x \in X\setminus A
 	\end{cases}
 	\] 
 \end{theorem}
@@ -883,50 +980,50 @@ $x \in \cl{A}$を任意に取り,  $f(x) \in \cl{A}$であることを示す:
 	\[
 	h^{-1}(V) =f^{-1}(V) \cup g^{-1}(V) = \left( f^{-1}(V) \cap A \right) \cup \left( g^{-1}(V) \cap B \right) 
 	.\] 
-	Theorem \ref{the:closedset}より, $\left( f^{-1}(V) \cap A \right),\left( g^{-1}(V) \cap B \right) \in \mathcal{C}_X $,従って,$h^{-1}(V) \in \mathcal{C}_X$
+	Theorem \ref{the:closedset}より,  $\left( f^{-1}(V) \cap A \right), \left( g^{-1}(V) \cap B \right) \in \mathcal{C}_X $, 従って, $h^{-1}(V) \in \mathcal{C}_X$
 \end{proof}
 
 \begin{theorem}[積位相空間の連続性]
 	写像$f:A \to X\times Y$\[
-	f(a)=\left( f_1(a),f_2(a) \right) 
+	f(a)=\left( f_1(a), f_2(a) \right) 
 	.\] 	
 	が連続であることと$f_1 : A\to X$かつ$f_2 : A \to Y$ が連続であることと同値である.
 \end{theorem}
 
 \begin{proof}
-	$\implies$ : $\pi_1 : X\times Y \to X,\pi_2 : X\times Y \to Y$が連続であることが自明である. $f_1=\pi_1 \circ f, f_2=\pi_2 \circ f $,連続写像の合成また連続写像となるから$f_1,f_2$ が連続写像であることが示された.\\
-	$\impliedby$ : $X\times Y$の任意開基$U\times V$に対し, $f^{-1}\left( U\times V \right) \in \mathcal{O}_{X\times Y}$を示す: $a \in f^{-1}(U\times V) \iff f(a) \in U\times V \iff f_1(a) \in U \land f_2(a) \in V$
-	従って,
+	$\implies$ : $\pi_1 : X\times Y \to X, \pi_2 : X\times Y \to Y$が連続であることが自明である. $f_1=\pi_1 \circ f,  f_2=\pi_2 \circ f $, 連続写像の合成また連続写像となるから$f_1, f_2$ が連続写像であることが示された.\\
+	$\impliedby$ : $X\times Y$の任意開基$U\times V$に対し,  $f^{-1}\left( U\times V \right) \in \mathcal{O}_{X\times Y}$を示す: $a \in f^{-1}(U\times V) \iff f(a) \in U\times V \iff f_1(a) \in U \land f_2(a) \in V$
+	従って, 
 	\[
 	f^{-1}(U\times V) = f_1^{-1}(U) \cap f_2^{-1}(V)
 	.\] 
-	$f_1^{-1}(U),f_2^{-1}(V) \in \mathcal{O}_{X\times Y}$ より,$f^{-1}(U\times V) \in \mathcal{O}_{X\times Y}$ が示された.
+	$f_1^{-1}(U), f_2^{-1}(V) \in \mathcal{O}_{X\times Y}$ より, $f^{-1}(U\times V) \in \mathcal{O}_{X\times Y}$ が示された.
 \end{proof}
 
 \section{直積位相}%
 \label{sec:直積位相}
-私達は前の節で積位相空間, 積位相空間の連続写像について考察していたが, 一般性を求める私達にとっては積位相という概念を一般化しなくてはならない.
+私達は前の節で積位相空間,  積位相空間の連続写像について考察していたが,  一般性を求める私達にとっては積位相という概念を一般化しなくてはならない.
 
 \begin{definition}[一般化された順序対と座標]
-	添字集合$J$と集合$X$ に対し, $X$ のJ組 \textbf{(J-tuple)}要素は写像$x:J\to X$として与えられる.$\alpha \in J$に対し, $x_{\alpha}:=x\left( \alpha \right) $ と定義し,これを$x$ の$\alpha$ 番目座標と呼ぶ.
+	添字集合$J$と集合$X$ に対し,  $X$ のJ組 \textbf{(J-tuple)}要素は写像$x:J\to X$として与えられる.$\alpha \in J$に対し,  $x_{\alpha}:=x\left( \alpha \right) $ と定義し, これを$x$ の$\alpha$ 番目座標と呼ぶ.
 \end{definition}
 
 \begin{definition}[直積]
-	添字集合$J$と集合族$\left( A_{\alpha} \right) _{\alpha \in J}$ に対し,  $X=\bigcup_{\alpha \in J} A$, $X$の直積$\prod_{\alpha \in J}A_{\alpha}$は次のように定める:
+	添字集合$J$と集合族$\left( A_{\alpha} \right) _{\alpha \in J}$ に対し,   $X=\bigcup_{\alpha \in J} A$,  $X$の直積$\prod_{\alpha \in J}A_{\alpha}$は次のように定める:
 	 \[
 	\prod_{\alpha \in J}A_{\alpha} :=\{x:J\to X \mid \forall \alpha \in J; x(\alpha) \in A_{\alpha} \} 
 	\] 
-	直積の元$x$と$\alpha \in J$に対し, 射影写像 $\pi_{\alpha} : \prod_{\beta \in J}A_{\beta} \to A_{\alpha}$は$\pi_{\alpha}(x):= x(\alpha)$と定める.
+	直積の元$x$と$\alpha \in J$に対し,  射影写像 $\pi_{\alpha} : \prod_{\beta \in J}A_{\beta} \to A_{\alpha}$は$\pi_{\alpha}(x):= x(\alpha)$と定める.
 \end{definition}
 
 \begin{remark}
-選択公理を仮定すると任意の空でない添字集合と任意の空でない集合族に対し, 直積は空でないことが保証される. また公理的集合論の話になって申し訳ないのだが, $X^J$ が空でないことが$X$が空でないもとで常に言えるが(それは同じ点に写す写像を考えれば良い), 集合族のすべての集合は互いに交わりをもたないのであれば, 写し先の元を無限回選ばなければいけなくなる. 実数全体の集合は非可算濃度を持つため, 添字集合を実数全体にした時, 直積の元を再帰的に定めるには無理がある. なので, 直積と選択公理は深く関連していることが見えるはず.
+選択公理を仮定すると任意の空でない添字集合と任意の空でない集合族に対し,  直積は空でないことが保証される. また公理的集合論の話になって申し訳ないのだが,  $X^J$ が空でないことが$X$が空でないもとで常に言えるが(それは同じ点に写す写像を考えれば良い),  集合族のすべての集合は互いに交わりをもたないのであれば,  写し先の元を無限回選ばなければいけなくなる. 実数全体の集合は非可算濃度を持つため,  添字集合を実数全体にした時,  直積の元を再帰的に定めるには無理がある. なので,  直積と選択公理は深く関連していることが見えるはず.
 \end{remark}
 
-これから二種類の位相空間を紹介する, いずれも有限積位相の世界で同じものとなるが無限次元の世界では話が変わるような位相空間を紹介する.
+これから二種類の位相空間を紹介する,  いずれも有限積位相の世界で同じものとなるが無限次元の世界では話が変わるような位相空間を紹介する.
 
 \begin{definition}[box topology]
-	位相空間$\left( X,\mathcal{O}_X \right) $ と添字集合$J$ に対し, 箱位相 \textbf{(box topology)}は次の集合を開基とする$\prod_{\alpha \in J}X$の位相である. 
+	位相空間$\left( X, \mathcal{O}_X \right) $ と添字集合$J$ に対し,  箱位相 \textbf{(box topology)}は次の集合を開基とする$\prod_{\alpha \in J}X$の位相である. 
 	 \[
 	\mathcal{B}:=\{\prod_{\alpha \in J}U_{\alpha}  \mid \forall \alpha \in J; U_{\alpha} \in \mathcal{O}_X\} 
 	.\] 
@@ -934,22 +1031,22 @@ $x \in \cl{A}$を任意に取り,  $f(x) \in \cl{A}$であることを示す:
 
 \begin{definition}[積位相]
 
-	位相空間$\left( X,\mathcal{O}_X \right) $ と添字集合$J$ に対し, 積位相 \textbf{(product topology)}は次の集合を準開基とする$\prod_{\alpha \in J}X$の位相である. 
+	位相空間$\left( X, \mathcal{O}_X \right) $ と添字集合$J$ に対し,  積位相 \textbf{(product topology)}は次の集合を準開基とする$\prod_{\alpha \in J}X$の位相である. 
 	\[
-	\mathcal{S}:=\{\bigcup_{\alpha \in J}\mathcal{S}_{\alpha} \mid \mathcal{S}_{\alpha}= \pi_{\alpha}^{-1} \left( U \right)  , U \in \mathcal{O}_X \} 
+	\mathcal{S}:=\{\bigcup_{\alpha \in J}\mathcal{S}_{\alpha} \mid \mathcal{S}_{\alpha}= \pi_{\alpha}^{-1} \left( U \right)  ,  U \in \mathcal{O}_X \} 
 	.\] 
 \end{definition}
 
-上記の定義を見ていただくと箱位相の方が構成として私達の直感に即しているんだが, このノートは数学のノートなので, そんな思う通りにうまく行くことがなかなかないのだ.
-積位相は準開基を用いて定義したが, 開基に直すと$\prod_{\alpha \in J} A_{\alpha}  $ の高々有限個の$A_{\alpha}$ に対し開集合となり, 残りすべて$X$ となるような直積を開基とする位相である. 
-これで, 箱位相は積位相より強いことが分かる. 
+上記の定義を見ていただくと箱位相の方が構成として私達の直感に即しているんだが,  このノートは数学のノートなので,  そんな思う通りにうまく行くことがなかなかないのだ.
+積位相は準開基を用いて定義したが,  開基に直すと$\prod_{\alpha \in J} A_{\alpha}  $ の高々有限個の$A_{\alpha}$ に対し開集合となり,  残りすべて$X$ となるような直積を開基とする位相である. 
+これで,  箱位相は積位相より強いことが分かる. 
 
 \begin{theorem}[共通性質]
-	$\prod_{\alpha \in J} X_{\alpha}  $の箱位相や積位相にかかわらず, 次の3つの命題成立する:
+	$\prod_{\alpha \in J} X_{\alpha}  $の箱位相や積位相にかかわらず,  次の3つの命題成立する:
 	\begin{enumerate}
-		\item $\forall \alpha \in J; A_{\alpha} \subseteq X_{\alpha} $かつ$\prod_{\alpha} A_{\alpha}  $は$\prod_{\alpha \in J} X_{\alpha}  $と同じ種類の位相を持つならば, $\prod_{\alpha} A_{\alpha}  $は部分位相空間となる.
-		\item $\forall \alpha \in J; X_{\alpha}$ がハウスドルフ空間ならば, $\prod_{\alpha \in J} X_{\alpha}  $もハウスドルフ空間である.
-		\item $\forall \alpha \in J; A_{\alpha} \subseteq X_{\alpha}$ならば, 
+		\item $\forall \alpha \in J; A_{\alpha} \subseteq X_{\alpha} $かつ$\prod_{\alpha} A_{\alpha}  $は$\prod_{\alpha \in J} X_{\alpha}  $と同じ種類の位相を持つならば,  $\prod_{\alpha} A_{\alpha}  $は部分位相空間となる.
+		\item $\forall \alpha \in J; X_{\alpha}$ がハウスドルフ空間ならば,  $\prod_{\alpha \in J} X_{\alpha}  $もハウスドルフ空間である.
+		\item $\forall \alpha \in J; A_{\alpha} \subseteq X_{\alpha}$ならば,  
 			\[
 			\prod_{\alpha \in J} \cl{A}_{\alpha} = \cl{\prod_{\alpha \in J} A_{\alpha}}    
 			.\] 
@@ -960,8 +1057,8 @@ $x \in \cl{A}$を任意に取り,  $f(x) \in \cl{A}$であることを示す:
 	1.\[
 \prod_{\alpha \in J} A_{\alpha}  \cap \prod_{\alpha \in J} U_{\alpha}  = \prod_{\alpha \in J}\left( A_{\alpha}  \cap U_{\alpha}	\right)
 	.\] より自明.\\
-	2. $\prod_{\alpha \in J} X_{\alpha}  $異なる$x,y$に対し, $x(\beta) \neq y(\beta)$ を満たす$\beta \in J$ が存在して, 
-	$X_{\beta}$を $x\left( \beta \right) , y\left( \beta \right) $ それぞれの非交開近傍に置き換えれば良い.\\
+	2. $\prod_{\alpha \in J} X_{\alpha}  $異なる$x, y$に対し,  $x(\beta) \neq y(\beta)$ を満たす$\beta \in J$ が存在して,  
+	$X_{\beta}$を $x\left( \beta \right) ,  y\left( \beta \right) $ それぞれの非交開近傍に置き換えれば良い.\\
 	3. 
 	$$
 	\begin{aligned}
@@ -980,89 +1077,89 @@ $x \in \cl{A}$を任意に取り,  $f(x) \in \cl{A}$であることを示す:
 	\[
 	f(a) = (f_{\alpha}(a))_{\alpha \in J}
 	.\] 
-	と与えられる, $\prod_{\alpha \in J} X_{\alpha}  $ に積位相が装備される時, $f$が連続であることと任意の $\alpha \in J$ に対し, $f_{\alpha}$ が連続であることと同値である.
+	と与えられる,  $\prod_{\alpha \in J} X_{\alpha}  $ に積位相が装備される時,  $f$が連続であることと任意の $\alpha \in J$ に対し,  $f_{\alpha}$ が連続であることと同値である.
 \end{theorem}
 
 \begin{proof}
-	$\implies$: $\forall \alpha \in J; f_{\alpha} = \pi_{\alpha} \circ f$に注目し, 連続写像の合成もまた連続であることより, 命題が示される.\\
-	 $\impliedby$: 準開基の逆像について議論すれば十分である. 準開基の元$\pi^{-1}\left( U_{\alpha}\right) $を任意に取る. この時, 
+	$\implies$: $\forall \alpha \in J; f_{\alpha} = \pi_{\alpha} \circ f$に注目し,  連続写像の合成もまた連続であることより,  命題が示される.\\
+	 $\impliedby$: 準開基の逆像について議論すれば十分である. 準開基の元$\pi^{-1}\left( U_{\alpha}\right) $を任意に取る. この時,  
 	  \[
 	 f^{-1}\left(\pi_{\alpha} ^{-1} \left( U_{\alpha}  \right) \right) = f_{\alpha}^{-1}\left( U_{\alpha} \right) 
 	 .\] 
-	 $f_{\alpha} = \pi_{\alpha} \circ f$が連続写像であることより, 
+	 $f_{\alpha} = \pi_{\alpha} \circ f$が連続写像であることより,  
 	 $f^{-1} \left( \pi_{\alpha} ^{-1}\left( U_{\alpha} \right)  \right) $ が$A$での開集合となる. 
-	 よって,  $f$ が連続写像であることが得られる. 
+	 よって,   $f$ が連続写像であることが得られる. 
 \end{proof}
 
 
 \section{Metric Topology}
-これから一般位相空間論における特殊な位相構造を持つもの，
+これから一般位相空間論における特殊な位相構造を持つもの,  
 いわゆる距離空間について議論するつもりである．
 
 
 \begin{definition}
 	集合$X$ の距離函数$d : X \times X \to \mathbb{R}$が以下の３つの性質を満たす写像である:
 	\begin{enumerate}
-		\item $\forall x  , y \in X ; \left( d(x,y) \ge 0 \land \left( d(x,y) = 0  \iff x = y \right) \right)$ 
-		\item $\forall x, y \in X; d(x,y) = d(y,x)$
-		\item  $\forall x,y,z ; d(x,z) \le d(x,y) + d(y,z)$
+		\item $\forall x  ,  y \in X ; \left( d(x, y) \ge 0 \land \left( d(x, y) = 0  \iff x = y \right) \right)$ 
+		\item $\forall x,  y \in X; d(x, y) = d(y, x)$
+		\item  $\forall x, y, z ; d(x, z) \le d(x, y) + d(y, z)$
 	\end{enumerate}
-	集合$X$に距離函数$d$が装備される$(X,d)$を距離空間\textbf{(metric space)}と呼ぶ.
+	集合$X$に距離函数$d$が装備される$(X, d)$を距離空間\textbf{(metric space)}と呼ぶ.
 \end{definition}
 
 \begin{definition}
-	距離空間$\left( X,d \right) $ について, $x \in X, r>0 \in  \mathbb{R}$に対し, 次の集合$B_d (x,r)$を中心が $x$半径が $r$となる開球体\textbf{(open ball)}と呼ぶ.
+	距離空間$\left( X, d \right) $ について,  $x \in X,  r>0 \in  \mathbb{R}$に対し,  次の集合$B_d (x, r)$を中心が $x$半径が $r$となる開球体\textbf{(open ball)}と呼ぶ.
 	 \[
-	B_d(x,r) = \{y \in X \mid d(x,y) <r\} 
+	B_d(x, r) = \{y \in X \mid d(x, y) <r\} 
 	.\] 
 \end{definition}
 
 \begin{lemma}
-	距離空間$(X,d)$に対し, 次の集合が開基の2条件を満たす:
+	距離空間$(X, d)$に対し,  次の集合が開基の2条件を満たす:
 	 \[
-	 \mathcal{B} = \{ B_d(x,r)  \mid  x \in X, r >0 \in \mathbb{R}\} 
+	 \mathcal{B} = \{ B_d(x, r)  \mid  x \in X,  r >0 \in \mathbb{R}\} 
 	 .\] 
 \end{lemma}
 
 \begin{proof}
-	$x \in X$を任意に取る.  $x \in B_d(x,1) \in \mathcal{B}$ より条件1が満たされる.\\
-	$x \in X$を任意に取る,  $x \in B_1, x \in B_2$を満たす$B_1,B_2 \in \mathcal{B}$ を任意にとり, これらの開球の中心を$x_1,x_2$,半径を$r_1,r_2$とする. $r = \min \{ r_1 - d(x,x_1), r_2 -d(x,x_2)\} $ とする. 開球体$ x \in B_d(x,r) \subseteq  B_1 \cap B_2$が成立する. よって, 条件2も成立する.
+	$x \in X$を任意に取る.  $x \in B_d(x, 1) \in \mathcal{B}$ より条件1が満たされる.\\
+	$x \in X$を任意に取る,   $x \in B_1,  x \in B_2$を満たす$B_1, B_2 \in \mathcal{B}$ を任意にとり,  これらの開球の中心を$x_1, x_2$, 半径を$r_1, r_2$とする. $r = \min \{ r_1 - d(x, x_1),  r_2 -d(x, x_2)\} $ とする. 開球体$ x \in B_d(x, r) \subseteq  B_1 \cap B_2$が成立する. よって,  条件2も成立する.
 \end{proof}
 
-今後，集合$X$に距離函数 $d$によって誘導される位相空間を $\left( X,d \right) $ と略記する．
+今後,  集合$X$に距離函数 $d$によって誘導される位相空間を $\left( X, d \right) $ と略記する．
 
 \begin{definition}
-	$X$を位相空間とする． $X$が距離づけ可能\textbf{(metrizable)}であるとは， $X$上に定義される距離函数 $d$が存在して,  $\left( X,d \right) $ が$X$と同じ位相構造を持つ．
+	$X$を位相空間とする． $X$が距離づけ可能\textbf{(metrizable)}であるとは,   $X$上に定義される距離函数 $d$が存在して,   $\left( X, d \right) $ が$X$と同じ位相構造を持つ．
 \end{definition}
 \begin{definition}
-	距離空間$\left( X, d \right) $の部分集合$A$が有界 \textbf{(bounded)}とは,  $\exists M>0 \in \mathbb{R}; \forall x, y \in A; d(x,y) \le M$である.
+	距離空間$\left( X,  d \right) $の部分集合$A$が有界 \textbf{(bounded)}とは,   $\exists M>0 \in \mathbb{R}; \forall x,  y \in A; d(x, y) \le M$である.
 \end{definition}
 
 \begin{definition}
-	距離空間$\left( X ,d \right) $の空でない部分集合$A$ に対し，その半径\textbf{(diameter)}は次のように定める:
+	距離空間$\left( X , d \right) $の空でない部分集合$A$ に対し,  その半径\textbf{(diameter)}は次のように定める:
 	\[
-		\mathrm{diam}A= \sup \{d(x,y)  \mid x,y \in A\} 
+		\mathrm{diam}A= \sup \{d(x, y)  \mid x, y \in A\} 
 	.\] 
 \end{definition}
 
 \begin{theorem}
-	$\left( X,d \right) $ を距離空間とする. $ \hat{d}: X \times X \to \mathbb{R} $ を次に定める.
+	$\left( X, d \right) $ を距離空間とする. $ \hat{d}: X \times X \to \mathbb{R} $ を次に定める.
 \end{theorem}
 \section{商位相}
 
 これでは点集合位相学の基本常識の最後となります.
-いわゆる空間を貼り付けて, 直感に反するような位相空間の構成はこの節で行う.
-複雑に見えるかもしれないんだが, 商位相空間の考え方は現代数学の各分野に浸透したのでこの部分を乗り越えられないと話にならないからちゃんとついていけるようにしてください. 
+いわゆる空間を貼り付けて,  直感に反するような位相空間の構成はこの節で行う.
+複雑に見えるかもしれないんだが,  商位相空間の考え方は現代数学の各分野に浸透したのでこの部分を乗り越えられないと話にならないからちゃんとついていけるようにしてください. 
 
 \begin{definition}[商写像]
-	全射$p: \left( X, \mathcal{O}_X \right) \to \left( Y, \mathcal{O}_Y \right)  $が商写像\textbf{(quotient map)}であるとは
+	全射$p: \left( X,  \mathcal{O}_X \right) \to \left( Y,  \mathcal{O}_Y \right)  $が商写像\textbf{(quotient map)}であるとは
 	\[
 	\forall U \subseteq Y;\left( p^{-1}\left( U \right) \in \mathcal{O}_X \iff U \in \mathcal{O}_Y \right) 
 	.\] 
 \end{definition}
 
 \begin{definition}[商位相]
-	全射$p:\left( X,\mathcal{O}_X \to Y \right) $ に対し, 次の集合が$p$ によって誘導される商位相\textbf{(quotient topology)}である:
+	全射$p:\left( X, \mathcal{O}_X \to Y \right) $ に対し,  次の集合が$p$ によって誘導される商位相\textbf{(quotient topology)}である:
 	\[
 	\mathcal{O}_Y := \{U \in \mathcal{P}\left( Y \right)  \mid p^{-1}\left( U \right)  \in \mathcal{O}_X \} 
 	.\] 
@@ -1070,30 +1167,30 @@ $x \in \cl{A}$を任意に取り,  $f(x) \in \cl{A}$であることを示す:
 \end{definition}
 
 \begin{definition}[商空間]
-	位相空間$\left( X, \mathcal{O}_X \right) $ に同値関係$\sim$が装備されている. 
+	位相空間$\left( X,  \mathcal{O}_X \right) $ に同値関係$\sim$が装備されている. 
 	 写像$p: X \to X / \sim $
       $$
 	x \mapsto [x]_{\sim}
       $$
-      によって誘導される位相空間$\left( X / \sim , \mathcal{O}_{X / \sim} \right) $ が商空間 \textbf{(quotient space)}と定義する.
+      によって誘導される位相空間$\left( X / \sim ,  \mathcal{O}_{X / \sim} \right) $ が商空間 \textbf{(quotient space)}と定義する.
 \end{definition}
 
 \begin{definition}[飽和]
-	写像$f:X \to Y$に対し, $A \subseteq X$が飽和\textbf{(saturate)}であるとは:
+	写像$f:X \to Y$に対し,  $A \subseteq X$が飽和\textbf{(saturate)}であるとは:
 	\[
 	f^{-1}\left(f( A) \right) = A
 	.\] 
 \end{definition}
 
-\begin{definition}[開写像, 閉写像]
+\begin{definition}[開写像,  閉写像]
 開集合の像が開集合となるような写像は開写像\textbf{(open map)}である. 閉集合の像が閉集合となるような写像が閉写像\textbf{(closed map)}である.	
 \end{definition}
 
 \begin{theorem}[誘導される商写像]\index{@誘導される商写像}
-	$p: (X,\mathcal{O}_X) \to \left( Y,\mathcal{O}_Y \right) $を商写像とする. $A$が写像 $p$で飽和となる部分位相空間とする.  写像$p$の終域を $p(A)$に, 定義域を$A$に制限した写像 $q: A \to p(A)$に対し, 以下の2つの命題が成立する:
+	$p: (X, \mathcal{O}_X) \to \left( Y, \mathcal{O}_Y \right) $を商写像とする. $A$が写像 $p$で飽和となる部分位相空間とする.  写像$p$の終域を $p(A)$に,  定義域を$A$に制限した写像 $q: A \to p(A)$に対し,  以下の2つの命題が成立する:
 	\begin{enumerate}
-		\item $A$が開集合または閉集合の時,  $q$が商写像となる.
-		\item  $p$が開写像または閉写像の時,  $q$ が商写像となる.
+		\item $A$が開集合または閉集合の時,   $q$が商写像となる.
+		\item  $p$が開写像または閉写像の時,   $q$ が商写像となる.
 	\end{enumerate}
 \end{theorem}
 
@@ -1101,31 +1198,31 @@ $x \in \cl{A}$を任意に取り,  $f(x) \in \cl{A}$であることを示す:
 	まず$A$が $p$のもとで飽和となることは以下の2つの命題を導く:
 	 \[
 	\begin{aligned}%[]\index{@}
-		q^{-1}(V) = p ^{-1}(V), \quad & V \subseteq p(A)\\
-		p(U\cap A) = p(U) \cap p(A), \quad & U\subseteq X 
+		q^{-1}(V) = p ^{-1}(V),  \quad & V \subseteq p(A)\\
+		p(U\cap A) = p(U) \cap p(A),  \quad & U\subseteq X 
 	\end{aligned}
 	\]
-	いずれも自明であるので, 気になる人は\textcolor{red}{check せよ}\footnote{二番目の等式で, "ああ,これは単射と同値やん"と思った人は定義を復習してください.$A$は固定された集合であって,任意性を持たない.予め定義を確認してください.}\\
-	続いて, $A$が開集合あるいは $p$が開写像の時,  $V \subseteq p(A)$を任意に取る.\\
-	$A \in \mathcal{O}_X$ の時, $V \in \mathcal{O}_{p(A)}$ならばある$U \in \mathcal{O}_Y $が存在して, 
-	$V = p(A) \cap U$, $q^{-1}(V) = p ^{-1}(V) = A \cap p^{-1}(U) \in \mathcal{O}_A$が成立する. 
-	$q^{-1}(V) \in \mathcal{O}_A$ならば, ある$U \in \mathcal{O}_X$が存在し, 
-	$q^{-1}(V) = A \cap U \in \mathcal{O}_X$, $q^{-1}(V) = p ^{-1}(V)$より, 
-	$p$が商写像であることから$V \in \mathcal{O}_Y$がわかる, 従って, $V =V \cap p(A)\in \mathcal{O}_{p(A)}$が得られる. \\
-	$p$が開写像の時,  $V \in \mathcal{O}_{p(A)}$ならば, ある$U \in \mathcal{O}_Y$が存在し, 
+	いずれも自明であるので,  気になる人は\textcolor{red}{check せよ}\footnote{二番目の等式で,  "ああ, これは単射と同値やん"と思った人は定義を復習してください.$A$は固定された集合であって, 任意性を持たない.予め定義を確認してください.}\\
+	続いて,  $A$が開集合あるいは $p$が開写像の時,   $V \subseteq p(A)$を任意に取る.\\
+	$A \in \mathcal{O}_X$ の時,  $V \in \mathcal{O}_{p(A)}$ならばある$U \in \mathcal{O}_Y $が存在して,  
+	$V = p(A) \cap U$,  $q^{-1}(V) = p ^{-1}(V) = A \cap p^{-1}(U) \in \mathcal{O}_A$が成立する. 
+	$q^{-1}(V) \in \mathcal{O}_A$ならば,  ある$U \in \mathcal{O}_X$が存在し,  
+	$q^{-1}(V) = A \cap U \in \mathcal{O}_X$,  $q^{-1}(V) = p ^{-1}(V)$より,  
+	$p$が商写像であることから$V \in \mathcal{O}_Y$がわかる,  従って,  $V =V \cap p(A)\in \mathcal{O}_{p(A)}$が得られる. \\
+	$p$が開写像の時,   $V \in \mathcal{O}_{p(A)}$ならば,  ある$U \in \mathcal{O}_Y$が存在し,  
 	$V = p(A) \cap U$となる. 
-	$q^{-1}(V) = p ^{-1}(V) = A \cap p ^{-1}(U)$であって, 
+	$q^{-1}(V) = p ^{-1}(V) = A \cap p ^{-1}(U)$であって,  
 	$q^{-1}(V) \in \mathcal{O}_A$が自然に得られる. 
-	$q^{-1}(V) \in \mathcal{O}_A$ならば, ある$U \in \mathcal{O}_X$が存在し,
-	$q^{-1} (V) =U \cap A$であり, $V=p(q^{-1}(V)) = p(A) \cap p(U)$, 
-	$p$ が開写像であることを認識できれば, $V \in \mathcal{O}_{p(A)}$であることがわかる.\\
-	以上より, $q$が商写像であることがわかった. 閉集合や閉写像に関する証明は上記の集合 $U$を閉集合に置き換えて同じ議論を施せば良い.
+	$q^{-1}(V) \in \mathcal{O}_A$ならば,  ある$U \in \mathcal{O}_X$が存在し, 
+	$q^{-1} (V) =U \cap A$であり,  $V=p(q^{-1}(V)) = p(A) \cap p(U)$,  
+	$p$ が開写像であることを認識できれば,  $V \in \mathcal{O}_{p(A)}$であることがわかる.\\
+	以上より,  $q$が商写像であることがわかった. 閉集合や閉写像に関する証明は上記の集合 $U$を閉集合に置き換えて同じ議論を施せば良い.
 \end{proof}
 
-毛沢東主席曰く:"特例には普遍性がある", 位相空間も毛沢東思想に従うはずです. 連続な世界において, ある種普遍性が存在し, その普遍性がどのように機能しているのを見て行きましょう.
+毛沢東主席曰く:“特例には普遍性がある”,  位相空間も毛沢東思想に従うはずです. 連続な世界において,  ある種普遍性が存在し,  その普遍性がどのように機能しているのを見て行きましょう.
 
 \begin{theorem}%[]\index{@}
-	位相空間$\left( X, \mathcal{O}_X \right) ,\left( Y,\mathcal{O}_Y \right) , \left( Z , \mathcal{O}_Z\right) $に対し, 商写像$p: X \to Y$に対し, $\forall y \in Y; \forall x ,x'\in p ^{-1}({y});g(x)=g(x')$を満たす任意の写像$g: X \to Z$ について, ただ一つの写像$f: Y\to Z$が存在して, $f \circ p = g$を満たす. この時,  $f$が連続であることと $g$ が連続であることと同値である. $f$が商写像であることと $g$が商写像であることと同値である.
+	位相空間$\left( X,  \mathcal{O}_X \right) , \left( Y, \mathcal{O}_Y \right) ,  \left( Z ,  \mathcal{O}_Z\right) $に対し,  商写像$p: X \to Y$に対し,  $\forall y \in Y; \forall x , x'\in p ^{-1}({y});g(x)=g(x')$を満たす任意の写像$g: X \to Z$ について,  ただ一つの写像$f: Y\to Z$が存在して,  $f \circ p = g$を満たす. この時,   $f$が連続であることと $g$ が連続であることと同値である. $f$が商写像であることと $g$が商写像であることと同値である.
 \[
 	\xymatrix{
 		X \ar[d]^{p} \ar[rd]^{\forall g} \\
@@ -1135,72 +1232,72 @@ $x \in \cl{A}$を任意に取り,  $f(x) \in \cl{A}$であることを示す:
 \end{theorem}
 
 \begin{proof}%[]\index{@}
-	$f$の存在と一意性に関しては, 自然な射影を取ることによって得られる. 以下連続性と商写像に関する議論を行う:
-	 $\forall U \subseteq Z; \left( f\circ p \right) ^{-1}(U) = p^{-1}(f^{-1}(U))$であることを利用して, $f\circ p =g$を考えれば良い. 
+	$f$の存在と一意性に関しては,  自然な射影を取ることによって得られる. 以下連続性と商写像に関する議論を行う:
+	 $\forall U \subseteq Z; \left( f\circ p \right) ^{-1}(U) = p^{-1}(f^{-1}(U))$であることを利用して,  $f\circ p =g$を考えれば良い. 
 \end{proof}
 
-以上より位相空間の基本常識が終わります. ここまでやって来た諸君は厳密な中国特色社会主義的数学を学ぶことの第一歩を踏み出せました. ここまで耐えて来た皆様の国に対する愛はきっと我々の偉大なる指導者のもとに届くはずだろう. 西洋から舶来した数学の社会主義的改造初期段階は終わりました, 次の章では位相空間の構造にまつわる細かい性質を調べて行きます.
+以上より位相空間の基本常識が終わります. ここまでやって来た諸君は厳密な中国特色社会主義的数学を学ぶことの第一歩を踏み出せました. ここまで耐えて来た皆様の国に対する愛はきっと我々の偉大なる指導者のもとに届くはずだろう. 西洋から舶来した数学の社会主義的改造初期段階は終わりました,  次の章では位相空間の構造にまつわる細かい性質を調べて行きます.
 
 \section{位相構造}
-今までの学習において，指導階級，対立階級，指導者の近傍，集団の内部，集団の閉包を考察して来ました．私達は社会学的議論をする際に常に指導階級を見ているわけではありません．対立階級，指導者の近傍を使って議論することも多いという事実を認識しておいてください．世界の他のところにいる社会学者は私達の研究手法と異なるかもしれません．ただし，上記の概念を使っているならば，同じ社会学を研究していることが違いません．なぜかというとこれらの概念は社会において同等であること．社会を多様な側面を持ち，これらのどの側面から見ても同じ社会では同じ結論が得られます．これからそれらが同じ社会構造を生成することについて学びましょう.
+今までの学習において,  指導階級,  対立階級,  指導者の近傍,  集団の内部,  集団の閉包を考察して来ました．私達は社会学的議論をする際に常に指導階級を見ているわけではありません．対立階級,  指導者の近傍を使って議論することも多いという事実を認識しておいてください．世界の他のところにいる社会学者は私達の研究手法と異なるかもしれません．ただし,  上記の概念を使っているならば,  同じ社会学を研究していることが違いません．なぜかというとこれらの概念は社会において同等であること．社会を多様な側面を持ち,  これらのどの側面から見ても同じ社会では同じ結論が得られます．これからそれらが同じ社会構造を生成することについて学びましょう.
 
 \begin{definition}
-	集合$X$に対し，次のような3つの性質を満たす部分集合族$\mathcal{O}$を$X$ の開集合族と呼ぶ．
+	集合$X$に対し,  次のような3つの性質を満たす部分集合族$\mathcal{O}$を$X$ の開集合族と呼ぶ．
 	\begin{enumerate}
-		\item $\emptyset , X \in \mathcal{O}$ 
-	\item $\forall O_1, O_2 \in  \mathcal{O} ;O_1 \cap O_2 \in \mathcal{O}$ 
+		\item $\emptyset ,  X \in \mathcal{O}$ 
+	\item $\forall O_1,  O_2 \in  \mathcal{O} ;O_1 \cap O_2 \in \mathcal{O}$ 
 		\item $\forall \mathcal{O}' \in \mathcal{P}(\mathcal{O}); \bigcup \mathcal{O}' \in \mathcal{O} $
 	\end{enumerate}
 \end{definition}
 
 \begin{definition}
-	集合$X$に対し，次のような3つの性質を満たす部分集合族$\mathcal{C}$を$X$ の開集合族と呼ぶ．
+	集合$X$に対し,  次のような3つの性質を満たす部分集合族$\mathcal{C}$を$X$ の開集合族と呼ぶ．
 	\begin{enumerate}
-		\item $\emptyset ,X \in \mathcal{C}$ 
-		\item $\forall C_1 , C_2 \in  \mathcal{C}; C_1 \cup C_2 \in \mathcal{C}$ 
+		\item $\emptyset , X \in \mathcal{C}$ 
+		\item $\forall C_1 ,  C_2 \in  \mathcal{C}; C_1 \cup C_2 \in \mathcal{C}$ 
 		\item $\forall \mathcal{C}' \in \mathcal{P}(\mathcal{C}); \bigcap \mathcal{C}' \in \mathcal{C} $
 
 	\end{enumerate}
 \end{definition}
 
 \begin{definition}
-	集合$X$に対し，写像 $i: \mathcal{P}(X) \to \mathcal{P}(X)$が以下の4つの性質を満たす時， $X$の開核作用素と呼ぶ．
+	集合$X$に対し,  写像 $i: \mathcal{P}(X) \to \mathcal{P}(X)$が以下の4つの性質を満たす時,   $X$の開核作用素と呼ぶ．
 	 \begin{enumerate}
 		\item $X^{i}=X$
 		\item $\forall M \in \mathcal{P}(X); M^{i}\subseteq M$
-		\item $\forall M ,N \in \mathcal{P}(X); \left( M \cap N \right) ^{i} = M^{i} \cap N^{i}$
+		\item $\forall M , N \in \mathcal{P}(X); \left( M \cap N \right) ^{i} = M^{i} \cap N^{i}$
 		\item $\forall M \in \mathcal{P}(X); M^{ii}= M^{i}$
 	\end{enumerate}
 \end{definition}
 
 \begin{definition}
-	集合$X$に対し，写像 $a: \mathcal{P}(X) \to \mathcal{P}(X)$が以下の4つの性質を満たす時， $X$の閉包作用素と呼ぶ．
+	集合$X$に対し,  写像 $a: \mathcal{P}(X) \to \mathcal{P}(X)$が以下の4つの性質を満たす時,   $X$の閉包作用素と呼ぶ．
 	 \begin{enumerate}
 		\item $\emptyset^{a}=\emptyset$
 		\item $\forall M \in \mathcal{P}(X); M^{a}\supseteq M$
-		\item $\forall M ,N \in \mathcal{P}(X); \left( M \cup N \right) ^{a} = M^{a} \cup N^{a}$
+		\item $\forall M , N \in \mathcal{P}(X); \left( M \cup N \right) ^{a} = M^{a} \cup N^{a}$
 		\item $\forall M \in \mathcal{P}(X); M^{aa}= M^{a}$
 	\end{enumerate}
 
 \end{definition}
 
 \begin{definition}
-	集合$X$に対し, 各$x \in X$ に対し, $X$の部分集合族 $\mathcal{N}_x$ が以下の5つの性質を満たすならば，$\mathcal{N}_x$を点$x$の近傍系と呼ぶ．
+	集合$X$に対し,  各$x \in X$ に対し,  $X$の部分集合族 $\mathcal{N}_x$ が以下の5つの性質を満たすならば,  $\mathcal{N}_x$を点$x$の近傍系と呼ぶ．
 	\begin{enumerate}
 		\item $\mathcal{N}_x \neq \emptyset$
 		\item $ \forall N \in \mathcal{N}_x; x \in N$
 		\item $ \forall N \in \mathcal{N}_x; \forall N' \in P(X); \left( N \subseteq N' \implies N' \in \mathcal{N}_x \right) $ 
-		\item $\forall M, N \in \mathcal{N}_x ; M  \cap N \in \mathcal{N}_x $ 
+		\item $\forall M,  N \in \mathcal{N}_x ; M  \cap N \in \mathcal{N}_x $ 
 		\item $\forall N \in \mathcal{N}_x; \exists N' \in \mathcal{N}_x ; \forall y \in N'; N \in \mathcal{N}_y$
 	\end{enumerate}
 \end{definition}
  \newpage
-では以上の定義を持って，どれか一つが与えられた場合，それと一対一に対応する他の概念が定まることを見ていきましょう．
+では以上の定義を持って,  どれか一つが与えられた場合,  それと一対一に対応する他の概念が定まることを見ていきましょう．
 
 \begin{theorem}
-集合$X$とその開集合族 $\mathcal{O}$ が与えられた場合，
-次のように定義される集合族$\mathcal{C}$は閉集合族の性質を満たし，
-更に閉集合族$\tilde{\mathcal{C}}$ を用いて定義される集合族$\tilde{\mathcal{O}}$は開集合族の性質を満たし,
+集合$X$とその開集合族 $\mathcal{O}$ が与えられた場合,  
+次のように定義される集合族$\mathcal{C}$は閉集合族の性質を満たし,  
+更に閉集合族$\tilde{\mathcal{C}}$ を用いて定義される集合族$\tilde{\mathcal{O}}$は開集合族の性質を満たし, 
 $\mathcal{C} = \tilde{\mathcal{C}}$ならば $\tilde{\mathcal{O}} = \mathcal{O}$  が成立する. $\tilde{\mathcal{O}} = \mathcal{O}$ ならば $\mathcal{C} = \tilde{\mathcal{C}}$ が成立する.
 	 \[
 	\mathcal{C} = \{X \setminus O \in \mathcal{P}(X) \mid O \in \mathcal{O} \} 
@@ -1215,8 +1312,8 @@ $\mathcal{C} = \tilde{\mathcal{C}}$ならば $\tilde{\mathcal{O}} = \mathcal{O}$
 \end{proof}
 
 \begin{theorem}
-	集合$X$とその開集合族 $\mathcal{O}$ が与えられた場合，
-	次のように定義される写像$i: \mathcal{P}(X) \to  \mathcal{P}(X)$が開核作用素の性質を満たし，
+	集合$X$とその開集合族 $\mathcal{O}$ が与えられた場合,  
+	次のように定義される写像$i: \mathcal{P}(X) \to  \mathcal{P}(X)$が開核作用素の性質を満たし,  
 	更に開核作用素の性質を満たす写像$\tilde{i}$を用いて定義される集合族 $\tilde{\mathcal{O}}$ が開集合族の性質を満たす．
 	\[
 	M^{i}= i(M) = \bigcup \{O \in \mathcal{O} \mid O \subseteq M\} 
@@ -1229,24 +1326,24 @@ $\mathcal{C} = \tilde{\mathcal{C}}$ならば $\tilde{\mathcal{O}} = \mathcal{O}$
 
 \begin{proof}
 	性質１と性質２と性質４が構成より自明である．\\
-	性質３の証明: $M , N \in \mathcal{P}(X)$ を任意に取る．$\left( M \cap N \right) ^{i} \subseteq M^{i} \cap N^{i}$ を示す: 性質２より, $\left( M \cap N \right)^{i} \subseteq M^{i}, \left( M \cap N \right) ^{i} \subseteq N^{i} $ が成立する．従って, $\left( M \cap  N \right) ^{i } \subseteq M^{i} \cap  N^{i}$ 
-	が得られる. 次に$(M\cap N)^{i} \supseteq M^{i}  \cap  N ^{i}$を示す: $M^{i} , N^{i} \in \mathcal{O}$より,$ M^{i} \cap  N^{ i} \in \mathcal{O}$ また$M^{i} \cap N^{i} \subseteq M \cap N$ より, $M^{i} \cap N^{i} \subseteq \left( M \cap N \right) ^{i}$ が得られる.\\
-	$\emptyset , X \in \tilde{\mathcal{O}}$が開核作用素の性質１，２より直ちに導かれる．\\
-	$O_1, O_2 \in \tilde{\mathcal{O}}$ を任意に取る, 性質３より
+	性質３の証明: $M ,  N \in \mathcal{P}(X)$ を任意に取る．$\left( M \cap N \right) ^{i} \subseteq M^{i} \cap N^{i}$ を示す: 性質２より,  $\left( M \cap N \right)^{i} \subseteq M^{i},  \left( M \cap N \right) ^{i} \subseteq N^{i} $ が成立する．従って,  $\left( M \cap  N \right) ^{i } \subseteq M^{i} \cap  N^{i}$ 
+	が得られる. 次に$(M\cap N)^{i} \supseteq M^{i}  \cap  N ^{i}$を示す: $M^{i} ,  N^{i} \in \mathcal{O}$より, $ M^{i} \cap  N^{ i} \in \mathcal{O}$ また$M^{i} \cap N^{i} \subseteq M \cap N$ より,  $M^{i} \cap N^{i} \subseteq \left( M \cap N \right) ^{i}$ が得られる.\\
+	$\emptyset ,  X \in \tilde{\mathcal{O}}$が開核作用素の性質１,  ２より直ちに導かれる．\\
+	$O_1,  O_2 \in \tilde{\mathcal{O}}$ を任意に取る,  性質３より
 	$(O_1 \cap O_2)^{\tilde{i}} = O_1 ^{\tilde{i}} \cap O_2^{\tilde{i}} = O_1 \cap O_2$ より $O_1 \cap O_2 \in \tilde{\mathcal{O}}$ が成立する.\\
 	$\mathcal{O}' \subseteq \tilde{\mathcal{O}}$ を任意に取る. 
 	$\left(\bigcup \mathcal{O}' \right) ^{\tilde{i}} \subseteq \bigcup \mathcal{O}'  $ が性質２より導かれる. 
-	任意の$O \in \mathcal{O}'$に対し, $O \subseteq \bigcup \mathcal{O}' $が成立するから, 
-	$O = O^{\tilde{i}} \subseteq  \left(\bigcup \mathcal{O}'\right) ^{\tilde{i}}$ が得られ，
-	従って, $\bigcup \mathcal{O}' \subseteq \left(\bigcup \mathcal{O}' \right)^{\tilde{i}}  $,
-	以上より, $\bigcup \mathcal{O}' = \left( \bigcup \mathcal{O}'  \right) ^{\tilde{i}}$ が得られ, 
+	任意の$O \in \mathcal{O}'$に対し,  $O \subseteq \bigcup \mathcal{O}' $が成立するから,  
+	$O = O^{\tilde{i}} \subseteq  \left(\bigcup \mathcal{O}'\right) ^{\tilde{i}}$ が得られ,  
+	従って,  $\bigcup \mathcal{O}' \subseteq \left(\bigcup \mathcal{O}' \right)^{\tilde{i}}  $, 
+	以上より,  $\bigcup \mathcal{O}' = \left( \bigcup \mathcal{O}'  \right) ^{\tilde{i}}$ が得られ,  
 	$\bigcup \mathcal{O}' \in \tilde{\mathcal{O}}$が示された.
 \end{proof}
 
 \begin{theorem}
 	$X$の任意の開核作用素$i$と任意の開集合族$\mathcal{O}$ 
 	と$i$から定まる開集合族 $\mathcal{O}_i$ と
-	開集合族$\mathcal{O}$ から定まる開核作用素に$i_O$対し, 以下の主張が成立する:
+	開集合族$\mathcal{O}$ から定まる開核作用素に$i_O$対し,  以下の主張が成立する:
 	\[
 	i_O = i \implies \mathcal{O} = \mathcal{O}_i
 	.\] 
@@ -1256,24 +1353,24 @@ $\mathcal{C} = \tilde{\mathcal{C}}$ならば $\tilde{\mathcal{O}} = \mathcal{O}$
 \end{theorem}
 
 \begin{proof}
-	$i_O = i $と仮定して， $\mathcal{O} = \mathcal{O}_i$を導く:\\
-	$O \in \mathcal{O}$ を任意に取る. $i_O$の定義より,  $O = O^{i_O}$ が成立し, 
-	仮定より $O = O ^{i}$ となり, $O \in \mathcal{O}_i$が得られる.\\
-	$O_i \in \mathcal{O}_i$ を任意に取る. $O_i = O_i^{i} = O_i^{i_O}$ が成立し, $O_i \in \mathcal{O}$ が得られる.\\
-	$\mathcal{O} = \mathcal{O}_i$ と仮定して, $i_O =i$を示す:\\
+	$i_O = i $と仮定して,   $\mathcal{O} = \mathcal{O}_i$を導く:\\
+	$O \in \mathcal{O}$ を任意に取る. $i_O$の定義より,   $O = O^{i_O}$ が成立し,  
+	仮定より $O = O ^{i}$ となり,  $O \in \mathcal{O}_i$が得られる.\\
+	$O_i \in \mathcal{O}_i$ を任意に取る. $O_i = O_i^{i} = O_i^{i_O}$ が成立し,  $O_i \in \mathcal{O}$ が得られる.\\
+	$\mathcal{O} = \mathcal{O}_i$ と仮定して,  $i_O =i$を示す:\\
 	 $M \in \mathcal{P}(X)$を任意に取る. 
 	 $M ^{i_O} = \bigcup \{O \in \mathcal{O} \mid O\subseteq M\} $ が定義より自明である．\\
 	 以下$M^{i_O} = M^{i}$ を示す:\\
 	 $M^{i} \subseteq M$ が開核作用素の性質２からわかる.
-	 また性質４より$M^{ii}=M^{i}$ より，$M^{i} \in \mathcal{O}_i$ が成立する. 
-	 仮定の条件を使えば$M^{i} \in \mathcal{O}$ が求まり, $M^{i} \subseteq M^{i_O}$ が導かれる.\\
+	 また性質４より$M^{ii}=M^{i}$ より,  $M^{i} \in \mathcal{O}_i$ が成立する. 
+	 仮定の条件を使えば$M^{i} \in \mathcal{O}$ が求まり,  $M^{i} \subseteq M^{i_O}$ が導かれる.\\
 	 $O \in \{O \in \mathcal{O} \mid O\subseteq M\} $ を任意に取る. 
 	 仮定に$\mathcal{O}_i$ の定義を適用すると$O^{i}= O$ がわかる.
-	 開核作用素の性質より, $O = O^{i} \subseteq M^{i}$. 従って$M^{i_O} \subseteq  M^{i}$ が示される.
+	 開核作用素の性質より,  $O = O^{i} \subseteq M^{i}$. 従って$M^{i_O} \subseteq  M^{i}$ が示される.
 \end{proof}
 
 \begin{theorem}
-	集合$X$とその開核作用素 $i$に対し,  次のように定義される写像$a : \mathcal{P}(X) \to \mathcal{P}(X)$が閉包作用素の性質を満たす．閉包作用素の性質を満たす写像$\tilde{a}$から作られた写像 $\tilde{i}$に対し，  $ i = \tilde{i} \implies a = \tilde{a}$, $a =\tilde{a} \implies i = \tilde{i}$が成立する.
+	集合$X$とその開核作用素 $i$に対し,   次のように定義される写像$a : \mathcal{P}(X) \to \mathcal{P}(X)$が閉包作用素の性質を満たす．閉包作用素の性質を満たす写像$\tilde{a}$から作られた写像 $\tilde{i}$に対し,    $ i = \tilde{i} \implies a = \tilde{a}$,  $a =\tilde{a} \implies i = \tilde{i}$が成立する.
 	\[
 		M^{a}= a(M) = M^{cic}
 	.\] 
@@ -1287,7 +1384,7 @@ $\mathcal{C} = \tilde{\mathcal{C}}$ならば $\tilde{\mathcal{O}} = \mathcal{O}$
 \end{proof}
 
 \begin{theorem}
-	集合$X$とその開集合族 $\mathcal{O}$ に対し, 各点$x \in X$に対し，次のように定める 集合族$\mathcal{N}_x$が近傍系の性質を満たす． 更に，近傍系が$\mathcal{\tilde{N}}_x$ から定まる集合族$\tilde{\mathcal{O}}$ が開集合族の性質を満たす.
+	集合$X$とその開集合族 $\mathcal{O}$ に対し,  各点$x \in X$に対し,  次のように定める 集合族$\mathcal{N}_x$が近傍系の性質を満たす． 更に,  近傍系が$\mathcal{\tilde{N}}_x$ から定まる集合族$\tilde{\mathcal{O}}$ が開集合族の性質を満たす.
 	\[
 	 \mathcal{N}_x =\{ V \in \mathcal{P}(X)  \mid  x \in V^{i}\} 
 	.\] 
@@ -1297,19 +1394,19 @@ $\mathcal{C} = \tilde{\mathcal{C}}$ならば $\tilde{\mathcal{O}} = \mathcal{O}$
 \end{theorem}
 
 \begin{proof}
-	性質１，２は定義より自明である．性質３は$M\subseteq N \implies M^{i} \subseteq N^{i}$ に従う. 性質４は$M^{i}\cap N^{i} = \left( M \cap N \right) ^{i}$ より明らかである．性質５は開核を取れば自明となる.\\
+	性質１,  ２は定義より自明である．性質３は$M\subseteq N \implies M^{i} \subseteq N^{i}$ に従う. 性質４は$M^{i}\cap N^{i} = \left( M \cap N \right) ^{i}$ より明らかである．性質５は開核を取れば自明となる.\\
 	以下近傍系から生成される集合族は開集合の公理を満たすことを示す:\\
-	$\emptyset ,X \in \tilde{\mathcal{O}}$ が自明である．\\
-	$O_1 ,O_2 \in \tilde{\mathcal{O}}$を任意に取る. 
-	$x \in O_1 \cap O_2$を任意に取り, 性質４より$O_1 \cap O_2 \in \mathcal{\tilde{N}}_x$が得られ, 定義に従えば$O_1 \cap O_2 \in \tilde{\mathcal{O}}$がわかる.\\
+	$\emptyset , X \in \tilde{\mathcal{O}}$ が自明である．\\
+	$O_1 , O_2 \in \tilde{\mathcal{O}}$を任意に取る. 
+	$x \in O_1 \cap O_2$を任意に取り,  性質４より$O_1 \cap O_2 \in \mathcal{\tilde{N}}_x$が得られ,  定義に従えば$O_1 \cap O_2 \in \tilde{\mathcal{O}}$がわかる.\\
 	$\mathcal{O}' \subseteq \tilde{\mathcal{O}}$を任意に取る.
-	$x \in \bigcup \mathcal{O}'  $ を任意に取り,
-	ある$O \in \mathcal{O}'$が存在して, $x \in O$を満たす. 性質３より$\bigcup \mathcal{O}' \in \mathcal{\tilde{N}}_x$ が示される.
+	$x \in \bigcup \mathcal{O}'  $ を任意に取り, 
+	ある$O \in \mathcal{O}'$が存在して,  $x \in O$を満たす. 性質３より$\bigcup \mathcal{O}' \in \mathcal{\tilde{N}}_x$ が示される.
 \end{proof}
 
 \begin{theorem}
-	集合$X$に対し，開集合族 $\mathcal{O}$ から生成される各点における近傍系$\mathcal{N}_x$ 
-	と各点の近傍系$\mathcal{\tilde{N}}_x$ から生成される開集合族$\tilde{\mathcal{O}}$に対し，以下の命題が成立する:
+	集合$X$に対し,  開集合族 $\mathcal{O}$ から生成される各点における近傍系$\mathcal{N}_x$ 
+	と各点の近傍系$\mathcal{\tilde{N}}_x$ から生成される開集合族$\tilde{\mathcal{O}}$に対し,  以下の命題が成立する:
 	\[
 		\left( \forall x \in X; \mathcal{N}_x = \mathcal{\tilde{N}}_x \right) \implies \mathcal{O} = \tilde{\mathcal{O}}
 	.\] 
@@ -1319,24 +1416,24 @@ $\mathcal{C} = \tilde{\mathcal{C}}$ならば $\tilde{\mathcal{O}} = \mathcal{O}$
 \end{theorem}
 
 \begin{proof}
-	$\mathcal{O}$ から定まる開核作用素を$i$,  $\tilde{\mathcal{O}}$ の開核作用素を$\tilde{i}$とする．\\
-	近傍系が同じと仮定して，$\mathcal{O} = \tilde{\mathcal{O}}$を示す: \\
+	$\mathcal{O}$ から定まる開核作用素を$i$,   $\tilde{\mathcal{O}}$ の開核作用素を$\tilde{i}$とする．\\
+	近傍系が同じと仮定して,  $\mathcal{O} = \tilde{\mathcal{O}}$を示す: \\
 	$O \in \mathcal{O}$ を任意に取る．
-	$\forall x \in O; O \in \mathcal{N}_x$ と仮定より, $\forall x \in O; O \in  \mathcal{\tilde{N}}_x$が成立し, $O \in \tilde{\mathcal{O}}$ がわかる.\\
+	$\forall x \in O; O \in \mathcal{N}_x$ と仮定より,  $\forall x \in O; O \in  \mathcal{\tilde{N}}_x$が成立し,  $O \in \tilde{\mathcal{O}}$ がわかる.\\
 	$O' \in  \tilde{\mathcal{O}}$を任意に取る. 
-	$x \in O'$ を任意に取って, $O' \in  \mathcal{\tilde{N}}_x$ が成立する.
-	仮定より, $O' \in \mathcal{N}_x$が得られ, 
+	$x \in O'$ を任意に取って,  $O' \in  \mathcal{\tilde{N}}_x$ が成立する.
+	仮定より,  $O' \in \mathcal{N}_x$が得られ,  
 すなわち$ O' \subseteq  O'^{i} \in \mathcal{O}$である.\\
-	次に開集合族が一致すると仮定して, 各点において$\mathcal{N}_x = \mathcal{\tilde{N}}_x$ が成立することを示す:\\
-	$N \in \mathcal{N}_x$を任意に取り, $x \in N^{i} \in \mathcal{O}$ より
+	次に開集合族が一致すると仮定して,  各点において$\mathcal{N}_x = \mathcal{\tilde{N}}_x$ が成立することを示す:\\
+	$N \in \mathcal{N}_x$を任意に取り,  $x \in N^{i} \in \mathcal{O}$ より
 	$x \in  N^{i} = N^{\tilde{i}}\in  \tilde{\mathcal{O}}$ が成立する. 
 	従って$N^{i} \in \mathcal{\tilde{N}}_x$ が求まる.
-	$N^{i} = N^{\tilde{i}} \subseteq N$と近傍系の性質３より, $N \in \mathcal{\tilde{N}}_x$がわかる.\\
+	$N^{i} = N^{\tilde{i}} \subseteq N$と近傍系の性質３より,  $N \in \mathcal{\tilde{N}}_x$がわかる.\\
 	$N' \in \mathcal{\tilde{N}}_x$ を任意に取る. 
 	\[
 		U =\{y \in X  \mid N' \in \mathcal{\tilde{N}}_y\} 
 	.\] 
-	とする. $z \in U$を任意に取る，性質５より$\forall y \in W; N' \in \mathcal{\tilde{N}}_y$を満たす$W \in \mathcal{\tilde{N}}_z$が存在する. 性質２よりこれは$N'$の部分集合でもある. また $U$の定義より $W \subseteq U$が成立し, 性質３から$U \in \mathcal{\tilde{N}}_z$が得られる. 従って, $U \in \tilde{\mathcal{O}}$ で, $x \in U \in \mathcal{O}$ が成立し, $U \in \mathcal{O}$ がわかる.$U \subseteq N'$より, $U^{i} \subseteq N'^{i}$ が得られ, すなわち$x \in N'^{i}$ が成立する. $N' \in \mathcal{N}_x$が示された.
+	とする. $z \in U$を任意に取る,  性質５より$\forall y \in W; N' \in \mathcal{\tilde{N}}_y$を満たす$W \in \mathcal{\tilde{N}}_z$が存在する. 性質２よりこれは$N'$の部分集合でもある. また $U$の定義より $W \subseteq U$が成立し,  性質３から$U \in \mathcal{\tilde{N}}_z$が得られる. 従って,  $U \in \tilde{\mathcal{O}}$ で,  $x \in U \in \mathcal{O}$ が成立し,  $U \in \mathcal{O}$ がわかる.$U \subseteq N'$より,  $U^{i} \subseteq N'^{i}$ が得られ,  すなわち$x \in N'^{i}$ が成立する. $N' \in \mathcal{N}_x$が示された.
 \end{proof}
 
 \chapter{連結性とコンパクト性}%
@@ -1345,35 +1442,35 @@ $\mathcal{C} = \tilde{\mathcal{C}}$ならば $\tilde{\mathcal{O}} = \mathcal{O}$
 
 \section{連結性}
 
-\begin{definition}[分割, 連結]
-	位相空間$\left( X , \mathcal{O}_X \right) $ において, 集合$A$の分割\textbf{(separation)}が存在するとは, ある空でない集合$U,V \in \mathcal{O}_X$ に対し, $A=U \sqcup   V $. 位相空間$\left( X,\mathcal{O}_X \right) $ が連結\textbf{(connected)}であるとは$X$ の分割が存在しないとする.
+\begin{definition}[分割,  連結]
+	位相空間$\left( X ,  \mathcal{O}_X \right) $ において,  集合$A$の分割\textbf{(separation)}が存在するとは,  ある空でない集合$U, V \in \mathcal{O}_X$ に対し,  $A=U \sqcup   V $. 位相空間$\left( X, \mathcal{O}_X \right) $ が連結\textbf{(connected)}であるとは$X$ の分割が存在しないとする.
 \end{definition} 
 
 \begin{lemma}
-$(X, \mathcal{O}_X)$の部分位相空間$Y$の分割が存在する
-とは, 互いの集積点を含まない非交和が$Y$となる集合$A,B$が存在することと同値である.
+$(X,  \mathcal{O}_X)$の部分位相空間$Y$の分割が存在する
+とは,  互いの集積点を含まない非交和が$Y$となる集合$A, B$が存在することと同値である.
 \end{lemma}
 
 \begin{proof}
-	$\implies:$ $A,B$が互いの集積点を含まない非交和が$Y$となるような集合とする. 
-	この時, $ \cl{A} \cap B = \emptyset, \cl{B} \cap A = \emptyset$が成立する。
-	$\cl{A} \cap Y = A, \cl{B} \cap Y = B$ が得られる.
-	よって, $A,B$は部分位相空間での閉集合であることが導かれる．
-	補集合をとれば, いずれも部分位相空間での開集合であるがわかり, 分割の定義に従う.\\
-	$\impliedby:$ 部分位相空間$Y$における分割$A,B$に対し, $A,B$は部分位相空間で開集合でもあり, 
-	閉集合でもあるため, $A$の部分位相空間での閉包は$\cl{A} \cap Y$で与えられる. 
+	$\implies:$ $A, B$が互いの集積点を含まない非交和が$Y$となるような集合とする. 
+	この時,  $ \cl{A} \cap B = \emptyset,  \cl{B} \cap A = \emptyset$が成立する。
+	$\cl{A} \cap Y = A,  \cl{B} \cap Y = B$ が得られる.
+	よって,  $A, B$は部分位相空間での閉集合であることが導かれる．
+	補集合をとれば,  いずれも部分位相空間での開集合であるがわかり,  分割の定義に従う.\\
+	$\impliedby:$ 部分位相空間$Y$における分割$A, B$に対し,  $A, B$は部分位相空間で開集合でもあり,  
+	閉集合でもあるため,  $A$の部分位相空間での閉包は$\cl{A} \cap Y$で与えられる. 
 	$A$が$Y$での閉集合なので$A = \cl{A} \cap Y$が成立する. 
-	よって, $\cl{A} \cap B = \emptyset$となり, $B$が$A$の集積点を含まないことを示せた. 
+	よって,  $\cl{A} \cap B = \emptyset$となり,  $B$が$A$の集積点を含まないことを示せた. 
 	$A$が$B$ の集積点を含まないことも同様に示せる.
 \end{proof}
 
 \begin{lemma}
-	集合$C,D$は位相空間 $(X,\mathcal{O}_X)$の分割とする. $Y$が$X$の連結な部分位相空間ならば, $Y \subseteq C \lor Y \subseteq D$が成立する.
+	集合$C, D$は位相空間 $(X, \mathcal{O}_X)$の分割とする. $Y$が$X$の連結な部分位相空間ならば,  $Y \subseteq C \lor Y \subseteq D$が成立する.
 \end{lemma}
  
 \begin{proof}
 	背理法で示す: $ \lnot (Y \subseteq C \lor Y \subseteq D)$と仮定して矛盾を導く．\\
-	仮定より, $Y \cap C, Y\cap D$が部分位相空間$Y$の分割になる. 矛盾が生じる.
+	仮定より,  $Y \cap C,  Y\cap D$が部分位相空間$Y$の分割になる. 矛盾が生じる.
 \end{proof}
 
 \begin{theorem}
@@ -1383,27 +1480,27 @@ $(X, \mathcal{O}_X)$の部分位相空間$Y$の分割が存在する
 \begin{proof}
 	連結でないと仮定して矛盾を導く:\\
 	集合族$\left( A_{\alpha} \right) _{\alpha \in J}$共通部分から点$x$を取って固定する.
-	集合族の和集合の分割を$C,D$とする.
-	この時, $x \in C$と仮定しても一般性を失わない, 集合族から集合$A_{\alpha}$を任意に取ってくる.
-	前の補題より, $A_{\alpha} \subseteq C \lor A_{\alpha} \subseteq D$が成立する. 
-	しかし, $x \in A_{\alpha} \cap C$より, $A_{\alpha}$しか考えられない. 
-	したがって, 和集合が$C$の部分集合であることが得られ, $D = \emptyset$とならなければいけない. 
+	集合族の和集合の分割を$C, D$とする.
+	この時,  $x \in C$と仮定しても一般性を失わない,  集合族から集合$A_{\alpha}$を任意に取ってくる.
+	前の補題より,  $A_{\alpha} \subseteq C \lor A_{\alpha} \subseteq D$が成立する. 
+	しかし,  $x \in A_{\alpha} \cap C$より,  $A_{\alpha}$しか考えられない. 
+	したがって,  和集合が$C$の部分集合であることが得られ,  $D = \emptyset$とならなければいけない. 
 	矛盾が生じた.
 \end{proof}
 
 \begin{theorem}
-	位相空間$\left( X , \mathcal{O}_X \right) $ の部分位相空間$A,B$に対し, $A \subseteq B \subseteq \cl{A} $ かつ, $A$が連結な位相空間ならば， $B$も連結な位相空間となる.
+	位相空間$\left( X ,  \mathcal{O}_X \right) $ の部分位相空間$A, B$に対し,  $A \subseteq B \subseteq \cl{A} $ かつ,  $A$が連結な位相空間ならば,   $B$も連結な位相空間となる.
 \end{theorem}
 
 \begin{proof}
 	これも背理法で示す: \\
-	$C,D$が部分位相空間 $B$ の分割であると仮定して, 矛盾を導く:\\
-	この時,  $A \subseteq C \lor A \subseteq D$が成立する. 
-	ここで, $A \subseteq C$としても一般性を失わない.
-	閉包の基本性質より, $\cl{A} \subseteq \cl{C}$ が得られる. 
-	部分位相空間の分割が互いの集積点を含まない性質を満たすので, 
-	$B \cap D \subseteq \cl{A} \cap D \subseteq \cl{C} \cap D = \emptyset$, 
-	$B \cap D = \emptyset$ となり, 分割の定義に反する.
+	$C, D$が部分位相空間 $B$ の分割であると仮定して,  矛盾を導く:\\
+	この時,   $A \subseteq C \lor A \subseteq D$が成立する. 
+	ここで,  $A \subseteq C$としても一般性を失わない.
+	閉包の基本性質より,  $\cl{A} \subseteq \cl{C}$ が得られる. 
+	部分位相空間の分割が互いの集積点を含まない性質を満たすので,  
+	$B \cap D \subseteq \cl{A} \cap D \subseteq \cl{C} \cap D = \emptyset$,  
+	$B \cap D = \emptyset$ となり,  分割の定義に反する.
 \end{proof}
 
 \begin{theorem}
@@ -1411,27 +1508,27 @@ $(X, \mathcal{O}_X)$の部分位相空間$Y$の分割が存在する
 \end{theorem}
 
 \begin{proof}
-	像が連結でなければ, 分割の逆像が定義域の分割になるので, 矛盾が生じる.
+	像が連結でなければ,  分割の逆像が定義域の分割になるので,  矛盾が生じる.
 \end{proof}
 
 \begin{theorem}
-	連結な位相空間$\left( X, \mathcal{O}_X \right) , \left( Y, \mathcal{O}_Y \right) $ の積位相空間も連結である.
+	連結な位相空間$\left( X,  \mathcal{O}_X \right) ,  \left( Y,  \mathcal{O}_Y \right) $ の積位相空間も連結である.
 \end{theorem}
 
 \begin{proof}
-	$(x,b) \in X \times Y $ を任意に取る. この時,
-	$T_{x} := \{x\} \times Y \cup X \times \{b\}  $ が連結である. $\because$ 共通点$\left( x,y \right) $ を持つ.\\
+	$(x, b) \in X \times Y $ を任意に取る. この時, 
+	$T_{x} := \{x\} \times Y \cup X \times \{b\}  $ が連結である. $\because$ 共通点$\left( x, y \right) $ を持つ.\\
 	 \[
 	X \times Y = \bigcup_{x \in X}T_x 
 	.\] 
-	右辺の集合族の共通部分が空ではないより, $X \times Y$が連結である.
+	右辺の集合族の共通部分が空ではないより,  $X \times Y$が連結である.
 \end{proof}
 
 \begin{remark}
 	上記の結論を数学的帰納法を用いると任意の有限積位相空間へ拡張できる.
 \end{remark}
 
-あんまり実用性はないんだけど, 標準積位相を装備している集合ならば, 無限積の場合に関しても同じ結論が成立する. これを示して行こう.
+あんまり実用性はないんだけど,  標準積位相を装備している集合ならば,  無限積の場合に関しても同じ結論が成立する. これを示して行こう.
 
 \begin{theorem}
 	$\{X_{\alpha}\} _{\alpha \in J}$ を連結な位相空間族とする. 
@@ -1448,16 +1545,16 @@ $(X, \mathcal{O}_X)$の部分位相空間$Y$の分割が存在する
 	 $$ 
 	 \forall \alpha \in J;  \left( \alpha \notin K \implies x_{\alpha} = a_{\alpha} \right)
 	 $$ 
-	 $X_{K}$ が有限積位相空間と同相である. 従って, これが連結である.\\
-	 $J$の有限部分集合全体 $\mathcal{F}$ として, 
+	 $X_{K}$ が有限積位相空間と同相である. 従って,  これが連結である.\\
+	 $J$の有限部分集合全体 $\mathcal{F}$ として,  
 	  \[
 	 Y = \bigcup_{K \in \mathcal{F} } X_{K} 
 	 .\] 
 	 が連結となる. $\because a \in \bigcap_{K \in \mathcal{F}} X_{K} $.\\
 	 次に$Y$の閉包 $\cl{Y} = X$を示す: \\
-	 $x \in X$を任意に取る,  $U \in \mathcal{U}_x$ を任意取る. 
-	  $U$に属する元は有限個の射影成分を除いて, 他の成分には制限がない. 該当する射影の有限添字集合を$K$とすれば,  $U \cap X_{K} \neq \emptyset $がわかる.\\
-	  従って, $x \in \cl{Y}$となり, $X$が連結な位相空間であることを示せた.
+	 $x \in X$を任意に取る,   $U \in \mathcal{U}_x$ を任意取る. 
+	  $U$に属する元は有限個の射影成分を除いて,  他の成分には制限がない. 該当する射影の有限添字集合を$K$とすれば,   $U \cap X_{K} \neq \emptyset $がわかる.\\
+	  従って,  $x \in \cl{Y}$となり,  $X$が連結な位相空間であることを示せた.
 \end{proof}
 
 \section{実数の連続性と弧状連結}
@@ -1471,30 +1568,30 @@ $(X, \mathcal{O}_X)$の部分位相空間$Y$の分割が存在する
 \end{definition}
 
 \begin{theorem}
-	線形連続な集合に順序位相を入れた位相空間に対し, 任意の凸集合が連結である.
+	線形連続な集合に順序位相を入れた位相空間に対し,  任意の凸集合が連結である.
 \end{theorem}
 
 \begin{proof}
 	$L$を線形連続の順序位相空間とする. 
 	$Y$ を$L$ における凸集合と定める. 
-	以下$Y$の分割$C,D$が存在すると仮定して矛盾を導く:\\ 
-	まず$a<b$となるように $a,b$を異なる分割の集合から任意に取って固定する. 
-	ここで, $a \in C, b \in D$とおいても一般性を失わない.\\
-	また集合 $A,B$を次のように定める:
+	以下$Y$の分割$C, D$が存在すると仮定して矛盾を導く:\\ 
+	まず$a<b$となるように $a, b$を異なる分割の集合から任意に取って固定する. 
+	ここで,  $a \in C,  b \in D$とおいても一般性を失わない.\\
+	また集合 $A, B$を次のように定める:
 	 \[
-		 A=[a,b] \cap C, B= [a,b] \cap D
+		 A=[a, b] \cap C,  B= [a, b] \cap D
 	.\] 
-	とおく. この時, 最小上界性より, $c=\sup A$が存在する.\\
-	$Y$が凸集合なので,  $[a,b] \subseteq Y$が成立し, $ c \in A \cup B$が成立する.\\
-	$c\in A$の時,  $c \neq b$が成立する．
-	また, $C$が開集合なので, $A=[a,b] \cap C$ が閉区間$[a,b]$の開集合である. 
-	この時, ある $e \in L$が存在して,  $[c,e) \subseteq A$を満たす.
-	$L$が線形連続なので,  $c<z<e$を満たす $z \in L$ が存在する. 
-	$z \in [c,e) \subseteq A$より, $c$が $A$の上界に反する.\\
-	 $c \in B$の時,  $c \neq a$が成立する. \\
-	 $B$も閉区間 $[a,b]$の開集合なので, ある $d \in L$が存在し,  $(d,c] \subseteq B$を満たす.
-	 $(d,b] = (d,c] \cup (c ,b]$, $d$も $A$の上界であることがわかる．
-	 しかし, これが$c$の最小上界性に反する.
+	とおく. この時,  最小上界性より,  $c=\sup A$が存在する.\\
+	$Y$が凸集合なので,   $[a, b] \subseteq Y$が成立し,  $ c \in A \cup B$が成立する.\\
+	$c\in A$の時,   $c \neq b$が成立する．
+	また,  $C$が開集合なので,  $A=[a, b] \cap C$ が閉区間$[a, b]$の開集合である. 
+	この時,  ある $e \in L$が存在して,   $[c, e) \subseteq A$を満たす.
+	$L$が線形連続なので,   $c<z<e$を満たす $z \in L$ が存在する. 
+	$z \in [c, e) \subseteq A$より,  $c$が $A$の上界に反する.\\
+	 $c \in B$の時,   $c \neq a$が成立する. \\
+	 $B$も閉区間 $[a, b]$の開集合なので,  ある $d \in L$が存在し,   $(d, c] \subseteq B$を満たす.
+	 $(d, b] = (d, c] \cup (c , b]$,  $d$も $A$の上界であることがわかる．
+	 しかし,  これが$c$の最小上界性に反する.
 \end{proof}
 
 \begin{corollary}
@@ -1502,27 +1599,27 @@ $(X, \mathcal{O}_X)$の部分位相空間$Y$の分割が存在する
 \end{corollary}
 
 \begin{theorem}[中間値の定理]
-	連結な順序位相空間$\left( X ,\mathcal{O}_X \right) $ と順序位相空間$ \left( Y, \mathcal{O}_Y \right) $ 間の連続写像
-	$f: X \to Y$ について, 以下の命題が成立する: 
+	連結な順序位相空間$\left( X , \mathcal{O}_X \right) $ と順序位相空間$ \left( Y,  \mathcal{O}_Y \right) $ 間の連続写像
+	$f: X \to Y$ について,  以下の命題が成立する: 
 	$$
-	\forall a,b \in X; \forall r \in Y; \left( f(a)<r< f(b) \implies \exists c \in X ;f(c) =r \right)
+	\forall a, b \in X; \forall r \in Y; \left( f(a)<r< f(b) \implies \exists c \in X ;f(c) =r \right)
 	$$
 \end{theorem}
 
 \begin{proof}
 	定理の条件を仮定する. 
 	\[
-	A=f(X) \cap (r, + \infty), B= f(X) \cap (- \infty, r)
+	A=f(X) \cap (r,  + \infty),  B= f(X) \cap (- \infty,  r)
 	.\]
-	とする, $f(c) =r$を満たす,  $c \in X$が存在しないと仮定すると,  $A,B$が $f(X)$の分割となる. 
+	とする,  $f(c) =r$を満たす,   $c \in X$が存在しないと仮定すると,   $A, B$が $f(X)$の分割となる. 
 	これが連結な位相空間の連続写像での像も連結であることに反する.
 \end{proof}
 
 \begin{definition}[弧状連結]
-	位相空間$ \left( X , \mathcal{O}_X \right) $の二点$x,y \in X$ に対し, 
-	実数のある閉区間$[a,b]$から,  $f(a) =x,f(b) = y$を満たすような連続写像 
-	$f: [a,b] \to X$は$x$から $y$への道\textbf{(path)}といい, 
-	位相空間が弧状連結 \textbf{(path connected)}とは, 任意の二点を結ぶ道が存在すること.
+	位相空間$ \left( X ,  \mathcal{O}_X \right) $の二点$x, y \in X$ に対し,  
+	実数のある閉区間$[a, b]$から,   $f(a) =x, f(b) = y$を満たすような連続写像 
+	$f: [a, b] \to X$は$x$から $y$への道\textbf{(path)}といい,  
+	位相空間が弧状連結 \textbf{(path connected)}とは,  任意の二点を結ぶ道が存在すること.
 \end{definition}
 
 \begin{lemma}
@@ -1530,173 +1627,173 @@ $(X, \mathcal{O}_X)$の部分位相空間$Y$の分割が存在する
 \end{lemma}
 
 \begin{proof}
-	位相空間$\left( X, \mathcal{O}_X \right) $ が弧状連結とする. 
+	位相空間$\left( X,  \mathcal{O}_X \right) $ が弧状連結とする. 
 	位相空間が連結でないと仮定して矛盾を導く:　\\
-	$C,D$を $X$の分割とする.  
-	$x \in C, y \in D$に対し,弧状連結であるから, $x,y$ を結ぶ道が存在する, 
-	道の像が連結であるから,$C,D$のどれかに含まれる.
-	その時, $x,y$が同一集合に属することになり, 矛盾が生じる.
+	$C, D$を $X$の分割とする.  
+	$x \in C,  y \in D$に対し, 弧状連結であるから,  $x, y$ を結ぶ道が存在する,  
+	道の像が連結であるから, $C, D$のどれかに含まれる.
+	その時,  $x, y$が同一集合に属することになり,  矛盾が生じる.
 \end{proof}
 
-ここで自然な質問が出てくると思うが,　連結と弧状連結が同値であるか? 当然ながらわざと弧状連結を定義したから同値なわけないだろう.
-でもこれについて, 少し議論をしないと皆さんが納得できないだろう. 
+ここで自然な質問が出てくると思うが, 　連結と弧状連結が同値であるか? 当然ながらわざと弧状連結を定義したから同値なわけないだろう.
+でもこれについて,  少し議論をしないと皆さんが納得できないだろう. 
 
 \begin{example}[位相学者の正弦曲線]
-	$S=\{(x,\sin (\frac{1}{x})  \mid 0<x< 1\} $が連結であることが明らか,
-	$\cl{S}$が連結であることは自明, しかし,  $\cl{S}$が弧状連結ならば,  $0$に収束する数列 $\left( s_n \right) _{n \in \mathbb{N}}; \sin \frac{1}{s_{n}}= (-1)^n$となるようなものが取れる, これが道が連続写像であることに反する.
+	$S=\{(x, \sin (\frac{1}{x})  \mid 0<x< 1\} $が連結であることが明らか, 
+	$\cl{S}$が連結であることは自明,  しかし,   $\cl{S}$が弧状連結ならば,   $0$に収束する数列 $\left( s_n \right) _{n \in \mathbb{N}}; \sin \frac{1}{s_{n}}= (-1)^n$となるようなものが取れる,  これが道が連続写像であることに反する.
 \end{example}
 
 \section{連結成分と局所連結}
 
 前のセクションでは連結な位相空間についていろんな議論を行った. 
-そこで, 任意の位相空間に対し, それを連結な部分空間に分解して議論したくなる気持ちは持っているのではないか?
+そこで,  任意の位相空間に対し,  それを連結な部分空間に分解して議論したくなる気持ちは持っているのではないか?
 
 \begin{definition}
-	位相空間$\left( X , \mathcal{O}_{X} \right)$ に次のような同値関係を定める:\\
-	$$x \sim y \iff \text{$x,y$ を含む連結な部分位相空間が存在する.}$$
-	この時, 同値関係$\sim$による同値類を $X$ の成分\textbf{(components)}と呼ぶ.
+	位相空間$\left( X ,  \mathcal{O}_{X} \right)$ に次のような同値関係を定める:\\
+	$$x \sim y \iff \text{$x, y$ を含む連結な部分位相空間が存在する.}$$
+	この時,  同値関係$\sim$による同値類を $X$ の成分\textbf{(components)}と呼ぶ.
 \end{definition}
 
 この二項関係は同値関係であることを各自確認してみると良い.
 
 \begin{definition}
-	位相空間$\left( X , \mathcal{O}_{X} \right)$ に次のような同値関係を定める:\\
-	$$x \sim y \iff \text{$x,y$ を結ぶ道が存在する.}$$
-	この時, 同値関係$\sim$による同値類を $X$ の道成分\textbf{(path components)}と呼ぶ.
+	位相空間$\left( X ,  \mathcal{O}_{X} \right)$ に次のような同値関係を定める:\\
+	$$x \sim y \iff \text{$x, y$ を結ぶ道が存在する.}$$
+	この時,  同値関係$\sim$による同値類を $X$ の道成分\textbf{(path components)}と呼ぶ.
 \end{definition}
 
 この二項関係も同値関係である. これは自明に見えるが証明は自明ではない.
-しかし, Theorem \ref{thm:paste}を利用すれば流石にお猿さんでも解けるから, ここも言わないようにしておく.
+しかし,  Theorem \ref{thm:paste}を利用すれば流石にお猿さんでも解けるから,  ここも言わないようにしておく.
 
 \begin{exercise}
-	連結あるいは弧状連結な空でない部分位相空間に対し, それと交わりを持てる連結種類に対応する成分がただ一つしかありえない. \footnote{これは成分が同値関係で結ばれていることに由来する性質である.}
+	連結あるいは弧状連結な空でない部分位相空間に対し,  それと交わりを持てる連結種類に対応する成分がただ一つしかありえない. \footnote{これは成分が同値関係で結ばれていることに由来する性質である.}
 \end{exercise}
 
 \begin{definition}
-	位相空間$\left( X , \mathcal{O}_{X} \right)$ が$x$で局所(弧状)連結\textbf{(locally (path) connected at x)}
-	であるとは, $x$の任意の開近傍 $U$に対し, $x \in V \subseteq U$を満たす(弧状)連結な開近傍$V$ が存在する. 
-	$X$が任意の点 $x \in X$で局所(弧状)連結となる時,  $X$が局所(弧状)連結空間\textbf{(locally (path) connected space)}と呼ぶ.
+	位相空間$\left( X ,  \mathcal{O}_{X} \right)$ が$x$で局所(弧状)連結\textbf{(locally (path) connected at x)}
+	であるとは,  $x$の任意の開近傍 $U$に対し,  $x \in V \subseteq U$を満たす(弧状)連結な開近傍$V$ が存在する. 
+	$X$が任意の点 $x \in X$で局所(弧状)連結となる時,   $X$が局所(弧状)連結空間\textbf{(locally (path) connected space)}と呼ぶ.
 \end{definition}
 
 \begin{remark}
 	位相空間が連結ならば局所連結である. 位相空間が弧状連結ならば局所弧状連結である. \footnote{同じ$0$に収束な点列を開近傍の中から選び出せば良い.}
-	これらの主張はいずれも不成立である. 前者の反例は位相学者の正弦曲線で与えられて, 後者の反例は次の演習問題に取り組んでいただくとわかるのではないか. 
+	これらの主張はいずれも不成立である. 前者の反例は位相学者の正弦曲線で与えられて,  後者の反例は次の演習問題に取り組んでいただくとわかるのではないか. 
 \end{remark}
 
 \begin{exercise}
-	$X$を区間 $[0,1] \times \{0\} $ 上の有理点とする. 
-	$T$を $X$上の各点と点$(0,1)$を結ぶ線分からなる集合とする.
-	この集合$T$ に$\mathbb{R}^2$ に対する部分位相を入れる, 位相空間$\left( T , \mathcal{O}_{T} \right)$
-	が弧状連結であるが, 局所弧状連結ではないことを示せ. 
+	$X$を区間 $[0, 1] \times \{0\} $ 上の有理点とする. 
+	$T$を $X$上の各点と点$(0, 1)$を結ぶ線分からなる集合とする.
+	この集合$T$ に$\mathbb{R}^2$ に対する部分位相を入れる,  位相空間$\left( T ,  \mathcal{O}_{T} \right)$
+	が弧状連結であるが,  局所弧状連結ではないことを示せ. 
 \end{exercise}
 
-さて, 局所における連結や弧状連結はなぜ必要とされるでしょう？
-そもそも連結と弧状連結は我々のイメージに即しているし,
+さて,  局所における連結や弧状連結はなぜ必要とされるでしょう？
+そもそも連結と弧状連結は我々のイメージに即しているし, 
 これ以上の連結性は何に使われるかが意味不明に見えるでしょう.
-しかし, 局所における連結性をよく見てみると, 開集合の連結性と深く関わっている. 
-局所連結性と局所弧状連結性の位相的性質が似ているため, 今後議論がこの両者のいずれに対しても成立する時,
+しかし,  局所における連結性をよく見てみると,  開集合の連結性と深く関わっている. 
+局所連結性と局所弧状連結性の位相的性質が似ているため,  今後議論がこの両者のいずれに対しても成立する時, 
 単に局所的連結性で表現する.
 
 \begin{theorem}
-	位相空間$\left( X , \mathcal{O}_{X} \right)$ に対し, 以下の２つの命題が互いに同値である: 
+	位相空間$\left( X ,  \mathcal{O}_{X} \right)$ に対し,  以下の２つの命題が互いに同値である: 
 	\begin{enumerate}
 		\item $X$ が局所(弧状)連結である.
-		\item $X$の任意の開集合 $U$ に対し, $U$ の(道)成分が開集合である.
+		\item $X$の任意の開集合 $U$ に対し,  $U$ の(道)成分が開集合である.
 	\end{enumerate}
 \end{theorem}
 
 \begin{proof}
 	$\implies$ を示す:
-	$U$の任意の(道)成分$C$を取る. $x \in C$ を任意に固定して, 
-	$X$ の局所的連結性より, $x \in V \subseteq U$を満たす(弧状)連結な開集合が存在する, 
-	この場合, $V$と交わりを持ちうる $U$の(道)成分が $C$しか存在しない. 
-	よって,  $V \subseteq C$がわかり, $C$が開集合であることを示せた.\\
+	$U$の任意の(道)成分$C$を取る. $x \in C$ を任意に固定して,  
+	$X$ の局所的連結性より,  $x \in V \subseteq U$を満たす(弧状)連結な開集合が存在する,  
+	この場合,  $V$と交わりを持ちうる $U$の(道)成分が $C$しか存在しない. 
+	よって,   $V \subseteq C$がわかり,  $C$が開集合であることを示せた.\\
 	$ \impliedby$ を示す: 
 	 $x \in  X$を任意に取る. $x$の開近傍 $U$を任意に取る.
-	 この時, $x$を含む $U$の(道)成分 $V$を取れば,
+	 この時,  $x$を含む $U$の(道)成分 $V$を取れば, 
 	 仮定より$V$が開集合であることがわかる. これで局所的連結性を示せた.
 \end{proof}
 
 いよいよ連結性の最後の部分になった. つまり局所連結性と局所弧状連結性は開集合の世界では類似な構造を持つことそれが成分に現れている. この関係性は次の定理で述べられる: 
 
 \begin{theorem}
-	位相空間$\left( X , \mathcal{O}_{X} \right)$ の任意の道成分がある成分に含まれている時, 
-	もし位相空間自体が局所弧状連結ならば, 成分と道成分が一致する.
+	位相空間$\left( X ,  \mathcal{O}_{X} \right)$ の任意の道成分がある成分に含まれている時,  
+	もし位相空間自体が局所弧状連結ならば,  成分と道成分が一致する.
 \end{theorem}
 
 \begin{proof}
 	位相空間$X$の成分 $C$を任意に取る. 
 	$x \in C $を任意にとって固定する. 
-	$x$を含む $X$の道成分 $P$ を一つとり, $P$が弧状連結なので, 連結でもある.
-	よって,  $P \subseteq C$が導かれる. 以下$C \subseteq P$を示す: \\
-	$P \subsetneq C $と仮定して, 矛盾を導く:
-	$Q$を $C$と交わりを持つが,  $P$と交わらない道成分全体の和集合とする. 
+	$x$を含む $X$の道成分 $P$ を一つとり,  $P$が弧状連結なので,  連結でもある.
+	よって,   $P \subseteq C$が導かれる. 以下$C \subseteq P$を示す: \\
+	$P \subsetneq C $と仮定して,  矛盾を導く:
+	$Q$を $C$と交わりを持つが,   $P$と交わらない道成分全体の和集合とする. 
 	 \[
 	C=P \cup Q
 	.\]
-	道成分が弧状連結で, 連結であるから, 成分が同値関係で定義されたことを思い出せば, $Q\subseteq C$となる.
-	局所弧状連結であるから, 道成分が開集合となる. 従って,  $P,Q$が $C$の分割をなす. 矛盾が生じた.
-	以上より$P=C$が得られ, 局所連結な位相空間では, 道成分と成分が一致することを示せた. 
+	道成分が弧状連結で,  連結であるから,  成分が同値関係で定義されたことを思い出せば,  $Q\subseteq C$となる.
+	局所弧状連結であるから,  道成分が開集合となる. 従って,   $P, Q$が $C$の分割をなす. 矛盾が生じた.
+	以上より$P=C$が得られ,  局所連結な位相空間では,  道成分と成分が一致することを示せた. 
 \end{proof}
 
 \section{コンパクト性}
 
 \begin{definition}[被覆]
-	位相空間$\left( X , \mathcal{O}_{X} \right)$ の部分集合族$\mathcal{A}$ に対し, $ \bigcup \mathcal{A} = X$ を満たすならば, $\mathcal{A}$ を$X$の被覆\textbf{(covering)}と呼び,  さらに$\mathcal{A}$ の各元が開集合の時, $\mathcal{A}$ を$X$の開被覆\textbf{(open covering)}とする. 部分空間の被覆は集合を含むことを満たせば良いとする. 特に被覆が有限個の集合からなる場合, 被覆のことを有限被覆と呼ぶ.
+	位相空間$\left( X ,  \mathcal{O}_{X} \right)$ の部分集合族$\mathcal{A}$ に対し,  $ \bigcup \mathcal{A} = X$ を満たすならば,  $\mathcal{A}$ を$X$の被覆\textbf{(covering)}と呼び,   さらに$\mathcal{A}$ の各元が開集合の時,  $\mathcal{A}$ を$X$の開被覆\textbf{(open covering)}とする. 部分空間の被覆は集合を含むことを満たせば良いとする. 特に被覆が有限個の集合からなる場合,  被覆のことを有限被覆と呼ぶ.
 \end{definition}
 
 \begin{definition}[\textcolor{red}{コンパクト性}]
-	位相空間$\left( X , \mathcal{O}_{X} \right)$がコンパクト\textbf{(compact)}とは, 任意の開被覆が$X$の有限被覆を部分集合に持つ.	
+	位相空間$\left( X ,  \mathcal{O}_{X} \right)$がコンパクト\textbf{(compact)}とは,  任意の開被覆が$X$の有限被覆を部分集合に持つ.	
 \end{definition}
 
 \begin{lemma}[部分空間におけるコンパクト性]
-	位相空間$\left( X , \mathcal{O}_{X} \right)$ の部分空間$Y$ に対し, 
-	$Y$ がコンパクトであることと,  $Y$の任意の$X$で開集合族が被覆となる場合, その部分有限被覆が存在する.
+	位相空間$\left( X ,  \mathcal{O}_{X} \right)$ の部分空間$Y$ に対し,  
+	$Y$ がコンパクトであることと,   $Y$の任意の$X$で開集合族が被覆となる場合,  その部分有限被覆が存在する.
 \end{lemma}
 
-これに関して, 部分位相空間が開集合との共通集合からできることより直ちに導かれる.
+これに関して,  部分位相空間が開集合との共通集合からできることより直ちに導かれる.
 
 \begin{theorem}
 	コンパクトな位相空間における閉集合からなる部分位相空間もコンパクトである.
 \end{theorem}
 
 \begin{proof}
-	コンパクトな位相空間$\left( X , \mathcal{O}_{X} \right)$の閉集合$Y$の任意の開被覆$\mathcal{A}$を取る.
+	コンパクトな位相空間$\left( X ,  \mathcal{O}_{X} \right)$の閉集合$Y$の任意の開被覆$\mathcal{A}$を取る.
 	\[
 		\mathcal{B}= \mathcal{A} \cup \{X \setminus Y\}
 	.\] 
-	が$X$の開被覆となるので,  $\mathcal{B}$ から$X$の有限開被覆$\mathcal{B'}$が取れる, この場合, $\mathcal{B'} \setminus \{ X \setminus Y\}$が$\mathcal{A}$ から取り出した$Y$の有限被覆となる. 
+	が$X$の開被覆となるので,   $\mathcal{B}$ から$X$の有限開被覆$\mathcal{B'}$が取れる,  この場合,  $\mathcal{B'} \setminus \{ X \setminus Y\}$が$\mathcal{A}$ から取り出した$Y$の有限被覆となる. 
 \end{proof}
 
 こんなの思いつくわけないだろう! と思っているでしょう. 僕も最初の時にこう思ったよ. 
-でもよく考えたら閉集合と言われたら, その補集合が開であることを常に意識する必要はあるかもしれない. 
-一言聞いただけで位相のすべてを理解できるわけないから, 細かいところまで証明を書く練習をすると良い.
+でもよく考えたら閉集合と言われたら,  その補集合が開であることを常に意識する必要はあるかもしれない. 
+一言聞いただけで位相のすべてを理解できるわけないから,  細かいところまで証明を書く練習をすると良い.
 
 \begin{theorem}
 	Hausdorff空間において任意のコンパクトな部分空間が閉集合である.
 \end{theorem}
 
 \begin{proof}
-	Hausdorff空間$\left( X , \mathcal{O}_{X} \right)$のコンパクトな部分位相空間$Y$を任意に取る.
-	以下$Y$が $\left(  X, \mathcal{O}_{X} \right)$での閉集合であることを示す:\\
-	言い換えると, $X\setminus Y$が開集合であり, 任意の$x \in X \setminus Y$ に対し,
+	Hausdorff空間$\left( X ,  \mathcal{O}_{X} \right)$のコンパクトな部分位相空間$Y$を任意に取る.
+	以下$Y$が $\left(  X,  \mathcal{O}_{X} \right)$での閉集合であることを示す:\\
+	言い換えると,  $X\setminus Y$が開集合であり,  任意の$x \in X \setminus Y$ に対し, 
 	$V \cap Y = \emptyset$ となる$x$ の開近傍が存在することを示せば良い. このような$x$を1つ取って固定する.\\
-	空間のHausdorff性より, 任意の点$y \in Y$と 固定された$x$に対し, 互いに非交な開近傍$V \in \mathcal{U}_y,U \in \mathcal{U}_x$が取れる. 
-	このようにできた開集合族$\left( V_y \right) _{y \in Y}$ が$Y$の開被覆であり,
-	空間のコンパクト性より,  $Y$の有限部分集合 $J$が取れて, 
+	空間のHausdorff性より,  任意の点$y \in Y$と 固定された$x$に対し,  互いに非交な開近傍$V \in \mathcal{U}_y, U \in \mathcal{U}_x$が取れる. 
+	このようにできた開集合族$\left( V_y \right) _{y \in Y}$ が$Y$の開被覆であり, 
+	空間のコンパクト性より,   $Y$の有限部分集合 $J$が取れて,  
 	$\left( V_y \right) _{y \in J}$が集合$Y$の有限被覆となる. 
-	この時, Hausdorff性より定まる非交開近傍の共通部分 $\cap \left( U_y \right) _{y \in J}$ が開集合であり, 
+	この時,  Hausdorff性より定まる非交開近傍の共通部分 $\cap \left( U_y \right) _{y \in J}$ が開集合であり,  
 	これが$Y$と交わらない.
-	つまり, 任意の $y \not\in Y$に対し,
-	$X \setminus Y$に含まれる開集合が取れるので, 
-	$X \setminus Y$ が開集合であり, 
-	つまり, $Y$が閉集合であることを得られた.
+	つまり,  任意の $y \not\in Y$に対し, 
+	$X \setminus Y$に含まれる開集合が取れるので,  
+	$X \setminus Y$ が開集合であり,  
+	つまり,  $Y$が閉集合であることを得られた.
 \end{proof}
 
 この証明では次のようなLemmaも示された.
 \begin{lemma}
 	\label{lem:compact-separate}
-	$Y$がHausdorff空間 $X$のコンパクトな部分位相空間である.  $x_0 \not\in Y$ならば, $x_0 \in U, Y \subseteq W$を満たす互いに交わらない開集合$U,W$が存在する.
+	$Y$がHausdorff空間 $X$のコンパクトな部分位相空間である.  $x_0 \not\in Y$ならば,  $x_0 \in U,  Y \subseteq W$を満たす互いに交わらない開集合$U, W$が存在する.
 \end{lemma}
 
 \begin{theorem}
@@ -1704,37 +1801,37 @@ $(X, \mathcal{O}_X)$の部分位相空間$Y$の分割が存在する
 \end{theorem}
 
 \begin{proof}
-	$\left( X , \mathcal{O}_{X} \right)$ をコンパクトな位相空間, $\left( Y , \mathcal{O}_{Y} \right)$を位相空間とする. 
-	写像$f: X \to Y$を連続写像とする. $f(X)$が $\left( Y , \mathcal{O}_{Y} \right)$ のコンパクトな部分位相空間であることを示す:\\
+	$\left( X ,  \mathcal{O}_{X} \right)$ をコンパクトな位相空間,  $\left( Y ,  \mathcal{O}_{Y} \right)$を位相空間とする. 
+	写像$f: X \to Y$を連続写像とする. $f(X)$が $\left( Y ,  \mathcal{O}_{Y} \right)$ のコンパクトな部分位相空間であることを示す:\\
 	$f(X)$の開被覆$\left( A_{\alpha} \right)_{\alpha \in J}$を任意に取る.
-	$f$が連続写像なので, $\left( f^{-1}(A_{\alpha}) \right) _{\alpha \in J}$ が$X$の開被覆となる.
-	$X$がコンパクトな位相空間なので,  $J$の有限部分集合$K$が存在し,  $\left( f^{-1}(A_{\alpha}) \right)_{\alpha \in K} $ が$X$の有限開被覆となる. つまり, $\left( A_{\alpha} \right) _{\alpha \in K}$ が$f(X)$の有限開被覆となる.
+	$f$が連続写像なので,  $\left( f^{-1}(A_{\alpha}) \right) _{\alpha \in J}$ が$X$の開被覆となる.
+	$X$がコンパクトな位相空間なので,   $J$の有限部分集合$K$が存在し,   $\left( f^{-1}(A_{\alpha}) \right)_{\alpha \in K} $ が$X$の有限開被覆となる. つまり,  $\left( A_{\alpha} \right) _{\alpha \in K}$ が$f(X)$の有限開被覆となる.
 
 \end{proof}
 
 \begin{theorem}
-	$\left( X , \mathcal{O}_{X} \right)$ をコンパクトな位相空間, $\left( Y , \mathcal{O}_{Y} \right)$ をHausdorff空間とする. $f: X \to Y$ を連続な全単射であるならば, $f$が同相写像である.
+	$\left( X ,  \mathcal{O}_{X} \right)$ をコンパクトな位相空間,  $\left( Y ,  \mathcal{O}_{Y} \right)$ をHausdorff空間とする. $f: X \to Y$ を連続な全単射であるならば,  $f$が同相写像である.
 \end{theorem}
 
 \begin{proof}
-	逆写像$f^{-1} :Y \to X$が連続写像であることを示せばよくて, この時, 閉集合を用いて議論する:\\
-	$A$を $X$の閉集合とする. この時, コンパクトな位相空間の閉集合がコンパクトな部分位相空間であるので,  連続写像$f$での像$f(A)$が$Y$のコンパクトな部分位相空間である. 
-	またHausdorff空間のコンパクトな集合が閉集合であることが示されていたので, $f(A)$が閉集合であり,  $f^{-1}$が連続写像であることが確認でき, $f$が同相写像であることが導かれる.
+	逆写像$f^{-1} :Y \to X$が連続写像であることを示せばよくて,  この時,  閉集合を用いて議論する:\\
+	$A$を $X$の閉集合とする. この時,  コンパクトな位相空間の閉集合がコンパクトな部分位相空間であるので,   連続写像$f$での像$f(A)$が$Y$のコンパクトな部分位相空間である. 
+	またHausdorff空間のコンパクトな集合が閉集合であることが示されていたので,  $f(A)$が閉集合であり,   $f^{-1}$が連続写像であることが確認でき,  $f$が同相写像であることが導かれる.
 \end{proof}
 
 \begin{lemma}
-	積位相空間$\left( X\times Y , \mathcal{O}_{X\times Y} \right)$ に対し, $Y$がコンパクトな位相空間とする. 
-	この時,  $N$が積位相空間で,  $\{x_0\} \times Y$ を含む開集合ならば,
+	積位相空間$\left( X\times Y ,  \mathcal{O}_{X\times Y} \right)$ に対し,  $Y$がコンパクトな位相空間とする. 
+	この時,   $N$が積位相空間で,   $\{x_0\} \times Y$ を含む開集合ならば, 
 	$N$が$x_0$のある開近傍$W$からなる集合$W\times Y$ を含む.
 \end{lemma}
 
 \begin{proof}
-	$N$に含まれる積位相空間の開基要素 $ U\times V $全体が開集合$N$を生成するから,  $N$の開被覆である. この場合,  $\{x_0\} \times Y$ が$Y$と同相であるから, 先程の開被覆から有限開被覆が取れる. さらに,  有限開被覆の任意要素が$\{x_0\} \times Y $ と交わりを持つものまで制限できる. \\
-	この有限開被覆の族を$\left( U_i \times V_i \right) _{i\in K}$, $K$を有限集合とする. 
+	$N$に含まれる積位相空間の開基要素 $ U\times V $全体が開集合$N$を生成するから,   $N$の開被覆である. この場合,   $\{x_0\} \times Y$ が$Y$と同相であるから,  先程の開被覆から有限開被覆が取れる. さらに,   有限開被覆の任意要素が$\{x_0\} \times Y $ と交わりを持つものまで制限できる. \\
+	この有限開被覆の族を$\left( U_i \times V_i \right) _{i\in K}$,  $K$を有限集合とする. 
 	$$
 	W=\bigcap_{i \in K}U_i 
 	$$
-	とすれば, $W$が $X$での開集合となる. しかも,  $\left( U_i \times V_i \right) _{i \in K}$ が$W$ の有限開被覆でもある. 従って, $W \times Y\subseteq N$であることがわかった.
+	とすれば,  $W$が $X$での開集合となる. しかも,   $\left( U_i \times V_i \right) _{i \in K}$ が$W$ の有限開被覆でもある. 従って,  $W \times Y\subseteq N$であることがわかった.
 \end{proof}
 
 \begin{theorem}
@@ -1742,67 +1839,67 @@ $(X, \mathcal{O}_X)$の部分位相空間$Y$の分割が存在する
 \end{theorem}
 
 \begin{proof}
-	コンパクトな位相空間$\left( X , \mathcal{O}_{X} \right),\left( Y , \mathcal{O}_{Y} \right)$
-	の積位相空間$\left( X\times Y , \mathcal{O}_{X\times Y} \right)$がコンパクトな位相空間であることを示せば, 数学的帰納法より任意の有限個のコンパクト位相空間からなる積位相空間がコンパクトであることがわかる.
+	コンパクトな位相空間$\left( X ,  \mathcal{O}_{X} \right), \left( Y ,  \mathcal{O}_{Y} \right)$
+	の積位相空間$\left( X\times Y ,  \mathcal{O}_{X\times Y} \right)$がコンパクトな位相空間であることを示せば,  数学的帰納法より任意の有限個のコンパクト位相空間からなる積位相空間がコンパクトであることがわかる.
 
-	ます, $X \times Y$ の開被覆$\mathcal{A}$ を任意に取る, $x_0 \in X$を任意に取る.
-	この時, $\{x_0\} \times Y$ の有限開被覆$\mathcal{A}'$が$\mathcal{A}$ から取れる. \\
-	$N = \bigcup \mathcal{A}_{x_0}$とする. 先程の補題より, ある$x_0$の開近傍$W$ が存在して, $W \times Y \subseteq N$が成立する.
-	任意の$x \in X$に対し, $W_{x}$ を取ってくると, $\left( W_x \right)_{x \in X}$が $X$の開被覆となり,
-	 $X$のコンパクト性より,  $X$の有限部分集合$K$が存在し,  $\left( W_x \right) _{x \in K}$が$X$の開被覆となる.
-	 従って, $\bigcup_{x \in K} \mathcal{A}_x $ が$X \times Y$の有限開被覆となる.
+	ます,  $X \times Y$ の開被覆$\mathcal{A}$ を任意に取る,  $x_0 \in X$を任意に取る.
+	この時,  $\{x_0\} \times Y$ の有限開被覆$\mathcal{A}'$が$\mathcal{A}$ から取れる. \\
+	$N = \bigcup \mathcal{A}_{x_0}$とする. 先程の補題より,  ある$x_0$の開近傍$W$ が存在して,  $W \times Y \subseteq N$が成立する.
+	任意の$x \in X$に対し,  $W_{x}$ を取ってくると,  $\left( W_x \right)_{x \in X}$が $X$の開被覆となり, 
+	 $X$のコンパクト性より,   $X$の有限部分集合$K$が存在し,   $\left( W_x \right) _{x \in K}$が$X$の開被覆となる.
+	 従って,  $\bigcup_{x \in K} \mathcal{A}_x $ が$X \times Y$の有限開被覆となる.
 \end{proof}
 
 これでコンパクト性を持つ集合を用いてより大きなコンパクト集合を作れること
-がある意味では保証されている. しかし, 上記の証明では選択公理を暗黙に使っている. どこで用いられているでしょう？
-一応演習問題として該当箇所を指摘してください, また上記の証明を標準積位相空間まで拡張できるかを考えて見てください? 今から続きを見ることをやめて, ゆっくり考えてから下の標準積位相空間への拡張を鑑賞してください.
+がある意味では保証されている. しかし,  上記の証明では選択公理を暗黙に使っている. どこで用いられているでしょう？
+一応演習問題として該当箇所を指摘してください,  また上記の証明を標準積位相空間まで拡張できるかを考えて見てください? 今から続きを見ることをやめて,  ゆっくり考えてから下の標準積位相空間への拡張を鑑賞してください.
 
 \begin{definition}[有限交叉性]
 	集合$X$の部分集合族$\mathcal{C}$が有限交叉性 
 	\textbf{(finite intersection property)}を持つとは$\mathcal{C}$ 
-	の任意の有限部分集合$\mathcal{C}'$に対し, $\bigcap \mathcal{C}' \neq \emptyset$ が成立する.
+	の任意の有限部分集合$\mathcal{C}'$に対し,  $\bigcap \mathcal{C}' \neq \emptyset$ が成立する.
 \end{definition}
 
 \begin{theorem}
-	位相空間$\left( X , \mathcal{O}_{X} \right)$ がコンパクトな位相空間であることと$\left( X , \mathcal{O}_{X} \right)$ の任意の有限交叉性を持つ閉集合族$\mathcal{C}$に対し, $\bigcap \mathcal{C} \neq \emptyset $ と同値である.
+	位相空間$\left( X ,  \mathcal{O}_{X} \right)$ がコンパクトな位相空間であることと$\left( X ,  \mathcal{O}_{X} \right)$ の任意の有限交叉性を持つ閉集合族$\mathcal{C}$に対し,  $\bigcap \mathcal{C} \neq \emptyset $ と同値である.
 \end{theorem}
 
 \begin{proof}
-	$X$の部分集合族 $\mathcal{A}$ が与えられた時, 
+	$X$の部分集合族 $\mathcal{A}$ が与えられた時,  
 	\[
 	\mathcal{C} = \{X \setminus A  \mid  A \in \mathcal{A} \} 
 	.\] 
 	と定義する. そして以下の命題が成立する:
 	\begin{enumerate}
 		\item $\mathcal{A}$が$X$の開集合族であることと $\mathcal{C}$ が$X$の閉集合族であることと同値である.
-		\item $\mathcal{A}$ が$X$の被覆であることと,  $\bigcap \mathcal{C} = \emptyset$と同値である.
-		\item $\mathcal{A}$ のある有限部分集合$\mathcal{A}'$ が$X$の被覆であることと$\mathcal{C}$のある有限部分集合$\mathcal{C}'$に対し, $\bigcap \mathcal{C}' = \emptyset$と同値である.
+		\item $\mathcal{A}$ が$X$の被覆であることと,   $\bigcap \mathcal{C} = \emptyset$と同値である.
+		\item $\mathcal{A}$ のある有限部分集合$\mathcal{A}'$ が$X$の被覆であることと$\mathcal{C}$のある有限部分集合$\mathcal{C}'$に対し,  $\bigcap \mathcal{C}' = \emptyset$と同値である.
 	\end{enumerate}
-	以下$X$がコンパクトであることの同値命題を考えれば良い.  $X$の任意の開集合族$\mathcal{A}$ に対し, $X$の有限被覆を持っていなければ,  $\mathcal{A}$ が$X$の被覆にならない.
-	この命題を上記の三条件で書き換えると正しく,  $X$の任意の閉集合族$\mathcal{C}$に対し,  $\mathcal{C}$ が有限交叉性を持つならば, $\bigcap \mathcal{C} \neq \emptyset$ となる.
+	以下$X$がコンパクトであることの同値命題を考えれば良い.  $X$の任意の開集合族$\mathcal{A}$ に対し,  $X$の有限被覆を持っていなければ,   $\mathcal{A}$ が$X$の被覆にならない.
+	この命題を上記の三条件で書き換えると正しく,   $X$の任意の閉集合族$\mathcal{C}$に対し,   $\mathcal{C}$ が有限交叉性を持つならば,  $\bigcap \mathcal{C} \neq \emptyset$ となる.
 \end{proof}
 
 \begin{lemma}
-	集合$X$ に対し, $\mathcal{F }= \{ \mathcal{A} \subseteq \mathcal{P}(X)  \mid  \mathcal{A} \text{が有限交叉性を持つ.}\} $ とする. $\mathcal{F}$ が包含関係での帰納的順序集合である.
+	集合$X$ に対し,  $\mathcal{F }= \{ \mathcal{A} \subseteq \mathcal{P}(X)  \mid  \mathcal{A} \text{が有限交叉性を持つ.}\} $ とする. $\mathcal{F}$ が包含関係での帰納的順序集合である.
 \end{lemma}
 
 \begin{proof}
 	$\mathcal{F}$ の鎖(包含関係での全順序部分集合)$ \mathcal{C}$を任意に取る. $\bigcup_{C \in \mathcal{C}} C \in \mathcal{C}$ を示す:\\
-	$\bigcup_{C \in \mathcal{C}} C$の有限部分集合$\mathcal{B}=\{B_1, \ldots , B_i\} $を任意に取る. 任意の$B_k$に対し, それを含む $\mathcal{C}$ の元$C_k$が存在する.  $C_1, \ldots ,C_i $の中から包含関係での最大元が存在して, それが有限交叉性を持つので, $\bigcap \mathcal{B} \neq \emptyset$ が示される.
-以上より, $\mathcal{F}$ が帰納的順序集合であることが示された.
+	$\bigcup_{C \in \mathcal{C}} C$の有限部分集合$\mathcal{B}=\{B_1,  \ldots ,  B_i\} $を任意に取る. 任意の$B_k$に対し,  それを含む $\mathcal{C}$ の元$C_k$が存在する.  $C_1,  \ldots , C_i $の中から包含関係での最大元が存在して,  それが有限交叉性を持つので,  $\bigcap \mathcal{B} \neq \emptyset$ が示される.
+以上より,  $\mathcal{F}$ が帰納的順序集合であることが示された.
 \end{proof}
 
 \begin{lemma}
-	集合$X$に対し,  $\mathcal{D}$ が$X$の有限交叉性を持つ部分集合族の中で包含関係での極大元であるならば, 以下の2つの命題が成立する: 
+	集合$X$に対し,   $\mathcal{D}$ が$X$の有限交叉性を持つ部分集合族の中で包含関係での極大元であるならば,  以下の2つの命題が成立する: 
 	 \begin{enumerate}
 		\item $\mathcal{D}$ の任意の有限個の要素の共通部分が$\mathcal{D}$ に属する.
-		\item $X$の部分集合 $A$が $\mathcal{D}$ の任意要素と交わるならば, $A$が $\mathcal{D}$ に属する.
+		\item $X$の部分集合 $A$が $\mathcal{D}$ の任意要素と交わるならば,  $A$が $\mathcal{D}$ に属する.
 	\end{enumerate}
 \end{lemma}
 
 \begin{proof}
-	1の証明, $\mathcal{D}$ の任意の有限個の要素の共通部分を$B$とする,  $\mathcal{E} = \mathcal{D}\cup \{B\} $ と定める. $\mathcal{E}$ は有限交叉性を持つことが明らかであり, $\mathcal{D}$ の包含関係での極大性より, $\mathcal{E}=\mathcal{D}$ とならざるを得ない.\\
-	2の証明, $\mathcal{E} = \mathcal{D} \cup \{A\} $ とすれば, 同じく極大性原理のもとで示される.
+	1の証明,  $\mathcal{D}$ の任意の有限個の要素の共通部分を$B$とする,   $\mathcal{E} = \mathcal{D}\cup \{B\} $ と定める. $\mathcal{E}$ は有限交叉性を持つことが明らかであり,  $\mathcal{D}$ の包含関係での極大性より,  $\mathcal{E}=\mathcal{D}$ とならざるを得ない.\\
+	2の証明,  $\mathcal{E} = \mathcal{D} \cup \{A\} $ とすれば,  同じく極大性原理のもとで示される.
 \end{proof}
 
 \begin{theorem}[Tychonoff theorem]
@@ -1813,52 +1910,52 @@ $(X, \mathcal{O}_X)$の部分位相空間$Y$の分割が存在する
 	\[
 	X = \prod_{\alpha \in J} X_{\alpha}  
 	.\] 
-	任意の$X_{\alpha}$ をコンパクトな位相空間とする. $\mathcal{A}$ を有限交叉性を持つ$X$の部分集合族とする. 以下,
+	任意の$X_{\alpha}$ をコンパクトな位相空間とする. $\mathcal{A}$ を有限交叉性を持つ$X$の部分集合族とする. 以下, 
 	 \[
 	 \bigcap_{A \in \mathcal{A}} \cl{A} \neq \emptyset
 	 .\] 
-	 を示せば, $X$のコンパクト性が直ちにこれに従う.
-	 Zornの補題より, $\mathcal{A}$ を含む有限交叉性を持つ包含関係での極大元$\mathcal{D}$ が取れる. 
+	 を示せば,  $X$のコンパクト性が直ちにこれに従う.
+	 Zornの補題より,  $\mathcal{A}$ を含む有限交叉性を持つ包含関係での極大元$\mathcal{D}$ が取れる. 
 	 \[
 		 \bigcap_{D \in  \mathcal{D}} \cl{D} \neq \emptyset
 	 .\] 
-	 を示せば, $\mathcal{A}$ に関する部分がすぐに導かれる.
-	 任意の$\alpha \in  J$に対し, 成分射影$\pi_{\alpha}: X \to X _{\alpha}$ について, 集合$P_{\alpha}$ を次のように定める: 
+	 を示せば,  $\mathcal{A}$ に関する部分がすぐに導かれる.
+	 任意の$\alpha \in  J$に対し,  成分射影$\pi_{\alpha}: X \to X _{\alpha}$ について,  集合$P_{\alpha}$ を次のように定める: 
 	 \[
 	 P_{\alpha }= \{\pi_{\alpha} \left( D \right)  \mid  D \in \mathcal{D}\} 
 	 .\] 
-	 $P_{\alpha}$ が有限交叉性を有し, $X_{\alpha}$ のコンパクト性より, 
+	 $P_{\alpha}$ が有限交叉性を有し,  $X_{\alpha}$ のコンパクト性より,  
 	  \[
 		  x_{\alpha} \in \bigcap_{D \in \mathcal{D}} \cl{\pi_{\alpha}(D)}
 	 .\] 
 	 が取れる.
- このように, $x_{\alpha}$ を成分に持つ$x = \left( x_{\alpha} \right) _{\alpha \in  J} \in X$を固定する.
- 以下, 任意の$D \in \mathcal{D}$ に対し, $x \in \cl{D}$が成立することを示す:\\
- まず,  $\pi_{\alpha}^{-1}(U_{\alpha})$ が$x$を含むならば,  $\pi_{\alpha}^{-1}(U_{\alpha})$と$\mathcal{D}$ の任意要素と交わることを示す:\\
-  $D \in  \mathcal{D}$ を任意に取る. $U _{\alpha}$が$x _{\alpha}$ の開近傍であるから, 
-  $U_{\alpha} \cap \cl{\pi_{\alpha}{(D)}} \neq \emptyset$, 従って, ある点$y \in D$が存在し,  $\pi_{\alpha} (y) \in U_{\alpha} \cap \cl{\pi_{\alpha}{(D)}}$ が言える, つまり, $y \in \pi_{\alpha}(U_{\alpha}) \cap D$が成立する.\\
-  よって, $x$を含む準開基がすべて $\mathcal{D}$ と交わりを持つ, $x$を含む準開基がすべて $\mathcal{D}$に属することとなり, $\mathcal{D}$ の有限交叉性より, $x$の開近傍がすべて $\mathcal{D}$ に属し, 任意の$D \in \mathcal{D}$ に対し, $x$の任意開近傍と $D$との交わりが空でないため,  $x \in \cl{D}$が言える.
-  以上より, 
+ このように,  $x_{\alpha}$ を成分に持つ$x = \left( x_{\alpha} \right) _{\alpha \in  J} \in X$を固定する.
+ 以下,  任意の$D \in \mathcal{D}$ に対し,  $x \in \cl{D}$が成立することを示す:\\
+ まず,   $\pi_{\alpha}^{-1}(U_{\alpha})$ が$x$を含むならば,   $\pi_{\alpha}^{-1}(U_{\alpha})$と$\mathcal{D}$ の任意要素と交わることを示す:\\
+  $D \in  \mathcal{D}$ を任意に取る. $U _{\alpha}$が$x _{\alpha}$ の開近傍であるから,  
+  $U_{\alpha} \cap \cl{\pi_{\alpha}{(D)}} \neq \emptyset$,  従って,  ある点$y \in D$が存在し,   $\pi_{\alpha} (y) \in U_{\alpha} \cap \cl{\pi_{\alpha}{(D)}}$ が言える,  つまり,  $y \in \pi_{\alpha}(U_{\alpha}) \cap D$が成立する.\\
+  よって,  $x$を含む準開基がすべて $\mathcal{D}$ と交わりを持つ,  $x$を含む準開基がすべて $\mathcal{D}$に属することとなり,  $\mathcal{D}$ の有限交叉性より,  $x$の開近傍がすべて $\mathcal{D}$ に属し,  任意の$D \in \mathcal{D}$ に対し,  $x$の任意開近傍と $D$との交わりが空でないため,   $x \in \cl{D}$が言える.
+  以上より,  
    \[
 	   x \in \bigcap_{D \in \mathcal{D}} \cl{D} 
   .\] 
-  が成立することを示せたので, $X$がコンパクトな位相空間であることがわかる.
+  が成立することを示せたので,  $X$がコンパクトな位相空間であることがわかる.
 
 \end{proof}
 
-実は上記の証明には選択公理を2回用いました, Zornの補題ともう一箇所で暗黙に選択公理を利用していました. これも読者の皆様に任せておきます. では完全に観賞用なものですが, コンパクト性を持つ位相空間の積位相空間がコンパクトであることから選択公理を導けます.
+実は上記の証明には選択公理を2回用いました,  Zornの補題ともう一箇所で暗黙に選択公理を利用していました. これも読者の皆様に任せておきます. では完全に観賞用なものですが,  コンパクト性を持つ位相空間の積位相空間がコンパクトであることから選択公理を導けます.
 
 \begin{theorem}
 	Tychonoffの定理は選択公理を含意する.
 \end{theorem}
 
 \begin{proof}
-	各$\lambda \in \Lambda$に対し, $A_{\lambda} \neq \emptyset$となるような集合系$\left( A_{\lambda} \right) _{\lambda \in \Lambda}$ に対し, その直積が空でないことを示す:\\
-	$\bigcup_{\lambda \in  \Lambda} A_{\lambda}$ に属さない集合$\omega$を選び,
+	各$\lambda \in \Lambda$に対し,  $A_{\lambda} \neq \emptyset$となるような集合系$\left( A_{\lambda} \right) _{\lambda \in \Lambda}$ に対し,  その直積が空でないことを示す:\\
+	$\bigcup_{\lambda \in  \Lambda} A_{\lambda}$ に属さない集合$\omega$を選び, 
 	 \[
 	X_{\lambda }= A_{\lambda} \cup \{ \omega\} 
 	.\] 
-	となるような集合系$\left( X_{\lambda} \right) _{\lambda \in \Lambda}$ を構成する. $X = \prod_{\lambda \in \Lambda} X_{\lambda}  $ に$(\omega)_{\lambda \in \Lambda}$ となる元が存在するので, 空でないことがわかる. 各$X_{\lambda}$ に補有限位相を入れ, $\{\omega\} $ を位相に入れるとコンパクトな位相空間であることが直ちにわかる. $F_{\lambda} = \pi ^{-1} \left( A_{\lambda} \right) $ となる集合系$\left( F_{\lambda} \right) _{\lambda \in \Lambda}$ が有限交叉性を持つ閉集合系となる. 閉集合であることは閉集合の連続写像での逆像が閉集合であることに由来し, 有限交叉性は有限個射影成分が$(A_{\lambda_i})_{1\le i \le n}$ に属し残りが$\omega$と指定するような元 $x$が存在することより導かれる. 積位相空間がコンパクトであることを使えば, $\bigcap_{\lambda \in \Lambda} F_{\lambda} \neq \emptyset$ が導かれ, この集合は正しく$\prod_{\lambda \in \Lambda} A_{\lambda}$ そのものである. 
+	となるような集合系$\left( X_{\lambda} \right) _{\lambda \in \Lambda}$ を構成する. $X = \prod_{\lambda \in \Lambda} X_{\lambda}  $ に$(\omega)_{\lambda \in \Lambda}$ となる元が存在するので,  空でないことがわかる. 各$X_{\lambda}$ に補有限位相を入れ,  $\{\omega\} $ を位相に入れるとコンパクトな位相空間であることが直ちにわかる. $F_{\lambda} = \pi ^{-1} \left( A_{\lambda} \right) $ となる集合系$\left( F_{\lambda} \right) _{\lambda \in \Lambda}$ が有限交叉性を持つ閉集合系となる. 閉集合であることは閉集合の連続写像での逆像が閉集合であることに由来し,  有限交叉性は有限個射影成分が$(A_{\lambda_i})_{1\le i \le n}$ に属し残りが$\omega$と指定するような元 $x$が存在することより導かれる. 積位相空間がコンパクトであることを使えば,  $\bigcap_{\lambda \in \Lambda} F_{\lambda} \neq \emptyset$ が導かれ,  この集合は正しく$\prod_{\lambda \in \Lambda} A_{\lambda}$ そのものである. 
 \end{proof}
 
 
@@ -1869,16 +1966,16 @@ $(X, \mathcal{O}_X)$の部分位相空間$Y$の分割が存在する
 \end{theorem}
 
 \begin{proof}
-	閉区間$[a,b]$を $a<b$を満たすように取る. この区間の開被覆 $\mathcal{A}$ について, 次の集合を考える:
+	閉区間$[a, b]$を $a<b$を満たすように取る. この区間の開被覆 $\mathcal{A}$ について,  次の集合を考える:
 	\[
-		\mathcal{S} = \{ x \in [a,b]  \mid  \text{$\mathcal{A}$ から$[a,x]$の有限開被覆が取れる}\} 
+		\mathcal{S} = \{ x \in [a, b]  \mid  \text{$\mathcal{A}$ から$[a, x]$の有限開被覆が取れる}\} 
 	.\] 
-	$x \in \mathcal{S}$ が自明で最小上界性より, $s = \sup \mathcal{S}$ が存在して, 以下$s =b$であることを示す:\\
-	まず$s \in \mathcal{S}$ であることを示す: $s$を含め開集合 $A\in \mathcal{A}$ を任意に取り, $A$が $(d,s]$となるような$[a,b]$に含まれる区間を含む, この区間から元 $z$を任意に取る, 最小上界性より,  $z \in \mathcal{S}$ が成立する. もし$s \not\in \mathcal{S}$ ならば, $[a,z]$が有限開被覆を持ち,更に $A$が $[z,s]$ を含むので, 合わせて有限開被覆が取れるから矛盾が生じる.\\
-	次に, $s <b$と仮定して矛盾を導く: \\
-	 $s$の後続元が存在するならば,  $s$の後続元を含む開集合を取れば, 最小上界性に反する.\\
-	 $s$の後続元が存在しないならば,  $s$を含む開集合 $A'$が存在し,  $[a,b]$に含まれるような $[s,c]$が取れる, 更に $\left( s,c \right) $ が空とならないので, $s$より大きい $x$が存在し,  $[a,x]$が有限被覆を持つ. これも矛盾を導く. \\
-	 従って,  $s=b$とならなければ行けない,定理が示された.
+	$x \in \mathcal{S}$ が自明で最小上界性より,  $s = \sup \mathcal{S}$ が存在して,  以下$s =b$であることを示す:\\
+	まず$s \in \mathcal{S}$ であることを示す: $s$を含め開集合 $A\in \mathcal{A}$ を任意に取り,  $A$が $(d, s]$となるような$[a, b]$に含まれる区間を含む,  この区間から元 $z$を任意に取る,  最小上界性より,   $z \in \mathcal{S}$ が成立する. もし$s \not\in \mathcal{S}$ ならば,  $[a, z]$が有限開被覆を持ち, 更に $A$が $[z, s]$ を含むので,  合わせて有限開被覆が取れるから矛盾が生じる.\\
+	次に,  $s <b$と仮定して矛盾を導く: \\
+	 $s$の後続元が存在するならば,   $s$の後続元を含む開集合を取れば,  最小上界性に反する.\\
+	 $s$の後続元が存在しないならば,   $s$を含む開集合 $A'$が存在し,   $[a, b]$に含まれるような $[s, c]$が取れる,  更に $\left( s, c \right) $ が空とならないので,  $s$より大きい $x$が存在し,   $[a, x]$が有限被覆を持つ. これも矛盾を導く. \\
+	 従って,   $s=b$とならなければ行けない, 定理が示された.
 \end{proof}
 
 \begin{corollary}
@@ -1886,127 +1983,127 @@ $(X, \mathcal{O}_X)$の部分位相空間$Y$の分割が存在する
 \end{corollary}
 
 \begin{exercise}
-	実数の集合において, 区間縮小法が成立する.
+	実数の集合において,  区間縮小法が成立する.
 \end{exercise}
 
 
 \begin{theorem}
-	$n$次元ユークリッド空間の通常の距離に誘導される位相空間の部分集合 $A$に対し,  $A$がコンパクトであることと有界かつ閉集合であることと同値である.
+	$n$次元ユークリッド空間の通常の距離に誘導される位相空間の部分集合 $A$に対し,   $A$がコンパクトであることと有界かつ閉集合であることと同値である.
 \end{theorem}
 
 \begin{proof}
-	$\implies$ $A$がコンパクトな部分集合とする. 距離空間がHausdorff空間であることより,  $A$が閉集合である.   $A$がコンパクトな集合なので, 開被覆
+	$\implies$ $A$がコンパクトな部分集合とする. 距離空間がHausdorff空間であることより,   $A$が閉集合である.   $A$がコンパクトな集合なので,  開被覆
 	 \[
-	 \mathcal{A}= \{ B_d \left( 0, n \right)  \mid  n \in \mathbb{Z}\} 
+	 \mathcal{A}= \{ B_d \left( 0,  n \right)  \mid  n \in \mathbb{Z}\} 
 	 .\]
-	 から$A$の有限被覆が存在する. 従って, ある$M \in \mathbb{Z}$が存在し, $A \subseteq  B_d\left( 0,M \right) $ が存在する. 従って, 任意の$x,y \in A$に対し,  $d(x,y) < 2M$が三角不等式から得られ, 有界性を示せた.\\
-	 $\impliedby$ $A$が有界な閉集合とする. この時, ある正の実数$M$が存在し,  任意の$x, y \in A$に対し,  $d(x,y) \le M$が成立する. このような $M$を1つ取って固定する. $x_0 \in A$を1つ取って固定する.
-	 $N = M + d(x_0, 0)$と定める. この場合$A \subseteq [-N, N]^n$がわかる. 
-	 $A$はコンパクトな位相空間の閉集合なので,  $A$もコンパクトである.
+	 から$A$の有限被覆が存在する. 従って,  ある$M \in \mathbb{Z}$が存在し,  $A \subseteq  B_d\left( 0, M \right) $ が存在する. 従って,  任意の$x, y \in A$に対し,   $d(x, y) < 2M$が三角不等式から得られ,  有界性を示せた.\\
+	 $\impliedby$ $A$が有界な閉集合とする. この時,  ある正の実数$M$が存在し,   任意の$x,  y \in A$に対し,   $d(x, y) \le M$が成立する. このような $M$を1つ取って固定する. $x_0 \in A$を1つ取って固定する.
+	 $N = M + d(x_0,  0)$と定める. この場合$A \subseteq [-N,  N]^n$がわかる. 
+	 $A$はコンパクトな位相空間の閉集合なので,   $A$もコンパクトである.
 \end{proof}
 
-\begin{theorem}[最大値,最小値の定理]
-	連続写像$f : X \to Y$に対し, $X$がコンパクトな位相空間,  $Y$が順序位相空間ならば,  $f(X)$の最大値と最小値が存在する.
+\begin{theorem}[最大値, 最小値の定理]
+	連続写像$f : X \to Y$に対し,  $X$がコンパクトな位相空間,   $Y$が順序位相空間ならば,   $f(X)$の最大値と最小値が存在する.
 \end{theorem}
 
 \begin{proof}
 	最大値を持つことを示す(最小値の部分は同じように示せるから演習問題にする):\\
 	最大値が存在しないと仮定して矛盾を導く. 
 	\[
-	\mathcal{A} = \{ (- \infty ,a )  \mid  a \in f(X)\} 
+	\mathcal{A} = \{ (- \infty , a )  \mid  a \in f(X)\} 
 	.\] 
-	が$f(X)$の開被覆である.  $X$がコンパクトな位相空間で,  $f$が連続写像より,  $f(X)$もコンパクトな位相空間となる.
-	この場合,  $\mathcal{A}$ から$f(X)$の有限被覆$\mathcal{A}' = \{ (-\infty, a_1) , \ldots ,(-\infty,a_i)\} $が取れる, しかし,  $f(X)$に最大値が存在しないから,  $\mathcal{A}'$が$f(X)$の被覆にならない. 矛盾が生じる.
+	が$f(X)$の開被覆である.  $X$がコンパクトな位相空間で,   $f$が連続写像より,   $f(X)$もコンパクトな位相空間となる.
+	この場合,   $\mathcal{A}$ から$f(X)$の有限被覆$\mathcal{A}' = \{ (-\infty,  a_1) ,  \ldots , (-\infty, a_i)\} $が取れる,  しかし,   $f(X)$に最大値が存在しないから,   $\mathcal{A}'$が$f(X)$の被覆にならない. 矛盾が生じる.
 
 \end{proof}
 
 \begin{definition}
-	距離空間$\left( X ,d \right) $ について, 点 $x \in  X$から空でない部分集合 $  A \subseteq X$ への距離は次のように定める:
+	距離空間$\left( X , d \right) $ について,  点 $x \in  X$から空でない部分集合 $  A \subseteq X$ への距離は次のように定める:
 	\[
-	d\left( x,A \right) = \inf  \{d\left( x,a \right)  \mid a \in A\} 
+	d\left( x, A \right) = \inf  \{d\left( x, a \right)  \mid a \in A\} 
 	.\] 
 \end{definition}
 
 \begin{claim}
-	距離空間$\left( X ,d \right) $ の空でない部分集合$A$より定まる写像 $f: X \to \mathbb{R}$:
+	距離空間$\left( X , d \right) $ の空でない部分集合$A$より定まる写像 $f: X \to \mathbb{R}$:
 	\[
-	x \mapsto d(x,A)
+	x \mapsto d(x, A)
 	.\] 
 が連続である.
 \end{claim}
 
 \begin{proof}
-	任意の$x,y \in X$と任意の$a \in A$に対し，
+	任意の$x, y \in X$と任意の$a \in A$に対し,  
 	\[
 	\begin{aligned}
-		& d\left( x,A \right)   \le d(x,a) \le d(x,y) + d(y,a)\\
-		\iff &d(x,A) - d(x,y)  \le d(y,a) \\
-		\implies &d(x,A) -d(x,y) \le d(y,A)\\
-		\iff & d(x,A) -d(y,A) \le d(x,y)
+		& d\left( x, A \right)   \le d(x, a) \le d(x, y) + d(y, a)\\
+		\iff &d(x, A) - d(x, y)  \le d(y, a) \\
+		\implies &d(x, A) -d(x, y) \le d(y, A)\\
+		\iff & d(x, A) -d(y, A) \le d(x, y)
 	\end{aligned}
 	\] 
-	より，連続であることが明らかである.
+	より,  連続であることが明らかである.
 \end{proof}
 
 
 \begin{theorem}
-	コンパクトな距離空間$\left( X,d \right) $ の任意の開被覆$\mathcal{A}$ に対し, 
-	ある正の実数$\delta$が存在し, $X$の任意の部分集合$U$ に対し, $\mathrm{diam}U < \delta$ならば, 開被覆のある要素$A$が存在し, $U \subseteq A$を満たす.
+	コンパクトな距離空間$\left( X, d \right) $ の任意の開被覆$\mathcal{A}$ に対し,  
+	ある正の実数$\delta$が存在し,  $X$の任意の部分集合$U$ に対し,  $\mathrm{diam}U < \delta$ならば,  開被覆のある要素$A$が存在し,  $U \subseteq A$を満たす.
 	このような正の実数$\delta$を Lebesgue numberと呼ぶ.
 \end{theorem}
 
 \begin{proof}
-	$\left( X,d \right) $ の開被覆$\mathcal{A}$ を任意に取る．
-	$X$がコンパクトな位相空間なので,  $\mathcal{A}$ から有限開被覆$\mathcal{A}'$が取れる. $\mathcal{A}'$に対応する$n$個の要素からなる閉集合族$\mathcal{C} = \{C_1, \ldots , C_{n}\} $ を取り, 次のような連続写像$f: X \to \mathbb{R}$を定める:
+	$\left( X, d \right) $ の開被覆$\mathcal{A}$ を任意に取る．
+	$X$がコンパクトな位相空間なので,   $\mathcal{A}$ から有限開被覆$\mathcal{A}'$が取れる. $\mathcal{A}'$に対応する$n$個の要素からなる閉集合族$\mathcal{C} = \{C_1,  \ldots ,  C_{n}\} $ を取り,  次のような連続写像$f: X \to \mathbb{R}$を定める:
 	\[
-		f(x) = \frac{1}{n}\sum_{i =1}^n d(x,C_i)
+		f(x) = \frac{1}{n}\sum_{i =1}^n d(x, C_i)
 	.\]
-	任意の$x \in X $ に対し, 
-	$x \in A_i$ を満たす, $A_i \in \mathcal{A}'$を取り, 
-	距離空間の定義より, ある$\varepsilon$を半径とする開近傍が取れて,
-	$A_i$に含まれる,
-	$C_i$ が$A_i$の補集合なので, 
-	任意の $y \in C$ に対し,  $d(x,y) \ge \varepsilon$となる. 
-	したがって, 
-	$f(x) \ge \frac{1}{n}d(x,C_i) \ge \frac{\varepsilon}{n}>0$.
-	これがコンパクトな位相空間に定義される連続写像なので， 最小値$\delta >0$が取れる.
+	任意の$x \in X $ に対し,  
+	$x \in A_i$ を満たす,  $A_i \in \mathcal{A}'$を取り,  
+	距離空間の定義より,  ある$\varepsilon$を半径とする開近傍が取れて, 
+	$A_i$に含まれる, 
+	$C_i$ が$A_i$の補集合なので,  
+	任意の $y \in C$ に対し,   $d(x, y) \ge \varepsilon$となる. 
+	したがって,  
+	$f(x) \ge \frac{1}{n}d(x, C_i) \ge \frac{\varepsilon}{n}>0$.
+	これがコンパクトな位相空間に定義される連続写像なので,   最小値$\delta >0$が取れる.
 	次に$\rm{diam}U<delta$を満たす$X$の部分集合 $U$を任意に取る.  $x \in U$を任意に一つ取って固定する.
-	 $$\delta \le f(x) \le d(x,C_m)$$
-	  を満たすかつ$d(x,C_m)$が最大となるような$C_m$ を取る.
-	  $C_i$に対応する $A_i \in \mathcal{A}'$を取り, この時, $x$の半径 $\delta$の開球体が $A_i$に含まれるから問題が示された.
+	 $$\delta \le f(x) \le d(x, C_m)$$
+	  を満たすかつ$d(x, C_m)$が最大となるような$C_m$ を取る.
+	  $C_i$に対応する $A_i \in \mathcal{A}'$を取り,  この時,  $x$の半径 $\delta$の開球体が $A_i$に含まれるから問題が示された.
 \end{proof}
 
 \begin{definition}
-	距離空間$\left( X,d_X \right) , \left( Y, d_Y \right) $ 間の写像
-	$f:X \to Y$が一様連続\textbf{(uniformly continuous)}とは，
-	任意の正の実数$\varepsilon$に対し, 
-	ある正の実数 $\delta$が存在し,
-	任意の$x,y \in X$について，
+	距離空間$\left( X, d_X \right) ,  \left( Y,  d_Y \right) $ 間の写像
+	$f:X \to Y$が一様連続\textbf{(uniformly continuous)}とは,  
+	任意の正の実数$\varepsilon$に対し,  
+	ある正の実数 $\delta$が存在し, 
+	任意の$x, y \in X$について,  
 	 \[
-	 d_X(x,y) < \delta \implies d_Y(f(x),f(y))<\varepsilon
+	 d_X(x, y) < \delta \implies d_Y(f(x), f(y))<\varepsilon
 	 .\] 
 \end{definition}
 
 \begin{theorem}
-	距離空間$\left( X,d_X \right) ,(Y,d_Y)$に対し, $f: X \to Y$が連続写像とする. 距離空間$X$がコンパクトならば, 写像 $f$が一様連続である.		
+	距離空間$\left( X, d_X \right) , (Y, d_Y)$に対し,  $f: X \to Y$が連続写像とする. 距離空間$X$がコンパクトならば,  写像 $f$が一様連続である.		
 \end{theorem}
 
 \begin{proof}
 $\varepsilon \in \mathbb{R}_{>0}$ を任意に取る.
-$f$が連続写像なので,
-$\mathcal{A}=\{f^{-1}\left(B_{d_Y}(x , \frac{\varepsilon}{2})\right)  \mid x \in Y\} $ 
+$f$が連続写像なので, 
+$\mathcal{A}=\{f^{-1}\left(B_{d_Y}(x ,  \frac{\varepsilon}{2})\right)  \mid x \in Y\} $ 
 が$X$の開被覆となる. 
-この時, Lebesgue number  $\delta$を一つ取って固定する. 
-$d\left( a,b \right) < \delta $を満たす$a,b \in X$を任意に取り, 
-この時, ある$x \in Y$が存在し,  
-$f(a),f(b) \in B_{d_Y}(x, \frac{\varepsilon}{2})$ が成立する. 
-したがって, $d_Y(f(a),f(b)) < \varepsilon$.一様連続性が示された.
+この時,  Lebesgue number  $\delta$を一つ取って固定する. 
+$d\left( a, b \right) < \delta $を満たす$a, b \in X$を任意に取り,  
+この時,  ある$x \in Y$が存在し,   
+$f(a), f(b) \in B_{d_Y}(x,  \frac{\varepsilon}{2})$ が成立する. 
+したがって,  $d_Y(f(a), f(b)) < \varepsilon$.一様連続性が示された.
 \end{proof}
 
 \section{集積点コンパクト性}
 
 \begin{definition}
-	位相空間$\left( X , \mathcal{O}_{X} \right)$が集積点コンパクト\textbf{(limit point compact)}であるとは任意の無限濃度の部分集合に集積点をもつ．
+	位相空間$\left( X ,  \mathcal{O}_{X} \right)$が集積点コンパクト\textbf{(limit point compact)}であるとは任意の無限濃度の部分集合に集積点をもつ．
 \end{definition}
 
 \begin{theorem}
@@ -2014,19 +2111,19 @@ $f(a),f(b) \in B_{d_Y}(x, \frac{\varepsilon}{2})$ が成立する.
 \end{theorem}
 
 \begin{proof}
-	位相空間$\left( X , \mathcal{O}_{X} \right)$ の部分集合$A$を任意に取る．
-	ここで， $X$がコンパクトであることを仮定して，集積点コンパクト性の対偶を示す: \\
-	 $A$が集積点を持たないと仮定して， $A$は有限濃度を持つことを示せば十分である.
-	 $A$が集積点を持たなければ,  $\cl{A} = A ' \cup  A = \emptyset \cup A =A$となり, $A$が閉集合となる. 次に任意の$x \in A$に対し,  $A$が集積点を持たないことから,  $U \cap A = \{x\} $となるような開近傍$U \in \mathcal{U}_x$ を取ることができる．
-	 このように$A$の開被覆を構成する． $A$コンパクト空間における閉集合はコンパクトであることから,  $A$が有限個要素から構成されることがわかる.
+	位相空間$\left( X ,  \mathcal{O}_{X} \right)$ の部分集合$A$を任意に取る．
+	ここで,   $X$がコンパクトであることを仮定して,  集積点コンパクト性の対偶を示す: \\
+	 $A$が集積点を持たないと仮定して,   $A$は有限濃度を持つことを示せば十分である.
+	 $A$が集積点を持たなければ,   $\cl{A} = A ' \cup  A = \emptyset \cup A =A$となり,  $A$が閉集合となる. 次に任意の$x \in A$に対し,   $A$が集積点を持たないことから,   $U \cap A = \{x\} $となるような開近傍$U \in \mathcal{U}_x$ を取ることができる．
+	 このように$A$の開被覆を構成する． $A$コンパクト空間における閉集合はコンパクトであることから,   $A$が有限個要素から構成されることがわかる.
 
-	 逆が成立しない例として，順序位相での最小不可算集合は最大値を持たないからコンパクト性を満たさず，無限部分集合$A$を取り出した時，更に可算無限の部分集合$B \subseteq A$を取り出す. 最小不可算性より, $B$がある閉区間に含まれて，最小上界性を持つ閉区間が順序位相ではコンパクトであるから，上記の証明より集積点を持つ. したがって集積点コンパクト性を満たす．
+	 逆が成立しない例として,  順序位相での最小不可算集合は最大値を持たないからコンパクト性を満たさず,  無限部分集合$A$を取り出した時,  更に可算無限の部分集合$B \subseteq A$を取り出す. 最小不可算性より,  $B$がある閉区間に含まれて,  最小上界性を持つ閉区間が順序位相ではコンパクトであるから,  上記の証明より集積点を持つ. したがって集積点コンパクト性を満たす．
 \end{proof}
 
 \begin{definition}
 	 写像$f: \mathbb{N} \to X$を$X$上の点列と呼ぶ. 
 	 通常$(f_n)_{n \in \mathbb{N}}$ と表す．
-	 $\mathbb{N}$上に定義される狭義単調増加写像$g: \mathbb{N} \to  \mathbb{N}$に対し, 
+	 $\mathbb{N}$上に定義される狭義単調増加写像$g: \mathbb{N} \to  \mathbb{N}$に対し,  
 	 \[
 	 h(x) = f(g(x))
 	 .\] 
@@ -2034,12 +2131,12 @@ $f(a),f(b) \in B_{d_Y}(x, \frac{\varepsilon}{2})$ が成立する.
 \end{definition}
 
 \begin{definition}
-	位相空間$\left( X , \mathcal{O}_{X} \right)$が点列コンパクト\textbf{(sequentially compact)}
-	であるとは任意の点列に対し，収束部分列が存在する.
+	位相空間$\left( X ,  \mathcal{O}_{X} \right)$が点列コンパクト\textbf{(sequentially compact)}
+	であるとは任意の点列に対し,  収束部分列が存在する.
 \end{definition}
 
 \begin{theorem}
-	距離空間$\left( X ,d \right)$ において以下３つの命題が互いに同値である.
+	距離空間$\left( X , d \right)$ において以下３つの命題が互いに同値である.
 	\begin{enumerate}
 		\item $X$がコンパクトである．
 		\item  $X$が集積点コンパクトである.
@@ -2048,89 +2145,89 @@ $f(a),f(b) \in B_{d_Y}(x, \frac{\varepsilon}{2})$ が成立する.
 \end{theorem}
 
 \begin{proof}
-	$(1) \implies (2)$ はすでに示されたので，ここで$(2) \implies (3) , (3) \implies (2)$を示す:\\
+	$(1) \implies (2)$ はすでに示されたので,  ここで$(2) \implies (3) ,  (3) \implies (2)$を示す:\\
 	$(2) \implies (3)$の証明:\\
 	点列$(x_n)_{n \in \mathbb{N}}$ を任意に取る. $A = \{x_n  \mid n \in N\} $ とする.
-	 $A$が有限集合ならば， 点列がある自然数以降で定数列となるから収束である．
+	 $A$が有限集合ならば,   点列がある自然数以降で定数列となるから収束である．
 	  $A$が無限集合の時.  集積点コンパクト性より$A$の集積点$a \in X$が存在する.
 	  距離空間がHausdorff空間であることから(check せよ)
-	  Theorem $\ref{thm: limit point}$より， 任意の $n \in \mathbb{N}$に対し,
+	  Theorem $\ref{thm: limit point}$より,   任意の $n \in \mathbb{N}$に対し, 
 	  \[
-	 C_n =  B_d(a, \frac{1}{2^{n}}) \cap A
+	 C_n =  B_d(a,  \frac{1}{2^{n}}) \cap A
 	  .\] 
-	  が無限集合である. 選択公理より,  $x_{n(k)} \in C_k$を満たす, 狭義単調増加の$n(k)$の列が取れる.
+	  が無限集合である. 選択公理より,   $x_{n(k)} \in C_k$を満たす,  狭義単調増加の$n(k)$の列が取れる.
 	  これより構成される$(x_{n(k)})_{k \in N}$ が収束する部分列である. (check せよ)\\
-	  $(3) \implies (1) $ の証明: この証明はかなり複雑であり，まず流れを述べておくと:
-	  点列コンパクト性から任意の開被覆に対し，Lebesgue numberが存在する．更に任意の$\varepsilon \in \mathbb{R}_{>0}$ に対し, 有限個の半径$\varepsilon$の開球で $X$を覆うことができる．この事実を用いて距離空間のコンパクト性が得られる.\\
-	Step1: ある$X$の開被覆 $\mathcal{A}$ に対し，
+	  $(3) \implies (1) $ の証明: この証明はかなり複雑であり,  まず流れを述べておくと:
+	  点列コンパクト性から任意の開被覆に対し,  Lebesgue numberが存在する．更に任意の$\varepsilon \in \mathbb{R}_{>0}$ に対し,  有限個の半径$\varepsilon$の開球で $X$を覆うことができる．この事実を用いて距離空間のコンパクト性が得られる.\\
+	Step1: ある$X$の開被覆 $\mathcal{A}$ に対し,  
 	Lebesgue number が存在しないと仮定する. 
-	任意の$n \in \mathbb{N}$に対し, 
-	$\rm{diam}C_n<\frac{1}{2^{n}}$ で,
+	任意の$n \in \mathbb{N}$に対し,  
+	$\rm{diam}C_n<\frac{1}{2^{n}}$ で, 
 	$\mathcal{A}$ の任意の元に含まれないような集合$C_n$が存在する.  
 	選択公理よりこのような集合列 $(C_n)_{n \in \mathbb{N}}$ が取れる．
-	更に, 選択公理より先程の集合列から一点ずつ取り出してできる数列$(x_n)_{n \in \mathbb{N}}$ が構成される.
-	点列コンパクト性より, 
-	収束部分列$\left( x_{n(k)} \right) _{k \in \mathbb{N}}$のが取れて, 
+	更に,  選択公理より先程の集合列から一点ずつ取り出してできる数列$(x_n)_{n \in \mathbb{N}}$ が構成される.
+	点列コンパクト性より,  
+	収束部分列$\left( x_{n(k)} \right) _{k \in \mathbb{N}}$のが取れて,  
 	収束先を$a$とする.  
 	$a \in A \in \mathcal{A} $ を満たす$A$を一つ取る.  
-	$A$が開集合より，ある正の実数$\delta$が存在し,  $B_d (a, \delta) \subseteq A$を満たす. 
-	$d(x_{n(k)},a)< \frac{\delta}{2}$ かつ$\frac{1}{2^{k} } < \frac{\delta}{2}$を満たすような自然数$k$を一つ取り, 
-	この時,  $C_k \subseteq A$が成立し，構成に反する．従って，Lebesgue number が存在する.\\
-	Step2: ある正の実数$\varepsilon$が存在して ，任意の有限個半径$\varepsilon$ の開球体で$X$の開被覆にならないと仮定して，矛盾を導く: 
-	$x_0 \in X$を任意に取り, 仮定より$B_d\left( x_0 , \varepsilon \right) $ が全体を
-	覆うことができないので, $x_1 \not\in  B_d(x_0 ,\varepsilon)$となるような$x_1$を取れる.
-	 $x_n$が定まる段階で,  $\bigcup_{0 \le i \le n} B_d(x_j,\varepsilon)$ が全体を覆うことができないので, それ以外のところから$x_{n+1}$ を取れる．
-	 選択公理より，このような点列$\left( x_n \right) _{n \in  \mathbb{N}}$を構成できる．
-	 しかし，いかなる部分列が収束しないことが構成よりわかる．
-	 実は任意の$0 \le j \le n$ に対し$d(x_{n+1},x_j)>\varepsilon$. 
+	$A$が開集合より,  ある正の実数$\delta$が存在し,   $B_d (a,  \delta) \subseteq A$を満たす. 
+	$d(x_{n(k)}, a)< \frac{\delta}{2}$ かつ$\frac{1}{2^{k} } < \frac{\delta}{2}$を満たすような自然数$k$を一つ取り,  
+	この時,   $C_k \subseteq A$が成立し,  構成に反する．従って,  Lebesgue number が存在する.\\
+	Step2: ある正の実数$\varepsilon$が存在して,  任意の有限個半径$\varepsilon$ の開球体で$X$の開被覆にならないと仮定して,  矛盾を導く: 
+	$x_0 \in X$を任意に取り,  仮定より$B_d\left( x_0 ,  \varepsilon \right) $ が全体を
+	覆うことができないので,  $x_1 \not\in  B_d(x_0 , \varepsilon)$となるような$x_1$を取れる.
+	 $x_n$が定まる段階で,   $\bigcup_{0 \le i \le n} B_d(x_j, \varepsilon)$ が全体を覆うことができないので,  それ以外のところから$x_{n+1}$ を取れる．
+	 選択公理より,  このような点列$\left( x_n \right) _{n \in  \mathbb{N}}$を構成できる．
+	 しかし,  いかなる部分列が収束しないことが構成よりわかる．
+	 実は任意の$0 \le j \le n$ に対し$d(x_{n+1}, x_j)>\varepsilon$. 
 	 これが点列コンパクト性に反する. 
-	 従って, 任意の正の実数$\varepsilon$ に対し, $X$を有限個の半径 $\varepsilon$となるような開球体で覆うことができる.\\
+	 従って,  任意の正の実数$\varepsilon$ に対し,  $X$を有限個の半径 $\varepsilon$となるような開球体で覆うことができる.\\
 	 Step3:  $X$の開被覆 $\mathcal{A}$ を任意に取る. 
 	 Step1より Lebesgue number $\delta$が存在する. 
 	 Step2より$X$を有限個の半径 $\frac{\delta}{3}$ の開球で覆うことができる．
-	 各開球の直径が$\frac{2\delta}{3}$ より, 
+	 各開球の直径が$\frac{2\delta}{3}$ より,  
 	 それを含む開被覆の要素が存在する. 
-	 従って,有限個の開球に対し，このような開被覆の元を取り出せば,
-	 $X$の被覆となる$\mathcal{A}$ の有限部分集合が構成されるので, 
+	 従って, 有限個の開球に対し,  このような開被覆の元を取り出せば, 
+	 $X$の被覆となる$\mathcal{A}$ の有限部分集合が構成されるので,  
 	 コンパクト性が示された．
 \end{proof}
 
 \section{局所コンパクト性とコンパクト化}
 
 \begin{definition}
-	位相空間$\left( X , \mathcal{O}_{X} \right)$ が点$x$において局所コンパクト\textbf{(locally compact at x)}であるとは$x$ のある開近傍を含むようなコンパクトな位相空間$C$が存在する.  $X$のすべての点において局所コンパクトであることを位相空間 $\left( X , \mathcal{O}_{X} \right)$ が局所コンパクト\textbf{(locally compact)}であるという.
+	位相空間$\left( X ,  \mathcal{O}_{X} \right)$ が点$x$において局所コンパクト\textbf{(locally compact at x)}であるとは$x$ のある開近傍を含むようなコンパクトな位相空間$C$が存在する.  $X$のすべての点において局所コンパクトであることを位相空間 $\left( X ,  \mathcal{O}_{X} \right)$ が局所コンパクト\textbf{(locally compact)}であるという.
 \end{definition}
 
 \begin{theorem}
-	位相空間$\left( X , \mathcal{O}_{X} \right)$ に対し，$X$が局所コンパクトなHausdorff空間であることと以下の3つの性質を満たす位相空間 $Y$が存在することと同値である:
+	位相空間$\left( X ,  \mathcal{O}_{X} \right)$ に対し,  $X$が局所コンパクトなHausdorff空間であることと以下の3つの性質を満たす位相空間 $Y$が存在することと同値である:
 	 \begin{enumerate}
 		\item $X$が $Y$の部分位相空間である．
 		\item $Y \setminus X$が一点集合である．
 		\item $Y$がコンパクトなHausdorff空間である．
 	\end{enumerate}
-	上記の性質を同時に満たす$Y,Y'$が存在するならば,  $X$において恒等写像となるような $Y,Y'$間の同相写像が存在する.
+	上記の性質を同時に満たす$Y, Y'$が存在するならば,   $X$において恒等写像となるような $Y, Y'$間の同相写像が存在する.
 \end{theorem}
 
 \begin{proof}
-	Step1: まず一意性を示す: $Y,Y'$を上記の性質を満たす位相空間とする. 
-	写像$h: Y \to Y'$を$X$において恒等写像で， 
+	Step1: まず一意性を示す: $Y, Y'$を上記の性質を満たす位相空間とする. 
+	写像$h: Y \to Y'$を$X$において恒等写像で,   
 	一点集合$Y\setminus X = \{p\} $ の$h$での像が
 	$Y' \setminus X = \{q\} $となるような写像とする.
 	この写像が全単射であることが明らかである. 
-	また$h^{-1}$が連続写像であることさえ言えれば,
+	また$h^{-1}$が連続写像であることさえ言えれば, 
 	対称性より$h$が同相写像であることがわかる. 
-	$Y$での開集合 $U$を任意に取り，$h\left( U \right) $ が$Y'$ での開集合であることを示す:\\
-	$ p \not\in U$の場合, $h(U) =U$, $U$が $Y$の開集合であるから,  
-	$U$が $X$での開集合であることが明らか, 
-	また $Y ' \setminus X$が一点集合で$Y '$ がHausdorff空間であるから, 有限濃度を持つ集合がすべて閉集合であり,
-	$X$が $Y'$での開集合となる. 従って, $h\left( U \right) $が$Y'$で開集合となる.\\
-	$p \in U$の場合，$C = Y \setminus U$が$Y$の閉集合で, 
-	従って, $C$が$Y$のコンパクトな部分集合である.
+	$Y$での開集合 $U$を任意に取り,  $h\left( U \right) $ が$Y'$ での開集合であることを示す:\\
+	$ p \not\in U$の場合,  $h(U) =U$,  $U$が $Y$の開集合であるから,   
+	$U$が $X$での開集合であることが明らか,  
+	また $Y ' \setminus X$が一点集合で$Y '$ がHausdorff空間であるから,  有限濃度を持つ集合がすべて閉集合であり, 
+	$X$が $Y'$での開集合となる. 従って,  $h\left( U \right) $が$Y'$で開集合となる.\\
+	$p \in U$の場合,  $C = Y \setminus U$が$Y$の閉集合で,  
+	従って,  $C$が$Y$のコンパクトな部分集合である.
 	$C \subseteq X$から$C$が $X$でのコンパクトな部分空間でもある. 
-	$X$が $Y'$の部分位相空間であるから,  $C $が $Y'$ のコンパクトな部分位相空間であることは自明である.
-	$Y'$がHausdorff空間より,  $C$が閉集合で , $ h\left( U \right)  = Y \setminus C$で, $h\left( U \right) $ が開集合となる.\\
+	$X$が $Y'$の部分位相空間であるから,   $C $が $Y'$ のコンパクトな部分位相空間であることは自明である.
+	$Y'$がHausdorff空間より,   $C$が閉集合で ,  $ h\left( U \right)  = Y \setminus C$で,  $h\left( U \right) $ が開集合となる.\\
 	Step2: これから局所コンパクトなHausdorff空間から上記3条件を満たすコンパクトな位相空間$Y$を構成する:\\
-	 便宜上，$Y = X \cup \{ \infty \} $ と定める. Step1の証明において,  $\left( Y , \mathcal{O}_{Y} \right)$ は$X$の開集合全体, $C$がコンパクト集合となるような $Y \setminus C$ 全体を開集合として含む. 
+	 便宜上,  $Y = X \cup \{ \infty \} $ と定める. Step1の証明において,   $\left( Y ,  \mathcal{O}_{Y} \right)$ は$X$の開集合全体,  $C$がコンパクト集合となるような $Y \setminus C$ 全体を開集合として含む. 
 	 $$
 		 A = \{U \in \mathcal{P}(Y)  \mid  U \in \mathcal{O}_X \} 
 		 $$
@@ -2138,13 +2235,13 @@ $f(a),f(b) \in B_{d_Y}(x, \frac{\varepsilon}{2})$ が成立する.
 		 B= \{Y \setminus C  \mid \text{$C$が$X$ においてコンパクトである.}\}  
 		 $$
 
-	 以下，$\mathcal{O}_Y = A \cup B$が位相の公理を満たすことを確認する:\\
-	 空集合が$A$に属し,  $Y$が $B$に属するから一番目の性質が自明である.\\
-	 共通部分に関して,
+	 以下,  $\mathcal{O}_Y = A \cup B$が位相の公理を満たすことを確認する:\\
+	 空集合が$A$に属し,   $Y$が $B$に属するから一番目の性質が自明である.\\
+	 共通部分に関して, 
 	 \begin{align*}
-		& U_1 \cap U_2 \in A & U_1 , U_2 \in A \\
-		& \left( Y \setminus U_1 \right) \cap \left( Y \setminus U_2 \right) = Y \setminus \left(U_1 \cup U_2  \right) \in B &Y\setminus U_1,Y\setminus U_2 \in B \\
-		&U_1 \cap  \left( Y \setminus C_1 \right) = U_1  \cap \left( X \setminus C_1 \right) \in A & U_1 \in A , Y\setminus C_1 \in B 
+		& U_1 \cap U_2 \in A & U_1 ,  U_2 \in A \\
+		& \left( Y \setminus U_1 \right) \cap \left( Y \setminus U_2 \right) = Y \setminus \left(U_1 \cup U_2  \right) \in B &Y\setminus U_1, Y\setminus U_2 \in B \\
+		&U_1 \cap  \left( Y \setminus C_1 \right) = U_1  \cap \left( X \setminus C_1 \right) \in A & U_1 \in A ,  Y\setminus C_1 \in B 
 	 \end{align*}
 	 次に和集合に関して閉じていることを示す:
 	 \begin{align*}
@@ -2153,55 +2250,55 @@ $f(a),f(b) \in B_{d_Y}(x, \frac{\varepsilon}{2})$ が成立する.
 		& \left( \bigcup U_{\alpha}  \right) \cup \left( \bigcup \left( Y \setminus C_{\beta} \right)   \right)  = U \cup (Y \setminus C) = Y \setminus \left( C \setminus U \right) \in B  
 	 \end{align*}
 	次に$X$が $Y$の部分位相空間であることを示す:  $U \in \mathcal{O}_Y$を任意に取る.
-	$U \in  A$ならば, $U \cap X = U \in \mathcal{O}_X $. $U = Y \setminus C \in B$ならば, $\left( Y\setminus C \right) \cap X = X \setminus C $で$C$が閉集合より,  $U \cap X$が$X$での開集合である. \\
+	$U \in  A$ならば,  $U \cap X = U \in \mathcal{O}_X $. $U = Y \setminus C \in B$ならば,  $\left( Y\setminus C \right) \cap X = X \setminus C $で$C$が閉集合より,   $U \cap X$が$X$での開集合である. \\
 	続いて$Y$がコンパクトであることを示す:
 	$Y$の任意の開被覆 $\mathcal{A}$ が$B$の元を含む． 
-	$Y \setminus C \in \mathcal{A} \cap B$を一つ取り,  
-	$D =\{ A \cap X \in \mathcal{A}  \mid A \neq Y \setminus C\} $ とすると, 
-	$D$がコンパクト集合 $C$ の開被覆となり, 
-	$\mathcal{A}$ から有限個の要素を用いて, $C$の開被覆となる.  
-	$Y \setminus C$を加えると, $Y$全体の有限開被覆をなす.\\
-	これから$Y$のHausdorff性を確認する.  $x, y \in Y$を任意に取る, $x, y \in X$の時, $X$のHausdorff性に従う.  $x \in X , y = \infty$の場合のみを議論すれば良い. この時, $X$の局所コンパクト性より,  $x$のある開近傍 $U$を含むコンパクト集合 $C$が存在する.  $U , Y \setminus C$が$x,y$を分離させる互いに交わらない開集合となる.\\
-	Step3: 上記3条件を満たす$Y$が存在する時,  $X$が局所コンパクトなHausdorff空間であることを示す:\\
-	Hausdorff性は$X$が $Y$の部分位相空間 であることに従う. $x \in X$を任意に取ると, $\infty ,x$を分離させる互いに交わらない$U \in \mathcal{U}_x, V \in \mathcal{U}_{\infty}$ が存在する. $Y \setminus V$が閉集合で, コンパクトである. 従って, 局所コンパクト性を示せた.
+	$Y \setminus C \in \mathcal{A} \cap B$を一つ取り,   
+	$D =\{ A \cap X \in \mathcal{A}  \mid A \neq Y \setminus C\} $ とすると,  
+	$D$がコンパクト集合 $C$ の開被覆となり,  
+	$\mathcal{A}$ から有限個の要素を用いて,  $C$の開被覆となる.  
+	$Y \setminus C$を加えると,  $Y$全体の有限開被覆をなす.\\
+	これから$Y$のHausdorff性を確認する.  $x,  y \in Y$を任意に取る,  $x,  y \in X$の時,  $X$のHausdorff性に従う.  $x \in X ,  y = \infty$の場合のみを議論すれば良い. この時,  $X$の局所コンパクト性より,   $x$のある開近傍 $U$を含むコンパクト集合 $C$が存在する.  $U ,  Y \setminus C$が$x, y$を分離させる互いに交わらない開集合となる.\\
+	Step3: 上記3条件を満たす$Y$が存在する時,   $X$が局所コンパクトなHausdorff空間であることを示す:\\
+	Hausdorff性は$X$が $Y$の部分位相空間 であることに従う. $x \in X$を任意に取ると,  $\infty , x$を分離させる互いに交わらない$U \in \mathcal{U}_x,  V \in \mathcal{U}_{\infty}$ が存在する. $Y \setminus V$が閉集合で,  コンパクトである. 従って,  局所コンパクト性を示せた.
 	
 
 \end{proof}
 
 \begin{definition}
-	コンパクトなHausdorff空間$Y$の真の部分集合 $X$の閉包は $Y$に一致するならば, 
-	$Y$を 位相空間$X$のコンパクト化 \textbf{(compactification)}といい, 
-	$Y \setminus X$が一点集合の場合,
+	コンパクトなHausdorff空間$Y$の真の部分集合 $X$の閉包は $Y$に一致するならば,  
+	$Y$を 位相空間$X$のコンパクト化 \textbf{(compactification)}といい,  
+	$Y \setminus X$が一点集合の場合, 
 	$Y$を $X$の一点コンパクト化\textbf{(one-point compactification)}という.
 \end{definition}
 
 
 
 \begin{theorem}
-	$\left( X , \mathcal{O}_{X} \right)$ をHausdorff空間とする. 
-	$X$が局所コンパクトであることと任意の点 $x \in X$と$U \in \mathcal{U}_x$に対し，
+	$\left( X ,  \mathcal{O}_{X} \right)$ をHausdorff空間とする. 
+	$X$が局所コンパクトであることと任意の点 $x \in X$と$U \in \mathcal{U}_x$に対し,  
 	$\overline{V} \subseteq U$ を満たすコンパクトな$\overline{V} \in  \mathcal{N}_x$が成立することと同値である.
 \end{theorem}
 
 \begin{proof}
-	構成から局所コンパクト性が成立するのが明らかであるので，その逆を示す:\\
-	$x \in X$と$U \in \mathcal{U}_x$を任意に取り, $X$の一点コンパクト化 $Y$を取り, 
+	構成から局所コンパクト性が成立するのが明らかであるので,  その逆を示す:\\
+	$x \in X$と$U \in \mathcal{U}_x$を任意に取り,  $X$の一点コンパクト化 $Y$を取り,  
 	$C = Y \setminus U$が$Y$のコンパクトな閉集合となる. 
-	Lemma\ref{lem:compact-separate}より,
-	$x \in V, C \subseteq W $となる互いに交わらない開集合$V ,W$が存在する. 
-	$V \subseteq U$, $\cl{V}$が $Y$でのコンパクト集合で, 
-	$V \subseteq Y \setminus W$より, 
-	$\cl{V} \subseteq Y \setminus W$,
+	Lemma\ref{lem:compact-separate}より, 
+	$x \in V,  C \subseteq W $となる互いに交わらない開集合$V , W$が存在する. 
+	$V \subseteq U$,  $\cl{V}$が $Y$でのコンパクト集合で,  
+	$V \subseteq Y \setminus W$より,  
+	$\cl{V} \subseteq Y \setminus W$, 
 	従って$C \subseteq Y \setminus V$が成立する． 
-	すなわち, $\cl{V} \subseteq U$が成立する.
+	すなわち,  $\cl{V} \subseteq U$が成立する.
 \end{proof}
 
 \begin{corollary}
-	$X$をHausdorffな局所コンパクト空間とする．任意の $A \subseteq X$に対し, $A$が開集合または閉集合である時, 部分位相空間$A$が局所コンパクトである.
+	$X$をHausdorffな局所コンパクト空間とする．任意の $A \subseteq X$に対し,  $A$が開集合または閉集合である時,  部分位相空間$A$が局所コンパクトである.
 \end{corollary}
 
 \begin{corollary}
-	$X$があるコンパクトなHausdorff空間の部分空間と同相であることと,  $X$が局所コンパクトなHausdorff空間であることと同値である.
+	$X$があるコンパクトなHausdorff空間の部分空間と同相であることと,   $X$が局所コンパクトなHausdorff空間であることと同値である.
 \end{corollary}
 
 
