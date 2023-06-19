@@ -1,6 +1,7 @@
 \RequirePackage{luatex85}
 \documentclass[lualatex]{ltjsbook}
 \usepackage{luatexja}
+\usepackage{mathtools}
 \usepackage{xcolor}
 \usepackage{pifont}
 \usepackage{bm}
@@ -27,6 +28,7 @@
 \newtheorem{example}[theorem]{Example}
 \newtheorem{exercise}[theorem]{Exercise}
 \newtheorem{axiom}{Axiom}
+\newtheorem*{garbage}{Garbage}
 \begin{document}
 \title{集合, 位相, 群}
 \author{Arnold Robinson}
@@ -126,7 +128,7 @@ $A$が自分自身を要素として持つとなり, 矛盾が生じる. どの�
 \end{axiom}
 
 \begin{axiom}[分出の公理]
-	$y$に依存しない任意の条件式 $\varphi$ に対し, 以下のことが成立する.
+	$y$を自由変数に持たない任意の条件式 $\varphi$ に対し, 以下のことが成立する.
 	\[
 	\forall z; \exists y; \forall x;\left(x \in y \leftrightarrow x \in z \land \varphi(x)  \right) 
 	\] 
@@ -145,7 +147,7 @@ $A$が自分自身を要素として持つとなり, 矛盾が生じる. どの�
 \end{axiom}
 
 \begin{axiom}[置換の公理]
-	$B$に依存しない任意の条件$\varphi$に対し, 以下のことが成立する.
+	$B$を自由変数に持たない任意の条件$\varphi$に対し, 以下のことが成立する.
 	\[
 	\forall A;\left( \forall x \in A; \exists! y ; \varphi(x,y) \rightarrow \exists B; \forall x \in A; \exists y \in B; \varphi(x,y) \right) 
 	\] 
@@ -186,19 +188,82 @@ $A$が自分自身を要素として持つとなり, 矛盾が生じる. どの�
 これで外延性の公理の解説が終わるが, 少し余談に入ろう.
 外延性の公理は当たり前な公理に見えるが実は恐ろしい公理でもある, 
 私達が議論できる数学的対象をすべて集合に制限した. 
-例えば「猫」と「犬」という集合でないものを扱う時に, 「猫」と「犬」をそれぞれ要素に持つものの集まりである$\{\text{猫}\}, \{\text{ 犬}\} $ を集合と認識してもよいか？
+例えば「猫」と「犬」という集合でないものを扱う時に, 「猫」と「犬」をそれぞれ要素に持つものの集まりである$\{\text{猫}\}, \{\text{犬}\} $ を集合と認識してもよいか？
 
 
 答えは「ダメ」. 任意の集合$z$に対し論理式$ z \in \{\text{猫}\} $と$z \in \{\text{犬}\} $ 両方とも偽であり, 従って, $\forall z ;\left( z \in \{\text{猫}\} \leftrightarrow z \in \{\text{犬}\}  \right) $ が真である. 外延性公理より$\{\text{猫}\} = \{\text{犬}\}$が導かれる. この例からわかったように, 公理的集合論の世界では議論できる対象は集合しかない！
 
 
 \section{基礎の公理}
-基礎の公理は一言でいうと, 空でない集合$X$に対して, $X \in X$が成立しない. つまり, 属するという関係で下への無限列が取れない. これは数学基礎論においてはもっと深い意味を持つが本書の意図からずれるので割愛させていただきます. 興味のある方はキューネンの「数学基礎論講義」を参照してください.
+基礎の公理は一言でいうと, 空でない集合$X$に対して, $X \in X$が成立しない. つまり, 属するという関係で下への無限列が取れない. 
+
+この公理のもう一つの帰結として, すべての集合の集まりが“集合”ではないということである. 簡単なため, 以下の演習問題を解いてみよう.
+
+\begin{exercise}
+	$A$をすべての集合の集合とする.  公理4の対の公理を用いて$A$の一点集合 $\{A\} $ が存在する. このもとで, 矛盾を導こう. この結果よりすべての集合の集まりは集合ではないことがわかる.
+\end{exercise}
+
+この公理は数学基礎論においてはもっと深い意味を持つが本書の意図からずれるので割愛させていただきます. 興味のある方はキューネンの「数学基礎論講義」を参照してください.
 
 \section{分出の公理}
 
+分出の公理の意味を解説する前にまず次の“公理”を見てみよう:
+
+\begin{garbage}[素朴集合論]
+	任意の条件$\varphi$に対して, 以下の命題が成立する:
+	 \[
+	\exists x; \forall y;\left( \varphi(y) \leftrightarrow y \in x \right) 
+	.\] 
+\end{garbage}
+
+\begin{theorem}[Russell's Paradox]
+	性質$\varphi (x) \iff x \not\in x  $とする. この場合, 素朴集合論の主張に矛盾が生じる.
+\end{theorem}
+
+\begin{proof}
+	素朴集合論の設定で, $\forall y; \left(  \varphi (y) \leftrightarrow y \in x \right) $ を満たす集合$x$が存在する. この集合 $x$を取る. 次に $x \in x$と$x \not\in x$について場合分けして議論を行う.
+
+	$x \in x$の時, $\varphi(x) $が成立し,  $x \not\in x$が得られ, 矛盾が生じる.
 
 
+	$x \not\in x$の時,  $x$が条件$\varphi$ 満たす, 素朴集合論の主張より$x \in x$となり矛盾が生じる.
+
+
+	以上の完全場合分けで矛盾を導けた.
+\end{proof}
+
+上記の証明でわかったように, 何らかの条件が与えられた時に, 必ずしもそれを満たすような集合が存在するとは限らない. この状況で, 特定な性質を満たすものを集めたい場合はどうすれば良いでしょう. これに悩んで最後にたどり着いたのは分出の公理である. 
+
+
+何でもいいから与えられた条件を満たすもの全体の集まりを考えるのではなく, ある枠組みのもとで, その条件を満たすもの全体の集まりを考えればよい. しかもその与えられた条件は我々の欲しい集合に依存しないことを要請する. つまり, 何かを定義しようとする時, 自分自身を持って自分自身を定義してはいけないということである.
+
+
+さて, その論理式を日本語に翻訳すると, 「任意の集合$z$と, $y$を自由変数に持たない条件式 $\varphi$に対し,  $z$の元で $\varphi$を満たすもの全体の集まり$y$は集合として存在する」 となる. 
+
+\section{対の公理}
+
+この公理の主張が極めて単純で, $x,y$の2つの集合が与えられた場合, これらを要素に持つ集合が存在するというと主張している. この公理と分出の公理と組み合わせて, 次のような集合が存在することが言える.
+
+\begin{definition}[集合のパア, 一点集合, 順序対]
+	集合$x,y$に対し, 
+	\[
+	\{x,y\} \coloneqq \{z| z = x \lor z = y\}  
+	\]
+	を集合$x,y$のペアといい,
+	$$
+	\{x\} \coloneqq \{x,x\}  
+	$$
+	を集合$x$の一点集合といい,
+
+	\[
+		(x,y) \coloneqq \{x, \{y\} \} 
+	\]
+	を集合$x,y$の順序対と呼ぶ.
+\end{definition}
+
+\begin{exercise}
+	集合$a,b,c,d$に対し,  $(a,b) = (c,d) \iff \left( a=c \land b=d \right) $ であることを示せ. (ヒント: $a=b$とそうでない時の場合分けを考えよう)
+\end{exercise}
 
 
 \part{一般位相空間論}
