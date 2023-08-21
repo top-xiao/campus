@@ -12,7 +12,7 @@ endglobal
 
 snippet template "Basic template" b
 \RequirePackage{luatex85}
-\documentclass[lualatex]{ltjs$1}
+\documentclass{ltjs$1}
 \usepackage{luatexja}
 \usepackage{mathtools}
 \usepackage{xcolor}
@@ -51,7 +51,7 @@ snippet template "Basic template" b
 \centerline{\Large $2}
 \rightline{Arnold Robinson (鄒暁城)}
 \rightline{\jtoday}
-\maketitle
+%\maketitle
 % \setcounter{chapter}{-1}
 % \tableofcontents
 $0

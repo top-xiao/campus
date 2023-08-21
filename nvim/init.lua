@@ -31,12 +31,22 @@ require("plugin-config.telescope")
 --dashboard
 require("plugin-config.dashboard")
 
---indent
-require("plugin-config.indent-blankline")
-
 --project
 require("plugin-config.project")
 
 --treesitter
 require("plugin-config.nvim-treesitter")
 
+--indent_blankline
+require("plugin-config.indent-blankline")
+
+--ultisnips
+require("plugin-config.ultisnips")
+
+--tex-conceal
+require("plugin-config.tex-conceal")
+
+require("plugin-config.mason")
+
+require("lsp.setup")
+require("lsp.cmp")

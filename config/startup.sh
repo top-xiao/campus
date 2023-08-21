@@ -28,13 +28,15 @@ cp /campus/.config/ ~/.config
 cd ~
 
 sudo add-apt-repository ppa:neovim-ppa/stable
-echo "#nvim" | cat >> ~/.bashrc
-echo "alias vim = 'nvim'" | cat >> ~/.bashrc
-echo "alias vi = 'nvim'" | cat >> ~/.bashrc
-echo "alias v = 'nvim'" | cat >> ~/.bashrc
-echo "\n" | cat >> ~/.bashrc
-echo "#nvim_environment_variable" | cat >> ~/.bashrc
+echo  "#nvim" | cat >> ~/.bashrc
+echo  "alias vim = 'nvim'" | cat >> ~/.bashrc
+echo  "alias vi = 'nvim'" | cat >> ~/.bashrc
+echo  "alias v = 'nvim'" | cat >> ~/.bashrc
+echo -e "\n" | cat >> ~/.bashrc
+echo  "#nvim_environment_variable" | cat >> ~/.bashrc
 echo "export NVIM_LISTEN_ADDRESS = /tmp/nvimsocket" | cat >> ~/.bashrc
 
+git clone --depth 1 https://github.com/wbthomason/packer.nvim\
+ ~/.local/share/nvim/site/pack/packer/start/packer.nvim
 
-
+vim -E -c :PackerSync -c q
