@@ -40,3 +40,7 @@ require("plugin-config.project")
 --treesitter
 require("plugin-config.nvim-treesitter")
 
+--lsp
+require("lsp.setup")
+require("lsp.cmp")
+require("lsp.ui")

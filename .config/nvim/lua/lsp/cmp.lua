@@ -1,4 +1,8 @@
-local cmp = require("cmp")
+local status, cmp = pcall(require,"cmp")
+if not status then
+  vim.notify("cmp is not found!")
+  return
+end
 
 cmp.setup({
   -- 指定 snippet 引擎
@@ -33,11 +37,6 @@ cmp.setup({
     -- { name = 'snippy' },
   }, { { name = "buffer" }, { name = "path" } }),
 
-  -- 快捷键设置
-  mapping = require("keybindings").cmp(cmp),
-
-  --lspkind-nvim
-  formatting = require('lsp.ui').formatting,
 })
 
 -- / 查找模式使用 buffer 源
