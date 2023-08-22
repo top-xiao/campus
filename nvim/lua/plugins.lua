@@ -61,6 +61,7 @@ packer.startup({
     use("neovim/nvim-lspconfig")
   --lspkind
     use("onsails/lspkind-nvim")
+    use("tami5/lspsaga.nvim")
   end,
   config = {
 

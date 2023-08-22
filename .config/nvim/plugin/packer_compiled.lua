@@ -99,20 +99,10 @@ _G.packer_plugins = {
     path = "/home/arnold/.local/share/nvim/site/pack/packer/start/cmp-path",
     url = "https://github.com/hrsh7th/cmp-path"
   },
-  ["cmp-vsnip"] = {
-    loaded = true,
-    path = "/home/arnold/.local/share/nvim/site/pack/packer/start/cmp-vsnip",
-    url = "https://github.com/hrsh7th/cmp-vsnip"
-  },
   ["dashboard-nvim"] = {
     loaded = true,
     path = "/home/arnold/.local/share/nvim/site/pack/packer/start/dashboard-nvim",
     url = "https://github.com/glepnir/dashboard-nvim"
-  },
-  ["friendly-snippets"] = {
-    loaded = true,
-    path = "/home/arnold/.local/share/nvim/site/pack/packer/start/friendly-snippets",
-    url = "https://github.com/rafamadriz/friendly-snippets"
   },
   ["indent-blankline.nvim"] = {
     loaded = true,
@@ -138,6 +128,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/arnold/.local/share/nvim/site/pack/packer/start/lualine.nvim",
     url = "https://github.com/nvim-lualine/lualine.nvim"
+  },
+  ["mason-lspconfig.nvim"] = {
+    loaded = true,
+    path = "/home/arnold/.local/share/nvim/site/pack/packer/start/mason-lspconfig.nvim",
+    url = "https://github.com/williamboman/mason-lspconfig.nvim"
   },
   ["mason.nvim"] = {
     loaded = true,
@@ -194,6 +189,11 @@ _G.packer_plugins = {
     path = "/home/arnold/.local/share/nvim/site/pack/packer/start/telescope.nvim",
     url = "https://github.com/nvim-telescope/telescope.nvim"
   },
+  ["tex-conceal.vim"] = {
+    loaded = true,
+    path = "/home/arnold/.local/share/nvim/site/pack/packer/start/tex-conceal.vim",
+    url = "https://github.com/KeitaNakamura/tex-conceal.vim"
+  },
   ["tokyonight.nvim"] = {
     loaded = true,
     path = "/home/arnold/.local/share/nvim/site/pack/packer/start/tokyonight.nvim",
@@ -208,6 +208,11 @@ _G.packer_plugins = {
     loaded = true,
     path = "/home/arnold/.local/share/nvim/site/pack/packer/start/vim-bbye",
     url = "https://github.com/moll/vim-bbye"
+  },
+  ["vim-snippets"] = {
+    loaded = true,
+    path = "/home/arnold/.local/share/nvim/site/pack/packer/start/vim-snippets",
+    url = "https://github.com/honza/vim-snippets"
   },
   vimtex = {
     loaded = true,

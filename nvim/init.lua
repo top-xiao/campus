@@ -50,3 +50,4 @@ require("plugin-config.mason")
 
 require("lsp.setup")
 require("lsp.cmp")
+require("lsp.ui")
