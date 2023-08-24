@@ -24,5 +24,8 @@ vim.cmd([[
 " qpdfviewでpdfプレビュー
 let g:vimtex_view_general_viewer = 'qpdfview'
 let g:vimtex_view_general_options = '--unique @pdf\#src:@tex:@line:@col'
+
+" preview via zathura
+"let g:vimtex_view_method='zathura'
 ]])
 

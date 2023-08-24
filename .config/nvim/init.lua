@@ -19,6 +19,9 @@ require("plugin-config.nvim-tree")
 --Vimtex
 require("plugin-config.vimtex")
 
+--tex-conceal
+require("plugin-config.tex-conceal")
+
 --bufferline
 require("plugin-config.bufferline")
 
