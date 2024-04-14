@@ -1,0 +1,110 @@
+% LuaLaTeX文書; 文字コードはUTF-8
+\documentclass[unicode,12pt]{beamer}% 'unicode'が必要
+\usepackage{luatexja, mathtools}% 日本語したい
+\usepackage[ipaex]{luatexja-preset}% IPAexフォントしたい
+\renewcommand{\kanjifamilydefault}{\gtdefault}% 既定をゴシック体に
+
+% あとは欧文の場合と同じ
+\usetheme{Copenhagen}
+
+%题目，作者，学校，日期
+\title{集合, 全単射}
+\subtitle{\fontsize{9pt}{14pt}\textbf{素朴集合論}}
+\author{永明}
+\institute{数学部会}
+\date{2023}
+%目录设置
+\begin{document}
+\begin{frame}
+%\label{frame:}
+ \titlepage 
+\end{frame}
+\begin{frame}
+  \frametitle{集合}
+  任意の性質$P$に対して, その性質を満たすもの全体
+   \begin{equation}
+    \begin{aligned}
+      S_P \coloneqq \{x  \mid \text{$x$が性質$P$ を満たす}\} 
+    \end{aligned}
+  \end{equation} 
+  が存在し, これを集合と呼ぶ. 
+
+  \begin{itemize}
+    \item $x \in S_P \iff \text{$x$が性質 $P$を満たす.}$
+    \item $x \not\in S_P \iff \text{$x$が性質 $P$を満たさない. }$
+  \end{itemize}
+  集合$A,B$に対して, 任意の $a \in A$について, $a \in B$が成立するならば, 
+  $A$が $B$の部分集合といい, $A \subseteq B$ と書く. 
+\end{frame}
+
+\begin{frame}
+%\label{frame:}
+  \frametitle{直積と対応}
+
+  集合$A \times B$に対して, それらの直積$A \times B$を
+  \begin{equation}
+    \begin{aligned}
+      A \times B \coloneqq \{(a,b)  \mid a \in A, b \in B\} 
+    \end{aligned}
+  \end{equation}
+  と定義する. 
+
+  集合$A,B$に対して,  $A \times B$の部分集合$R \subseteq A \times B$を集合 $A$から$B$への対応と呼ぶ.  
+ 
+
+  $R$と任意の$(a,b) \in A \times B$に対して, $(a,b) \in R \iff a R b$と書く. 
+\end{frame}
+
+\begin{frame}
+%\label{frame:}
+  \frametitle{写像}
+  集合$A,B$と$A$から$B$への対応 $f$に対して, $(A,B,f)$の組が写像であるとは
+
+  任意の$a \in A$に対して, 唯一の$b \in B$が存在して, $a f b$が成立する. 
+
+  この時,  $(A,B,f)$を $f :A \to B$と書き, $a \in A$に対して, $a f b$が成立する
+   $b \in B$を$f(a)$と表す. 
+
+   
+
+
+\end{frame}
+
+\begin{frame}
+  \frametitle{逆対応と逆写像}
+ 集合$A$から $B$への対応 $R$に対して, $R$の逆対応 $R^{-1}$ を次のように定義する: 
+ \begin{equation}
+   \begin{aligned}
+     R^{-1}\coloneqq \{(b,a) \in B \times A  \mid (a,b) \in R\} .
+   \end{aligned}
+ \end{equation} 
+写像$(A,B,f)$に対して,  $(B,A,f^{-1})$が写像になる時, $f^{-1}$を$f$の逆写像と呼ぶ.
+\end{frame}
+
+\begin{frame}
+%\label{frame:}
+  \frametitle{単射, 全射, 全単射}
+
+ 写像 $f:A \to B$が
+\begin{itemize}
+  \item 
+  単射であるとは
+  
+  任意の$a, a' \in A$に対して, $f(a) = f(a')$ならば $a = a'$が成立する. 
+
+\item 全射であるとは
+
+  任意の$b \in B$に対して, ある$a \in A$が存在して, $f(a) = b$が成立する. 
+
+\item 全単射であるとは
+
+   $f$が単射かつ全射.
+\end{itemize}
+
+  
+\end{frame}
+
+
+
+\end{document}
+
