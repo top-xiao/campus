@@ -40,7 +40,7 @@ packer.startup({
     })
     use("ahmedkhalf/project.nvim")
   --treesitter
-    use({"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"})
+ --   use({"nvim-treesitter/nvim-treesitter", run = ":TSUpdate"})
   --LSP
     use("williamboman/mason.nvim")
   --LSPconfig

@@ -21,6 +21,7 @@
 \newtheorem{corollary}[theorem]{Corollary}
 \newtheorem{lemma}[theorem]{Lemma}
 \newtheorem{definition}[theorem]{Definition}
+\newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{claim}[theorem]{Claim}
 \theoremstyle{remark}
 \newtheorem{remark}[theorem]{Remark}
@@ -368,7 +369,6 @@ $I=[0, 1]$として,   順序位相空間$I^2_o$と順序位相空間$\mathbb{R}
 	以上の議論より,   $Y$ が凸集合の時,  部分位相空間と順序位相空間が一致することがわかる.
 \end{proof}
 
-上記の議論をよく見ると,  $Y$順序位相空間の部分位相は常に部分集合の順序位相より強いことがわかりますそれがまさに偉大な指導者が人民に戻っても人民の指導者であり,  指導者のない人民には何事を行ってもうまく行かないことと同じ理由です.
 
 \section{閉集合,  集積点,  内部,  閉包,  近傍,  境界}
 
@@ -427,7 +427,6 @@ $I=[0, 1]$として,   順序位相空間$I^2_o$と順序位相空間$\mathbb{R}
 	位相空間$X$のある閉集合$C$が存在し,  $A = C\cap Y$となるので,  閉集合の共通集合もまた閉集合であることを用いるとすぐに導かれる.
 \end{proof}
 
-一つの社会には情報が公開されている部分があれば,  それを取り除けば闇の部分となります.
 
 \begin{definition}[内部,  閉包]
 	集合$A$は位相空間$X$の部分集合とする. 
@@ -455,7 +454,6 @@ $I=[0, 1]$として,   順序位相空間$I^2_o$と順序位相空間$\mathbb{R}
 	$\cl{A} \subseteq C$,  よって,   $B = C \cap Y \supseteq \cl{A} \cap Y$が得られる.
 \end{proof}
 
-我々中華人民共和国の人民は偉大なる中国共産党の周りにいます. 党員が存在すれば,  その周りに必ず群衆が集まっています. 党員と人民が一体であるこそこの社会が正常に動いています. この状況を抽象的にいえば次に述べられる近傍となります. 党員と人民のいるところに,  社会が生まれます.
 
 \begin{definition}[近傍]
 	位相空間$\left( X,  \mathcal{O}_X \right)$の点$x \in X$ に対し,  近傍族$\mathcal{N}_x$ は次のように定める:
@@ -775,7 +773,8 @@ $x \in \cl{A}$を任意に取り,   $f(x) \in \cl{A}$であることを示す:
 		\item 連続写像$f:X\to Y; g:Y\to Z$に対する合成写像$g\circ f$.
 		\item $X$の部分位相空間 $A$に対し, 連続写像$f:X\to Y$の定義域を$A$に制限した写像 $f\upharpoonright A$.
 		\item  $Y$の部分位相空間 $Z$,  連続写像$f:X \to Y$に対し,  $f\left( X \right) \subseteq Z$ の時,  $f$の終域を $Z$ に制限した写像.
-		\item $X$が開集合列 $\left(U_{\alpha}\right) _{\alpha \in J}$の和集合の時,   $\forall \alpha \in J; f\upharpoonright U_{\alpha}$が連続写像となる写像 $f:X \to Y$
+		\item $X$が開集合列 $\left(U_{\alpha}\right) _{\alpha \in J}$の和集合の時,  
+      $\forall \alpha \in J; f\upharpoonright U_{\alpha}$が連続写像となる写像 $f:X \to Y$
 	\end{enumerate}
 \end{theorem}
 
@@ -1015,54 +1014,17 @@ $x \in \cl{A}$を任意に取り,   $f(x) \in \cl{A}$であることを示す:
 	位相空間$\left( X,  \mathcal{O}_X \right) $ に同値関係$\sim$が装備されている. 
 	 写像$p: X \to X / \sim $
       $$
-	x \mapsto [x]_{\sim}
+	x \mapsto [x]_{\sim}\coloneqq \{y \in X \mid x \sim y\} 
       $$
       によって誘導される位相空間$\left( X / \sim ,  \mathcal{O}_{X / \sim} \right) $ が商空間 \textbf{(quotient space)}と定義する.
 \end{definition}
 
-\begin{definition}[飽和]
-	写像$f:X \to Y$に対し,  $A \subseteq X$が飽和\textbf{(saturate)}であるとは:
-	\[
-	f^{-1}\left(f( A) \right) = A
-	.\] 
-\end{definition}
 
 \begin{definition}[開写像,  閉写像]
 開集合の像が開集合となるような写像は開写像\textbf{(open map)}である. 閉集合の像が閉集合となるような写像が閉写像\textbf{(closed map)}である.	
 \end{definition}
 
-\begin{theorem}[誘導される商写像]\index{@誘導される商写像}
-	$p: (X, \mathcal{O}_X) \to \left( Y, \mathcal{O}_Y \right) $を商写像とする. $A$が写像 $p$で飽和となる部分位相空間とする.  写像$p$の終域を $p(A)$に,  定義域を$A$に制限した写像 $q: A \to p(A)$に対し,  以下の2つの命題が成立する:
-	\begin{enumerate}
-		\item $A$が開集合または閉集合の時,   $q$が商写像となる.
-		\item  $p$が開写像または閉写像の時,   $q$ が商写像となる.
-	\end{enumerate}
-\end{theorem}
 
-\begin{proof}%[]\index{@}
-	まず$A$が $p$のもとで飽和となることは以下の2つの命題を導く:
-	 \[
-	\begin{aligned}%[]\index{@}
-		q^{-1}(V) = p ^{-1}(V),  \quad & V \subseteq p(A)\\
-		p(U\cap A) = p(U) \cap p(A),  \quad & U\subseteq X 
-	\end{aligned}
-	\]
-	いずれも自明であるので,  気になる人は\textcolor{red}{check せよ}\footnote{二番目の等式で,  "ああ, これは単射と同値やん"と思った人は定義を復習してください.$A$は固定された集合であって, 任意性を持たない.予め定義を確認してください.}\\
-	続いて,  $A$が開集合あるいは $p$が開写像の時,   $V \subseteq p(A)$を任意に取る.\\
-	$A \in \mathcal{O}_X$ の時,  $V \in \mathcal{O}_{p(A)}$ならばある$U \in \mathcal{O}_Y $が存在して,  
-	$V = p(A) \cap U$,  $q^{-1}(V) = p ^{-1}(V) = A \cap p^{-1}(U) \in \mathcal{O}_A$が成立する. 
-	$q^{-1}(V) \in \mathcal{O}_A$ならば,  ある$U \in \mathcal{O}_X$が存在し,  
-	$q^{-1}(V) = A \cap U \in \mathcal{O}_X$,  $q^{-1}(V) = p ^{-1}(V)$より,  
-	$p$が商写像であることから$V \in \mathcal{O}_Y$がわかる,  従って,  $V =V \cap p(A)\in \mathcal{O}_{p(A)}$が得られる. \\
-	$p$が開写像の時,   $V \in \mathcal{O}_{p(A)}$ならば,  ある$U \in \mathcal{O}_Y$が存在し,  
-	$V = p(A) \cap U$となる. 
-	$q^{-1}(V) = p ^{-1}(V) = A \cap p ^{-1}(U)$であって,  
-	$q^{-1}(V) \in \mathcal{O}_A$が自然に得られる. 
-	$q^{-1}(V) \in \mathcal{O}_A$ならば,  ある$U \in \mathcal{O}_X$が存在し, 
-	$q^{-1} (V) =U \cap A$であり,  $V=p(q^{-1}(V)) = p(A) \cap p(U)$,  
-	$p$ が開写像であることを認識できれば,  $V \in \mathcal{O}_{p(A)}$であることがわかる.\\
-	以上より,  $q$が商写像であることがわかった. 閉集合や閉写像に関する証明は上記の集合 $U$を閉集合に置き換えて同じ議論を施せば良い.
-\end{proof}
 
 
 \begin{theorem}%[]\index{@}
@@ -1080,10 +1042,8 @@ $x \in \cl{A}$を任意に取り,   $f(x) \in \cl{A}$であることを示す:
 	 $\forall U \subseteq Z; \left( f\circ p \right) ^{-1}(U) = p^{-1}(f^{-1}(U))$であることを利用して,  $f\circ p =g$を考えれば良い. 
 \end{proof}
 
-以上より位相空間の基本常識が終わります. ここまでやって来た諸君は厳密な中国特色社会主義的数学を学ぶことの第一歩を踏み出せました. ここまで耐えて来た皆様の国に対する愛はきっと我々の偉大なる指導者のもとに届くはずだろう. 西洋から舶来した数学の社会主義的改造初期段階は終わりました,  次の章では位相空間の構造にまつわる細かい性質を調べて行きます.
 
 \section{位相構造}
-今までの学習において,  指導階級,  対立階級,  指導者の近傍,  集団の内部,  集団の閉包を考察して来ました．私達は社会学的議論をする際に常に指導階級を見ているわけではありません．対立階級,  指導者の近傍を使って議論することも多いという事実を認識しておいてください．世界の他のところにいる社会学者は私達の研究手法と異なるかもしれません．ただし,  上記の概念を使っているならば,  同じ社会学を研究していることが違いません．なぜかというとこれらの概念は社会において同等であること．社会を多様な側面を持ち,  これらのどの側面から見ても同じ社会では同じ結論が得られます．これからそれらが同じ社会構造を生成することについて学びましょう.
 
 \begin{definition}
 	集合$X$に対し,  次のような3つの性質を満たす部分集合族$\mathcal{O}$を$X$ の開集合族と呼ぶ．
@@ -1115,7 +1075,8 @@ $x \in \cl{A}$を任意に取り,   $f(x) \in \cl{A}$であることを示す:
 \end{definition}
 
 \begin{definition}
-	集合$X$に対し,  写像 $a: \mathcal{P}(X) \to \mathcal{P}(X)$が以下の4つの性質を満たす時,   $X$の閉包作用素と呼ぶ．
+  \label{def:cl-op}
+  集合$X$に対し,  写像 $a: \mathcal{P}(X) \to \mathcal{P}(X)$が以下の4つの性質を満たす時,   $X$の閉包作用素と呼ぶ．
 	 \begin{enumerate}
 		\item $\emptyset^{a}=\emptyset$
 		\item $\forall M \in \mathcal{P}(X); M^{a}\supseteq M$
@@ -1911,7 +1872,7 @@ $(X,  \mathcal{O}_X)$の部分位相空間$Y$の分割が存在する
 	したがって,  
 	$f(x) \ge \frac{1}{n}d(x, C_i) \ge \frac{\varepsilon}{n}>0$.
 	これがコンパクトな位相空間に定義される連続写像なので,   最小値$\delta >0$が取れる.
-	次に$\rm{diam}U<delta$を満たす$X$の部分集合 $U$を任意に取る.  $x \in U$を任意に一つ取って固定する.
+	次に$\rm{diam}U<\delta$を満たす$X$の部分集合 $U$を任意に取る.  $x \in U$を任意に一つ取って固定する.
 	 $$\delta \le f(x) \le d(x, C_m)$$
 	  を満たすかつ$d(x, C_m)$が最大となるような$C_m$ を取る.
 	  $C_i$に対応する $A_i \in \mathcal{A}'$を取り,  この時,  $x$の半径 $\delta$の開球体が $A_i$に含まれるから問題が示された.
@@ -2037,9 +1998,10 @@ $f(a), f(b) \in B_{d_Y}(x,  \frac{\varepsilon}{2})$ が成立する.
 \end{proof}
 
 \section{局所コンパクト性とコンパクト化}
-
+このsectionを読み飛ばしても良い. 
 \begin{definition}
-	位相空間$\left( X ,  \mathcal{O}_{X} \right)$ が点$x$において局所コンパクト\textbf{(locally compact at x)}であるとは$x$ のある開近傍を含むようなコンパクトな位相空間$C$が存在する.  $X$のすべての点において局所コンパクトであることを位相空間 $\left( X ,  \mathcal{O}_{X} \right)$ が局所コンパクト\textbf{(locally compact)}であるという.
+	位相空間$\left( X ,  \mathcal{O}_{X} \right)$ が点$x$において局所コンパクト\textbf{(locally compact at x)}であるとは$x$ のある開近傍を含むようなコンパクトな位相空間$C$が存在する.  $X$のすべての点において局所コンパクトであることを位相空間 $\left( X ,  \mathcal{O}_{X} \right)$ 
+  が局所コンパクト\textbf{(locally compact)}であることをいう.
 \end{definition}
 
 \begin{theorem}
@@ -2149,20 +2111,16 @@ $f(a), f(b) \in B_{d_Y}(x,  \frac{\varepsilon}{2})$ が成立する.
 
 
 
-\begin{thebibliography}{99}
-	\bibitem{munkres} James R. Munkres 
-	\newblock{\em Topology 2nd}.
-
-	\bibitem{uchida} 内田伏一 
-	\newblock{『集合と位相』}.
-\end{thebibliography}
 
 
-\chapter{分離性と距離化可能性}
+\chapter{距離化可能性とパラコンパクト性}
+この章では, 抽象的な位相空間が直感的にわかりやすい距離函数で表現できる
+必要十分条件と幾何学の重要な道具である一の分割
+を学習する.
 
-\section{分離性}
-このsectionで登場するすべての位相空間にHausdorff性を課す. 
+このchapterで登場するすべての位相空間にHausdorff性を課す. 
 
+\section{距離化可能性}
 \begin{definition}
 %\label{definition:}
   位相空間$\left( X , \mathcal{O}_{X} \right)$ が正則空間(\textbf{regular space}) であるとは, 
@@ -2177,24 +2135,314 @@ $f(a), f(b) \in B_{d_Y}(x,  \frac{\varepsilon}{2})$ が成立する.
 次に分離性の使いやすい言い換えを考える. 
 \begin{proposition}
 %\label{proposition:}
+ $\left( X , \mathcal{O}_{X} \right)$ に対して, 
+ \begin{enumerate}
+   \item $X$が正則空間  $\iff$ 任意の $x \in X$と任意の$U \in \mathcal{U}_x$に対して, ある$V \in \mathcal{U}_x$が存在して, 
+     $\cl{V} \subseteq U$が成立する. 
+   \item $X$が正規空間  $\iff$任意の閉集合$W$と任意の開集合$U$ に対して, $W \subseteq U$ならば, ある開集合$V$が存在して, 
+     $W \subseteq V$かつ$\cl{V} \subseteq U $が成立する. 
+ \end{enumerate}
+\end{proposition}
+
+\begin{proof}
+%\label{proof:}
+  簡単なため, 演習問題とする. (Hint: 図を描いてみよう!)
+\end{proof}
+
+次に今までの学習で最も"難しい"定理に出会うことになる. その定理は今までやってきたほぼ自明な
+ものと違って, 幾何学的な直感がなければその定理に辿り着くことはない. 
+
+\begin{theorem}[Urysohnの補題]
+\label{theorem:Urysohn}
+  $\left( X , \mathcal{O}_{X} \right)$ を正規空間とする. $A,B \subseteq X$を$A \cap B = \emptyset$を
+  満たす閉集合とする. この時, ある連続函数$f :X \to [0,1]$が存在して, $f|_A \equiv 0, f|_B \equiv 1$を満たす. 
+\end{theorem}
+
+まず証明の方針を述べておく. やりたいことは$X$上の等高線図を描くことである.  $A$を等高線0の地域$A_0$, 
+ $B$を高さ $1$の高原$A_1$だと思. 正規空間の言い換えから等高線 $\frac{1}{2}$ の集合$U_{\frac{1}{2}}$ が取れる. 
+ その閉包$A_{\frac{1}{2}}$とする. このプロセスですべての既約分数$\frac{p}{q}$で表示される有理数に対応する$A_{\frac{p}{q}}$ を数の大小関係で
+ 集合の包含関係を保つ順序で構成して, 函数$f$を各点 $x$に対して,  $x$を含む $A_{\frac{p}{q}}$ の$\frac{p}{q}$ の下限として定めればよい. 
+ 最後にこれが連続であることを示せば定理が従う. 
+\begin{proof}
+%\label{proof:}
+  $X$が正規空間なので, $A\subseteq U_1, \cl{U_1} \subseteq X \setminus B $を満たす開集合$U_1$が存在する. これを一つ取る. 
+  更に, $A \subseteq U_0, \cl{U_0} \subseteq U_1$を満たす開集合$U_0$が存在する. 
+  これを固定する. 
+
+  $(0,1)$上の有理数を$\{q_k\} _{k \in \mathbb{N}}$ で番号づける. (これができるのは集合論の教科書を参照すればわかるBernsteinの定理と呼ばれている)
+  開集合$U_{q_0}$ が存在して, $\cl{U_0} \subseteq U_{q_0}$ かつ$\cl{U_{q_0}} \subseteq U_1$を満たす. 
+  この$U_{q_0}$ を取る. 今, $U_{q_0}, \ldots , U_{q_{k}} $がすべて定義できたとする. 
+  次に$U_{q_{k+1}}$ を構成する. $\{0, q_0, \ldots, q_k ,1\} $ の中で, $a$を $q_{k+1}$ を超えない最大の数, 
+  $b$を$q_{k+1}$ 以上の最小の数とする. 再び$X$の正規性を利用することで,  $\cl{U_a} \subseteq U_{q_{k+1}}, \cl{U_{q_{k+1}}} \subseteq U_b$を満たす開集合$U_{q_{k+1}}$ が存在する. これを$U_{q_{k+1}}$ と定める. 
+  帰納的に$(0,1)$上のすべての有理数$q$に対して,  $U_{q}$ が定まる. 
   
+  次に任意の有理数$p$に対し,  
+  $$U_p \coloneqq \begin{cases}
+    \emptyset, \quad &p<0 \\
+    X, \quad &p>1
+  \end{cases}
+  $$
+  と拡張する. 
+
+  この列は構成より, 任意の$p<q$を満たす有理数に対して,  $\cl{U_p} \subseteq U_q $が成立する. 
+$X$上の函数 $f$を $x \mapsto \inf \{q  \mid x \in U_q\} $ と定める. これが所望の函数であることの証明を読者の演習問題にする. 
+
+\end{proof}
+
+次に, 距離空間の分離性について学習する. 
+
+\begin{proposition}
+\label{proposition:m-sp}
+  $\left( X,d \right) $ を距離空間とする. この時, $X$が正規空間である. 
+\end{proposition}
+
+\begin{proof}
+%\label{proof:}
+  $A,B$を $A \cap B = \emptyset$を満たす閉集合とする. この時, 任意の$x \in A$に対して, 
+  $r_x \coloneqq \inf \{d(x,y) | y \in B\} >0 $. これにより, $\{B_d(x, \frac{r_x}{3})\}_{x \in A} $ が
+  $A$の開被覆である.  同様に任意の$y \in B$に対して, $r_y \coloneqq \inf \{d(y,x) | x\in A\} >0$. 
+  これを用いて, $\{B_d(y,\frac{r_y}{3})\} _{y \in B}$ が$B$ の開被覆になる. 
+  $U \coloneqq \bigcup_{x \in A}B_d(x, \frac{r_x}{3}), V \coloneqq \bigcup_{y \in B}B_d(y , \frac{r_y}{3})  $ と定めて, 
+  $U \cap V = \emptyset$であることの証明を読者に任せる. 
+\end{proof}
+
+距離化可能性を理解するには局所有限という概念を習得する必要がある. それに局所有限性が今後の微分可能多様体論における
+1の分割という概念と深く関わっている. とりあえず定義だけを先にしておくことにする. 
+
+\begin{definition}
+%\label{definition:}
+  $\left( X , \mathcal{O}_{X} \right)$ に対し, $\mathcal{A} \subseteq \mathcal{P}(X)$とする. 
+  $\mathcal{A}$ が局所有限(\textbf{locally finite})であるとは, 任意の$x \in X$に対して, 
+  ある$U \in \mathcal{O}_X$が存在して, $\{A \in \mathcal{A} \mid A \cap U \neq \emptyset\} $ が
+  有限集合である時をいう.
+\end{definition}
+
+局所有限性を持つ集合族は閉包との相性がよい. 以下の命題から実感してみよう. 
+
+\begin{proposition}
+%\label{proposition:}
+   $\left( X , \mathcal{O}_{X} \right)$の局所有限な部分集合族$\mathcal{A}$ に対し, 
+   以下の命題が成立する: 
+   \begin{enumerate}
+     \item $\mathcal{B} \subseteq \mathcal{A}$ ならば, $\mathcal{B}$ も局所有限.
+     \item $\tilde{\mathcal{A}} \coloneqq \{\cl{A}  \mid  A \in \mathcal{A}\} $ も局所有限.
+     \item $\bigcup_{A \in \mathcal{A}}\cl{A}  = \cl{\bigcup_{A \in \mathcal{A}} A} $.
+   \end{enumerate}
+\end{proposition}
+
+\begin{proof}
+%\label{proof:}
+  一番目が明らか. 二番目は開集合と$A$の閉包と交わるなら $A$との共通部分ももちろん空ではないことより
+  簡単にわかる. 
+  
+  三番目だけを証明する. $\subseteq $の部分は閉包の特徴づけDefinition \ref{def:cl-op} より直ちに従う. 
+  $x \in \cl{\bigcup_{A \in \mathcal{A}} A}$を任意に取る. この時, $\forall U \in \mathcal{U}_x; U \cap \bigcup_{A \in \mathcal{A}} A \neq \emptyset$
+  が成立する. $U$を $\mathcal{A}$ の有限個の要素$A_1,\ldots, A_k $ としか交わらない開集合として取る. 
+
+  もし, $x \not\in  \bigcup_{i=1} ^k \cl{A_i} $だったら, $U \setminus \bigcup_{i=1}^k \cl{A_i} $ が
+   $\bigcup_{A \in \mathcal{A}} A  $ との共通部分が空な$x$の開近傍になる. これが矛盾を導く. 
+\end{proof}
+
+
+\begin{definition}
+%\label{definition:}
+  $\left( X , \mathcal{O}_{X} \right)$ の部分集合族$\mathcal{B}$ が可算局所有限である
+  とは$\mathcal{B} = \bigcup_{n \in \mathbb{N}} \mathcal{B}_n$の形で書ける. ここで, 任意の
+  $n \in \mathbb{N}$に対して, $\mathcal{B}_n$が局所有限である.
+\end{definition}
+
+\begin{definition}
+%\label{definition:}
+  $\mathcal{A}$ を$\left( X , \mathcal{O}_{X} \right)$の部分集合族であるとする.  $\mathcal{B}$ が$\mathcal{A}$ の細分(\textbf{refinement})であるとは, 
+  $\forall  B \in \mathcal{B}, \exists A \in \mathcal{A}, B \subseteq A$ を満たす時をいう. 
+
+  $\mathcal{B} \subseteq \mathcal{O}_X$ の時, $\mathcal{A}$ の開細分といい, 
+  $\mathcal{B} \subseteq \mathcal{C}_X$ の時, $\mathcal{A}$ の閉細分という.
+
+\end{definition}
+
+\begin{lemma}
+\label{lemma:open-refinement}
+  $\left( X , d\right)$ を距離空間とする. $\mathcal{A}$ を$X$の開被覆とする. この時, 
+   $\mathcal{A}$ の可算局所有限な開細分で, $X$を被覆するような開部分集合族 $\mathcal{E}$ が
+   存在する. 
+\end{lemma}
+
+\begin{proof}
+%\label{proof:}
+  $\mathcal{A}$ 上の整列順序$<$を一つ固定する. $n \in \mathbb{N}$を任意に一つ固定する. 
+  $U \in \mathcal{A}$に対し, $S_n(U) \coloneqq \{x  \mid B_d(x, 1/ 2^n ) \subseteq U\} $ とする. 
+   次に, 整列順序$<$ を用いて, $T_n(U) \coloneqq S_n(U) \setminus \bigcup_{V < U} V $ として
+   定める. 
+   $E_n(U) \coloneqq \bigcup_{x \in T_n(U)}B_d(x,1/8^n)  $ とする.
+
+   最後に, $\mathcal{E}_n \coloneqq \{E_n(U)  \mid U \in \mathcal{A}\} $ とする. 
+   $\mathcal{E}\coloneqq \bigcup_{n \in \mathbb{N}} \mathcal{E}_n$ が所望の集合族である. この事実をcheckせよ.
+\end{proof}
+
+実は上記の補題まで距離空間の特徴づけとなる性質をほぼすべて確認した. 次にそれらの性質を
+満たす位相空間に距離構造を入れることを考えよう. 
+
+\begin{definition}
+%\label{definition:}
+  位相空間$\left( X , \mathcal{O}_{X} \right)$ の部分集合$A$が $G_{\delta}$ 集合であるとは, 
+  $A$が可算個の開集合の共通部分で表せる時をいう.
+  
+\end{definition}
+
+\begin{lemma}
+\label{lemma:local-regular-normal}
+  $\left( X , \mathcal{O}_{X} \right)$ を可算局所有限な開基$\mathcal{B}$ を持つ正則空間とする. 
+  この時, $X$が正規空間で, すべての閉集合が $G_{\delta}$ 集合である. 
+\end{lemma}
+
+\begin{proof}
+%\label{proof:}
+  証明は開集合からスタートする. 任意の開集合$W$が可算個の閉集合の和で書けることを示せば, 
+  補集合を取る操作で, もとの主張が従う. 
+  では $\mathcal{B}= \bigcup_{n \in \mathbb{N}} \mathcal{B}_n$ とする. $n \in \mathbb{N}$に
+  対して, $\mathcal{C}_n \coloneqq \{B \in \mathcal{B}_n \mid \cl{B} \subseteq W\} $ 
+  と定める. $U_n \coloneqq \bigcup_{B \in \mathcal{C}_n} B$とおく.
+
+  この時, 局所有限性から,  $\cl{U}_n = \bigcup_{B \in \mathcal{B}_n}\cl{B} $が成立する. 
+  正則性と合わせて, 
+   \begin{equation*}
+    \begin{aligned}
+      \bigcup_{n \in \mathbb{N}}U_n \subseteq \bigcup_{n \in \mathbb{N}} \cl{U}_n \subseteq W  
+    \end{aligned}
+  \end{equation*}
+  が成立する.
+
+
+  最後に, $X$が正規空間であることを示す: 
+  $C,D$を $C \cap D = \emptyset$を満たす閉集合とする. 先ほどの証明まで, $X \setminus D$を
+  $\bigcup_{n \in \mathbb{N}} U_n = \bigcup_{n \in  \mathbb{N}} \cl{U}_n = X\setminus D$
+  を満たす開集合列$ \{U_n\}_{n \in \mathbb{N}} $ が取れる. これが$C$を被覆して, かつ
+  $\cl{U} \cap D = \emptyset$が成立する. 同じように, $X \setminus C$に対して, 
+  開集合の列$\{V_n\}_{n \in \mathbb{N}} $ を取って, 
+  任意の$n \in \mathbb{N}$に対し, 
+  \begin{equation*}
+    \begin{aligned}
+      U'_n \coloneqq U_n \setminus \bigcup_{i \leq n} \cl{V}_i, \quad V'_n \coloneqq V_n \setminus \bigcup_{i \leq n} \cl{U}_i  
+    \end{aligned}
+  \end{equation*}
+  と定める. $U' \coloneqq \bigcup_{n \in \mathbb{N}} U'_n, V'\coloneqq \bigcup_{n \in \mathbb{N}} V'_n$
+  が$C,D$を分離する開集合となる. 
+\end{proof}
+
+\begin{lemma}
+\label{lemma:closed-continuous}
+  $X$を正規空間とする.  $A$を $G_{\delta}$ 集合とする. この時, $f|_A \equiv 0, f(x)>0 (\forall x \not\in A)$を満たす
+  連続函数$f:X \to [0,1]$が存在する.
+\end{lemma}
+
+\begin{proof}
+%\label{proof:}
+  $A\coloneqq \bigcap_{n \in \mathbb{N}} U_n$を満たす開集合列を取り, Theorem \ref{theorem:Urysohn}
+  より, 連続函数$f_n : X\to [0,1]$が存在して, $f_n |_A \equiv 0 , f_n |_{X \setminus U_n} \equiv 1$ を
+  満たすものが存在する. よって, $f\coloneqq \sum_{n \in \mathbb{N}} f_n /2^n $ が所望の連続函数. 
+  (これの連続性はWeierstrass のM-testによりわかる)
+\end{proof}
+
+以上の準備を持って, 距離化可能性の必要十分条件を考えよう. 
+気持ちとしては等高線図を重ね合わせること. 
+
+\begin{theorem}
+%\label{theorem:}
+  $\left( X , \mathcal{O}_{X} \right)$ が距離化可能であることと$X$が正則空間かつ
+  可算局所有限開基をもつことと同値である. 
+\end{theorem}
+
+\begin{proof}
+%\label{proof:}
+  $\implies$Proposition \ref{proposition:m-sp}とLemma \ref{lemma:open-refinement}
+  より従う. 
+
+  $X$が正則かつ可算局所有限開基$\mathcal{B}= \bigcup_{n \in \mathbb{N}} \mathcal{B}_n$をもつとする. 
+  この時, $B \in \mathcal{B}_n$に対して, Lemma \ref{lemma:closed-continuous} を
+  適用することより, 連続函数
+  \begin{equation}
+    \begin{aligned}
+      f_{n,B}: X \to  [0, 1/2^n]
+    \end{aligned}
+  \end{equation} 
+  が存在して, $f_{n,B}|_B >0, f_{n,B}|_{X \setminus B} \equiv 0$ を満たす. $J\coloneqq \{(n,B)  \mid B \in \mathcal{B}_n, n \in \mathbb{N}\} $
+  と定める. $F:X \to [0,1]^J$を, $x \mapsto (f_{n,B}(x))_{(n,B) \in J}$ とする. 
+  今, $[0,1]^J$に直積位相を入れた状態で話を進める.  $F$が像への開写像であることを示す. 
+  任意の $(n,B) \in J$に対して, $F(B)$ が$F(X)$上の開集合であることを示す. 
+  $\pi_{(n,B)} : [0,1]^J \to [0,1]$ を自然な射影とする. $\pi_{(n,B)}^{-1}((0,1]) \cap F(X) = F(B)$ 
+  であることに注意すれば, $F(B)$が $F(X)$上の開集合であることがわかる. (check せよ)
+
+  最後に連続性を示す:  $[0,1]^J$上の距離$\rho$を 
+  \begin{equation}
+    \begin{aligned}
+      \rho (x,y) \coloneqq \sup_{(n,B) \in J}| x_{(n,B)} - y _{(n,B)}|
+    \end{aligned}
+  \end{equation} 
+  とする. この距離から定める位相は直積位相より強い. (checkせよ)
+
+  $x \in X, \varepsilon >0$を任意に取り, $1/2^N \leq \varepsilon /4 $を満たす $N$を一つ取る. 
+  $\mathcal{B}$ が可算局所有限なので, ある$x$の開近傍$U$ が存在して, $A\coloneqq \{(n,B)  \mid n \leq N, B \cap U \neq \emptyset \} $ 
+  が有限集合となる. 
+  $f_{n,B}$ が連続なので, $A$が有限であることと合わせると, ある $x$の開近傍 $V$が存在して, 
+   $|f_{n,B}(x) - f_{n,B}(y)| \leq \varepsilon /2, \forall (n,B) \in A, \forall y \in V$が成立する. 
+
+   $n >N$の時,  $f_{n,B}(x) \leq \varepsilon /4 , \forall x \in X$ なので, 
+   \begin{equation}
+     \begin{aligned}
+       \rho (F(x) ,F(y)) \leq \varepsilon , \forall y \in V
+     \end{aligned}
+   \end{equation} 
+   が成立する. よって連続性が従い, $F: X \to F(X)$が同相写像で, $F(X)$が距離空間の部分空間で $X$が距離化可能である. 
+
+
+
+\end{proof}
+ 
+
+\section{パラコンパクト性}
+
+\begin{definition}
+%\label{definition:}
+  $\left( X , \mathcal{O}_{X} \right)$ がパラコンパクト(\textbf{paracompact})
+  であるとは, $X$の任意の開被覆 $\mathcal{A}$ に対して, 局所有限な開被覆となるような細分$\mathcal{B}$ が存在する
+  時をいう.
+\end{definition}
+
+
+\begin{proposition}
+%\label{proposition:}
+  すべてのパラコンパクトなハウスドルフ空間が正規空間である. 
 \end{proposition}
 
 
+\begin{proof}
+%\label{proof:}
+  ここで, 正則空間であることの証明のみを与える. (正規空間の部分は同じ方法で証明できるので演習問題にする)
+  $a \in X$, $B \subseteq X$を$a$を含まない閉集合とする. 任意の$b \in B$に対して, 
+  $X$のハウスドルフ性より, ある $U_b$が存在して,  $a \not \in \cl{U}_b$, 
+  $\{U_b  \mid b \in B\} \cup \{X \setminus B\}  $ が$X$の開被覆をなす. パラコンパクト性
+  より局所有限な$X$の開被覆 となるような細分$\mathcal{C}$ が取れる. 
+  $\mathcal{D}\coloneqq \{C \in \mathcal{C} \mid C \cap B \neq \emptyset\} $ 
+  とする. この時, $V\coloneqq \bigcup_{D \in \mathcal{D}}D $ として, 局所有限性より
+  $\cl{V} = \bigcup_{D \in \mathcal{D}} \cl{D} $ が成立する. 
+  $a \not \in \cl{V}$で(なぜか考えてみよう, 細分の定義を思い出そう)証明終了. 
+
+\end{proof}
+
+\begin{lemma}
+%\label{lemma:}
+  $X$を
+\end{lemma}
 
 
+\begin{thebibliography}{99}
+	\bibitem{munkres} James R. Munkres 
+	\newblock{\em Topology 2nd}.
 
-
-
-
-
-
-
-
-
-
-
-
+	\bibitem{uchida} 内田伏一 
+	\newblock{『集合と位相』}.
+\end{thebibliography}
 
 
 

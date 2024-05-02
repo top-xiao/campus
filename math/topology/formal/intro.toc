@@ -6,15 +6,18 @@
 \contentsline {section}{\numberline {1.3}閉集合, 集積点, 内部, 閉包, 近傍, 境界}{13}{section.1.3}%
 \contentsline {section}{\numberline {1.4}連続写像}{18}{section.1.4}%
 \contentsline {section}{\numberline {1.5}直積位相}{21}{section.1.5}%
-\contentsline {section}{\numberline {1.6}Metric Topology}{23}{section.1.6}%
-\contentsline {section}{\numberline {1.7}商位相}{24}{section.1.7}%
-\contentsline {section}{\numberline {1.8}位相構造}{25}{section.1.8}%
-\contentsline {chapter}{\numberline {第2章}連結性とコンパクト性}{31}{chapter.2}%
-\contentsline {section}{\numberline {2.1}連結性}{31}{section.2.1}%
-\contentsline {section}{\numberline {2.2}実数の連続性と弧状連結}{33}{section.2.2}%
-\contentsline {section}{\numberline {2.3}連結成分と局所連結}{34}{section.2.3}%
-\contentsline {section}{\numberline {2.4}コンパクト性}{36}{section.2.4}%
-\contentsline {section}{\numberline {2.5}実数上のコンパクト空間}{40}{section.2.5}%
-\contentsline {section}{\numberline {2.6}集積点コンパクト性}{42}{section.2.6}%
-\contentsline {section}{\numberline {2.7}局所コンパクト性とコンパクト化}{44}{section.2.7}%
-\contentsline {chapter}{参考文献}{47}{chapter*.3}%
+\contentsline {section}{\numberline {1.6}Metric Topology}{22}{section.1.6}%
+\contentsline {section}{\numberline {1.7}商位相}{23}{section.1.7}%
+\contentsline {section}{\numberline {1.8}位相構造}{24}{section.1.8}%
+\contentsline {chapter}{\numberline {第2章}連結性とコンパクト性}{29}{chapter.2}%
+\contentsline {section}{\numberline {2.1}連結性}{29}{section.2.1}%
+\contentsline {section}{\numberline {2.2}実数の連続性と弧状連結}{31}{section.2.2}%
+\contentsline {section}{\numberline {2.3}連結成分と局所連結}{32}{section.2.3}%
+\contentsline {section}{\numberline {2.4}コンパクト性}{34}{section.2.4}%
+\contentsline {section}{\numberline {2.5}実数上のコンパクト空間}{38}{section.2.5}%
+\contentsline {section}{\numberline {2.6}集積点コンパクト性}{40}{section.2.6}%
+\contentsline {section}{\numberline {2.7}局所コンパクト性とコンパクト化}{42}{section.2.7}%
+\contentsline {chapter}{\numberline {第3章}距離化可能性とパラコンパクト性}{45}{chapter.3}%
+\contentsline {section}{\numberline {3.1}距離化可能性}{45}{section.3.1}%
+\contentsline {section}{\numberline {3.2}パラコンパクト性}{49}{section.3.2}%
+\contentsline {chapter}{参考文献}{51}{chapter*.3}%
