@@ -9,48 +9,52 @@ def env(name):
 endglobal
 
 
+
 snippet template "Basic template" b
-\documentclass[dvipdfmx]{$1}
-\usepackage[dvipdfmx]{graphicx}
-\usepackage{float}
-\usepackage{framed}
+\RequirePackage{luatex85}
+\documentclass{ltjs$1}
+\usepackage{luatexja}
+\usepackage{mathtools}
+\usepackage{xcolor}
+\usepackage{mathrsfs}
 \usepackage{pifont}
-\usepackage[dvipdfmx,hidelinks]{hyperref}
-\usepackage{pxjahyper}
 \usepackage{bm}
 \usepackage{tikz}
+\usepackage{dsfont}
 \usepackage{amsmath}
 \usepackage{amsfonts}
 \usepackage{amssymb}
 \usepackage{amsthm}
 \usepackage[all]{xy}
-\usepackage[english]{babel}
-\usepackage{import}
-\usepackage{xifthen}
-\usepackage{pdfpages}
-\usepackage{transparent}
-\newcommand{\cl}[1]{\overline{ #1}  }
-\newcommand{\Int}[1]{#1 ^{\mathrm{o}} }
+\usepackage{bookmark}
+\usepackage{xurl}
+\hypersetup{unicode,bookmarksnumbered=true,hidelinks,final} 
+\newcommand{\cl}[1]{\overline{ #1}  } 
+\newcommand{\Int}[1]{#1 ^{ o } }
 \newcommand{\bd}[1]{\operatorname{Bd}{#1}}
 \newtheorem{theorem}{Theorem}[section]
-\newtheorem{corollary}{Corollary}[theorem]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
 \newtheorem{lemma}[theorem]{Lemma}
-\newtheorem{definition}{Definition}[section]
-\newtheorem{claim}{Claim}[section]
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{claim}[theorem]{Claim}
 \theoremstyle{remark}
-\newtheorem{remark}{Remark}[section]
-\theoremstyle{plain}
-\newtheorem{example}{Example}[section]
-\newtheorem{exercise}{Exercise}[section]
-\newcommand{\incfig}[1]{%
-    \includegraphics{~/Documents/campus/math/eps/topology/1st/#1.eps}
-}
+\newtheorem{remark}{Remark}
+\theoremstyle{plain} 
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
 
+\newcommand{\jtoday}{\number \year 年 \number \month 月 \number \day 日}
+
+\everymath{\displaystyle}
 \begin{document}
-\title{$2}
-\author{$3}
-\date{${4:\today}}
-	$0
+\centerline{\Large $2}
+\rightline{Arnold Robinson (鄒暁城)}
+\rightline{\jtoday}
+%\maketitle
+% \setcounter{chapter}{-1}
+% \tableofcontents
+$0
 \end{document}
 endsnippet
 
@@ -130,9 +134,11 @@ else:
 endsnippet
 
 snippet dm "Math" wA
-\[
-${1:${VISUAL}}
-.\] $0
+\begin{equation}
+	\begin{aligned}
+		${1:${VISUAL}}
+	\end{aligned}
+\end{equation} $0
 endsnippet
 
 snippet ali "Align" bA
@@ -504,15 +510,17 @@ snippet \\\ "setminus" iA
 \setminus
 endsnippet
 
+context "math()"
 snippet >> ">>" iA
 \gg
 endsnippet
 
+context "math()"
 snippet << "<<" iA
 \ll
 endsnippet
 
-
+context "math()"
 snippet ~~ "~" iA
 \sim 
 endsnippet
@@ -522,6 +530,7 @@ snippet set "set" wA
 \\{$1\\} $0
 endsnippet
 
+context "math()"
 snippet || "mid" iA
  \mid 
 endsnippet
@@ -532,6 +541,7 @@ snippet cc "subset" Ai
 \subseteq 
 endsnippet
 
+context "math()"
 snippet notin "not in " iA
 \not\in 
 endsnippet
@@ -541,46 +551,57 @@ snippet inn "in " iA
 \in 
 endsnippet
 
-snippet NN "n" iA
+context "math()"
+snippet \N "natural number" iA
 \mathbb{N}
 endsnippet
 
-snippet Nn "cap" iA
+context "math()"
+snippet NN "cap" iA
 \cap 
 endsnippet
 
+context "math()"
 snippet UU "cup" iA
 \cup 
 endsnippet
 
+context "math()"
 snippet uuu "bigcup" iA
 \bigcup_{${1:i \in ${2: I}}} $0
 endsnippet
 
+context "math()"
 snippet nnn "bigcap" iA
 \bigcap_{${1:i \in ${2: I}}} $0
 endsnippet
 
+context "math()"
 snippet OO "emptyset" iA
 \emptyset
 endsnippet
 
+context "math()"
 snippet RR "real" iA
 \mathbb{R}
 endsnippet
 
+context "math()"
 snippet QQ "Q" iA
 \mathbb{Q}
 endsnippet
 
+context "math()"
 snippet ZZ "Z" iA
 \mathbb{Z}
 endsnippet
 
+context "math()"
 snippet <! "normal" iA
 \triangleleft 
 endsnippet
 
+context "math()"
 snippet <> "hokje" iA
 \diamond 
 endsnippet
@@ -646,11 +667,12 @@ snippet letw "let omega" iA
 Let $\Omega \subset \C$ be open.
 endsnippet
 
-
+context "math()"
 snippet HH "H" iA
 \mathbb{H}
 endsnippet
 
+context "math()"
 snippet DD "D" iA
 \mathbb{D}
 endsnippet
@@ -658,4 +680,69 @@ endsnippet
 context "math()"
 snippet top "topological space" iA
 \left( $1 , \mathcal{T}_{$1} \right)
+endsnippet
+
+context "math()"
+snippet @a "alpha" iA
+\alpha 
+endsnippet
+
+context "math()"
+snippet @b "beta" iA
+\beta 
+endsnippet
+
+context "math()"
+snippet @l "lambda" iA
+\lambda  
+endsnippet
+
+context "math()"
+snippet @L "Lambda" iA
+\Lambda 
+endsnippet
+
+context "math()"
+snippet @f "varphi" iA
+\varphi 
+endsnippet
+
+context "math()"
+snippet @e "varepsilon" iA
+\varepsilon 
+endsnippet
+
+context "math()"
+snippet @p "psi" iA
+\varpsi 
+endsnippet
+
+context "math()"
+snippet @z "zeta" iA
+\zeta 
+endsnippet
+
+context "math()"
+snippet @g "gamma" iA
+\gamma 
+endsnippet
+
+context "math()"
+snippet @i "iota" iA
+\iota 
+endsnippet
+
+context "math()"
+snippet @t "tau" iA
+\tau 
+endsnippet
+
+context "math()"
+snippet mu "mu" iA
+\mu 
+endsnippet
+
+context "math()"
+snippet nu "nu" iA
+\nu 
 endsnippet
