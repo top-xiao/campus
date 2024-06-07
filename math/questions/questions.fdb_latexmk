@@ -1,5 +1,5 @@
 # Fdb version 4
-["lualatex"] 1717685346.32861 "questions.tex" "questions.pdf" "questions" 1717685347.7426 0
+["lualatex"] 1717768701.95311 "questions.tex" "questions.pdf" "questions" 1717768703.46791 0
   "/home/arnold/.texlive2024/texmf-var/luatex-cache/generic/fonts/otl/haranoajigothic-medium.luc" 1717642265.95656 1924615 e21c5ee4ca568cb907556e3bdf364263 ""
   "/home/arnold/.texlive2024/texmf-var/luatex-cache/generic/fonts/otl/haranoajimincho-regular.luc" 1717642263.46305 2011213 7221fcdccf757c0b43375417e862a944 ""
   "/home/arnold/.texlive2024/texmf-var/luatex-cache/generic/fonts/otl/lmmono9-regular.luc" 1717642263.64378 81875 9c75b3a3df266c2970fc91fab8010b3b ""
@@ -309,9 +309,9 @@
   "/usr/local/texlive/2024/texmf-dist/tex/luatex/luatexja/patches/lltjp-geometry.sty" 1635109274 19234 a1b77f145e2d634350e4e002242d5016 ""
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1716951372 5483668 9e45798515b35c9eab0413928a3e8881 ""
   "/usr/local/texlive/2024/texmf-var/web2c/luahbtex/lualatex.fmt" 1716951488 12269450 be86025241d08155cd3893bd545724b7 ""
-  "questions.aux" 1717685347.58673 1896 976f3cdd1bdbab1f32c61fb330ba6a87 "lualatex"
-  "questions.tex" 1717685345.18672 4230 03904f15cfbc8d15045c6734a5ae6c06 ""
-  "questions.toc" 1717685347.59673 68 8a3524d203bda84cedefacc0e00e91c9 "lualatex"
+  "questions.aux" 1717768703.30608 1896 0b9a3e3ecc574c1f775f73b8a49a802c "lualatex"
+  "questions.tex" 1717768701.72615 4250 8b224eafb6808cdc73986c8c6cb6cc0b ""
+  "questions.toc" 1717768703.30608 68 8a3524d203bda84cedefacc0e00e91c9 "lualatex"
   (generated)
   "questions.aux"
   "questions.log"

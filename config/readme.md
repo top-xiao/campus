@@ -1,7 +1,7 @@
 You need down load qpdf and ripgrep in advance.
 $sudo apt install python3-pip
 $pip3 install pynvim neovim-remote
-
+$sudo apt install python3-full
 
 
 " Starting server for LaTeX inverse search.

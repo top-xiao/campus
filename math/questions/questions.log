@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.5.29)  6 JUN 2024 23:49
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.5.29)  7 JUN 2024 22:58
  system commands enabled.
  file:line:error style messages enabled.
 **questions.tex
@@ -1080,15 +1080,15 @@ L3 programming layer <2024-05-08>
 
 Here is how much of LuaTeX's memory you used:
  27230 strings out of 476324
- 156560,1977958 words of node,token memory allocated
+ 156564,1977958 words of node,token memory allocated
  1302 words of node memory still in use:
    11 hlist, 2 vlist, 6 rule, 2 glue, 5 kern, 1 glyph, 231 attribute, 82 glue_spec, 35 attribute_list, 3 write, 17 user_defined nodes
-   avail lists: 1:41,2:37465,3:562,4:354,5:225,6:58,7:6582,8:24,9:2680,10:34,11:12
+   avail lists: 1:39,2:37441,3:562,4:354,5:225,6:58,7:6582,8:24,9:2680,10:34,11:12
  48653 multiletter control sequences out of 65536+600000
  68 fonts using 34028959 bytes
  110i,10n,115p,3241b,344s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/local/texlive/2024/texmf-dist/fonts/opentype/public/haranoaji/HaranoAjiGothic-Medium.otf></usr/local/texlive/2024/texmf-dist/fonts/opentype/public/lm/lmroman10-bold.otf></usr/local/texlive/2024/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf></usr/local/texlive/2024/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf></usr/local/texlive/2024/texmf-dist/fonts/opentype/public/haranoaji/HaranoAjiMincho-Regular.otf></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on questions.pdf (1 page, 122529 bytes).
+Output written on questions.pdf (1 page, 122523 bytes).
 
 PDF statistics: 96 PDF objects out of 1000 (max. 8388607)
  70 compressed objects within 1 object stream
