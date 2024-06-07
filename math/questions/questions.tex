@@ -1,0 +1,78 @@
+\RequirePackage{luatex85}
+\documentclass[lualatex]{exam}
+\usepackage{luatexja}
+\usepackage{mathtools}
+\usepackage{xcolor}
+\usepackage{mathrsfs}
+\usepackage{pifont}
+\usepackage{bm}
+\usepackage{tikz}
+\usepackage{dsfont}
+\usepackage{amsmath}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage[all]{xy}
+\usepackage{bookmark}
+\usepackage{xurl}
+\hypersetup{unicode,bookmarksnumbered=true,hidelinks,final} 
+\newcommand{\cl}[1]{\overline{ #1}  } 
+\newcommand{\Int}[1]{#1 ^{ o } }
+\newcommand{\bd}[1]{\operatorname{Bd}{#1}}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{definition}[theorem]{Definition}
+\newtheorem{claim}[theorem]{Claim}
+\theoremstyle{remark}
+\newtheorem{remark}{Remark}
+\theoremstyle{plain} 
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
+
+\newcommand{\jtoday}{\number \year 年 \number \month 月 \number \day 日}
+
+\everymath{\displaystyle}
+\begin{document}
+\centerline{\Large 数学科の学部生ができた方がいい問題集 }
+\rightline{Arnold Robinson}
+\rightline{\jtoday}
+%\maketitle
+% \setcounter{chapter}{-1}
+\tableofcontents
+この文章は作者が数学の学部教育を受けて, このぐらいの問題だったらみんな全員できた方が
+いいよなと思いながら作った問題集である. 大雑把にいうと, この問題集は学部3年までの
+授業で習う知識の中で最も基礎的な常識さえ理解していれば解ける問題ばっかりである.
+問題は分野ごとに分けられていて, 線形代数学, 位相数学, ヒルベルト空間論, 群論, 可換環論, 多様体論, 
+複素函数論, ルベーグ積分論, フーリエ解析という構成で展開される. 前半の問題は
+具体的な計算より, 抽象論を重視するものが多く. 後半では, 理論より応用を重視する. 
+この問題集で出てくる問題は大きい定理の証明を分割して出題しているので, 一個一個の問題は
+あんまり苦労せずすんなり解けるはず. さらに, これらの問題をクリアすることで, 多くの定理の証明
+が自力に完成できたということに近いので, 自信をつけるにはちょうどいいのではないかと思う. 
+
+この問題集の問題を解くことにあたって選択公理を自由に用いて良い. (選択公理警察は近寄らないでください)
+\section{線形代数}
+このsectionでは体$k$と体$k$上のベクトル空間 $V$を固定する. ベクトル空間がすべて$k$上の
+有限次元なものとする. すべての線形写像が$k$-線形写像とする. 
+\begin{questions}
+  \question 体と体上のベクトル空間の定義を述べよ. 
+  \question $\forall v \in V$に対して, $-v = (-1)v$をベクトル空間の公理を用いて示せ.
+  \question $V$上のベクトルの組 $\left( v_1, v_2, \ldots, v_n \right) $ が一次独立, 
+  $\left( w_1, \ldots ,w_n \right) $ が$V$を生成するとする. この時,  $m \leq n$が成立することを
+  示せ. これをもってベクトル空間の次元がwell-definedであることを示せ.
+  \question $f:V \to W$を線形写像とする. $\dim \ker f + \dim \mathrm{Im} f= \dim V$であることを示せ. 
+  \question $f:V\to W$を線形写像とする. 
+   \begin{enumerate}
+    \item $f$が単射 $\iff \ker f = \{0\} $ 
+    \item $f$が全射 $\iff \mathrm{Im}f =W$
+  \end{enumerate}
+  を示せ. 
+  \question すべてのベクトル空間が基底を持つことをZornの補題を用いて示せ.
+  \question $V,W$の基底をそれぞれ $\left( v_1,\ldots,v_n \right), \left( w_1, \ldots ,w_m \right)  $ として定める. 
+  線形写像$f:V \to W$を固定する. 行列$A \coloneqq \left( a_{ij} \right)_{\substack{1\leq i \leq m \\  1 \leq j \leq n}} $ を$f(v_j) = \sum_{i=1}^{n} a_{ij} w_i$を満たすように定義する. 
+  この時, 線形写像$\varphi : k^n \to k^m, x \mapsto Ax $が定義できて, $\mathrm{rank} A \coloneqq \dim \mathrm{Im}\varphi  $とする. 
+  $\dim \mathrm{Im}f = \mathrm{rank}A$を示せ.
+\end{questions}
+
+\end{document}

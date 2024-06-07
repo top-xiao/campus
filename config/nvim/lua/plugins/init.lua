@@ -18,6 +18,7 @@ return {
   	"neovim/nvim-lspconfig",
   --ultisnips
  	 "SirVer/ultisnips",
+    "honza/vim-snippets",
   --tex-conceal
  	 "KeitaNakamura/tex-conceal.vim",
   --

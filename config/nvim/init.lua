@@ -16,7 +16,7 @@ vim.opt.rtp:prepend(lazypath)
 --keybindings
 require("keybindings")
 --lazy-plugins
-require("lazy").setup("plugins")
+require("lazy").setup("plugins",opt)
 --foundation
 require("basic")
 --colorscheme
