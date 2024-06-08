@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.5.29)  7 JUN 2024 22:58
+This is LuaHBTeX, Version 1.18.0 (TeX Live 2024)  (format=lualatex 2024.5.29)  8 JUN 2024 15:45
  system commands enabled.
  file:line:error style messages enabled.
 **questions.tex
@@ -1070,7 +1070,12 @@ LaTeX Font Info:    Font shape `JY3/gt/m/n' will be
  [1
 
 {/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map}]
-This exam contains 7 questions with 0 parts, 0 subparts, and 0 subsubparts.
+Overfull \hbox (20.79437pt too wide) in paragraph at lines 177--181
+[]$\OML/cmm/m/it/10 v[]; [] ; v[] \OMS/cmsy/m/n/10 2 \OML/cmm/m/it/10 W[]$ |\JY3/mc/m/n/10 を $\OMS/cmsy/m/n/10 f[]\OML/cmm/m/it/10 ; [] ; []\OMS/cmsy/m/n/10 g$ |\JY3/mc/m/n/10 が $\OML/cmm/m/it/10 W[]=[]$ |\JY3/mc/m/n/10 の |基 |底 |と |な |る |よ |う |に |取 |る\TU/lmr/m/n/10 . |\JY3/mc/m/n/10 こ |の |時\TU/lmr/m/n/10 , $\OMS/cmsy/m/n/10 f[]\OML/cmm/m/it/10 ; [] ; []\OMS/cmsy/m/n/10 g$
+ []
+
+[2]
+This exam contains 17 questions with 14 parts, 0 subparts, and 0 subsubparts.
 (./questions.aux)
  ***********
 LaTeX2e <2023-11-01> patch level 1
@@ -1079,19 +1084,19 @@ L3 programming layer <2024-05-08>
 )
 
 Here is how much of LuaTeX's memory you used:
- 27230 strings out of 476324
- 156564,1977958 words of node,token memory allocated
- 1302 words of node memory still in use:
-   11 hlist, 2 vlist, 6 rule, 2 glue, 5 kern, 1 glyph, 231 attribute, 82 glue_spec, 35 attribute_list, 3 write, 17 user_defined nodes
-   avail lists: 1:39,2:37441,3:562,4:354,5:225,6:58,7:6582,8:24,9:2680,10:34,11:12
- 48653 multiletter control sequences out of 65536+600000
+ 27354 strings out of 476324
+ 244638,1977958 words of node,token memory allocated
+ 1442 words of node memory still in use:
+   11 hlist, 2 vlist, 6 rule, 2 glue, 5 kern, 1 glyph, 290 attribute, 82 glue_spec, 42 attribute_list, 3 write, 19 user_defined nodes
+   avail lists: 1:44,2:52861,3:770,4:444,5:440,6:65,7:8898,8:78,9:3499,10:34,11:15
+ 48752 multiletter control sequences out of 65536+600000
  68 fonts using 34028959 bytes
- 110i,10n,115p,3241b,344s stack positions out of 10000i,1000n,20000p,200000b,200000s
-</usr/local/texlive/2024/texmf-dist/fonts/opentype/public/haranoaji/HaranoAjiGothic-Medium.otf></usr/local/texlive/2024/texmf-dist/fonts/opentype/public/lm/lmroman10-bold.otf></usr/local/texlive/2024/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf></usr/local/texlive/2024/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf></usr/local/texlive/2024/texmf-dist/fonts/opentype/public/haranoaji/HaranoAjiMincho-Regular.otf></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on questions.pdf (1 page, 122523 bytes).
+ 110i,17n,115p,3241b,493s stack positions out of 10000i,1000n,20000p,200000b,200000s
+</usr/local/texlive/2024/texmf-dist/fonts/opentype/public/haranoaji/HaranoAjiGothic-Medium.otf></usr/local/texlive/2024/texmf-dist/fonts/opentype/public/lm/lmroman10-bold.otf></usr/local/texlive/2024/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf></usr/local/texlive/2024/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf></usr/local/texlive/2024/texmf-dist/fonts/opentype/public/haranoaji/HaranoAjiMincho-Regular.otf></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
+Output written on questions.pdf (2 pages, 180292 bytes).
 
-PDF statistics: 96 PDF objects out of 1000 (max. 8388607)
- 70 compressed objects within 1 object stream
- 13 named destinations out of 1000 (max. 131072)
+PDF statistics: 139 PDF objects out of 1000 (max. 8388607)
+ 108 compressed objects within 2 object streams
+ 38 named destinations out of 1000 (max. 131072)
  24 words of extra memory for PDF output out of 10000 (max. 100000000)
 

@@ -73,10 +73,10 @@
   \question $f:V \to W$を線形写像とする. $\dim \ker f + \dim \mathrm{Im} f= \dim V$であることを示せ. 
   
   \question $f:V\to W$を線形写像とする. 
-   \begin{enumerate}
-    \item $f$が単射 $\iff \ker f = \{0\} $ 
-    \item $f$が全射 $\iff \mathrm{Im}f =W$
-  \end{enumerate}
+   \begin{parts}
+    \part $f$が単射 $\iff \ker f = \{0\} $ 
+    \part $f$が全射 $\iff \mathrm{Im}f =W$
+  \end{parts}
   を示せ. 
   
   \question すべてのベクトル空間が基底を持つことをZornの補題を用いて示せ.
@@ -85,6 +85,107 @@
   線形写像$f:V \to W$を固定する. 行列$A \coloneqq \left( a_{ij} \right)_{\substack{1\leq i \leq m \\  1 \leq j \leq n}} $ を$f(v_j) = \sum_{i=1}^{n} a_{ij} w_i$を満たすように定義する. 
   この時, 線形写像$\varphi : k^n \to k^m, x \mapsto Ax $が定義できて, $\mathrm{rank} A \coloneqq \dim \mathrm{Im}\varphi  $とする. 
   $\dim \mathrm{Im}f = \mathrm{rank}A$を示せ.
+
+  \question ベクトル空間$V$とその部分空間 $W$に対して, 
+  $V$上の同値関係 $\sim $を $x \sim y \iff x - y \in W$と定義する. $V  /\mathord{W} \coloneqq V/ \mathord{\sim}$ 
+   とする. この時, $V /W$に自然な $k$-ベクトル空間の構造が入ることを示せ. 
+   (和とスカラー倍を定義する時に, well-defined性を確認せよ) この時, $V \mathord{W} $を $V$の
+   $W$に関する商ベクトル空間と呼ぶ.
+   更に,  $\dim V/ \mathord{W} = \dim V - \dim W$を示せ.
+   
+  \question $f:V \to W$を線形写像とする. $\pi :V \to  V/\mathord{\ker f} $ を自然な射影とする. 
+   $f= \tilde{f} \circ \pi$を満たす線形同型写像$\tilde{f} : V /\mathord{\ker f} \to \mathrm{Im}f$
+   が一意的に存在することを示せ. (これが準同型定理という, やっていることは$V $から$U$への全射準同型
+   が存在するなら,  $V$において $\ker$の元をすべてゼロとして扱えば, 一部の構造を忘れた商ベクトル空間が
+    $U$と同型になる)
+   
+  \question $f: V \to V$を線形写像とする. 任意の$n \geq 0$に対して,  $\ker f^n  \subseteq \ker f^{n+1}$
+   が成立することを示したうえで, ある$m \geq 0$が存在して, $n\geq m \implies \ker f^n = \ker f^m$
+   が成立することを示せ. 
+
+  \question $f: V_1 \to V_2$を線形写像とする. $W_i \subseteq V_i \left( i =1,2 \right) $ を
+  部分空間とする. $f(W_1) \subseteq W_2$を満たすならば, 自然な線形写像$\tilde{f} :V_1 /\mathord{W_1} \to V_2 /\mathord{W_2}$ 
+  がwell-definedであることを示せ. (ここでいう自然な線形写像は$\tilde{f} \circ \pi_1 = \pi_2 \circ f$ を満たすものである
+  この式では自然だと感じられないかもしれないが, 写像の図式を書けば自然であることがわかる. ただし$\pi_i$を$V_i$からの自然な射影とする.)
+
+  \question $f: V\to V$を線形写像とする. 任意の$n \geq 0$に対して, 
+  \begin{parts}
+    \part $f(\ker f^{n+1}) \subseteq \ker f^n$ を示せ. 
+    \part 自然な写像
+    $\ker f^{n+1} / \mathord{\ker f^n} \to \ker f^n / \mathord{\ker f^{n-1}}$ がwell-definedで, 
+    単射であることを示せ.
+  \end{parts}
+
+  \question $V$をベクトル空間とし,  ${0} = W_0 \subseteq W_1 \subseteq \ldots \subseteq W_m = V$を部分空間
+  の増大列とする. 
+  \begin{parts}
+    \part $\sum_{i=1}^{m} \dim (W_i / \mathord{W_{i-1}}) = \dim V$ となることを示せ. 
+    \part $d_i \coloneqq \dim (W_i / \mathord W_{i-1})$ とおき, $v_1^{(i)}, \ldots , v_{d_i}^{(i)} \in W_i$ を
+    $\{\overline{v_1^{(i)}}, \ldots , \overline{v_{d_i}^{(i)}}\} \subseteq W_i / \mathord{W_{i-1}} $ が基底となる
+    ようにとる. (ただし, $\overline{v^{(i)}_{n}}$ が$v^{(i)}_n$の自然な射影での像とする.) 
+    この時, 
+    \begin{equation*}
+      \begin{aligned}
+        \{v^{(1)}_1, \ldots , v_{d_1}^{(1)}, \ldots v_1^{(2)}, \ldots , v_{d_2}^{(2)}, \ldots , 
+        v_1^{(m)}, \ldots , v_{d_m}^{(m)}\} 
+      \end{aligned}
+    \end{equation*}
+    が$V$の基底になることを示せ. 
+
+  \end{parts}
+
+  \question $A$を $n$次正方行列とする. 
+  $\det A \coloneqq \sum_{\sigma \in S_n}^{} (-1)^{\sigma} \prod_{i=1}^{n} a_{i,\sigma (i)}  $ 
+  と定義する. (ただし, $(-1)^{\sigma}$ は$\sigma$が奇置換の時に $-1$, 偶置換の時 $1$を取る函数とする.) 
+  以下の命題を示せ.
+  \begin{parts}
+    \part $A'$を $A$の異なる$2$行を入れ替えた行列とする. この時, $\det A' = - \det A$. 
+    \part  $A'$を $A$のある行に他の行のスカラー倍を足したものとする. この時, $\det A' = \det A$. 
+    \part  $A'$を $A$のある行を$c$倍したものとする.  この時, $\det A' = c \det A$.
+    \part  $A^{\top}$ を$A$の転置行列とする. この時,  $\det A^{\top} = \det A$. 
+    (これをもって, 上の議論は列に置き換えても成立することがわかる.)
+  \end{parts}
+
+  \question $A,B$を $n$次正方行列とする.  $\det (AB) = \det A \cdot \det B$を示せ. 
+
+  \question $A$を$n$次正方行列とする.  $A$の余因子行列
+  $\mathrm{adj}A$が $\mathrm{adj}A \cdot A = A \cdot \mathrm{adj}A = \det A \cdot I_n$($I_n$が$n$次単位行列) を満たす
+  ものとする. 余因子行列を構成し, $\mathrm{adj}(tI_n -A)$が $t$の$n-1$次以下の
+  行列係数多項式であることを示せ. それを用いて, 行列$A$の固有多項式$P$に対して, 
+   $P(A) = 0$であることを示せ. 
+
+  \question $V$を$n$次元ベクトル空間とする. $f:V \to V$を線形写像で$\exists m \geq 1, f^m = 0$ を満たすとする. 
+  \begin{parts}
+    \part $m \leq n$を示せ. 
+    \part  $W_k \coloneqq  \ker f^k$と定め, $\{0\}= W_0 \subseteq W_1 \subseteq \ldots \subseteq W_m = V$ 
+    を部分空間の列とする. この時, $f$によって自然に誘導される線形写像の列
+     \begin{equation}
+      \begin{aligned}
+        W_1 = W_1 / \mathord{W_0} \xleftarrow{\eta_1} W_2 / \mathord{W_1} \xleftarrow{\eta_2} \ldots \xleftarrow{\eta_{k-1}} 
+        W_k / \mathord{W_{k-1}} \xleftarrow{\eta_{k}} W_{k+1} / \mathord{W_k} \xleftarrow{\eta_{k+1}} \ldots
+        \xleftarrow{\eta_{m-1}} W_{m}/\mathord{W_{m-1}}
+      \end{aligned}
+    \end{equation} 
+    があって, $\eta_k$がすべて単射である. この $\eta_k$の列を明示的に構成せよ. 
+    さらに,  $d_k\coloneqq \dim (W_k / \mathord{W_{k-1}})$ とした時, 
+    \begin{equation}
+      \begin{aligned}
+        d_1 \geq d_2 \geq \ldots \geq d_k \geq \ldots \geq d_m \geq 0, \quad \sum_{k=1}^{m} d_k = n
+      \end{aligned}
+    \end{equation} 
+    を示せ. 
+    \part $v_1^{(k)}, \ldots ,v_{d_k}^{(k)} \in W_k$ を$\{\overline{v_1^{(k)}}, \ldots , \overline{v_{d_k}^{(k)}}\} $が
+    $W_k / \mathord{W_{k-1}}$ の基底となるように取る. 
+    この時,  $\{\overline{f(v_1^{(k)})}, \ldots , \overline{f(v_{d_k}^{(k)})}\} $が
+    $W_{k-1} / \mathord{W_{k-2}}$ 上で一次独立になることを示せ. 
+    \part $f$の表現行列がジョルダン標準形となる $V$上の基底を構成せよ. (これで冪零行列のジョルダン標準形の理論ができた.)
+  \end{parts}
+
+
+
+
+
+
 \end{questions}
 
 \end{document}

@@ -1,5 +1,5 @@
 # Fdb version 4
-["lualatex"] 1717768701.95311 "questions.tex" "questions.pdf" "questions" 1717768703.46791 0
+["lualatex"] 1717829100.1639 "questions.tex" "questions.pdf" "questions" 1717829101.88282 0
   "/home/arnold/.texlive2024/texmf-var/luatex-cache/generic/fonts/otl/haranoajigothic-medium.luc" 1717642265.95656 1924615 e21c5ee4ca568cb907556e3bdf364263 ""
   "/home/arnold/.texlive2024/texmf-var/luatex-cache/generic/fonts/otl/haranoajimincho-regular.luc" 1717642263.46305 2011213 7221fcdccf757c0b43375417e862a944 ""
   "/home/arnold/.texlive2024/texmf-var/luatex-cache/generic/fonts/otl/lmmono9-regular.luc" 1717642263.64378 81875 9c75b3a3df266c2970fc91fab8010b3b ""
@@ -64,10 +64,13 @@
   "/usr/local/texlive/2024/texmf-dist/fonts/tfm/public/xypic/xylubt10.tfm" 1381187214 608 a3a3bc08980c5126ff2a7a68fb5a64ff ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb" 1248133631 30251 6afa5cb1d0204815a708a080681d4674 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb" 1248133631 36299 5f9df58c2139e7edcf37c8fca4bd384d ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb" 1248133631 37912 77d683123f92148345f3fc36a38d9ab1 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb" 1248133631 36281 c355509802a035cadc5f15869451dcee ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb" 1248133631 35752 024fb6c41858982481f6968b5fc26508 ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb" 1248133631 31809 8670ca339bf94e56da1fc21c80635e2a ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb" 1248133631 32762 224316ccc9ad3ca0423a14971cfa7fc1 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb" 1248133631 32569 5e5ddc8df908dea60932f3c484a54c0d ""
+  "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb" 1248133631 32915 7bf7720c61a5b3a7ff25b0964421c9b6 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb" 1248133631 32716 08e384dc442464e7285e891af9f45947 ""
   "/usr/local/texlive/2024/texmf-dist/tex/context/base/mkii/supp-pdf.mkii" 1461363279 71627 94eb9990bed73c364d7f53f960cc8c5b ""
   "/usr/local/texlive/2024/texmf-dist/tex/generic/bigintcalc/bigintcalc.sty" 1576625341 40635 c40361e206be584d448876bba8a64a3b ""
@@ -309,9 +312,9 @@
   "/usr/local/texlive/2024/texmf-dist/tex/luatex/luatexja/patches/lltjp-geometry.sty" 1635109274 19234 a1b77f145e2d634350e4e002242d5016 ""
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1716951372 5483668 9e45798515b35c9eab0413928a3e8881 ""
   "/usr/local/texlive/2024/texmf-var/web2c/luahbtex/lualatex.fmt" 1716951488 12269450 be86025241d08155cd3893bd545724b7 ""
-  "questions.aux" 1717768703.30608 1896 0b9a3e3ecc574c1f775f73b8a49a802c "lualatex"
-  "questions.tex" 1717768701.72615 4250 8b224eafb6808cdc73986c8c6cb6cc0b ""
-  "questions.toc" 1717768703.30608 68 8a3524d203bda84cedefacc0e00e91c9 "lualatex"
+  "questions.aux" 1717829101.70109 5006 65d5694eae38d47ee295b24bca97df6f "lualatex"
+  "questions.tex" 1717829098.82782 10538 47c6437d9744c9a6e77dee142f3fd8e4 ""
+  "questions.toc" 1717829101.70109 68 8a3524d203bda84cedefacc0e00e91c9 "lualatex"
   (generated)
   "questions.aux"
   "questions.log"
