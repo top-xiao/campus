@@ -89,7 +89,7 @@
   \question ベクトル空間$V$とその部分空間 $W$に対して, 
   $V$上の同値関係 $\sim $を $x \sim y \iff x - y \in W$と定義する. $V  /\mathord{W} \coloneqq V/ \mathord{\sim}$ 
    とする. この時, $V /W$に自然な $k$-ベクトル空間の構造が入ることを示せ. 
-   (和とスカラー倍を定義する時に, well-defined性を確認せよ) この時, $V \mathord{W} $を $V$の
+   (和とスカラー倍を定義する時に, well-defined性を確認せよ) この時, $V/ \mathord{W} $を $V$の
    $W$に関する商ベクトル空間と呼ぶ.
    更に,  $\dim V/ \mathord{W} = \dim V - \dim W$を示せ.
    
@@ -149,7 +149,7 @@
   \question $A,B$を $n$次正方行列とする.  $\det (AB) = \det A \cdot \det B$を示せ. 
 
   \question $A$を$n$次正方行列とする.  $A$の余因子行列
-  $\mathrm{adj}A$が $\mathrm{adj}A \cdot A = A \cdot \mathrm{adj}A = \det A \cdot I_n$($I_n$が$n$次単位行列) を満たす
+  $\mathrm{adj}A$を $\mathrm{adj}A \cdot A = A \cdot \mathrm{adj}A = \det A \cdot I_n$($I_n$が$n$次単位行列) を満たす
   ものとする. 余因子行列を構成し, $\mathrm{adj}(tI_n -A)$が $t$の$n-1$次以下の
   行列係数多項式であることを示せ. それを用いて, 行列$A$の固有多項式$P$に対して, 
    $P(A) = 0$であることを示せ. 
@@ -180,6 +180,37 @@
     $W_{k-1} / \mathord{W_{k-2}}$ 上で一次独立になることを示せ. 
     \part $f$の表現行列がジョルダン標準形となる $V$上の基底を構成せよ. (これで冪零行列のジョルダン標準形の理論ができた.)
   \end{parts}
+
+  \question 
+  \label{q:triangle-matrix} この問題では体$k$を代数閉体とする. つまり, $k$係数のすべての多項式は
+  一次式の積に分解できるとする. $A$を$k$上の$n$次正方行列とする. この時, ある$n$ 次正方行列
+  $P$ が存在して, 
+  $P^{-1}AP$が対角成分$\lambda_1, \ldots ,\lambda_n$が$A$の固有値となるような上三角行列になること
+  を次のようにプロセスで証明しよう. 
+  $V\coloneqq k^n$ とし, $f_A: V \ni x \mapsto Ax \in V$を考える. 
+  \begin{parts}
+    \part 固有値$\lambda_n$に属する固有ベクトル$x_n \neq 0$をとり,  $W\coloneqq \langle x_n \rangle$($x_n$の生成する一次元ベクトル空間)とおく.
+    この時, $f(W) \subseteq W$を示せ. 
+    \part 自然な写像$\overline{f}_A : V / \mathord{W} \to V / \mathord{W}$ を考えて, 次元に関する帰納法で$f_A$に対して
+     $f_A$の表現行列が上三角行列となる基底が存在することを示せ. 
+  \end{parts}
+
+  \question $f:V\to V$を代数閉体$k$上の$n$ 次元ベクトル空間上の線形写像とする. 
+  $f$の固有多項式 $p_f (t) \coloneqq  (t- \lambda_1)^{r_1}\cdots (t- \lambda_k)^{r_k}$ とする. 
+  $r_k$を固有値 $\lambda_k$の重複度とする. $k$上の$n$次正方行列 $A$を一つ取り, 
+   $A$の固有値 $\alpha $を一つ固定して, $r$を $\alpha $ の固有値とする. 
+   問題\ref{q:triangle-matrix}より, ある$n$次正方行列
+   $P$が存在して, 三角化の最初の$r$個対角成分が $\alpha $にできる. $U \coloneqq  \ker (f - \alpha \cdot 1_V)^r$とする. 
+   ここで, $1_V $を $V$上の恒等写像とする. 
+    \begin{parts}
+      \part $P^{-1}(A-\alpha I_n)^rP$を計算して, $\mathrm{rank}(A-\alpha I_n)^r = n-r$を示せ, 
+      このことより, $\dim U = r$ を示せ. 
+      \part $V$のある部分空間 $W$が存在して,  $V = U \oplus W, f(W) \subseteq W$となる
+      ことを示せ. また, $f(U) \subseteq U$を確認せよ. 
+      \part $p_{f|_U}(t) = (t-\alpha )^r$ となることを確かめよう. 
+      \part 以上をもって, $V = \bigoplus_{i=1}^k \ker (f- \lambda_i)^{r_i}$ であり, 
+      このもとで, 代数閉体上の $n$次正方行列が常にジョルダン標準形をもつことを示せ. 
+   \end{parts}
 
 
 
