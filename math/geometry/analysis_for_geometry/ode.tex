@@ -1,0 +1,199 @@
+\RequirePackage{luatex85}
+\documentclass{ltjsarticle}
+\usepackage{luatexja}
+\usepackage{mathtools}
+\usepackage{xcolor}
+%\usepackage{mathrsfs}
+%\usepackage{bm}
+%\usepackage{tikz}
+\usepackage{amsmath}
+\usepackage{cases}
+\usepackage{amsfonts}
+\usepackage{amssymb}
+\usepackage{amsthm}
+\usepackage[all]{xy}
+\usepackage{bookmark}
+\usepackage{xurl}
+\hypersetup{unicode,bookmarksnumbered=true,hidelinks,final} 
+\newcommand{\cl}[1]{\overline{ #1}  } 
+\newcommand{\Int}[1]{#1 ^{ o } }
+\newcommand{\bd}[1]{\operatorname{Bd}{#1}}
+\newtheorem{theorem}{Theorem}
+%\newtheorem{proposition}[theorem]{Proposition}
+%\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}{Lemma}
+%\newtheorem{definition}[theorem]{Definition}
+%\newtheorem{claim}[theorem]{Claim}
+%\theoremstyle{remark}
+%\newtheorem{remark}{Remark}
+%\theoremstyle{plain} 
+%\newtheorem{example}[theorem]{Example}
+%\newtheorem{exercise}[theorem]{Exercise}
+
+\newcommand{\jtoday}{\number \year 年 \number \month 月 \number \day 日}
+
+%\everymath{\displaystyle}
+\begin{document}
+\centerline{\Large 常微分方程式の初期値問題}
+\rightline{Arnold Robinson}
+\rightline{\jtoday}
+%\maketitle
+% \setcounter{chapter}{-1}
+% \tableofcontents
+
+\begin{theorem}
+   $U \subseteq \mathbb{R}^n$ を開集合, $V^i : U \to \mathbb{R}$を$C^{\infty}$ 函数とする($i = 1,2,\ldots ,n$). 
+   \begin{align}
+     \dot{y}^i (t) &= V^i(y^1(t), \ldots , y^n(t)) \\
+     y^i(t_0) &= c^i 
+   \end{align}
+を常微分方程式の初期値問題といい, $y$を初期値問題の解という. 
+この初期値問題に対して, 以下のことが成立する: 
+
+\begin{enumerate}
+  \item (解の存在性)任意の$t_0 \in \mathbb{R}, x \in \mathbb{R}^n $に対して, 
+    ある$t_0$ の開近傍$J_0$と$x_0$の開近傍$U_0 \subseteq U$が存在して, 
+    $\forall c \in U_0, \exists y_c: J_0 \to U $($C^1$級), $y_c$が初期値問題の解となる. 
+  \item (解の一意性)  $y_c, \tilde{y}_c$が同じ初期値問題の解ならば,  $y_c, \tilde{y}_c$が
+    共通の定義域で一致する. 
+  \item (解の滑らかさ)  $J_0, U_0$を解の存在性で登場した開集合とする. この時, 
+    $\theta :J_0 \times U_0, (t,c) \mapsto y_c(t)$で定めた写像が$C^{\infty}$ 級. 
+\end{enumerate}
+\end{theorem}
+
+証明を後回しにして, まず重要な道具を紹介する. 
+
+\begin{theorem}[Gronwallの不等式]
+  実数$x_0<x_1$に対し,  $I \coloneqq [x_0,x_1]$とする.  $\alpha ,\beta , u \in C(I)$とする.  $\beta \geq 0$とする. 
+  この時, 
+  \begin{enumerate}
+    \item  \begin{equation}
+      \begin{aligned}
+        u(t) \leq \alpha (t) + \int_{x_0}^t \beta (s)u(s) ds, \quad \forall t \in I
+      \end{aligned}
+    \end{equation} 
+    を満たすなら, 
+    \begin{equation}
+      \begin{aligned}
+        u(t) \leq \alpha (t) + \int_{x_0}^t \alpha (s)\beta (s) \exp \left( \int_s^t \beta (r) dr \right) ds
+      \end{aligned}
+    \end{equation} 
+    が成立する. 
+  \item さらに$\alpha $が広義単調増加ならば,  
+    \begin{equation}
+      \begin{aligned}
+        u(t) \leq \alpha (t) \exp \left( \int_{x_0}^t \beta (s) ds \right) 
+      \end{aligned}
+    \end{equation} 
+    が成立する. 
+  \end{enumerate} 
+\end{theorem}
+   
+  \begin{proof}
+    $v\coloneqq  \exp(-\int_{x_0}^t \beta (s) ds), w\coloneqq  \int_{x_0}^t \beta (s)u(s) ds$
+    とする. 
+    \begin{equation}
+      \begin{aligned}
+        (vw)' &= \exp \left(-\int_{x_0}^t \beta (s) ds\right)\left( - \beta (t) \int_{x_0}^t \beta (s)u(s) ds + 
+          \beta (t) u(t) \right) \\
+              &\leq  v  \beta (t) \alpha (t)  
+      \end{aligned}
+    \end{equation} 
+    両辺を$x_0$から$x$まで積分すると, 
+    \begin{equation}
+      \begin{aligned}
+        \exp\left(-\int_{x_0}^x \beta (s) ds\right) \int_{x_0}^x \beta (s) u(s) ds \leq \int_{x_0}^x 
+        \alpha (t) \beta (t) \exp\left( -\int_{x_0}^t \beta (s) ds \right) dt
+      \end{aligned}
+    \end{equation} 
+    つまり, 
+    \begin{equation}
+      \begin{aligned}
+        \int_{x_0}^x \beta (s) u(s) ds \leq \int_{x_0}^x \alpha (t) \beta (t) \exp\left( \int_{t}^x \beta (s) ds \right) dt
+      \end{aligned}
+    \end{equation} 
+    が成立する. 
+    両辺に$\alpha (x)$を足せば, 
+\begin{equation}
+  \begin{aligned}
+   u(x) \leq \alpha (x)    + \int_{x_0}^x \beta (s) u(s) ds \leq \alpha (x) + \int_{x_0}^x \alpha (t) \beta (t) \exp\left( \int_{t}^x \beta (s) ds \right) dt
+  \end{aligned}.
+\end{equation} 
+$\alpha $が広義単調増加の場合は
+\begin{equation}
+  \begin{aligned}
+    u(x) \leq \alpha (x) - \alpha (x) \exp\left( \int_{t}^x\beta (s) ds\right)\Big|_{t=x_0}^x = \alpha (x) \exp \left( \int_{x_0}^x \beta (s) ds \right) 
+  \end{aligned}
+\end{equation} 
+が成立する. 
+
+
+  \end{proof}
+
+  \begin{theorem}[比較定理]
+    $J\subseteq \mathbb{R}$を開区間, $u : J\to \mathbb{R}^n$を微分可能とする. 
+    $f:[0,\infty ) \to [0, \infty )$をLipschitz連続函数で, 
+    \begin{equation}
+      \begin{aligned}
+        |u'(t) | \leq f(|u(t)|), \quad  \forall t \in J
+      \end{aligned}
+    \end{equation} 
+    ある$t_0 \in J$に対して$v:[0, \infty) \to [0,\infty )$を微分可能な以下の初期値問題の解とする.
+    \begin{align}
+      v'(t) &= f(v(t)), \\
+      v(0) &= |u(t_0)|.
+    \end{align}
+    この時,  
+    \begin{equation}
+      \begin{aligned}
+        |u(t)| \leq v(|t-t_0|), \quad \forall t \in J
+      \end{aligned}
+    \end{equation} 
+    が成立する. 
+  \end{theorem}
+
+  \begin{proof}
+    $|u(t)| >0$を満たすところにおいて,  $$\frac{d}{dt} |u(t)| \leq f(|u(t)|)$$ が成立する. 
+まず$t_0 = 0$と仮定する. $J^+ \coloneqq  \{t \in J\mid t \geq t_0\} $ とする. 
+    \begin{equation}
+      \begin{aligned}
+        w(t) \coloneqq  e^{-Kt}\left( |u(t)| - v(t) \right) 
+      \end{aligned}
+    \end{equation} 
+    と定める. ただし, $K$を $f$の Lipschitz定数とする. $t \geq t_0$に対して, $w(t)>0 \implies w'(t) \leq 0$, 
+     $w \leq 0$が成立するなら示すことなく,  $w(t_1) > 0$を満たす $t_1 \geq t_0 $が存在するなら,  
+     $\tilde{t}\coloneqq \sup \{t \in J| w(t) \leq 0, t \leq t_1\} $とすれば, $w(\tilde{t}) = 0$が連続性に従う. 
+     平均値の定理より, 矛盾が生じる. $t \leq t_0$の場合は上記の議論で$t$を $-t$にすれば良い. 
+     $t_0 \neq 0$の場合は$\tilde{u}(t)\coloneqq  u(t+t_0), \tilde{J} \coloneqq  \{t |t+t_0 \in J\} $に置き換えればよい. 
+
+  \end{proof}
+
+  \begin{lemma}
+   $U \subseteq \mathbb{R}^n$ を開集合, $V^i : U \to \mathbb{R}$を局所Lipschitz連続函数とする($i = 1,2,\ldots ,n$). 
+   $\forall (t_0,x_0) \in \mathbb{R}\times U$に対して, ある$t_0$の開近傍$J_0$, $x_0$の開近傍$U_0 \subseteq U$が存在して, 
+   $\forall c \in U_0$に対して, 以下の初期値問題の解となる$C^1$級写像が存在する.
+   \begin{align}
+     \dot{y}^i (t) &= V^i(y^1(t), \ldots , y^n(t)) \\
+     y^i(t_0) &= c^i 
+   \end{align}
+    
+  \end{lemma}
+
+  \begin{proof}
+    つまり, 
+     \begin{equation}
+      \begin{aligned}
+        y^i(t) = c^i + \int_{t_0}^t V^i(y^1(s), \ldots , y^n(s)) ds
+      \end{aligned}
+    \end{equation} 
+    を解くことと同じ, つまり, 次のような写像を適切な定義域で考えて$c$に関して一様に不動点を
+    もつことを示せば良い. 
+     \begin{equation}
+      \begin{aligned}
+        I_c : y \mapsto \left( t \mapsto c + \int_{t_0}^t V(y(s)) ds \right) 
+      \end{aligned}
+    \end{equation} 
+  \end{proof}
+
+
+\end{document}
