@@ -41,7 +41,7 @@ require("plugin-config.indent-blankline")
 require("plugin-config.project")
 
 --treesitter
---require("plugin-config.nvim-treesitter")
+require("plugin-config.nvim-treesitter")
 
 require("plugin-config.ultisnips")
 --lsp

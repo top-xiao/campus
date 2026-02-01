@@ -1,22 +1,21 @@
---LaTeX
-vim.cmd([[
-" Starting server for LaTeX inverse search.
-function! s:myinversetex()
-    if !filereadable('/tmp/sv4nvim' . expand("%:p"))
-        call mkdir('/tmp/sv4nvim' . expand("%:p:h"),"p")
-        call serverstart('/tmp/sv4nvim' . expand("%:p"))
-    endif
-endfunction
-command! Serverorig call s:myinversetex()
+-- ~/.config/nvim/lua/autocmd.lua
 
-augroup latex_new
-" texソースのときに自動実行
-autocmd!
-autocmd BufRead *.tex Serverorig
-autocmd BufRead *.ltx Serverorig
-autocmd BufWritePost *.tex Serverorig
-autocmd BufWritePost *.ltx Serverorig
-augroup END
-]])
+vim.notify("autocmd.lua LOADED", vim.log.levels.INFO)
 
+local group = vim.api.nvim_create_augroup("LatexServer", { clear = true })
+
+vim.api.nvim_create_autocmd("FileType", {
+  group = group,
+  pattern = { "tex", "plaintex" },
+  callback = function()
+    -- Neovim 永远支持 serverstart，这个判断其实可省
+    local server_name = "latex-nvim"
+
+    local servers = vim.fn.serverlist()
+    if not vim.tbl_contains(servers, server_name) then
+      vim.notify("Starting LaTeX nvim server", vim.log.levels.INFO)
+      vim.fn.serverstart(server_name)
+    end
+  end,
+})
 
