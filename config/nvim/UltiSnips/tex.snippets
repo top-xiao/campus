@@ -12,7 +12,7 @@ endglobal
 
 snippet template "Basic template" b
 \RequirePackage{luatex85}
-\documentclass{ltjs$1}
+\documentclass[lualatex]{ltjs$1}
 \usepackage{luatexja}
 \usepackage{mathtools}
 \usepackage{xcolor}
@@ -29,14 +29,11 @@ snippet template "Basic template" b
 \usepackage{bookmark}
 \usepackage{xurl}
 \hypersetup{unicode,bookmarksnumbered=true,hidelinks,final} 
-\newcommand{\cl}[1]{\overline{ #1}  } 
-\newcommand{\Int}[1]{#1 ^{ o } }
-\newcommand{\bd}[1]{\operatorname{Bd}{#1}}
 \newtheorem{theorem}{Theorem}[section]
 \newtheorem{proposition}[theorem]{Proposition}
 \newtheorem{corollary}[theorem]{Corollary}
 \newtheorem{lemma}[theorem]{Lemma}
-\newtheorem{definition}[theorem]{Definition}
+\newtheorem{definition}[theo]{Definition}
 \newtheorem{claim}[theorem]{Claim}
 \theoremstyle{remark}
 \newtheorem{remark}{Remark}
@@ -60,6 +57,7 @@ endsnippet
 
 snippet beg "begin{} / end{}" bA
 \\begin{$1}
+${2:%}\label{$1:$3}
 	$0
 \\end{$1}
 endsnippet
@@ -285,7 +283,7 @@ snippet conj "conjugate" iA
 endsnippet
 
 snippet sum "sum" w
-\sum_{n=${1:1}}^{${2:\infty}} ${3:a_n z^n}
+\sum_{$1}^{$2} $0
 endsnippet
 
 snippet taylor "taylor" w
@@ -324,7 +322,7 @@ snippet cb "^3" iA
 endsnippet
 
 context "math()"
-snippet td "to the ... power" iA
+snippet ^^ "to the ... power" iA
 ^{$1}$0
 endsnippet
 
@@ -333,22 +331,27 @@ snippet rd "to the ... power" iA
 ^{($1)}$0
 endsnippet
 
+context "math()"
 snippet __ "subscript" iA
 _{$1}$0
 endsnippet
 
+context "math()"
 snippet ooo "\infty" iA
 \infty
 endsnippet
 
+context "math()"
 snippet rij "mrij" i
 (${1:x}_${2:n})_{${3:$2}\\in${4:\\N}}$0
 endsnippet
 
+context "math()"
 snippet <= "leq" iA
 \le 
 endsnippet
 
+context "math()"
 snippet >= "geq" iA
 \ge 
 endsnippet
@@ -435,6 +438,12 @@ snippet mcal "mathcal" iA
 \mathcal{$1}$0
 endsnippet
 
+context "math()"
+snippet mrm "mathcal" iA
+\mathrm{$1}$0
+endsnippet
+
+context "math()"
 snippet lll "l" iA
 \ell
 endsnippet
@@ -450,6 +459,7 @@ snippet xx "cross" iA
 endsnippet
 
 priority 100
+context "math()"
 snippet ** "cdot" iA
 \cdot 
 endsnippet
@@ -468,7 +478,7 @@ endsnippet
 priority 300
 context "math()"
 snippet dint "integral" wA
-\int_{${1:-\infty}}^{${2:\infty}} ${3:${VISUAL}} $0
+\int_{${1:${VISUAL}}}^{${2:${VISUAL}}} ${3:${VISUAL}} \, \mathrm{d}${4:${VISUAL}}$0
 endsnippet
 
 priority 200
@@ -663,6 +673,7 @@ snippet "([a-zA-Z])hat" "hat" riA
 \hat{`!p snip.rv=match.group(1)`}
 endsnippet
 
+context "math()"
 snippet letw "let omega" iA
 Let $\Omega \subset \C$ be open.
 endsnippet
@@ -679,70 +690,84 @@ endsnippet
 
 context "math()"
 snippet top "topological space" iA
-\left( $1 , \mathcal{T}_{$1} \right)
+\left( $1 , \mathcal{O}_{$1} \right)
 endsnippet
 
 context "math()"
 snippet @a "alpha" iA
-\alpha 
+\alpha
 endsnippet
 
 context "math()"
 snippet @b "beta" iA
-\beta 
+\beta
 endsnippet
 
 context "math()"
 snippet @l "lambda" iA
-\lambda  
+\lambda
 endsnippet
 
 context "math()"
 snippet @L "Lambda" iA
-\Lambda 
+\Lambda
 endsnippet
 
 context "math()"
 snippet @f "varphi" iA
-\varphi 
+\varphi
 endsnippet
 
 context "math()"
 snippet @e "varepsilon" iA
-\varepsilon 
+\varepsilon
 endsnippet
 
 context "math()"
 snippet @p "psi" iA
-\varpsi 
+\varpsi
 endsnippet
 
 context "math()"
 snippet @z "zeta" iA
-\zeta 
+\zeta
 endsnippet
 
 context "math()"
 snippet @g "gamma" iA
-\gamma 
+\gamma
 endsnippet
 
 context "math()"
 snippet @i "iota" iA
-\iota 
+\iota
 endsnippet
 
 context "math()"
 snippet @t "tau" iA
-\tau 
+\tau
 endsnippet
 
 context "math()"
 snippet mu "mu" iA
-\mu 
+\mu
 endsnippet
 
 context "math()"
 snippet nu "nu" iA
-\nu 
+\nu
 endsnippet
+
+snippet bf "textbf" w  
+\textbf{$1} $0 
+endsnippet
+
+snippet it "textit" w  
+\textit{$1} $0 
+endsnippet
+
+snippet col "textcolor" w 
+\textcolor{${1:red}}{$2} $0 
+endsnippet
+
+

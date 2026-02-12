@@ -19,3 +19,8 @@ vim.api.nvim_create_autocmd("FileType", {
   end,
 })
 
+vim.opt.wrap = true
+vim.opt.linebreak = true
+vim.opt.breakindent = true
+
+

@@ -30,10 +30,5 @@ let g:vimtex_compiler_latexmk = {
 -- vim.g.vimtex_view_general_options = '--unique @pdf#src:@tex:@line:@col'
 vim.g.vimtex_view_method = "zathura"
 
-vim.g.vimtex_view_general_viewer = "zathura"
-vim.g.vimtex_view_general_options =
-  "--synctex-forward @line:@col:@tex @pdf"
 
-vim.g.vimtex_view_general_command =
-  "zathura -x \"nvim --server latex-nvim --remote-send '<Esc>:VimtexInverseSearch %{line}:%{column} %{input}<CR>'\""
 

@@ -1,4 +1,4 @@
-This is LuaHBTeX, Version 1.22.0 (TeX Live 2026/dev/Arch Linux)  (format=lualatex 2026.2.1)  1 FEB 2026 15:57
+This is LuaHBTeX, Version 1.22.0 (TeX Live 2026/dev/Arch Linux)  (format=lualatex 2026.2.1)  12 FEB 2026 02:18
  system commands enabled.
  file:line:error style messages enabled.
 **questions.tex
@@ -1085,19 +1085,19 @@ L3 programming layer <2025-01-18>
 )
 
 Here is how much of LuaTeX's memory you used:
- 27399 strings out of 475506
+ 27400 strings out of 475506
  244635,1144653 words of node,token memory allocated
- 1462 words of node memory still in use:
-   11 hlist, 2 vlist, 6 rule, 2 glue, 5 kern, 1 glyph, 294 attribute, 82 glue_spec, 44 attribute_list, 3 write, 21 user_defined nodes
-   avail lists: 1:40,2:52878,3:770,4:432,5:433,6:65,7:8901,8:78,9:3499,10:34,11:15
+ 1510 words of node memory still in use:
+   11 hlist, 2 vlist, 6 rule, 2 glue, 5 kern, 1 glyph, 316 attribute, 82 glue_spec, 46 attribute_list, 3 write, 21 user_defined nodes
+   avail lists: 1:34,2:52866,3:770,4:432,5:433,6:65,7:8904,8:78,9:3499,10:34,11:15
  49582 multiletter control sequences out of 65536+600000
  68 fonts using 34028959 bytes
  110i,17n,115p,3241b,509s stack positions out of 10000i,1000n,20000p,200000b,200000s
 </usr/share/texmf-dist/fonts/opentype/public/haranoaji/HaranoAjiGothic-Medium.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman10-bold.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman12-bold.otf></usr/share/texmf-dist/fonts/opentype/public/lm/lmroman10-regular.otf></usr/share/texmf-dist/fonts/opentype/public/haranoaji/HaranoAjiMincho-Regular.otf></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmex10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmmi7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmr7.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy10.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy5.pfb></usr/share/texmf-dist/fonts/type1/public/amsfonts/cm/cmsy7.pfb>
-Output written on questions.pdf (3 pages, 191858 bytes).
+Output written on questions.pdf (3 pages, 192484 bytes).
 
-PDF statistics: 153 PDF objects out of 1000 (max. 8388607)
- 121 compressed objects within 2 object streams
- 47 named destinations out of 1000 (max. 131072)
+PDF statistics: 154 PDF objects out of 1000 (max. 8388607)
+ 122 compressed objects within 2 object streams
+ 48 named destinations out of 1000 (max. 131072)
  24 words of extra memory for PDF output out of 10000 (max. 100000000)
 

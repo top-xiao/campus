@@ -29,20 +29,17 @@ snippet template "Basic template" b
 \usepackage{bookmark}
 \usepackage{xurl}
 \hypersetup{unicode,bookmarksnumbered=true,hidelinks,final} 
-\newcommand{\cl}[1]{\overline{ #1}  } 
-\newcommand{\Int}[1]{#1 ^{ o } }
-\newcommand{\bd}[1]{\operatorname{Bd}{#1}}
-\newtheorem{theo}{Theorem}[section]
-\newtheorem{prop}[theo]{Proposition}
-\newtheorem{coro}[theo]{Corollary}
-\newtheorem{lem}[theo]{Lemma}
-\newtheorem{def}[theo]{Definition}
-\newtheorem{claim}[theo]{Claim}
+\newtheorem{theorem}{Theorem}[section]
+\newtheorem{proposition}[theorem]{Proposition}
+\newtheorem{corollary}[theorem]{Corollary}
+\newtheorem{lemma}[theorem]{Lemma}
+\newtheorem{definition}[theo]{Definition}
+\newtheorem{claim}[theorem]{Claim}
 \theoremstyle{remark}
 \newtheorem{remark}{Remark}
 \theoremstyle{plain} 
-\newtheorem{example}[theo]{Example}
-\newtheorem{exercise}[theo]{Exercise}
+\newtheorem{example}[theorem]{Example}
+\newtheorem{exercise}[theorem]{Exercise}
 
 \newcommand{\jtoday}{\number \year 年 \number \month 月 \number \day 日}
 
@@ -442,6 +439,11 @@ snippet mcal "mathcal" iA
 endsnippet
 
 context "math()"
+snippet mrm "mathcal" iA
+\mathrm{$1}$0
+endsnippet
+
+context "math()"
 snippet lll "l" iA
 \ell
 endsnippet
@@ -476,7 +478,7 @@ endsnippet
 priority 300
 context "math()"
 snippet dint "integral" wA
-\int_{${1:-\infty}}^{${2:\infty}} ${3:${VISUAL}} $0
+\int_{${1:${VISUAL}}}^{${2:${VISUAL}}} ${3:${VISUAL}} \, \mathrm{d}${4:${VISUAL}}$0
 endsnippet
 
 priority 200
@@ -693,67 +695,67 @@ endsnippet
 
 context "math()"
 snippet @a "alpha" iA
-\alpha 
+\alpha
 endsnippet
 
 context "math()"
 snippet @b "beta" iA
-\beta 
+\beta
 endsnippet
 
 context "math()"
 snippet @l "lambda" iA
-\lambda 
+\lambda
 endsnippet
 
 context "math()"
 snippet @L "Lambda" iA
-\Lambda 
+\Lambda
 endsnippet
 
 context "math()"
 snippet @f "varphi" iA
-\varphi 
+\varphi
 endsnippet
 
 context "math()"
 snippet @e "varepsilon" iA
-\varepsilon 
+\varepsilon
 endsnippet
 
 context "math()"
 snippet @p "psi" iA
-\varpsi 
+\varpsi
 endsnippet
 
 context "math()"
 snippet @z "zeta" iA
-\zeta 
+\zeta
 endsnippet
 
 context "math()"
 snippet @g "gamma" iA
-\gamma 
+\gamma
 endsnippet
 
 context "math()"
 snippet @i "iota" iA
-\iota 
+\iota
 endsnippet
 
 context "math()"
 snippet @t "tau" iA
-\tau 
+\tau
 endsnippet
 
 context "math()"
 snippet mu "mu" iA
-\mu 
+\mu
 endsnippet
 
 context "math()"
 snippet nu "nu" iA
-\nu 
+\nu
 endsnippet
 
 snippet bf "textbf" w  
