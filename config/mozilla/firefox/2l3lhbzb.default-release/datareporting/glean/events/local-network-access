@@ -1,0 +1,8 @@
+{"timestamp":33247346,"category":"networking","name":"local_network_access_connection","extra":{"target_ip":"127.0.0.1","initiator":"qq.com","load_success":"true","target_host":"qq.com","protocol":"https","is_secure_context":"true","target_port":"4301","top_level_site":"qq.com","glean_timestamp":"1771766668322"}}
+{"timestamp":33250808,"category":"networking","name":"local_network_access_connection","extra":{"protocol":"https","target_ip":"127.0.0.1","is_secure_context":"true","target_host":"qq.com","glean_timestamp":"1771766671784","initiator":"qq.com","target_port":"4301","load_success":"true","top_level_site":"qq.com"}}
+{"timestamp":20369,"category":"glean","name":"restarted","extra":{"glean.startup.date":"2026-02-23T20:02+09:00","glean_timestamp":"1771844553359"},"execution_counter":1}
+{"timestamp":2277414,"category":"glean","name":"restarted","extra":{"glean_timestamp":"1771846810404","glean.startup.date":"2026-02-23T20:40+09:00"},"execution_counter":2}
+{"timestamp":2388344,"category":"glean","name":"restarted","extra":{"glean.startup.date":"2026-02-23T20:42+09:00","glean_timestamp":"1771846921333"},"execution_counter":3}
+{"timestamp":15511380,"category":"glean","name":"restarted","extra":{"glean.startup.date":"2026-02-24T00:20+09:00","glean_timestamp":"1771860044370"},"execution_counter":4}
+{"timestamp":75869,"category":"glean","name":"restarted","extra":{"glean.startup.date":"2026-02-24T18:09+09:00","glean_timestamp":"1771924148869"},"execution_counter":5}
+{"timestamp":7361762,"category":"glean","name":"restarted","extra":{"glean.startup.date":"2026-02-24T20:10+09:00","glean_timestamp":"1771931434762"},"execution_counter":6}

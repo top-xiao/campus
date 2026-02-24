@@ -1,0 +1,2 @@
+{"timestamp":4287589,"category":"bounce.tracking.protection","name":"purge_action","extra":{"is_dry_run":"true","site_host":"openai.com","require_stateful_bounces":"false","bounce_time":"1770708131","success":"true","glean_timestamp":"1770811655642"},"execution_counter":11}
+{"timestamp":129126,"category":"glean","name":"restarted","extra":{"glean.startup.date":"2026-02-11T23:50+09:00","glean_timestamp":"1770821429093"},"execution_counter":12}
