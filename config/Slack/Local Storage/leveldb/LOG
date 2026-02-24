@@ -1,9 +1,0 @@
-2026/02/24-01:51:32.507 2149d Reusing MANIFEST /home/arnold/.config/Slack/Local Storage/leveldb/MANIFEST-000001
-2026/02/24-01:51:32.508 2149d Recovering log #21
-2026/02/24-01:51:32.508 2149d Reusing old log /home/arnold/.config/Slack/Local Storage/leveldb/000021.log 
-2026/02/24-01:52:32.516 21482 Level-0 table #26: started
-2026/02/24-01:52:32.522 21482 Level-0 table #26: 152721 bytes OK
-2026/02/24-01:52:32.530 21482 Delete type=0 #21
-2026/02/24-01:53:34.125 21482 Level-0 table #28: started
-2026/02/24-01:53:34.134 21482 Level-0 table #28: 11799 bytes OK
-2026/02/24-01:53:34.142 21482 Delete type=0 #25
