@@ -1,0 +1,226 @@
+\documentclass[lualatex]{article}
+
+\usepackage{ctex}
+\usepackage{amsmath}
+\usepackage{amssymb}
+\usepackage{mathtools}
+\usepackage{bm}
+\usepackage[margin=1in]{geometry}
+
+\title{
+    从 RCD 空间到 LCD 空间\\[0.5em]
+    \large 低正则性理论迷失的二十年和今后的二十年
+}
+
+\author{Arnold Robinson}
+\date{\today}
+
+\begin{document}
+
+\maketitle
+
+\section{Introduction}
+
+一切源自于 Poincar\'e 在 1904 年提出的著名问题：
+
+\begin{quote}
+所有单连通三维闭流形是否与三维球面同胚？
+\end{quote}
+
+这个问题极大地改变了 20 世纪几何学的发展，并激发了无数强力的工具和理论。Hamilton 在 1980 年代提出的 Ricci flow
+\[
+    \frac{\partial}{\partial t} g_t = -2\operatorname{Ric}(g_t)
+\]
+提供了一种完全不同于传统拓扑方法的视角：让几何结构本身随时间演化，并希望通过这种演化逐渐消除局部的复杂性。Ricci flow 的思想与热方程具有深刻的类比。曲率在演化过程中发生扩散，而几何结构则逐渐趋向更加规则的状态。然而，与普通热方程不同的是，Ricci flow 会产生奇异性。
+
+因此，真正困难的问题并不是证明 Ricci flow 存在，而是理解在 $t \nearrow T$ 时流形究竟发生了什么，以及在奇异时刻之后如何继续理解这个几何对象。Perelman 对 Ricci flow 的工作最终完成了这一计划。通过 entropy、non-collapsing、surgery 以及奇异性分析等一系列工具，三维流形可以被分解成具有高度受控几何结构的部分，从而最终解决了 Poincar\'e 猜想以及更一般的 Thurston 几何化猜想。
+
+然而，从今天的角度来看，Ricci flow 带来的最重要遗产或许并不是 Poincar\'e 猜想本身。真正重要的是：
+
+\begin{quote}
+我们开始系统地研究一个光滑几何对象在退化之后究竟会变成什么。
+\end{quote}
+
+当一列黎曼流形 $(M_i,g_i)$ 在适当的曲率和几何条件下收敛时，即使每一个 $M_i$ 都是光滑流形，它们的极限 $(X,d)$ 也未必仍然是光滑流形。奇异空间并不是人为构造出来的反例，而是自然几何演化和几何极限中不可避免的对象。于是现代几何分析发生了一次根本性的转变：研究光滑空间 $\longrightarrow$ 研究光滑空间的极限。
+
+\section{从 Ricci flow 到 Ricci limit spaces}
+
+在 Ricci curvature 得到统一下界的条件下，Gromov 的紧性理论给出了度量空间层面的预紧性，而 Cheeger--Colding 则进一步系统研究了这些极限空间的内部结构。考虑 $\operatorname{Ric}_{g_i} \geq K g_i$。即使每个 $(M_i,g_i)$ 都是 $n$ 维光滑黎曼流形，其 Gromov--Hausdorff 极限 $(X,d)$ 仍然可能出现奇异点。然而，这些奇异空间并不是完全任意的。
+
+Cheeger--Colding 理论表明，Ricci 曲率下界会以一种极其强的方式限制极限空间的结构。Regular set、singular set、tangent cones、splitting maps、almost splitting theorem 以及 volume convergence 等理论逐渐形成了一套完整的 Ricci limit space 理论。这里发生了一件非常重要的事情：
+
+\begin{quote}
+奇异性本身开始成为几何对象。
+\end{quote}
+
+这意味着低正则性并不等于完全失去结构。恰恰相反，曲率条件本身能够在极限空间中产生新的正则性和刚性。然而，Cheeger--Colding 理论仍然从黎曼流形序列出发。于是一个更加大胆的问题自然出现：
+
+\begin{quote}
+如果我们完全忘记极限空间来自黎曼流形这一事实，能否仅仅从度量和测度本身定义 Ricci curvature？
+\end{quote}
+
+\section{从 Ricci curvature 到 optimal transport}
+
+Lott--Sturm--Villani 给出了一个革命性的答案。他们发现，Ricci curvature 的下界可以通过概率测度空间上的 Wasserstein 几何来刻画。对于一个测度度量空间 $(X,d,m)$，考虑概率测度空间 $\mathcal{P}_2(X)$ 以及 Wasserstein distance $W_2$。Ricci curvature 的下界可以被转化为熵泛函沿 Wasserstein geodesic 的凸性。于是：Ricci curvature $\longrightarrow$ optimal transport。
+
+Ricci curvature 从一个依赖二阶微分结构的局部对象，变成了一个可以通过距离、测度和概率分布之间的运输结构描述的对象。由此产生了 Curvature-Dimension condition，即 $CD(K,N)$。这一转变的重要性远远超过了给 Ricci curvature 找到一个新的定义。它意味着：
+
+\begin{quote}
+一个原本属于光滑微分几何的结构，可能存在一个完全不依赖微分结构的本质描述。
+\end{quote}
+
+这为真正意义上的奇异 Ricci 几何打开了大门。
+
+\section{RCD：从曲率到能量}
+
+然而，$CD(K,N)$ 空间仍然过于宽泛。特别是，$CD$ 条件并不能排除 Finsler geometry。因此，如果我们希望得到真正意义上黎曼几何的奇异推广，还需要加入能够刻画 Hilbertian structure 的条件。这便产生了 RCD 空间。粗略而言，
+\[
+    RCD(K,N) = CD(K,N) + \text{infinitesimal Hilbertianity}.
+\]
+其中 infinitesimal Hilbertianity 可以通过 Cheeger energy
+\[
+    \operatorname{Ch}(f) = \frac{1}{2} \int_X |Df|^2 \, dm
+\]
+的二次性来表达。这一步尤其重要。
+
+我们并没有直接把黎曼度量重新放回定义中。相反，我们要求能量结构具有 Hilbert 空间的二次结构，从而让梯度、Laplace operator、heat flow 等分析对象重新出现。于是出现了一条非常漂亮的路线：
+\[
+    \text{Riemannian manifolds} \longrightarrow \text{Ricci limit spaces} \longrightarrow \text{RCD spaces}.
+\]
+RCD 理论因此成为一种非常成功的 synthetic Ricci geometry。它不仅包含大量 Ricci limit spaces，而且在适当的测度 Gromov--Hausdorff 收敛下具有良好的稳定性。Heat flow、Cheeger energy、Laplacian、Bochner inequality、Sobolev calculus、rectifiability、splitting theorem 以及大量经典几何分析结果，都可以在这一框架中得到相应版本。到这里，一切看起来都非常成功。然而，正是在这里，一个更加危险的问题开始出现。
+
+\section{迷失的二十年}
+
+过去二十年的 RCD 理论取得了令人惊叹的技术成果。问题恰恰不是 RCD 做得不够多。问题是：
+
+\begin{quote}
+RCD 做得太成功了。
+\end{quote}
+
+它建立了一套非常强大的工具，使得我们能够在没有光滑结构的空间上重新定义梯度、Hessian、Laplacian、heat flow 以及大量经典分析对象。于是研究逐渐形成了一种非常稳定的模式：经典黎曼几何 $\longrightarrow$ 去掉光滑性 $\longrightarrow$ 寻找 synthetic formulation $\longrightarrow$ 证明经典定理仍然成立 $\longrightarrow$ 建立更多 calculus $\longrightarrow$ 证明更多经典定理。这个循环产生了大量漂亮而深刻的数学。但是，它也可能正是过去二十年低正则性几何最值得警惕的问题。
+
+\subsection{我们究竟在研究奇异空间，还是在恢复黎曼流形？}
+
+RCD 空间可以具有真正的奇异性。它可能不是流形，tangent cone 可以出现复杂结构，局部维数可以发生变化，甚至微分结构本身也只能以弱意义存在。然而，大量研究的基本目标却是证明：RCD space $\approx$ Riemannian geometry almost everywhere。Rectifiability theory 是最典型的例子。我们不断寻找 coordinate charts、Euclidean tangent cones、splitting maps 以及弱微分结构，最终证明空间在几乎处处意义下具有良好的欧氏性质。这当然是重要的。但是这里存在一个更根本的问题：
+
+\begin{quote}
+如果我们的最终目标始终是证明一个奇异空间“几乎处处仍然是黎曼的”，那么我们是否真的在研究奇异性？
+\end{quote}
+
+我们真正应该问的问题也许恰恰相反：“singularity itself carries what geometry?” 而不仅仅是 “how small is the singular set?”
+
+\subsection{从恢复经典定理到创造新定理}
+
+过去二十年的另一个显著特征，是大量经典黎曼几何定理被推广到 RCD 空间。Splitting theorem、volume cone implies metric cone、maximum diameter theorem、Obata theorem、isoperimetric inequalities、Sobolev inequalities、spectral convergence 等，都在 RCD 框架中获得了相应的版本。这些工作当然具有巨大的价值。但我们需要区分两个完全不同的问题：哪些经典结构能够在极限中保留下来？和：极限本身创造了哪些新的结构？
+
+前一个问题已经得到了极其丰富的研究。后一个问题却远没有得到同样程度的关注。这导致了一种奇怪的局面：
+
+\begin{quote}
+我们越来越了解 RCD 空间为什么仍然像黎曼流形，却没有同样清楚地理解它们为什么不再是黎曼流形。
+\end{quote}
+
+换句话说，低正则性理论中的“奇异”经常被当作一个需要控制的误差，而不是一个需要解释的数学现象。
+
+\subsection{稳定性是不是成为了终点？}
+
+RCD 理论最令人惊叹的性质之一当然是稳定性。若 $(X_i,d_i,m_i) \longrightarrow (X,d,m)$ 在适当意义下收敛，并且每个 $X_i$ 都满足统一的 RCD 条件，那么极限空间仍然保留相应的 RCD 结构。这建立了一个非常强的闭性原理：Ricci lower bound + geometric convergence $\Longrightarrow$ Ricci lower bound on the limit。然而稳定性回答的是：经典结构退化以后还剩下什么？它并没有回答：退化以后产生了什么？
+
+这两个问题不能混为一谈。稳定性当然是一个理论必须具有的重要性质。但如果一个理论只关心结构是否在极限中保持，那么它很容易把极限中的新现象重新解释成原有结构的弱极限。于是出现了一个值得警惕的可能：stability may preserve structure while hiding novelty。
+
+\subsection{工具开始决定问题}
+
+RCD 理论逐渐形成了一套非常成熟的技术闭环：optimal transport $\longrightarrow$ entropy convexity $\longrightarrow$ Cheeger energy $\longrightarrow$ heat flow $\longrightarrow$ Bochner inequality $\longrightarrow$ second-order calculus。这套理论极其漂亮。但它同时产生了一种方法论上的吸引力。一旦一个问题能够被写成：energy + convexity + gradient flow，那么 RCD machinery 就可以自然地介入。于是研究者很容易继续寻找那些能够被这套 machinery 处理的问题。这可能导致一种反常现象：
+
+\begin{quote}
+我们拥有越来越强大的工具，但研究的问题本身却越来越接近这些工具能够处理的问题。
+\end{quote}
+
+最终，methodology begins to determine the geometry。这或许才是所谓“迷失的二十年”真正值得警惕的地方。
+
+\section{一个真正困难的问题}
+
+因此，我们应该重新提出一个更加尖锐的问题：
+
+\begin{quote}
+RCD 空间作为黎曼流形、加权黎曼流形以及 Ricci limit spaces 的统一扩张，究竟有没有产生一种不能从经典黎曼几何直接看见的新几何结构？
+\end{quote}
+
+这里并不是说 RCD 空间没有新现象。恰恰相反，它们拥有大量经典流形中不存在的奇异行为。问题是这些现象通常被组织成：如何恢复 regularity、如何控制 singularity、如何证明 stability，以及如何推广 classical theorem。而真正缺少的是另一种研究方向：从 singularity 出发，而不是消除 singularity。也就是说，我们需要从 What survives the limit? 转向 What is created by the limit? 这也许是过去二十年 RCD 理论最重要而又最少被正面提出的问题。
+
+\section{为什么 Lorentzian geometry 是一个自然的实验场}
+
+如果我们希望寻找低正则性理论真正可能产生的新结构，Lorentzian geometry 是一个极其自然的实验场。黎曼几何与 Lorentzian geometry 都以 metric 为核心，但二者的几何本质并不相同。在 Lorentzian geometry 中，我们不仅有 metric，还有 causal structure 和 time separation。记 time separation 为 $\tau(x,y)$。它不是普通的距离函数。它受到 causal relation $x \leq y$ 的控制。因此 Lorentzian geometry 至少同时包含：metric + causal structure + time separation。
+
+这意味着把 RCD 的思想直接搬到 Lorentzian 世界，从一开始就存在一个根本性的风险：
+
+\begin{quote}
+我们可能成功推广了 Ricci curvature，却没有真正推广 Lorentzian geometry。
+\end{quote}
+
+如果我们只研究 Lorentzian analogue of $CD(K,N)$，那么最容易得到的是体积变化率、Jacobian estimates 以及 optimal transport 中的熵凸性。这些结果当然重要。但它们主要描述的是 volume distortion。而 Lorentzian geometry 最独特的结构却是：causality and time separation。如果一个理论不能真正解释 $\tau(x,y)$、$J^+(x)$、$J^-(x)$ 以及 causal geodesics，那么我们究竟是在构造 Lorentzian geometry 的低正则性版本，还是仅仅构造了一个带有 Lorentzian 味道的 CD 空间？这是两个完全不同的问题。
+
+\section{更加危险的问题：PDE}
+
+问题甚至比 causal structure 更深。RCD 理论之所以能够取得巨大成功，一个关键原因是黎曼几何中的 PDE 与能量结构具有极其紧密的联系。在光滑黎曼流形上，$\Delta f = \operatorname{div}(\nabla f)$ 是椭圆算子。相应的 Bochner identity 为
+\[
+\frac{1}{2}\Delta |\nabla f|^2 = |\operatorname{Hess}f|^2 + \langle \nabla f, \nabla\Delta f \rangle + \operatorname{Ric}(\nabla f,\nabla f).
+\]
+它把 PDE + energy + Ricci curvature 联系在了一起。然而 Lorentzian geometry 中对应的 d'Alembert operator $\Box_g$ 却是双曲型算子。因此 $\Delta_g$ 与 $\Box_g$ 在 PDE 理论中的性质存在根本差异。
+
+Riemannian geometry 中的基本分析结构是：elliptic PDE, heat flow, energy minimization。而 Lorentzian geometry 中则是：hyperbolic PDE, wave propagation, causal evolution。因此：heat flow $\neq$ wave propagation，gradient flow $\neq$ causal evolution。如果我们仅仅把 RCD 中的 Cheeger energy $\longrightarrow$ heat flow $\longrightarrow$ Laplacian 这一套结构搬到 Lorentzian geometry，那么我们很可能从根本上错过 Lorentzian geometry 最重要的部分。Lorentzian geometry 中的信息不是简单地向空间中扩散。它具有方向。信息沿 causal cones 传播。因此，未来的 synthetic Lorentzian geometry 很可能不能仅仅建立在 metric measure structure 和 convexity 之上。它必须能够同时编码：causality + time separation + hyperbolic PDE + Ricci curvature。
+
+\section{Einstein equation：真正的终点}
+
+Lorentzian geometry 还有一个 Riemannian geometry 无法回避的问题：Einstein field equation。在光滑 Lorentzian manifold 上，
+\[
+    \operatorname{Ric}_{\mu\nu} - \frac{1}{2}R g_{\mu\nu} + \Lambda g_{\mu\nu} = 8\pi T_{\mu\nu}.
+\]
+这里 Ricci curvature 并不是一个孤立的曲率条件。它是一个动力学方程的一部分。因此，如果我们希望建立真正的 synthetic spacetime theory，仅仅定义一个 Ricci curvature lower bound 是远远不够的。我们真正需要问：
+
+\begin{quote}
+在没有经典微分结构的情况下，Einstein equation 是否仍然具有一个自然的意义？
+\end{quote}
+
+这与 RCD 理论中的问题有本质区别. RCD 主要回答：Ricci lower bound 如何在奇异空间中表达。而 Lorentzian geometry 最终需要回答：Einstein dynamics 如何在奇异空间中表达。这两者之间存在巨大的鸿沟。
+
+\section{从“推广定理”到“发现结构”}
+
+因此，未来二十年的问题不应该只是：如何把更多 Lorentzian geometry 的经典定理推广到 LCD spaces？而应该是：低正则性究竟迫使我们发现什么新的几何结构？第一种研究方式是：classical geometry $\longrightarrow$ weak formulation $\longrightarrow$ synthetic theorem。第二种研究方式则是：classical geometry $\longrightarrow$ loss of regularity $\longrightarrow$ new phenomenon $\longrightarrow$ new structure。
+
+两者的差异并不是技术路线上的差异。它们实际上代表了两种完全不同的数学哲学。过去二十年，我们已经非常成功地回答了：光滑性消失以后，经典黎曼几何还能保留下来多少？但未来真正值得回答的问题也许应该是：光滑性消失以后，什么东西第一次出现了？
+
+\section{未来二十年的问题}
+
+从这个角度来看，未来低正则性 Lorentzian geometry 至少存在几个基本问题。
+
+\subsection{Ricci curvature 应该如何被重新理解？}
+
+如果底层空间没有微分结构，那么 $\operatorname{Ric}$ 不再是一个可以逐点定义的 tensor。仅仅通过 entropy convexity 定义 Ricci lower bound，是否已经包含 Einstein equation 所需要的全部信息？还是应该存在一种同时看到 $\operatorname{Ric}$ and causal geometry 的新对象？
+
+\subsection{Time separation 是否应该成为基本变量？}
+
+在 Lorentzian geometry 中，$\tau(x,y)$ 可能比一个抽象的 Lorentzian metric 更加接近真正的基本变量。因此，一个真正的 synthetic spacetime 也许应该从 $(X,d,m)$ 走向某种 $(X,\tau,m,\leq)$。这意味着理论将从 metric measure geometry 走向 causal measure geometry。
+
+\subsection{是否存在 Lorentzian analogue of Cheeger energy？}
+
+RCD 的 infinitesimal Hilbertianity 最终由 Cheeger energy 的二次性体现。那么 Lorentzian 世界中对应的能量结构是什么？一个自然的候选并不一定是正定的 Dirichlet form，因为 Lorentzian metric 本身具有不定号。因此，我们也许需要某种完全不同的能量结构：indefinite energy，或者更加接近 Hamiltonian mechanics 的结构。
+
+\subsection{Einstein equation 能否成为 synthetic equation？}
+
+最终最重要的问题或许是：Can Einstein's equation survive without smoothness? 如果答案仅仅是：可以定义一个 synthetic Ricci curvature lower bound。那么这仍然只是 Ricci geometry 的推广。真正令人兴奋的答案应该是：Einstein spacetime $\longrightarrow$ synthetic Einstein spacetime。如果能够做到这一点，那么我们得到的就不再是 Lorentzian geometry 的一个弱版本，而可能是一种真正新的几何理论。
+
+\section{结语：从二十年的继承到二十年的创造}
+
+从 Poincar\'e 猜想到 Ricci flow，从 Ricci flow 到 Ricci limit spaces，从 Cheeger--Colding 到 Lott--Sturm--Villani，再到 RCD spaces，现代几何学花费了一个世纪，逐渐学会了如何在没有光滑结构的情况下继续讨论 Ricci curvature。这条道路告诉我们：smoothness is not the essence of geometry。但它也留下了一个更加困难的问题：if smoothness is not essential, what is?
+
+过去二十年的 RCD 理论，已经非常成功地回答了：经典黎曼几何能够保留下来多少？但我们仍然没有真正回答：低正则性本身创造了什么？如果过去的主要任务是不断证明 RCD space $\approx$ Riemannian geometry almost everywhere，那么下一个二十年真正值得研究的问题也许恰恰相反：RCD space $\not\approx$ Riemannian geometry。
+
+我们需要寻找的不是：哪里仍然是欧氏空间？而是：哪里开始不再是欧氏空间？不是：哪些经典定理仍然成立？而是：哪些新的定理只有在奇异空间中才可能出现？不是：如何恢复微分结构？而是：没有微分结构以后，什么结构取代了它？
+
+这也是为什么 Lorentzian geometry 如此重要。因为在 Lorentzian 世界中，我们无法简单地把 Riemannian theory 的每一个工具重新建立一次。因果性不会被 rectifiability 消除。Time separation 不会被 Cheeger energy 替代。Hyperbolic propagation 不会因为拥有一个良好的 heat flow 而消失。Einstein equation 也不会因为存在一个 synthetic Ricci lower bound 而自动出现。
+
+因此，Lorentzian geometry 可能迫使低正则性理论真正完成它尚未完成的任务：从恢复经典结构，走向发现新结构。如果说过去二十年是在回答：光滑性消失以后，黎曼几何还能保留多少？那么接下来的二十年，也许应该开始回答：光滑性消失以后，几何究竟会变成什么？
+
+这或许才是低正则性几何真正尚未开始的部分。
+
+\end{document}
